@@ -1,0 +1,11 @@
+/* Navbar.php */
+
+.bg-dream {
+    background-color: #D4D6FA !important;
+}
+  
+.bg-body-tert {
+    --bs-bg-opacity: 1;
+    background-color: #D4D6FA !important;
+}
+
