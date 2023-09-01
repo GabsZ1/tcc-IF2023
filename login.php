@@ -46,7 +46,7 @@ if (isset($_POST['logar'])){
             <div class="login-header">
                 <h1>Login</h1>
             </div>
-            <form class="login-form" action="logar.php" method="POST">
+            <form class="login-form" action="autenticacao.php" method="POST">
                 <div class="form-item">
                     <span class="form-item-icon material-symbols-rounded">mail</span>
                     <input type="email" name="email" class="form-control" placeholder="Insira o Email" required autofocus>
@@ -62,7 +62,7 @@ if (isset($_POST['logar'])){
                     </div>
                     <a href="#">Esqueci minha senha</a>
                 </div>
-                <input class="btn btn-lg btn-primary" type="submit" value="Entre" name="logar">
+                    <input class="btn btn-lg btn-primary" type="submit" value="Entre" name="logar">
             </form>
             <div class="login-footer">
                 Não possui uma conta? <a href="cadastro.php">Crie uma conta</a>.<br>
