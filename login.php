@@ -23,31 +23,6 @@ if (isset($_POST['logar'])){
 
 }
 
-
-/*
-session_start();
-
-include 'conexao.php';
-
-    $email = $_POST['email'];
-    $senha = $_POST['senha'];
-
-    $sql = "SELECT * FROM usuario WHERE email LIKE '$email' AND senha_usuario '$senha'"; 
-
-    $result = mysqli_num_rows($conexao,$sql);
-
-if(mysqli_num_rows($result) > 0){
-    echo "usuário cadastrado"; 
-
-    $_SESSION['email'] = $email; 
-    $_SESSION['senha'] = $senha;
-
-    header("Location: index.html");
-}else{
-    echo "usuario não cadastrado";
-}
-*/
-
 ?>
 
 <!DOCTYPE html>
