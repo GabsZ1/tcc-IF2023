@@ -60,7 +60,7 @@ if (isset($_POST['logar'])){
             <div class="login-header">
                 <h1>Logar Administrador</h1>
             </div>
-            <form class="login-form" action="logar.php" method="POST" enctype="multipart/form-data">
+            <form class="login-form" action="autenticacaoAdm.php" method="POST" enctype="multipart/form-data">
                 <div class="form-item">
                     <span class="form-item-icon material-symbols-rounded">mail</span>
                     <input type="email" name="email" class="form-control" placeholder="Insira o Email" required autofocus>
