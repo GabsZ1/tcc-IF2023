@@ -42,43 +42,14 @@ $result2 = mysqli_query($conexao, $sql2);
     <script src="https://kit.fontawesome.com/42c6fc9b70.js" crossorigin="anonymous"></script>
   </head>
   <body>
-    <header>
+    <header id="cabecalho">
 
       <?php require_once("navbar.php"); ?>
-
-    </header>
-
-    <div id="page-container">
-      <div class="row">
-        <div class="col-12">
-
-          <!-- CAROUSSEL INICIAL -->
-
-          <div id="myCarousel" class="carousel slide" data-ride="carousel">
-            <ol class="carousel-indicators">
-              <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
-              <li data-target="#myCarousel" data-slide-to="1"></li>
-            </ol>
-            <div class="carousel-inner">
-              <div class="carousel-item active">
-                <img class="first-slide" src="img/imgSITE/DREAMSTORE-BANNER.png" alt="First slide">
-              </div>
-              <div class="carousel-item">
-                <img class="second-slide" src="img/imgSITE/banner2.png" alt="Second slide">
-              </div>
-            </div>
-            <a class="carousel-control-prev" href="#myCarousel" role="button" data-slide="prev">
-              <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-              <span class="sr-only">Voltar</span>
-            </a>
-            <a class="carousel-control-next" href="#myCarousel" role="button" data-slide="next">
-              <span class="carousel-control-next-icon" aria-hidden="true"></span>
-              <span class="sr-only">Avançar</span>
-            </a>
-          </div>
-        </div>
+      
+      <div class="banner">
+        <img src="img/imgSITE/DREAMSTORE-BANNER" alt="">
       </div>
-    </div>
+   </header>
 
     <!-- SLIDER DAS IMAGENS DE LIVROS -->
 
