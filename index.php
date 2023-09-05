@@ -130,10 +130,10 @@ $result2 = mysqli_query($conexao, $sql2);
 
     <footer class="mt-5">
       <div class="footer">
-        <img src="img/imgSITE/nuvemBRANCO.png" alt="" >
+        <img src="img/imgSITE/logoCOMPLETA.png" alt="" >
       </div>
 
-      
+
 
       <div>
         <p class="float-right"><a href="#">Voltar ao topo</a></p>
