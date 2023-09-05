@@ -130,15 +130,15 @@ $result2 = mysqli_query($conexao, $sql2);
 
     <footer class="mt-5">
       <div class="footer">
-        <img src="img/imgSITE/logoCOMPLETA.png" alt="" >
+       <center> <img src="img/imgSITE/logoCOMPLETA.png" alt=""></center>
       </div>
 
 
 
       <div>
-        <p class="float-right"><a href="#">Voltar ao topo</a></p>
+        <!-- <p class="float-right"><a href="#">Voltar ao topo</a></p>
         <p>&copy; Companhia D.S 2022-2023</p>
-      </div>
+      </div> -->
     </footer>
   </body>
   <!-- Principal JavaScript do Bootstrap
