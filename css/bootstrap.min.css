@@ -172,18 +172,7 @@ section {
   color: #fff;
 }
 
-
-/* divisão paginaProdutoH.php */
-
-.featurette-divider {
-  margin: 5rem 0;
-}
-
-
 /* Container Heartstopper GRID */
-
-/* se eu tirar esse css ele considera as imagens parte do html, problema está no css, não na semantica HTML */
-
 
 * {
   font-family: "Open Sans";
@@ -872,13 +861,6 @@ body {
   align-items: center;
 }
 
-
-body {
-  -ms-flex-align: center;
-  align-items: center;
-  padding-top: 140px;
-  padding-bottom: 40px;
-}
 
 [tabindex="-1"]:focus {
   outline: 0 !important;
