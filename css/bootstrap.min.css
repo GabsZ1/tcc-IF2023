@@ -859,13 +859,6 @@ body {
 }
 
 
-body {
-  -ms-flex-align: center;
-  align-items: center;
-  padding-top: 140px;
-  padding-bottom: 40px;
-}
-
 [tabindex="-1"]:focus {
   outline: 0 !important;
 }
