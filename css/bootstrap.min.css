@@ -149,9 +149,12 @@ section {
   height: 350px;
 }
 
-.footer img{
+.footer > .img{
   width: 600px;
-  display: flex;
+  display: grid;
+  place-items: center;
+  margin: 0;
+ 
 }
 
 
