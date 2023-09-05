@@ -96,18 +96,18 @@ $result2 = mysqli_query($conexao, $sql2);
           </div>
         </div>
       </div>
-      <div class="row">
+      <div class="row" style="width: 95%; padding-left: 53px">
         <div class="col-lg-6">
           <?php while ($row2 = $result2->fetch_assoc()) { ?>
           <a href="paginaprodutoH.php?id=<?php echo $row2['id']; ?>">
-            <img src="img/LIVRO/<?php echo $row2['capa']; ?>" style="width: 95%" alt="">
+            <img src="img/LIVRO/<?php echo $row2['capa']; ?>" style="width: 100%" alt="">
           </a><?php } ?>
         </div>
         <div class="col-lg-6">
           <div class="row">
             <div class="col-lg-12">
               <a style="text-align: right">
-                <img src="img/imgSITE/img1CONTAINERZÃO.webp" style="width: 95%; height: 135%" alt="">
+                <img src="img/imgSITE/img1CONTAINERZÃO.webp" style="width: 100%; height: 135%" alt="">
               </a>
             </div>
           </div>
