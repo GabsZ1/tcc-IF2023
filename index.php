@@ -131,7 +131,7 @@ $result2 = mysqli_query($conexao, $sql2);
     <footer class="mt-5">
       <div>
         <p class="float-right"><a href="#">Voltar ao topo</a></p>
-        <p>&copy; Companhia D.S 2022-2023 &middot; <a href="#">Privacidade</a> &middot; <a href="#">Termos</a></p>
+        <p>&copy; Companhia D.S 2022-2023</p>
       </div>
     </footer>
   </body>
