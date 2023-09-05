@@ -127,8 +127,12 @@ $result2 = mysqli_query($conexao, $sql2);
       </div>
     </div>
     <!-- FOOTER -->
-       
+
     <footer class="mt-5">
+      <div class="footer">
+        <img src="img/imgSITE/nuvemBRANCO.png" alt="" >
+      </div>
+
       <div>
         <p class="float-right"><a href="#">Voltar ao topo</a></p>
         <p>&copy; Companhia D.S 2022-2023</p>
