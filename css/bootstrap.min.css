@@ -169,18 +169,7 @@ section {
   color: #fff;
 }
 
-
-/* divisão paginaProdutoH.php */
-
-.featurette-divider {
-  margin: 5rem 0;
-}
-
-
 /* Container Heartstopper GRID */
-
-/* se eu tirar esse css ele considera as imagens parte do html, problema está no css, não na semantica HTML */
-
 
 * {
   font-family: "Open Sans";
