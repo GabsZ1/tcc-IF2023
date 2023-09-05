@@ -41,7 +41,7 @@ if (isset($_POST['logar'])){
     <div class="login-container">
         <div class="login">
             <div class="login-logo">
-                <img src="img/imgSITE/PPK_nuvem.png" alt="logo">
+                <img src="img/imgSITE/nuvemLILAS.png" alt="logo">
             </div>
             <div class="login-header">
                 <h1>Login</h1>

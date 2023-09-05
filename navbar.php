@@ -8,7 +8,7 @@
 
     <div class="col-8">
       <a class="navbar-brand" href="index.php">
-      <img src="img/imgSITE/nuvemBRANCO.png" width="120" height="105">
+      <img src="img/imgSITE/nuvemLILAS.png" width="120" height="105">
       </a>
     </div>
 

@@ -82,7 +82,7 @@ if (isset($_POST['cadastrar'])){
         <div class="cadastro">
             <div class="cadastro-logo">
                 <a href="login.php">
-                    <img src="img/imgSITE/PPK_nuvem.png" alt="logo">
+                    <img src="img/imgSITE/nuvemLILAS.png" alt="logo">
                 </a>
             </div>
             <div class="cadastro-heather">
