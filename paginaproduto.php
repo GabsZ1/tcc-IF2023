@@ -4,8 +4,6 @@ require_once("conexao.php");
 
 $idlivro = $_GET["id"];  
 
-echo $idlivro;
-
 $sql = "SELECT * FROM livros WHERE id LIKE '$idlivro'";
 
 $result = mysqli_query($conexao, $sql);
