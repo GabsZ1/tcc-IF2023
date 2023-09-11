@@ -157,10 +157,6 @@ section {
  
 }
 
-
-
-
-
 #cabecalho {
   background: url("../img/imgSITE/DREAMSTORE-BANNER.png");
   background-position: center;
@@ -342,7 +338,7 @@ div.galeria{
   top:55%;
   left: 90%;
   transform: translate(-50%, -50%);
-  height: 20%;
+  /* height: 20%; */
   display: flex;
   justify-content: space-between; 
   flex-direction: row-reverse;
@@ -357,7 +353,7 @@ div.galeria{
   outline: none;
   padding: 0;
   color: #737373;
-  font-size: 16px;
+  /* font-size: 16px; */
   line-height: 40px;
   width: 0; 
   transition: .2s; 
@@ -4613,98 +4609,6 @@ input[type="submit"].btn-block {
   z-index: 2;
 }
 
-
-
-
-
-
-/*
-.form-signin input[type="text"] {
-  margin-bottom: -1px;
-  border-bottom-right-radius: 0;
-  border-bottom-left-radius: 0;
-}
-
-
-.form-signin input[type="email"] {
-  margin-bottom: -1px;
-  border-bottom-right-radius: 0;
-  border-bottom-left-radius: 0;
-}
-.form-signin input[type="password"] {
-  margin-bottom: 10px;
-  border-top-left-radius: 0;
-  border-top-right-radius: 0;
-}
-*/
-
-
-
-
-
-/*
-
-@keyframes bounce {
-  0%, 20%, 60%, 100% {
-    -webkit-transform: translateY(0);
-    transform: translateY(0);
-  }
-
-  40% {
-    -webkit-transform: translateY(-20);
-    transform: translateY(-20);
-  }
-
-  80% {
-    -webkit-transform: translateY(-10);
-    transform: translateY(-10);
-  }
-}
-
-.efeito {
-  border: none;
-  color: #ffff;
-  padding: 20px;
-  margin: 10px;
-  font-size: 24px;
-  line-height: 24px;
-  border-radius: 10px;
-  position: relative;
-  box-sizing: border-box;
-  cursor: pointer;
-  transition: all 400ms ease;
-}
-
-.efeito-1 {
-  background-color: #28348a;
-}
-
-.efeito-1:hover {
-  animation: bounce 1s;
-}
-
-*/
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 .navbar-brand {
   display: inline-block;
   padding-top: 0.3125rem;
@@ -7816,165 +7720,6 @@ button.bg-dark:hover {
   border: 0;
 }
 
-/*
-.sr-only-focusable:active,
-.sr-only-focusable:focus {
-  position: static;
-  width: auto;
-  height: auto;
-  overflow: visible;
-  clip: auto;
-  white-space: normal;
-}
-*/
-
-
-
-
-
-
-
-
-/*
-.login-logo {
-  margin-bottom: 2rem;
-}
-
-.login-logo img {
-  width: 100px;
-}
-
-.login-logo,
-.login-header,
-.login-footer {
-    text-align: center;
-}
-
-.login-header {
-  margin-bottom: 2rem;
-}
-
-.login-header h1 {
-  font-size: 2rem;
-  font-weight: 600;
-  margin-bottom: .5rem;
-}
-
-.login-footer {
-  margin-top: 1.5rem;
-}
-
-
-
-
-
-
-
-.login-form {
-  display: flex;
-  flex-direction: column;
-  gap: 1.5rem;
-}
-
-.login-form .form-item {
-  position: relative;
-}
-
-.login-form .form-item .form-item-icon {
-  position: absolute;
-  top: .82rem;
-  left: 1.4rem;
-  font-size: 1.3rem;
-  opacity: .4;
-}
-
-.login-form .checkbox {
-  display: flex;
-  align-items: center;
-  gap: 7px;
-}
-
-.login-form .form-item-outro {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  font-size: calc(1rem * .8);
-  margin-bottom: .5rem;
-}
-
-
-
-
-
-
-.login input[type="text"],
-.login input[type="password"],
-.login input[type="email"] {
-    background: rgba(255, 255, 255, .3);
-    padding: 1rem 1.5rem;
-    padding-left: calc(1rem * 3.5);
-    width: 100%;
-}
-
-.login input[type="checkbox"] {
-    width: 16px;
-    height: 16px;
-    accent-color: black;
-}
-
-
-
-
-
-
-
-
-.login-social {
-  display: flex;
-  flex-direction: column;
-  gap: 1.5rem;
-  text-align: center;
-  margin-top: 3rem;
-}
-
-.login-social>div {
-  opacity: .8;
-  text-transform: uppercase;
-  letter-spacing: 1px;
-  font-size: calc(1rem * .8);
-}
-
-.login-social-btns {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 1rem;
-}
-
-.login-social-btns a {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: black;
-  width: 50px;
-  height: 50px;
-  background-color: rgba(255, 255, 255, .6);
-  border-radius: 100px;
-  transition: all .5s;
-}
-
-.login-social-btns a:hover {
-  background-color: white;
-  transform: scale(1.1);
-}
-*/
-
-
-
-
-
-
-
 .body-login {
   min-height: 100vh;
   background-color: #D4D6FA;
@@ -7982,7 +7727,6 @@ button.bg-dark:hover {
   justify-content: center;
   align-items: center;
 }
-
 
 
 .login {
