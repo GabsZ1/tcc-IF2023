@@ -114,12 +114,12 @@ $result2 = mysqli_query($conexao, $sql2);
           <div class="row" style="margin-top: 175px">
             <div class="col-lg-6">
               <div class="img">
-                <img src="img/imgSITE/img2CONTAINERZÃO.webp" alt="">
+                <img src="img/imgSITE/img2CONTAINERZÃO.webp" style="width: 100%" alt="">
               </div>
             </div>
             <div class="col-lg-6">
               <div class="img">
-                <img src="img/imgSITE/img3CONTAINERZÃO.jpg" alt="">
+                <img src="img/imgSITE/img3CONTAINERZÃO.webp" style="width: 100%" alt="">
               </div>
             </div>
           </div>
