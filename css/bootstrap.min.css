@@ -251,13 +251,16 @@ section {
 /* CSS DA BARRA DE PESQUISA */
 
 .box-busca {
-  width: 400px;
+  width: 80px;
   height: 80px;
-  background-color: #ffff;
   overflow: hidden;
   display: flex;
   justify-content: space-between;
   position: relative;
+}
+
+.box-busca.ativo {
+  width: 400px;
 }
 
 .box-busca .lupa, .box-busca .btn-fecha {
