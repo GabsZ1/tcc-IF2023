@@ -4,8 +4,6 @@ require_once("conexao.php");
 
 $idheart = $_GET["id"];  
 
-echo $idheart;
-
 $sql = "SELECT * FROM heartstopper WHERE id LIKE '$idheart'";
 
 $result = mysqli_query($conexao, $sql);
