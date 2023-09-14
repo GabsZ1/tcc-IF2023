@@ -130,7 +130,7 @@ $result2 = mysqli_query($conexao, $sql2);
 
     <footer class="mt-5">
       <div class="footer">
-       <center> <img src="img/imgSITE/logoCOMPLETA.png" alt=""></center>
+       <img src="img/imgSITE/logoCOMPLETA.png" alt="">
       </div>
 
 
