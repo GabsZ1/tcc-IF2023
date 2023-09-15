@@ -49,5 +49,6 @@ $result = mysqli_query($conexao, $sql);
             </div>
             <hr>
         </main>
+        <script src="js/pesquisa.js"></script>
     </body>
 </html>

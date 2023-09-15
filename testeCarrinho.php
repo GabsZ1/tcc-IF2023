@@ -121,6 +121,7 @@
                 </ul>
             </footer>
         </div>
+        <script src="js/pesquisa.js"></script>
         <script src="/docs/5.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous"></script>
         <script src="checkout.js"></script>
     </body>

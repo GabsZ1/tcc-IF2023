@@ -48,5 +48,6 @@ $result = mysqli_query($conexao, $sql);
                 <?php } ?>
             </div>
         </main>
+        <script src="js/pesquisa.js"></script>
     </body>
 </html>
