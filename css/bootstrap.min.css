@@ -266,6 +266,7 @@ html{
   display: flex;
   justify-content: space-between;
   position: relative;
+  transition: .5s;
 }
 
 .box-busca.ativo {
@@ -284,7 +285,7 @@ html{
 .box-busca .input-busca {
   position: absolute;
   left: 80px;
-  width: 100%;
+  width: calc(100% - 120px);
   height: 100%;
   line-height: 80px;
 }
