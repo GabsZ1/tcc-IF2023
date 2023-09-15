@@ -110,20 +110,3 @@ function TestaCPF(strCPF) {
 }
 
 
-//colocando . e - conforme as especificações
-function maskCPF() {
-  let strCPF = cpfInput.value;
-  if (strCPF.length == 3 || strCPF.length == 7) cpfInput.value += ".";
-  if (strCPF.length == 11) cpfInput.value += "-";
-}
-
-//retirando tudo que n seja apenas digitos (. and - )
-function deMaskCPF(cpf) {
-  return cpf.replace(/\D/g, '');
-}
-
-
-cpfInput.addEventListener("input", function () {
-  maskCPF();
-});
-
