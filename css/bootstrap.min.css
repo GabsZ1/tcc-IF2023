@@ -36,6 +36,20 @@
   --font-family-monospace: SFMono-Regular, Menlo, Monaco, Consolas,
     "Liberation Mono", "Courier New", monospace;
 }
+.btn-primary {
+  color: white;
+  background-color: #9c93cf;
+  border-color: #9c93cf;
+  background-image: linear-gradient(
+    -60deg,
+    transparent, transparent 40%,
+    #ffffff44 40%, #ffffff44 60%,
+    transparent 60%, transparent 100%
+  );
+  background-size: 200% 100%;
+  background-repeat: no-repeat;
+  background-position-x: 150%;
+}
 *,
 ::after,
 ::before {
@@ -260,7 +274,7 @@ html{
 /* CSS DA BARRA DE PESQUISA */
 
 .box-busca {
-  width: 80px;
+  width: 54px;
   height: 80px;
   overflow: hidden;
   display: flex;
@@ -274,7 +288,7 @@ html{
 }
 
 .box-busca .lupa, .box-busca .btn-fecha {
-  min-width: 80px;
+  min-width: 50px;
   height: 80px;
   display: flex;
   align-items: center;
@@ -2986,48 +3000,7 @@ fieldset:disabled a.btn {
   pointer-events: none;
 }
 
-
-
-
-
-.btn-primary {
-  color: white;
-  background-color: #9c93cf;
-  border-color: #9c93cf;
-  background-image: linear-gradient(
-    -60deg,
-    transparent, transparent 40%,
-    #ffffff44 40%, #ffffff44 60%,
-    transparent 60%, transparent 100%
-  );
-  background-size: 200% 100%;
-  background-repeat: no-repeat;
-  background-position-x: 150%;
-}
-
 .btn-primary:hover {
-  color: #fff;
-  background-position-x:-150%;
-  transition: background-position-x 600ms;
-}
-
-.btn-secondary {
-  color: #FEF5E8;
-  background-color: #005799;
-  border-color: #256BA1;
-  background-image: linear-gradient(
-    -60deg,
-    transparent, transparent 40%,
-    #ffffff44 40%, #ffffff44 60%,
-    transparent 60%, transparent 100%
-  );
-  background-size: 200% 100%;
-  background-repeat: no-repeat;
-  background-position-x: 150%;
-}
-
-
-.btn-secondary:hover {
   color: #fff;
   background-position-x:-150%;
   transition: background-position-x 600ms;
@@ -4368,6 +4341,7 @@ input[type="submit"].btn-block {
   -ms-flex-positive: 1;
   flex-grow: 1;
   text-align: center;
+  align-items: center;
 }
 .tab-content > .tab-pane {
   display: none;
