@@ -16,7 +16,7 @@ if (isset($_POST['cadastrar'])){
     //3. Preparar a SQL
 
     $sql = "insert into usuario (nome, email, senha, dataNascimento, cpf, cidade, UF, telefone) values ('$nome', '$email', '$senha', '$dataNasc', '$cpf', '$cidade', '$estado', '$telefone')";
-
+    
     //4. executar a sql no banco de dados
 
     mysqli_query($conexao, $sql);
