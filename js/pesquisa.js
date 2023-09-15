@@ -5,3 +5,7 @@ let btnFecha = document.querySelector('.btn-fecha');
 lupa.addEventListener('click', ()=> {
     boxBusca.classList.add('ativo')
 })
+
+btnFecha.addEventListener('click', ()=> {
+    boxBusca.classList.remove('ativo')
+})

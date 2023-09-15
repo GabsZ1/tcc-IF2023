@@ -144,7 +144,7 @@ $result2 = mysqli_query($conexao, $sql2);
   <!-- Principal JavaScript do Bootstrap
   ================================================== -->
   <!-- Foi colocado no final para a página carregar mais rápido -->
-  
+  <script src="js/pesquisa.js"></script>
   <script src="js/slider.js" defer></script>
   <script src="js/jquery-3.3.1.slim.min.js"></script>
   <script>window.jQuery || document.write('<script src="js/jquery-slim.min.js"><\/script>')</script>
