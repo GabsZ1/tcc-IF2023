@@ -129,10 +129,18 @@ $result2 = mysqli_query($conexao, $sql2);
     <!-- FOOTER -->
 
     <footer class="mt-5">
-      <div class="footer">
-       <img src="img/imgSITE/logoCOMPLETA.png" alt="">
+      <div class="footer text-center">
+       <img class="" src="img/imgSITE/logoCOMPLETA.png" alt="">
       </div>
 
+        <footer class="my-5 pt-5 text-body-secondary text-center text-small">
+                  <p class="mb-1">&copy; 2022–2023 DREAMSTORE</p>
+                  <ul class="list-inline">
+                  <li class="list-inline-item"><a href="#">Privacy</a></li>
+                  <li class="list-inline-item"><a href="#">Terms</a></li>
+                  <li class="list-inline-item"><a href="#">Support</a></li>
+                  </ul>
+        </footer>
 
 
       <div>
