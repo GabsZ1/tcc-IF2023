@@ -17,6 +17,12 @@ $result = mysqli_query($conexao, $sql);
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Document</title>
+ 
+        <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
+<link href='https://fonts.googleapis.com/css?family=Lato' rel='stylesheet' type='text/css'>
+
+
+
 
         <!-- Principal CSS do Bootstrap -->
         <link href="css/bootstrap.min.css" rel="stylesheet">
@@ -40,7 +46,7 @@ $result = mysqli_query($conexao, $sql);
                     <h2 class="sinopse mb-3">Sinopse:</h2>
                     <h1 class="lead mb-4"><?php echo $row['sinopse']; ?></h1>
                     <span class="mb-4"><?php echo $row['valor']; ?></span>
-                    <a href="" class="btn btn-lg btn-primary mb-5">ADICIONAR AO CARRINHO</a>
+                    <button class="btn btn-2 btn-sep icon-cart">ADICIONAR AO CARRINHO</button>
                 </div>
                 <div class="right-side">  
                     <img src="img/LIVRO/<?php echo $row['capa']; ?>">
