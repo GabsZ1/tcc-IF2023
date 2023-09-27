@@ -40,7 +40,7 @@ $result = mysqli_query($conexao, $sql);
                     <h2 class="sinopse mb-3">Sinopse:</h2>
                     <h1 class="lead mb-4"><?php echo $row['sinopse']; ?></h1>
                     <span class="mb-4"><?php echo $row['valor']; ?></span>
-                    <a href="" class="btn btn-lg btn-primary mb-5">ADICIONAR AO CARRINHO</a>
+                    <a href="testeCarrinho.php" class="btn btn-lg btn-primary mb-5">ADICIONAR AO CARRINHO</a>
                 </div>
                 <div class="right-side">  
                     <img src="img/LIVRO/<?php echo $row['capa']; ?>">

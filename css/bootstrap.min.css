@@ -18,7 +18,6 @@
   --white: #fff;
   --gray: #6c757d;
   --gray-dark: #343a40;
-  --secondary: #6c757d;
   --success: #28a745;
   --info: #17a2b8;
   --warning: #ffc107;
@@ -36,7 +35,7 @@
   --font-family-monospace: SFMono-Regular, Menlo, Monaco, Consolas,
     "Liberation Mono", "Courier New", monospace;
 }
-.btn-primary {
+.botao {
   color: white;
   background-color: #9c93cf;
   border-color: #9c93cf;
@@ -77,6 +76,12 @@ main,
 nav,
 section {
   display: block;
+}
+
+.foto {
+  width: 15em;
+  height: 15em;
+  border-radius: 50%;
 }
 
 /* teste do carrinho */
@@ -3191,42 +3196,6 @@ fieldset:disabled a.btn {
   border-color: #9c93cf;
 }
 
-.btn-outline-secondary {
-  color: #6c757d;
-  background-color: transparent;
-  background-image: none;
-  border-color: #6c757d;
-}
-.btn-outline-secondary:hover {
-  color: #fff;
-  background-color: #6c757d;
-  border-color: #6c757d;
-}
-.btn-outline-secondary.focus,
-.btn-outline-secondary:focus {
-  box-shadow: 0 0 0 0.2rem rgba(108, 117, 125, 0.5);
-}
-.btn-outline-secondary.disabled,
-.btn-outline-secondary:disabled {
-  color: #6c757d;
-  background-color: transparent;
-}
-.btn-outline-secondary:not(:disabled):not(.disabled).active,
-.btn-outline-secondary:not(:disabled):not(.disabled):active,
-.show > .btn-outline-secondary.dropdown-toggle {
-  color: #fff;
-  background-color: #6c757d;
-  border-color: #6c757d;
-}
-.btn-outline-secondary:not(:disabled):not(.disabled).active:focus,
-.btn-outline-secondary:not(:disabled):not(.disabled):active:focus,
-.show > .btn-outline-secondary.dropdown-toggle:focus {
-  box-shadow: 0 0 0 0.2rem rgba(108, 117, 125, 0.5);
-}
-
-
-
-
 .btn-outline-success {
   background-color: transparent;
   background-image: none;
@@ -3235,12 +3204,6 @@ fieldset:disabled a.btn {
   color: #fff;
 }
 
-.btn-outline-info {
-  color: #ffc107;
-  background-color: transparent;
-  background-image: none;
-  border-color: #ffc107;
-}
 .btn-outline-info:hover {
   color: #fff;
   background-color: #17a2b8;
