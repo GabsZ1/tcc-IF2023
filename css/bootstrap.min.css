@@ -35,7 +35,8 @@
   --font-family-monospace: SFMono-Regular, Menlo, Monaco, Consolas,
     "Liberation Mono", "Courier New", monospace;
 }
-.botao {
+
+.btn-primary {
   color: white;
   background-color: #9c93cf;
   border-color: #9c93cf;
@@ -49,6 +50,7 @@
   background-repeat: no-repeat;
   background-position-x: 150%;
 }
+
 *,
 ::after,
 ::before {
