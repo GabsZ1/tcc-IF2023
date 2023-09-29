@@ -126,6 +126,21 @@ section {
   -webkit-font-smoothing: antialiased;
 }
 
+.btn-check:checked+.btn, .btn.active, .btn.show, .btn:first-child:active, :not(.btn-check)+.btn:active {
+  color: white;
+  background-color: #9c93cf !important;
+  border-color: #9c93cf !important;
+  background-image: linear-gradient(
+    -60deg,
+    transparent, transparent 40%,
+    #ffffff44 40%, #ffffff44 60%,
+    transparent 60%, transparent 100%
+  );
+  background-size: 200% 100%;
+  background-repeat: no-repeat;
+  background-position-x: 150%;
+}
+
 
 /* Icon separator */
 .btn-sep {
@@ -182,6 +197,8 @@ section {
   height: 15em;
   border-radius: 50%;
 }
+
+
 
 /* teste do carrinho */
 
