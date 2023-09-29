@@ -211,6 +211,7 @@ if (isset($_POST['cadastrar'])){
         </div>
     </div>
   </div>  
-
 </body>
+
+<script src="js/TesteValCPF.js"></script>
 </html>
