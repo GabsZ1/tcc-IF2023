@@ -45,8 +45,11 @@ $result = mysqli_query($conexao, $sql);
                     <h1 class="lead mb-5"><?php echo $row['subtitulo']; ?></h1>
                     <h2 class="sinopse mb-3">Sinopse:</h2>
                     <h1 class="lead mb-4"><?php echo $row['sinopse']; ?></h1>
-                    <span class="mb-4"><?php echo $row['valor']; ?></span>
-                    <a href="" class="btn btn-lg btn-primary mb-5">ADICIONAR AO CARRINHO</a>
+                    <span class="mb-4">R$<?php echo $row['valor']; ?></span>
+                    <a href="#" class="btn btn-primary btn-lg btn-block active" role="button"
+              aria-pressed="true">Adicionar ao carrinho</a>
+
+
                 </div>
                 <div class="right-side">  
                     <img src="img/LIVRO/<?php echo $row['capa']; ?>">
