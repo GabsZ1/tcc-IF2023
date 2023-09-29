@@ -4,18 +4,15 @@
 $conexao = mysqli_connect('127.0.0.1', 'root', '', 'tcc');
 
 if (isset($_POST['cadastrar'])){
-    $nome = $_POST['nome'];
-    $email = $_POST['email'];
-    $senha = $_POST['senha'];
-    $dataNasc = $_POST['dataNascimento'];
-    $cpf = $_POST['cpf'];
-    $cidade = $_POST['cidade'];
-    $estado = $_POST['estado'];
-    $telefone = $_POST['telefone'];
+    $titulo = $_POST['titulo'];
+    $subt = $_POST['subtitulo'];
+    $sinopse = $_POST['sinopse'];
+    $val = $_POST['valor'];
+    $capa = $_POST['capa'];
 
     //3. Preparar a SQL
 
-    $sql = "insert into usuario (nome, email, senha, dataNascimento, cpf, cidade, UF, telefone) values ('$nome', '$email', '$senha', '$dataNasc', '$cpf', '$cidade', '$estado', '$telefone')";
+    $sql = "insert into livros (titulo, subtitulo, sinopse, valor, capa) values ('$titulo', '$subt', '$sinopse', '$val', '$capa')";
     
     //4. executar a sql no banco de dados
 
@@ -39,42 +36,6 @@ if (isset($_POST['cadastrar'])){
     <link href="css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@48,300,0,0" />
     <title>Cadastro</title>
-
-    <script>
-        function mascara_cpf() {
-        var cpf = document.getElementById('cpf')
-        if(cpf.value.length == 3 || cpf.value.length == 7) {
-            cpf.value = cpf.value += "."
-        } else if (cpf.value.length == 11) {
-            cpf.value += "-"
-        }
-        }
-    </script>
-
-    <script>
-        function mascara_telefone() {
-        var celular = document.getElementById('telefone');
-        if (celular.value.length == 2) {
-            celular.value = '(' + celular.value + ')';
-        }
-        if (celular.value.length == 9) {
-            celular.value = celular.value + '-';
-        }
-        }
-    </script>
-    
-    <script>
-        function mascara_DataNascimento() {
-        var DataNascimento = document.getElementById('dataNascimento');
-        if (DataNascimento.value.length == 2) {
-            DataNascimento.value = DataNascimento.value + '/';
-        }
-        if (DataNascimento.value.length == 5) {
-            DataNascimento.value = DataNascimento.value + '/';
-        }
-        }
-    </script>
-
 </head>
 <body class="body-cadastro">
   <div class="text-center">
@@ -114,50 +75,11 @@ if (isset($_POST['cadastrar'])){
                     <input type="text" id="cpf" autocomplete="off" maxlength="14" name="cpf" class="form-control" placeholder="Seu CPF" onkeyup="mascara_cpf()">
                 </div>
                 
-
-                <div class="form-item">
-                    <span class="form-item-icon material-symbols-rounded">person_pin_circle</span>
-                    <select id="estado" name="estado">
-                        <option>Seu Estado</option>
-                        <option value="AC">Acre</option>
-                        <option value="AL">Alagoas</option>
-                        <option value="AP">Amapá</option>
-                        <option value="AM">Amazonas</option>
-                        <option value="BA">Bahia</option>
-                        <option value="CE">Ceará</option>
-                        <option value="DF">Distrito Federal</option>
-                        <option value="ES">Espírito Santo</option>
-                        <option value="GO">Goiás</option>
-                        <option value="MA">Maranhão</option>
-                        <option value="MT">Mato Grosso</option>
-                        <option value="MS">Mato Grosso do Sul</option>
-                        <option value="MG">Minas Gerais</option>
-                        <option value="PA">Pará</option>
-                        <option value="PB">Paraíba</option>
-                        <option value="PR">Paraná</option>
-                        <option value="PE">Pernambuco</option>
-                        <option value="PI">Piauí</option>
-                        <option value="RJ">Rio de Janeiro</option>
-                        <option value="RN">Rio Grande do Norte</option>
-                        <option value="RS">Rio Grande do Sul</option>
-                        <option value="RO">Rondônia</option>
-                        <option value="RR">Roraima</option>
-                        <option value="SC">Santa Catarina</option>
-                        <option value="SP">São Paulo</option>
-                        <option value="SE">Sergipe</option>
-                        <option value="TO">Tocantins</option>
-                        <option value="EX">Estrangeiro</option>
-                    </select>
-                </div>
-
                 <div class="form-item">
                     <span class="form-item-icon material-symbols-rounded">location_city</span>
                     <input type="text" name="cidade" class="form-control" placeholder="Sua cidade">
                 </div>
-                
-                
 
-                
                 <div class="form-item">
                     <span class="form-item-icon material-symbols-rounded">call</span>
                     <input type="tel" id="telefone" name="telefone" autocomplete="off" maxlength="14" class="form-control" placeholder="insira o DDD" onkeyup="mascara_telefone()">
