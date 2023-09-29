@@ -39,7 +39,11 @@ if (isset($_POST['cadastrar'])){
                 </div>
             </div>
             </div>
-        </div>';
+        </div>
+        
+        const myModal = document.getElementById(\'exampleModal\')
+        
+        ';
 
     $mensagem = "Inserido com sucesso.";
 
@@ -93,10 +97,74 @@ if (isset($_POST['cadastrar'])){
         }
     </script>
 
+<script>
+    function validarCPF() {
+        if (vercpf(document.frmcpf.cpf.value))
+        {
+            document.frmcpf.submit();
+        } else {
+            errors = "1";
+            if (errors)
+                alert('CPF inválido');
+            document.retorno = (errors == '');
+        }
+    }
+
+    function vercpf(cpf) {
+        if (cpf.length != 11 ||
+            cpf == "00000000000" ||
+            cpf == "11111111111" ||
+            cpf == "22222222222" ||
+            cpf == "33333333333" ||
+            cpf == "44444444444" ||
+            cpf == "55555555555" ||
+            cpf == "66666666666" ||
+            cpf == "77777777777" ||
+            cpf == "88888888888" ||
+            cpf == "99999999999")
+            return false;
+
+        add = 0;
+
+        for (i = 0; i &lt; 9; i++)
+                add += parseInt(cpf.charAt(i)) * (10 - i);
+        rev = 11 - (add % 11);
+        if (rev == 10 || rev == 11)
+            rev = 0;
+        if (rev != parseInt(cpf.charAt(9)))
+            return false;
+        add = 0;
+                for (i = 0; i &lt; 10; i++)
+                add += parseInt(cpf.charAt(i)) * (11 - i);
+        rev = 11 - (add % 11);
+        if (rev == 10 || rev == 11)
+            rev = 0;
+        if (rev != parseInt(cpf.charAt(10)))
+            return false;
+        alert('O CPF INFORMADO É VÁLIDO.');
+        return true;
+    }
+
+    $j(document).ready(function () {
+
+        $j("#meuForm").validate({
+            rules: {
+                NrCpf: {NrCpf: true, required: true}
+            },
+            messages: {
+                NrCpf: {NrCpf: alert('CPF Inválido')}
+            }
+        });
+    });
+
+    
+</script>
+
 </head>
 <body class="body-cadastro">
   <div class="text-center">
     <div class="cadastro-container">
+        
         <div class="cadastro">
             <div class="cadastro-logo">
                 <a href="login.php">
@@ -129,7 +197,8 @@ if (isset($_POST['cadastrar'])){
 
                 <div class="form-item">
                     <span class="form-item-icon material-symbols-rounded">terminal</span>
-                    <input type="text" id="cpf" autocomplete="off" maxlength="14" name="cpf" class="form-control" placeholder="Seu CPF" onkeyup="mascara_cpf()">
+                    <input type="text" id="cpf" autocomplete="off" maxlength="14" name="cpf" class="form-control" placeholder="Seu CPF" onkeyup="mascara_cpf()"
+                        onblur="javascript: validarCPF(this.value);" >
                 </div>
                 
 
