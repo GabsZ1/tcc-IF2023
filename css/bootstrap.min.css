@@ -80,6 +80,91 @@ section {
   display: block;
 }
 
+/* card */
+
+/* .body-card{
+  display: flex;
+  justify-content: center;
+  height: 100vh;
+  font-family: Arial;
+  gap: 16px;
+  background-image: url("img/LIVRO/capa1.webp");
+}
+
+.cards {
+  background-color: #fff;
+}
+
+.cards div{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 4px;
+  height: 50%;
+}
+
+.cards h1{
+  font-size: 1.2rem;
+}
+
+.cards h2{
+  font-size: .9rem;
+  color: #aaaa;
+} */
+
+
+
+.body-card {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  font-family: "Arial";
+  gap:16px;
+}
+.cards {
+  background-color: #fff;
+  width: 180px;
+  height: 260px;
+  border-radius: 12px;
+  box-shadow: 4px 4px 12px #aaaa;
+}
+.cards img {
+  width: 100%;
+  height: 130px;
+  border-top-left-radius: 12px;
+  border-top-right-radius: 12px;
+}
+.cards div {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 4px;
+  height: 50%;
+}
+.cards h1 {
+  font-size: 1.2rem;
+}
+.cards h2 {
+  font-size: .9rem;
+  color: #aaaa;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 /* botao add carrinho */
 .btn {
