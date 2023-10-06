@@ -89,7 +89,7 @@ if (isset($_POST['cadastrar'])){
                         <input type="checkbox" id="rememberMeCheck">
                         <label for="rememberMeCheck">Lembre-se de mim</label>
                     </div>
-                <input class="btn btn-lg btn-primary" type="submit" value="Cadastrar" name="cadastrar">
+                    <input class="btn btn-primary btn-lg btn-block active" style="left: -30px;" type="submit" value="Cadastrar" name="cadastrar">
             </form>
             <div class="cadastro-footer"></div>
         </div>

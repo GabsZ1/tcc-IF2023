@@ -4,6 +4,7 @@
 $conexao = mysqli_connect('127.0.0.1', 'root', '', 'tcc');
 
 if (isset($_POST['cadastrar'])){
+
     $nome = $_POST['nome'];
     $email = $_POST['email'];
     $senha = $_POST['senha'];
@@ -98,66 +99,55 @@ if (isset($_POST['cadastrar'])){
     </script>
 
 <script>
-    function validarCPF() {
-        if (vercpf(document.frmcpf.cpf.value))
-        {
-            document.frmcpf.submit();
-        } else {
-            errors = "1";
-            if (errors)
-                alert('CPF inválido');
-            document.retorno = (errors == '');
-        }
-    }
+    function validaCPF(cpf) {
+    var Soma = 0
+    var Resto
 
-    function vercpf(cpf) {
-        if (cpf.length != 11 ||
-            cpf == "00000000000" ||
-            cpf == "11111111111" ||
-            cpf == "22222222222" ||
-            cpf == "33333333333" ||
-            cpf == "44444444444" ||
-            cpf == "55555555555" ||
-            cpf == "66666666666" ||
-            cpf == "77777777777" ||
-            cpf == "88888888888" ||
-            cpf == "99999999999")
-            return false;
-
-        add = 0;
-
-        for (i = 0; i &lt; 9; i++)
-                add += parseInt(cpf.charAt(i)) * (10 - i);
-        rev = 11 - (add % 11);
-        if (rev == 10 || rev == 11)
-            rev = 0;
-        if (rev != parseInt(cpf.charAt(9)))
-            return false;
-        add = 0;
-                for (i = 0; i &lt; 10; i++)
-                add += parseInt(cpf.charAt(i)) * (11 - i);
-        rev = 11 - (add % 11);
-        if (rev == 10 || rev == 11)
-            rev = 0;
-        if (rev != parseInt(cpf.charAt(10)))
-            return false;
-        alert('O CPF INFORMADO É VÁLIDO.');
-        return true;
-    }
-
-    $j(document).ready(function () {
-
-        $j("#meuForm").validate({
-            rules: {
-                NrCpf: {NrCpf: true, required: true}
-            },
-            messages: {
-                NrCpf: {NrCpf: alert('CPF Inválido')}
-            }
-        });
-    });
-
+    var strCPF = String(cpf).replace(/[^\d]/g, '')
     
+    if (strCPF.length !== 11)
+        return false
+    
+    if ([
+        '00000000000',
+        '11111111111',
+        '22222222222',
+        '33333333333',
+        '44444444444',
+        '55555555555',
+        '66666666666',
+        '77777777777',
+        '88888888888',
+        '99999999999',
+        ].indexOf(strCPF) !== -1)
+        return false
+
+    for (i=1; i<=9; i++)
+        Soma = Soma + parseInt(strCPF.substring(i-1, i)) * (11 - i);
+
+    Resto = (Soma * 10) % 11
+
+    if ((Resto == 10) || (Resto == 11)) 
+        Resto = 0
+
+    if (Resto != parseInt(strCPF.substring(9, 10)) )
+        return false
+
+    Soma = 0
+
+    for (i = 1; i <= 10; i++)
+        Soma = Soma + parseInt(strCPF.substring(i-1, i)) * (12 - i)
+
+    Resto = (Soma * 10) % 11
+
+    if ((Resto == 10) || (Resto == 11)) 
+        Resto = 0
+
+    if (Resto != parseInt(strCPF.substring(10, 11) ) )
+        return false
+
+    return true
+    }   
 </script>
 
 </head>
@@ -174,7 +164,7 @@ if (isset($_POST['cadastrar'])){
             <div class="cadastro-heather">
                 <h1>Cadastre-se</h1>
             </div>
-            <form class="cadastro-form" method="post">
+            <form onsubmit="return validaCPF(this.cpf.value)" class="cadastro-form" method="post">
                 <div class="form-item">
                     <span class="form-item-icon material-symbols-rounded">badge</span>
                     <input type="text" name="nome" class="form-control" placeholder="Seu nome" required autofocus>
@@ -191,21 +181,21 @@ if (isset($_POST['cadastrar'])){
                 <div class="form-item">
 
                     <span class="form-item-icon material-symbols-rounded">calendar_today</span>
-                    <input type="text" id="dataNascimento" name="dataNascimento" autocomplete="off" maxlength="10" class="form-control" placeholder="Sua data de Nascimento" onkeyup="mascara_DataNascimento()">
+                    <input type="text" id="dataNascimento" name="dataNascimento" autocomplete="off" maxlength="10" class="form-control" placeholder="Sua data de Nascimento" onkeyup="mascara_DataNascimento()" required>
 
                 </div>
 
                 <div class="form-item">
                     <span class="form-item-icon material-symbols-rounded">terminal</span>
-                    <input type="text" id="cpf" autocomplete="off" maxlength="14" name="cpf" class="form-control" placeholder="Seu CPF" onkeyup="mascara_cpf()"
-                        onblur="javascript: validarCPF(this.value);" >
+                    <input class="form-control" type="text" name="cpf" id="cpf" placeholder="Seu CPF" autocomplete="off" maxlength="14" onkeyup="document.getElementById('validation').innerHTML = validaCPF(this.value)" required>
+                    <div><b>Resultado:</b> <span id="validation"></span></div>
                 </div>
                 
 
                 <div class="form-item">
                     <span class="form-item-icon material-symbols-rounded">person_pin_circle</span>
-                    <select id="estado" name="estado">
-                        <option>Seu Estado</option>
+                    <select id="estado" name="estado" required>
+                        <option selected disabled value="">Seu Estado</option>
                         <option value="AC">Acre</option>
                         <option value="AL">Alagoas</option>
                         <option value="AP">Amapá</option>
@@ -239,15 +229,12 @@ if (isset($_POST['cadastrar'])){
 
                 <div class="form-item">
                     <span class="form-item-icon material-symbols-rounded">location_city</span>
-                    <input type="text" name="cidade" class="form-control" placeholder="Sua cidade">
+                    <input type="text" name="cidade" class="form-control" placeholder="Sua cidade" required>
                 </div>
-                
-                
 
-                
                 <div class="form-item">
                     <span class="form-item-icon material-symbols-rounded">call</span>
-                    <input type="tel" id="telefone" name="telefone" autocomplete="off" maxlength="14" class="form-control" placeholder="insira o DDD" onkeyup="mascara_telefone()">
+                    <input type="tel" id="telefone" name="telefone" autocomplete="off" maxlength="14" class="form-control" placeholder="insira o DDD" onkeyup="mascara_telefone()" required>
                 </div>
                 <div class="form-item-outro">
                     
