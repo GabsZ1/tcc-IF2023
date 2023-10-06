@@ -19,7 +19,7 @@
     
     <div class="navbar-nav nav justify-content-end col-4">
 
-      <!-- Lupa (ainda precisa ser corrigida!!!!!!!) -->
+      <!-- Lupa -->
 
       <li class="nav-item">
         <div class="box-busca">
