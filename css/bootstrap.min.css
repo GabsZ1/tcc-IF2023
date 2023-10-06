@@ -81,83 +81,80 @@ section {
 }
 
 /* card */
-
-/* .body-card{
-  display: flex;
-  justify-content: center;
-  height: 100vh;
-  font-family: Arial;
-  gap: 16px;
-  background-image: url("img/LIVRO/capa1.webp");
-}
-
-.cards {
-  background-color: #fff;
-}
-
-.cards div{
-  display: flex;
-  flex-direction: column;
+.body-card{
+  display:flex;
   justify-content: center;
   align-items: center;
-  gap: 4px;
-  height: 50%;
+  min-height: 100vh;
+
 }
 
-.cards h1{
-  font-size: 1.2rem;
+.cards{
+  position: relative;
+  width: 320px;
+  height: 420px;
+  background: #D4D6FA;
+  border-radius: 20px;
+  overflow: hidden;
 }
 
-.cards h2{
-  font-size: .9rem;
-  color: #aaaa;
+.cards:before{
+  content: '';
+  position: absolute;
+  top:-50%;
+  width:100%;
+  height: 100%;
+  background: #D4D6FA;
+  
+
+}
+
+
+
+.cards .imgBx{
+  position: relative;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-top: 20px;
+  z-index: 1;
+}
+
+.cards .imgBx img{
+  max-width: 50%;
+  transition: 0.5s;
+}
+
+/* .cards:hover .imgBx img{
+  max-width: 70%;
 } */
 
-
-
-.body-card {
+.cards .contentBx{
+  position: relative;
+  padding: 20px;
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 100vh;
-  font-family: "Arial";
-  gap:16px;
-}
-.cards {
-  background-color: #fff;
-  width: 180px;
-  height: 260px;
-  border-radius: 12px;
-  box-shadow: 4px 4px 12px #aaaa;
-}
-.cards img {
-  width: 100%;
-  height: 130px;
-  border-top-left-radius: 12px;
-  border-top-right-radius: 12px;
-}
-.cards div {
-  display: flex;
   flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  gap: 4px;
-  height: 50%;
-}
-.cards h1 {
-  font-size: 1.2rem;
-}
-.cards h2 {
-  font-size: .9rem;
-  color: #aaaa;
+  z-index: 1;
 }
 
+.cards .contentBx h3{
+  font-size: 18px;
+  color: #5A5A5A;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
 
+.cards .contentBx .price{
+  font-size: 24px;
+  color: #5A5A5A;
+  font-weight: 500;
+  letter-spacing: 1px;
 
-
-
-
-
+}
 
 
 
