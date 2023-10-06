@@ -24,7 +24,7 @@
 <td>
   <div class="qty">
     <button><i class="bx bx-minus">-</i></button>
-    <span>2</span>
+    <span>1</span>
     <button<i class="bx bx-plus">+</i></button>
   </div>
 
