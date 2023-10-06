@@ -80,6 +80,7 @@ section {
   display: block;
 }
 
+
 /* card */
 .body-card{
   display:flex;
@@ -105,11 +106,7 @@ section {
   width:100%;
   height: 100%;
   background: #D4D6FA;
-  
-
 }
-
-
 
 .cards .imgBx{
   position: relative;
@@ -125,10 +122,6 @@ section {
   max-width: 50%;
   transition: 0.5s;
 }
-
-/* .cards:hover .imgBx img{
-  max-width: 70%;
-} */
 
 .cards .contentBx{
   position: relative;
@@ -174,7 +167,20 @@ button {
   font-size: 20px;
 }
 
+.buy{
+ background: #9c93cf;
+ color:#5A5A5A;
+ border-radius: 20px;
+ margin-top: 10px;
+ padding: 10px;
+ cursor: pointer;
+ text-transform: uppercase;
+}
 
+.buy:hover {
+  color: #747373;
+  text-decoration: none;
+}
 
 
 /* botao add carrinho */
