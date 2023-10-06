@@ -19,7 +19,20 @@
 </div>
 <div class="contentBx">
 <h3>Amor e Gelato</h3>
-<h2 class="price">R$ 31,<small>99</small></h2>
+<h2 class="price">R$ 31,<small>90</small></h2>
+
+<td>
+  <div class="qty">
+    <button><i class="bx bx-minus">-</i></button>
+    <span>2</span>
+    <button<i class="bx bx-plus">+</i></button>
+  </div>
+
+
+
+
+
+</td>
 </div>
 </div>
 </body>
