@@ -76,7 +76,7 @@ if (isset($_POST['logar'])){
                 <div class="form-item-outro">
                     <a href="#">Esqueci minha senha</a>
                 </div>
-                <input class="btn btn-lg btn-primary" type="submit" value="Entre" name="logar">
+                <input class="btn btn-primary btn-lg btn-block active" style="left: -30px;" type="submit" value="Entre" name="logar">
             </form>
         </div>
         <div class="login-social">

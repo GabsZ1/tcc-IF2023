@@ -10,6 +10,8 @@ $sql2 = "SELECT * FROM heartstopper"; //pega a tabela pra abrir o heatstopper pa
 
 $result2 = mysqli_query($conexao, $sql2); 
 
+// vou tentar fazer aqui a parte de quando for o adm a navbar dele aparecer
+
 ?>
 
 <!doctype html>
