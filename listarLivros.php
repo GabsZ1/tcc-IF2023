@@ -34,14 +34,14 @@ $resultado = mysqli_query($conexao, $sql);
 <body>
 
   <?php // arrumar essa parte para não cpbrir a parte de adicionar um novo livro
-  // require_once("testeNavbar.php"); ?>
+    // require_once("testeNavbar.php"); ?>
   
   <div class="container-md">
 
     <div class="card mt-3 mb-3">
       <div class="card-body">
         <h1 class="card-title" style="color: #5a5a5a; font-family: '-apple-system'; font-weight: 300;">Listagem de Livros
-          <a href="cad_usuario.php" class="btn btn-primary btn-sm"><i class="fa-solid fa-plus"></i>
+          <a href="cadastroLivro.php" class="btn btn-primary btn-sm"><i class="fa-solid fa-plus"></i>
           </a>
         </h1>
       </div>

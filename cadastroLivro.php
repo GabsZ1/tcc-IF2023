@@ -52,44 +52,32 @@ if (isset($_POST['cadastrar'])){
             <form class="cadastro-form" method="post">
                 <div class="form-item">
                     <span class="form-item-icon material-symbols-rounded">badge</span>
-                    <input type="text" name="nome" class="form-control" placeholder="Seu nome" required autofocus>
+                    <input type="text" name="titulo" class="form-control" placeholder="Seu nome" required autofocus>
                 </div>
                 <div class="form-item">
                     <span class="form-item-icon material-symbols-rounded">mail</span>
-                    <input type="email" name="email" class="form-control" placeholder="Seu e-mail" required>
+                    <input type="text" name="subtitulo" class="form-control" placeholder="Seu e-mail" required>
                 </div>
                 <div class="form-item">
                     <span class="form-item-icon material-symbols-rounded">lock</span>
-                    <input type="password" name="senha" class="form-control"  placeholder="Cadastre sua senha" required>
+                    <input type="text" name="sinopse" class="form-control"  placeholder="Cadastre sua senha" required>
                 </div>
 
                 <div class="form-item">
 
                     <span class="form-item-icon material-symbols-rounded">calendar_today</span>
-                    <input type="text" id="dataNascimento" name="dataNascimento" autocomplete="off" maxlength="10" class="form-control" placeholder="Sua data de Nascimento" onkeyup="mascara_DataNascimento()">
+                    <input type="text" id="dataNascimento" name="valor" autocomplete="off" maxlength="10" class="form-control" placeholder="Sua data de Nascimento" onkeyup="mascara_DataNascimento()">
 
-                </div>
-
-                <div class="form-item">
-                    <span class="form-item-icon material-symbols-rounded">terminal</span>
-                    <input type="text" id="cpf" autocomplete="off" maxlength="14" name="cpf" class="form-control" placeholder="Seu CPF" onkeyup="mascara_cpf()">
                 </div>
                 
                 <div class="form-item">
                     <span class="form-item-icon material-symbols-rounded">location_city</span>
-                    <input type="text" name="cidade" class="form-control" placeholder="Sua cidade">
+                    <input type="text" name="capa" class="form-control" placeholder="Sua cidade">
                 </div>
 
-                <div class="form-item">
-                    <span class="form-item-icon material-symbols-rounded">call</span>
-                    <input type="tel" id="telefone" name="telefone" autocomplete="off" maxlength="14" class="form-control" placeholder="insira o DDD" onkeyup="mascara_telefone()">
-                </div>
                 <div class="form-item-outro">
-                    <div class="checkbox">
-                        <input type="checkbox" id="rememberMeCheck">
-                        <label for="rememberMeCheck">Lembre-se de mim</label>
-                    </div>
                     <input class="btn btn-primary btn-lg btn-block active" style="left: -30px;" type="submit" value="Cadastrar" name="cadastrar">
+                </div>
             </form>
             <div class="cadastro-footer"></div>
         </div>
