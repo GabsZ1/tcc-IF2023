@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Tempo de geração: 18/10/2023 às 15:49
+-- Tempo de geração: 19/10/2023 às 15:56
 -- Versão do servidor: 10.4.28-MariaDB
 -- Versão do PHP: 8.2.4
 
@@ -68,6 +68,30 @@ CREATE TABLE `editora` (
   `status` varchar(20) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
+--
+-- Despejando dados para a tabela `editora`
+--
+
+INSERT INTO `editora` (`id`, `nome`, `status`) VALUES
+(1, 'TAHEREH MAFI', 'ativo'),
+(3, 'JENNA EVANS WELCH', 'ativo'),
+(4, 'VICTORIA AVEYARD', 'ativo'),
+(5, 'C.C.HUNTER', 'ativo'),
+(6, 'TAYLOR JENKINS REID', 'ativo'),
+(7, 'C.J.TUDOR', 'ativo'),
+(8, 'TORI TELFER', 'ativo'),
+(9, 'EMILY HENRY', 'ativo'),
+(10, 'STEPHENIE MEYER', 'ativo'),
+(11, 'SHEA ERNSHAW', 'ativo'),
+(12, 'AGATHA CRISTIE', 'ativo'),
+(13, 'JANE AUSTEN', 'ativo'),
+(14, 'LOUISE O\'NEILL', 'ativo'),
+(15, 'RICK RIORDAN', 'ativo'),
+(16, 'HOLLY BLACK', 'ativo'),
+(17, 'ANA BEATRIZ BRANDÃO', 'ativo'),
+(18, 'COLLEEN HOUCK ', 'ativo'),
+(19, 'TILLIE COLE ', 'ativo');
+
 -- --------------------------------------------------------
 
 --
@@ -92,15 +116,16 @@ CREATE TABLE `heartstopper` (
   `subtitulo` varchar(200) NOT NULL,
   `sinopse` varchar(1000) NOT NULL,
   `valor` int(11) NOT NULL,
-  `capa` varchar(100) NOT NULL
+  `capa` varchar(100) NOT NULL,
+  `class` varchar(200) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Despejando dados para a tabela `heartstopper`
 --
 
-INSERT INTO `heartstopper` (`id`, `titulo`, `subtitulo`, `sinopse`, `valor`, `capa`) VALUES
-(1, 'Heartstopper: Dois garotos, um encontro (vol. 1)', 'O primeiro volume da adorada série em quadrinhos finalmente chega ao Brasil.', 'Charlie Spring e Nick Nelson não têm quase nada em comum. Charlie é um aluno dedicado e bastante inseguro por conta do bullying que sofre no colégio desde que se assumiu gay. Já Nick é superpopular, especialmente querido por ser um ótimo jogador de rúgbi. Quando os dois passam a sentar um ao lado do outro toda manhã, uma amizade intensa se desenvolve, e eles ficam cada vez mais próximos.\r\nCharlie logo começa a se sentir diferente a respeito do novo amigo, apesar de saber que se apaixonar por um garoto hétero só vai gerar frustrações. Mas o próprio Nick está em dúvida sobre o que sente ― e talvez os garotos estejam prestes a descobrir que, quando menos se espera, o amor pode funcionar das formas mais incríveis e surpreendentes.', 42, 'heartstopper.jpg');
+INSERT INTO `heartstopper` (`id`, `titulo`, `subtitulo`, `sinopse`, `valor`, `capa`, `class`) VALUES
+(1, 'Heartstopper: Dois garotos, um encontro ', 'O primeiro volume da adorada série em quadrinhos finalmente chega ao Brasil.', 'Charlie Spring e Nick Nelson não têm quase nada em comum. Charlie é um aluno dedicado e bastante inseguro por conta do bullying que sofre no colégio desde que se assumiu gay. Já Nick é superpopular, especialmente querido por ser um ótimo jogador de rúgbi. Quando os dois passam a sentar um ao lado do outro toda manhã, uma amizade intensa se desenvolve, e eles ficam cada vez mais próximos.\r\nCharlie logo começa a se sentir diferente a respeito do novo amigo, apesar de saber que se apaixonar por um garoto hétero só vai gerar frustrações. Mas o próprio Nick está em dúvida sobre o que sente ― e talvez os garotos estejam prestes a descobrir que, quando menos se espera, o amor pode funcionar das formas mais incríveis e surpreendentes.', 42, 'heartstopper.jpg', 'class12.png');
 
 -- --------------------------------------------------------
 
@@ -240,7 +265,7 @@ ALTER TABLE `autor`
 -- AUTO_INCREMENT de tabela `editora`
 --
 ALTER TABLE `editora`
-  MODIFY `id` int(13) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(13) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=20;
 
 --
 -- AUTO_INCREMENT de tabela `genero`
