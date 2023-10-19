@@ -69,10 +69,10 @@ CREATE TABLE `editora` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
--- Despejando dados para a tabela `editora`
+-- Despejando dados para a tabela `autor`
 --
 
-INSERT INTO `editora` (`id`, `nome`, `status`) VALUES
+INSERT INTO `autor` (`id`, `nome`, `status`) VALUES
 (1, 'TAHEREH MAFI', 'ativo'),
 (3, 'JENNA EVANS WELCH', 'ativo'),
 (4, 'VICTORIA AVEYARD', 'ativo'),
