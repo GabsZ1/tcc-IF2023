@@ -39,6 +39,8 @@ $result2 = mysqli_query($conexao, $sql2);
     <!-- Estilos customizados para o template do carousel -->
     <link href="css/carousel.css" rel="stylesheet">
 
+ 
+
     <!-- Link para os icones -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" rel="stylesheet">
     <script src="https://kit.fontawesome.com/42c6fc9b70.js" crossorigin="anonymous"></script>
@@ -47,6 +49,7 @@ $result2 = mysqli_query($conexao, $sql2);
     <header id="cabecalho">
 
       <?php require_once("navbar.php"); ?>
+     
       
       <div class="banner">
         <img src="img/imgSITE/DREAMSTORE-BANNER" alt="">
@@ -129,19 +132,8 @@ $result2 = mysqli_query($conexao, $sql2);
       </div>
     </div>
     <!-- FOOTER -->
-
-    <footer class="mt-5">
-      <div class="footer text-center">
-       <img class="" src="img/imgSITE/logoCOMPLETA.png" alt="">
-      </div>
-
-        <footer class="my-5 pt-5 text-body-secondary text-center text-small">
-                  <p class="mb-1">&copy; 2022–2023 DREAMSTORE</p>
-                  <ul class="list-inline">
-                  </ul>
-        </footer>
-
-
+    <?php require_once("footer.php"); ?>
+    
       <div>
         <!-- <p class="float-right"><a href="#">Voltar ao topo</a></p>
         <p>&copy; Companhia D.S 2022-2023</p>
