@@ -81,6 +81,17 @@ section {
 }
 
 
+ul.footer{
+padding: 0;
+align-items: center;
+
+}
+
+
+
+
+
+
 /* card */
 .body-card{
   display:flex;

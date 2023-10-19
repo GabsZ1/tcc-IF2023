@@ -49,22 +49,21 @@
         <!-- Grid column -->
         <div class="col-md-3 col-lg-2 col-xl-2 mx-auto mb-4">
           <!-- Links -->
-          <h6 class="text-uppercase fw-bold mb-4">
+          <h6 class="text-uppercase fw-bold mb-4"  style="margin-left: -200px">
            BANDEIRAS ACEITAS:
           </h6>
-          <p>
-            <a href="#!" class="text-reset">Pricing</a>
-          </p>
-          <p>
-            <a href="#!" class="text-reset">Settings</a>
-          </p>
-          <p>
-            <a href="#!" class="text-reset">Orders</a>
-          </p>
-          <p>
-            <a href="#!" class="text-reset">Help</a>
-          </p>
-        </div>
+          <ul class="footer" style="margin-left: -200px" >
+           <img src="img/imgSITE/bb.png" alt="" style="height: 40px;">
+          <img src="img/imgSITE/bradesco.png" alt=""  style="height: 40px;">
+            <img src="img/imgSITE/mastercard.webp" alt=""  style="height: 40px;">
+            <img src="img/imgSITE/nubank.png" alt=""  style="height: 40px;">
+          </ul>
+            <ul class="footer1" style="margin-left: -230px" >
+               <img src="img/imgSITE/santander.png" alt=""  style="height: 40px;">
+                <img src="img/imgSITE/visa.png" alt=""  style="height: 40px;">
+                <img src="img/imgSITE/itau.webp" alt=""  style="height: 40px;">
+                <img src="img/imgSITE/picpay.png" alt=""  style="height: 40px;">
+              </ul>
         <!-- Grid column -->
 
         <!-- Grid column -->
