@@ -5,8 +5,9 @@ require_once("conexao.php");
 $idlivro = $_GET["id"];  
 
 $sql = "SELECT livros.*, autor.nome 
+FROM livros
 LEFT JOIN autor ON autor.id = livros.livrosAutor_id
-FROM livros WHERE id LIKE '$idlivro'";
+ WHERE livros.id LIKE '$idlivro'";
 
 $result = mysqli_query($conexao, $sql);
 
