@@ -101,7 +101,7 @@ $result2 = mysqli_query($conexao, $sql2);
           </div>
         </div>
       </div>
-      <div class="row" style="width: 95%; padding-left: 53px">
+      <div class="row mb-5" style="width: 95%; padding-left: 53px">
         <div class="col-lg-6">
           <?php while ($row2 = $result2->fetch_assoc()) { ?>
           <a href="paginaprodutoH.php?id=<?php echo $row2['id']; ?>">

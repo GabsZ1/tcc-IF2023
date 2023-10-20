@@ -11,7 +11,7 @@
 <footer class="text-center text-lg-start text-muted" style="background-color: #D4D6FA;">
   
   
-  <!-- Section: Links  -->
+  <!-- nuvem footer -->
   <section class="footer2">
     <div class="container text-center text-md-start mt-5">
       <!-- Grid row -->
@@ -25,13 +25,14 @@
         </div>
         <!-- Grid column -->
 
-        <!-- Grid column -->
+        <!-- coluna pagamento -->
         <div class="col-md-2 col-lg-2  mx-auto mb-4">
-          <!-- Links -->
-          <h6 class="text-uppercase fw-bold mb-4">
+        
+          <h6 class="text-uppercase fw-bold mb-4" style="margin-left: -300px;">
         PAGAMENTOS COM: 
           </h6>
-          <p>
+          <p> 
+            <div class="formapagamento"  style="margin-left: -300px;">
             <a href="#!" class="text-reset">Boleto Bancário</a>
           </p>
           <p>
@@ -44,33 +45,28 @@
             <a href="#!" class="text-reset">Pix</a>
           </p>
         </div>
-        <!-- Grid column -->
+        </div>
+     
 
-        <!-- Grid column -->
+        <!-- coluna cartões -->
         <div class="col-md-3 col-lg-2 col-xl-2 mx-auto mb-4">
-          <!-- Links -->
-          <h6 class="text-uppercase fw-bold mb-4"  style="margin-left: -200px">
+      
+          <h6 class="text-uppercase fw-bold mb-4"  style="margin-left: -400px">
            BANDEIRAS ACEITAS:
           </h6>
-          <ul class="footer" style="margin-left: -200px" >
+          <ul class="footer" style="margin-left: -400px" >
            <img src="img/imgSITE/bb.png" alt="" style="height: 40px;">
           <img src="img/imgSITE/bradesco.png" alt=""  style="height: 40px;">
             <img src="img/imgSITE/mastercard.webp" alt=""  style="height: 40px;">
             <img src="img/imgSITE/nubank.png" alt=""  style="height: 40px;">
           </ul>
-            <ul class="footer1" style="margin-left: -230px" >
+        <!-- coluna cartões 2 -->
+            <ul class="footer1" style="margin-left: -430px" >
                <img src="img/imgSITE/santander.png" alt=""  style="height: 40px;">
                 <img src="img/imgSITE/visa.png" alt=""  style="height: 40px;">
                 <img src="img/imgSITE/itau.webp" alt=""  style="height: 40px;">
                 <img src="img/imgSITE/picpay.png" alt=""  style="height: 40px;">
               </ul>
-        <!-- Grid column -->
-
-        <!-- Grid column -->
-        <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mb-md-0 mb-4">
-         
-        </div>
-        <!-- Grid column -->
       </div>
       <!-- Grid row -->
     </div>
@@ -79,7 +75,7 @@
 
   <!-- Copyright -->
   <div class="text-center p-4" style="background-color: rgba(0, 0, 0, 0.05);">
-    © 2021 Copyright:
+    © DS TCC 2023 :
   </div>
   <!-- Copyright -->
 </footer>
