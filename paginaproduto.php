@@ -4,7 +4,9 @@ require_once("conexao.php");
 
 $idlivro = $_GET["id"];  
 
-$sql = "SELECT * FROM livros WHERE id LIKE '$idlivro'";
+$sql = "SELECT livros.*, autor.nome 
+LEFT JOIN autor ON autor.id = livros.livrosAutor_id
+FROM livros WHERE id LIKE '$idlivro'";
 
 $result = mysqli_query($conexao, $sql);
 
@@ -44,7 +46,7 @@ $result = mysqli_query($conexao, $sql);
                 <div class="left-side">
                     <?php while ($row = $result->fetch_assoc()) { ?>
                     <h1 class="featurette-heading mb-2"><?php echo $row['titulo']; ?></h1>
-                    <img src="img/imgSITE/<?php echo $row['class']; ?>" style="width: 20px"><?php echo $row['livrosAutor_id']; ?>
+                    <img src="img/imgSITE/<?php echo $row['class']; ?>" style="width: 20px"><?php echo $row['nome']; ?>
                     <h1 class="lead mt-1 mb-5"><?php echo $row['subtitulo']; ?></h1>
                     <h2 class="sinopse mb-3">Sinopse:</h2>
                     <h1 class="lead mb-4"><?php echo $row['sinopse']; ?></h1>
