@@ -52,7 +52,9 @@ $result = mysqli_query($conexao, $sql);
                 </div>
                 <?php } ?>
             </div>
+            <hr>
 
+            
             <?php require_once("cardH.php"); ?>
         </main>
         <script src="js/pesquisa.js"></script>
