@@ -19,7 +19,7 @@
 </div>
 <div class="contentBx">
 <h3>Heartstopper vol.2</h3>
-<h2 class="price">R$ 41,<small>90</small></h2>
+<h2 class="price">R$ 38,<small>00</small></h2>
 <a href="#" class="buy">Adicionar ao Carrinho</a>
 
 
