@@ -1,3 +1,14 @@
+<!-- 
+document.getElementById("dado")
+    .addEventListener("keyup", function(event) {
+    event.preventDefault();
+    if (event.keyCode === 13) {
+        document.getElementById("button-dado").click();
+    }
+});
+<input type="text" id="dado" name="dado" placeholder="Descrição" required/>
+<button id="button-dado" onclick="enviar('0');">Pesquisar</button> -->
+
 <link rel="stylesheet" href="css/navbar.css" >
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.0/font/bootstrap-icons.css">
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
@@ -28,7 +39,7 @@
           </div>
 
           <div class="input-busca">
-            <input type="text" name="" id="" placeholder="Pesquisar" style="height: 40px">
+            <input type="text" name="" id="floatingInput" placeholder="Pesquisar" style="height: 40px">
           </div>
 
           <div class="btn-fecha">

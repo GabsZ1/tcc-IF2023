@@ -2,7 +2,7 @@
 
 require_once("conexao.php");
 
-$idheartc = $_GET["id"];  
+$idheartc = $_GET["id"]; 
 
 $sql = "SELECT * FROM heartscard WHERE id LIKE '$idheartc'";
 
@@ -48,7 +48,7 @@ $result = mysqli_query($conexao, $sql);
               aria-pressed="true">Adicionar ao carrinho</a>
                 </div>
                 <div class="right-side">  
-                    <img src="img/LIVRO/<?php echo $row['capa']; ?>">
+                    <img src="img/LIVRO/<?php echo $row['h']; ?>">
                 </div>
                 <?php } ?>
             </div>

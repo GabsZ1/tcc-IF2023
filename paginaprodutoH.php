@@ -55,7 +55,7 @@ $result = mysqli_query($conexao, $sql);
             <hr>
 
             
-           <a href="paginaCard.php"><?php require_once("cardH.php"); ?></a>
+<?php require_once("cardH.php"); ?>
         </main>
         <script src="js/pesquisa.js"></script>
     </body>
