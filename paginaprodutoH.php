@@ -4,9 +4,10 @@ require_once("conexao.php");
 
 $idheart = $_GET["id"];  
 
-$sql = "SELECT heartstopper.*, autor.nome
+$sql = "SELECT heartstopper.*, autor.nome, editora.nome as editora_nome
 FROM heartstopper
 LEFT JOIN autor ON autor.id = heartstopper.heartAutor_id
+LEFT JOIN editora ON editora.id = heartstopper.heartEditora_id
 WHERE heartstopper.id LIKE '$idheart'";
 
 $result = mysqli_query($conexao, $sql);
@@ -41,7 +42,7 @@ $result = mysqli_query($conexao, $sql);
             <div class="content">
                 <div class="left-side">
                     <?php while ($row = $result->fetch_assoc()) { ?>
-                    <h1 class="featurette-heading mb-2"><?php echo $row['titulo']; ?></h1><h1 class="lead"><?php echo $row['nome']; ?> - </h1>
+                    <h1 class="featurette-heading mb-2"><?php echo $row['titulo']; ?></h1><h1 class="lead"><?php echo $row['nome']; ?> - <?php echo $row['editora_nome']; ?></h1>
                     <img src="img/imgSITE/<?php echo $row['class']; ?>" style="width: 20px">
                     <h1 class="lead mb-5"><?php echo $row['subtitulo']; ?></h1>
                     <h2 class="sinopse mb-3">Sinopse:</h2>
