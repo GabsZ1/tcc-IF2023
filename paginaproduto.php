@@ -54,7 +54,7 @@ $result = mysqli_query($conexao, $sql);
                     <h2 class="sinopse mb-3">Sinopse:</h2>
                     <h1 class="lead mb-4"><?php echo $row['sinopse']; ?></h1>
                     <span class="mb-4">R$<?php echo $row['valor']; ?>,00</span>
-                    <a href="#" class="btn btn-primary btn-lg btn-block active" role="button" aria-pressed="true">Adicionar ao carrinho</a>
+                    <a href="#" class="btn btn-primary btn-lg btn-block active" role="button" aria-pressed="true" style="margin-left: 0px;">Adicionar ao carrinho</a>
 
 
                 </div>

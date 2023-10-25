@@ -20,16 +20,22 @@ $result = mysqli_query($conexao, $sql);
         <meta charset="UTF-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>heartstopper</title>
+        <title>Heartstopper</title>
+ 
+        <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
+        <link href='https://fonts.googleapis.com/css?family=Lato' rel='stylesheet' type='text/css'>
+
+
+
 
         <!-- Principal CSS do Bootstrap -->
         <link href="css/bootstrap.min.css" rel="stylesheet">
 
-        <link rel="website icon" type="png" href="img/imgSITE/nuvemLILAS.png">
-
-
         <!-- Estilos customizados para esse template -->
         <link href="css/carousel.css" rel="stylesheet">
+        
+        <!-- Icone da aba -->
+        <link rel="website icon" type="png" href="img/imgSITE/nuvemLILAS.png">
 
         <!-- CSS para os icones usados -->
         <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" rel="stylesheet">
@@ -48,8 +54,7 @@ $result = mysqli_query($conexao, $sql);
                     <h2 class="sinopse mb-3">Sinopse:</h2>
                     <h1 class="lead mb-4"><?php echo $row['sinopse']; ?></h1>
                     <span class="mb-4">R$<?php echo $row['valor']; ?>,00</span>
-                    <a href="#" class="btn btn-primary btn-lg btn-block active" role="button"
-              aria-pressed="true">Adicionar ao carrinho</a>
+                    <a href="#" class="btn btn-primary btn-lg btn-block active" role="button" aria-pressed="true" style="margin-left: 0px;">Adicionar ao carrinho</a>
                 </div>
                 <div class="right-side">  
                     <img src="img/LIVRO/<?php echo $row['capa']; ?>">
