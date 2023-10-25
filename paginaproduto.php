@@ -33,7 +33,8 @@ $result = mysqli_query($conexao, $sql);
 
         <!-- Estilos customizados para esse template -->
         <link href="css/carousel.css" rel="stylesheet">
-
+        
+        <!-- Icone da aba -->
         <link rel="website icon" type="png" href="img/imgSITE/nuvemLILAS.png">
 
         <!-- CSS para os icones usados -->

@@ -44,11 +44,15 @@ if (isset($_POST['logar'])){
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="icon" href="img/PPK_nuvem.png">
+
+    <!-- Icone da aba -->
+    <link rel="website icon" type="png" href="img/imgSITE/nuvemLILAS.png">
+
+    <!-- Estilizações -->
     <link href="css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@48,300,0,0" />
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
-    <title>login</title>
+    <title>login do Administrador</title>
 </head>
 <body class="body-login">
    <div class="text-center"> 

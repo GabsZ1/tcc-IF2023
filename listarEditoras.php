@@ -23,6 +23,10 @@ $resultado = mysqli_query($conexao, $sql);
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- Icone da aba -->
+  <link rel="website icon" type="png" href="img/imgSITE/nuvemLILAS.png">
+  
   <script src="https://kit.fontawesome.com/42c6fc9b70.js" crossorigin="anonymous"></script>
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@200&family=Poppins:wght@100&display=swap" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100&display=swap" rel="stylesheet">
