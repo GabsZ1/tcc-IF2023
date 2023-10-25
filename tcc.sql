@@ -73,7 +73,7 @@ INSERT INTO `autor` (`id`, `nome`, `status`) VALUES
 (11, 'SHEA ERNSHAW', 'ativo'),
 (12, 'AGATHA CRISTIE', 'ativo'),
 (13, 'JANE AUSTEN', 'ativo'),
-(14, 'LOUISE O\'NEILL', 'ativo'),
+(14, 'LOUISE O\NEILL', 'ativo'),
 (15, 'RICK RIORDAN', 'ativo'),
 (16, 'HOLLY BLACK', 'ativo'),
 (17, 'ANA BEATRIZ BRANDÃO', 'ativo'),
@@ -92,6 +92,23 @@ CREATE TABLE `editora` (
   `status` varchar(20) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
+--
+-- Despejando dados para a tabela `editora`
+--
+
+INSERT INTO `editora` (`id`, `nome`, `status`) VALUES
+(20, 'UNIVERSO DOS LIVROS', 'ativo'),
+(21, 'INTRINSECA', 'ativo'),
+(22, 'SEGUINTE', 'ativo'),
+(23, 'JANGADA', 'ativo'),
+(24, 'DARKSIDE', 'ativo'),
+(25, 'VERUS', 'ativo'),
+(26, 'GALERA', 'ativo'),
+(27, 'GLOBO LIVROS', 'ativo'),
+(28, 'ARQUEIRO', 'ativo'),
+(29, 'PLANETA', 'ativo'),
+(30, 'CAMELOT', 'ativo');
+
 -- --------------------------------------------------------
 
 --
@@ -103,6 +120,22 @@ CREATE TABLE `genero` (
   `nome` varchar(100) NOT NULL,
   `status` varchar(20) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Despejando dados para a tabela `genero`
+--
+
+INSERT INTO `genero` (`id`, `nome`, `status`) VALUES
+(1, 'ROMANCE', 'ativo'),
+(2, 'DISTOPIA', 'ativo'),
+(3, 'SUSPENSE', 'ativo'),
+(4, 'FICÇÃO', 'ativo'),
+(5, 'FANTASIA', 'ativo'),
+(6, 'CRIME REAL', 'ativo'),
+(7, 'BIOGRAFIA', 'ativo'),
+(8, 'DRAMA', 'ativo'),
+(9, 'MISTÉRIO', 'ativo'),
+(10, 'AVENTURA', 'ativo');
 
 -- --------------------------------------------------------
 
@@ -153,6 +186,19 @@ INSERT INTO `heartstopper` (`id`, `titulo`, `subtitulo`, `sinopse`, `valor`, `ca
 (1, 'Heartstopper: Dois garotos, um encontro ', 'O primeiro volume da adorada série em quadrinhos finalmente chega ao Brasil.', 'Charlie Spring e Nick Nelson não têm quase nada em comum. Charlie é um aluno dedicado e bastante inseguro por conta do bullying que sofre no colégio desde que se assumiu gay. Já Nick é superpopular, especialmente querido por ser um ótimo jogador de rúgbi. Quando os dois passam a sentar um ao lado do outro toda manhã, uma amizade intensa se desenvolve, e eles ficam cada vez mais próximos.\r\nCharlie logo começa a se sentir diferente a respeito do novo amigo, apesar de saber que se apaixonar por um garoto hétero só vai gerar frustrações. Mas o próprio Nick está em dúvida sobre o que sente ― e talvez os garotos estejam prestes a descobrir que, quando menos se espera, o amor pode funcionar das formas mais incríveis e surpreendentes.', 42, 'heartstopper.jpg', 'class12.png');
 
 -- --------------------------------------------------------
+
+--
+-- Estrutura para tabela `livrogenero`
+--
+
+CREATE TABLE `livrogenero` (
+  `id` int(11) NOT NULL,
+  `livro_id` int(11) NOT NULL,
+  `genero_id` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+-- --------------------------------------------------------
+
 
 --
 -- Estrutura para tabela `livros`
