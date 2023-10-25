@@ -4,7 +4,7 @@ require_once("conexao.php");
 //Bloco de exclusão
 if (isset($_GET['id'])) {
 
-  $sql = "delete from livros where id = " . $_GET['id'];
+  $sql = "delete from editora where id = " . $_GET['id'];
   mysqli_query($conexao, $sql);
   $mensagem = "Exclusão realizada com sucesso";
 }
@@ -12,14 +12,14 @@ if (isset($_GET['id'])) {
 
 
 //2. preparar a sql
-$sql = "select * from livros";
+$sql = "select * from editora";
 
 //3.executar a sql
 $resultado = mysqli_query($conexao, $sql);
 
 ?>
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -29,18 +29,18 @@ $resultado = mysqli_query($conexao, $sql);
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe" crossorigin="anonymous"></script>
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.0/font/bootstrap-icons.css">
-  <title>Listagem de Livros</title>
+  <title>Listagem de Editoras</title>
 </head>
 <body>
 
-  <?php // arrumar essa parte para não cpbrir a parte de adicionar um novo livro
+  <?php // arrumar essa parte para não cpbrir a parte de adicionar uma nova editora
     // require_once("testeNavbar.php"); ?>
   
   <div class="container-md">
 
     <div class="card mt-3 mb-3">
       <div class="card-body">
-        <h1 class="card-title" style="color: #5a5a5a; font-family: '-apple-system'; font-weight: 300;">Listagem de Livros
+        <h1 class="card-title" style="color: #5a5a5a; font-family: '-apple-system'; font-weight: 300;">Listagem de Editoras
           <a href="cadastroLivro.php" class="btn btn-primary btn-sm"><i class="fa-solid fa-plus"></i>
           </a>
         </h1>
@@ -49,11 +49,9 @@ $resultado = mysqli_query($conexao, $sql);
     <table class="table table-hover">
       <thead> <!-- cabeçalho -->
         <tr>
-          <th scope="col">ID</th>
-          <th scope="col">Título</th>
-          <th scope="col">Subtitulo</th>
-          <th scope="col">Sinopse</th>
-          <th scope="col">Valor</th>
+        <th scope="col">ID</th>
+          <th scope="col">Nome</th>
+          <th scope="col">Status</th>
           <th scope="col">Ação</th>
         </tr>
       </thead>
@@ -62,10 +60,8 @@ $resultado = mysqli_query($conexao, $sql);
         <?php while ($linha = mysqli_fetch_array($resultado)) { ?>
           <tr>
             <td><?= $linha['id'] ?></th>
-            <td><?= $linha['titulo'] ?></th>
-            <td><?= $linha['subtitulo'] ?></th>
-            <td><?= $linha['sinopse'] ?></th>
-            <td><?= $linha['valor'] ?></th>
+            <td><?= $linha['nome'] ?></th>
+            <td><?= $linha['status'] ?></th>
             <td>
 
               <a href="usuarioAlterar.php?id=<?= $linha['id'] ?>" class="btn btn-warning"><i class="fa-solid fa-pen-to-square"></i></a>
