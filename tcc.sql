@@ -73,12 +73,13 @@ INSERT INTO `autor` (`id`, `nome`, `status`) VALUES
 (11, 'SHEA ERNSHAW', 'ativo'),
 (12, 'AGATHA CRISTIE', 'ativo'),
 (13, 'JANE AUSTEN', 'ativo'),
-(14, 'LOUISE O\NEILL', 'ativo'),
+(14, 'LOUISE ONEILL', 'ativo'),
 (15, 'RICK RIORDAN', 'ativo'),
 (16, 'HOLLY BLACK', 'ativo'),
 (17, 'ANA BEATRIZ BRANDÃO', 'ativo'),
 (18, 'COLLEEN HOUCK ', 'ativo'),
-(19, 'TILLIE COLE ', 'ativo');
+(19, 'TILLIE COLE ', 'ativo'),
+(20, 'ALICE OSEMAN', 'ativo');
 
 -- --------------------------------------------------------
 
@@ -175,15 +176,17 @@ CREATE TABLE `heartstopper` (
   `sinopse` varchar(1000) NOT NULL,
   `valor` int(11) NOT NULL,
   `capa` varchar(100) NOT NULL,
-  `class` varchar(200) NOT NULL
+  `class` varchar(200) NOT NULL,
+  `heartAutor_id` int(11) DEFAULT NULL,
+  `heartEditora_id` int(11) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Despejando dados para a tabela `heartstopper`
 --
 
-INSERT INTO `heartstopper` (`id`, `titulo`, `subtitulo`, `sinopse`, `valor`, `capa`, `class`) VALUES
-(1, 'Heartstopper: Dois garotos, um encontro ', 'O primeiro volume da adorada série em quadrinhos finalmente chega ao Brasil.', 'Charlie Spring e Nick Nelson não têm quase nada em comum. Charlie é um aluno dedicado e bastante inseguro por conta do bullying que sofre no colégio desde que se assumiu gay. Já Nick é superpopular, especialmente querido por ser um ótimo jogador de rúgbi. Quando os dois passam a sentar um ao lado do outro toda manhã, uma amizade intensa se desenvolve, e eles ficam cada vez mais próximos.\r\nCharlie logo começa a se sentir diferente a respeito do novo amigo, apesar de saber que se apaixonar por um garoto hétero só vai gerar frustrações. Mas o próprio Nick está em dúvida sobre o que sente ― e talvez os garotos estejam prestes a descobrir que, quando menos se espera, o amor pode funcionar das formas mais incríveis e surpreendentes.', 42, 'heartstopper.jpg', 'class12.png');
+INSERT INTO `heartstopper` (`id`, `titulo`, `subtitulo`, `sinopse`, `valor`, `capa`, `class`, `heartAutor_id`, `heartEditora_id`) VALUES
+(1, 'Heartstopper: Dois garotos, um encontro ', 'O primeiro volume da adorada série em quadrinhos finalmente chega ao Brasil.', 'Charlie Spring e Nick Nelson não têm quase nada em comum. Charlie é um aluno dedicado e bastante inseguro por conta do bullying que sofre no colégio desde que se assumiu gay. Já Nick é superpopular, especialmente querido por ser um ótimo jogador de rúgbi. Quando os dois passam a sentar um ao lado do outro toda manhã, uma amizade intensa se desenvolve, e eles ficam cada vez mais próximos.\r\nCharlie logo começa a se sentir diferente a respeito do novo amigo, apesar de saber que se apaixonar por um garoto hétero só vai gerar frustrações. Mas o próprio Nick está em dúvida sobre o que sente ― e talvez os garotos estejam prestes a descobrir que, quando menos se espera, o amor pode funcionar das formas mais incríveis e surpreendentes.', 42, 'heartstopper.jpg', 'class12.png', 20, 22);
 
 -- --------------------------------------------------------
 
