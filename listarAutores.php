@@ -4,7 +4,7 @@ require_once("conexao.php");
 //Bloco de exclusão
 if (isset($_GET['id'])) {
 
-  $sql = "delete from autores where id = " . $_GET['id'];
+  $sql = "delete from autor where id = " . $_GET['id'];
   mysqli_query($conexao, $sql);
   $mensagem = "Exclusão realizada com sucesso";
 }
@@ -12,7 +12,7 @@ if (isset($_GET['id'])) {
 
 
 //2. preparar a sql
-$sql = "select * from autores";
+$sql = "select * from autor";
 
 //3.executar a sql
 $resultado = mysqli_query($conexao, $sql);
@@ -29,18 +29,18 @@ $resultado = mysqli_query($conexao, $sql);
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe" crossorigin="anonymous"></script>
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.0/font/bootstrap-icons.css">
-  <title>Listagem de Livros</title>
+  <title>Listagem de Autores</title>
 </head>
 <body>
 
-  <?php // arrumar essa parte para não cpbrir a parte de adicionar um novo livro
+  <?php // arrumar essa parte para não cpbrir a parte de adicionar um novo autor
     // require_once("testeNavbar.php"); ?>
   
   <div class="container-md">
 
     <div class="card mt-3 mb-3">
       <div class="card-body">
-        <h1 class="card-title" style="color: #5a5a5a; font-family: '-apple-system'; font-weight: 300;">Listagem de Livros
+        <h1 class="card-title" style="color: #5a5a5a; font-family: '-apple-system'; font-weight: 300;">Listagem de Autores
           <a href="cadastroLivro.php" class="btn btn-primary btn-sm"><i class="fa-solid fa-plus"></i>
           </a>
         </h1>
@@ -52,6 +52,7 @@ $resultado = mysqli_query($conexao, $sql);
           <th scope="col">ID</th>
           <th scope="col">Nome</th>
           <th scope="col">Status</th>
+          <th scope="col">Ação</th>
         </tr>
       </thead>
 
