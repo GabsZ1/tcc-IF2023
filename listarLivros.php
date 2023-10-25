@@ -68,7 +68,7 @@ $resultado = mysqli_query($conexao, $sql);
             <td><?= $linha['valor'] ?></th>
             <td>
 
-              <a href="usuarioAlterar.php?id=<?= $linha['id'] ?>" class="btn btn-warning"><i class="fa-solid fa-pen-to-square"></i></a>
+              <a href="alterarLivros.php?id=<?= $linha['id'] ?>" class="btn btn-warning"><i class="fa-solid fa-pen-to-square"></i></a>
 
               <a href="usuarioListar.php?id=<?= $linha['id'] ?>" class="btn btn-danger" onclick="return confirm('Confirmar exclusão?')"><i class="fa-solid fa-trash-can"></i></a>
 
