@@ -47,32 +47,30 @@ if (isset($_POST['cadastrar'])){
                 </a>
             </div>
             <div class="cadastro-heather">
-                <h1>Cadastre-se</h1>
+                <h1>Cadastro de Livros</h1>
             </div>
             <form class="cadastro-form" method="post">
                 <div class="form-item">
-                    <span class="form-item-icon material-symbols-rounded">badge</span>
-                    <input type="text" name="titulo" class="form-control" placeholder="Seu nome" required autofocus>
+                    <input type="text" name="titulo" placeholder="Título" required autofocus>
                 </div>
                 <div class="form-item">
-                    <span class="form-item-icon material-symbols-rounded">mail</span>
-                    <input type="text" name="subtitulo" class="form-control" placeholder="Seu e-mail" required>
+                    
+                    <input type="text" name="subtitulo" placeholder="Subtitulo" required>
                 </div>
                 <div class="form-item">
-                    <span class="form-item-icon material-symbols-rounded">lock</span>
-                    <input type="text" name="sinopse" class="form-control"  placeholder="Cadastre sua senha" required>
+                    
+                    <input type="text" name="sinopse" placeholder="Sinopse" required>
                 </div>
 
                 <div class="form-item">
-
-                    <span class="form-item-icon material-symbols-rounded">calendar_today</span>
-                    <input type="text" id="dataNascimento" name="valor" autocomplete="off" maxlength="10" class="form-control" placeholder="Sua data de Nascimento" onkeyup="mascara_DataNascimento()">
+                    <input type="text" name="valor" placeholder="Valor">
 
                 </div>
                 
                 <div class="form-item">
-                    <span class="form-item-icon material-symbols-rounded">location_city</span>
-                    <input type="text" name="capa" class="form-control" placeholder="Sua cidade">
+                    <form name="form" method="post" enctype="multipart/form-data">
+                        <input type="file" name="arquivo" id="arquivo">
+                    </form>
                 </div>
 
                 <div class="form-item-outro">
