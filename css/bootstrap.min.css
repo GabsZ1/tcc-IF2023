@@ -96,7 +96,7 @@ align-items: center;
 
 
 
-/* card */
+/* card Heart */
 .body-card{
   display:flex;
   justify-content: center;
@@ -136,7 +136,7 @@ align-items: center;
 }
 
 .cards .imgBx img{
-  max-width: 50%;
+  max-width: 60%;
   transition: 0.5s;
 }
 
