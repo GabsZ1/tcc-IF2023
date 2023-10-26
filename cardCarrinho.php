@@ -13,28 +13,22 @@
   <link href="css/bootstrap.min.css" rel="stylesheet">
 </head>
 <body class="body-card">
-<div class="cards">
-<div class="imgBx">
-<img src="img/LIVRO/capa2.jpg" alt="">
-</div>
-<div class="contentBx">
-<h3>Amor e Gelato</h3>
-<h2 class="price">R$ 31,<small>90</small></h2>
-
-<td>
-  <div class="qty">
-    <button><i class="bx bx-minus">-</i></button>
-    <span>1</span>
-    <button<i class="bx bx-plus">+</i></button>
+  <div class="cards">
+    <div class="imgBx">
+      <img src="img/LIVRO/capa2.jpg" alt="">
+    </div>
+    <div class="contentBx">
+      <h3>Amor e Gelato</h3>
+      <h2 class="price">R$ 31,<small>90</small></h2>
+      <td>
+        <div class="qty">
+          <button><i class="bx bx-minus">-</i></button>
+          <span>1</span>
+          <button<i class="bx bx-plus">+</i></button>
+        </div>
+      </td>
+    </div>
   </div>
-
-
-
-
-
-</td>
-</div>
-</div>
 </body>
 </html>
 

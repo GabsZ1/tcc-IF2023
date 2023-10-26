@@ -13,22 +13,16 @@
   <link href="css/bootstrap.min.css" rel="stylesheet">
 </head>
 <body class="body-card">
-<div class="cards">
-<div class="imgBx">
-<img src="img/LIVRO/h2.jpg" alt="">
-</div>
-<div class="contentBx">
-<h3>Heartstopper vol.2</h3>
-<h2 class="price">R$ 38,<small>00</small></h2>
-<a href="#" class="buy">Adicionar ao Carrinho</a>
-
-
-
-
-
-</td>
-</div>
-</div>
+  <div class="cards">
+    <div class="imgBx">
+      <a href="testeCarrinho.php"><img src="img/LIVRO/h2.jpg" alt=""></a>
+    </div>
+    <div class="contentBx">
+      <h3>Heartstopper vol.2</h3>
+      <h2 class="price">R$ 38,<small>00</small></h2>
+      <a href="#" class="buy">Adicionar ao Carrinho</a>
+    </div>
+  </div>
 </body>
 </html>
 
