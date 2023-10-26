@@ -18,7 +18,7 @@ if (isset($_POST['logar'])):
     
     //Verificar se o usuário existe no BD e concede PERMISSÃO ou VOLTA  AO LOGIN
     if ($registros > 0) {
-        header("location:testeIndex.php");
+        header("location:IndexAdm.php");
     }else{
         echo "Usuário/senha inválido!";
         header("location:adm.php");

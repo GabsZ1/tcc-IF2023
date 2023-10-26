@@ -128,6 +128,8 @@ $result2 = mysqli_query($conexao, $sql2);
     </div>
     <!-- FOOTER -->
 
+    <!-- ADICIONAR O FOOTER QUE JÁ TA CERTO -->
+
     <footer class="mt-5">
       <div class="footer text-center">
        <img class="" src="img/imgSITE/logoCOMPLETA.png" alt="">

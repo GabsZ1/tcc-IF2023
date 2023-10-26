@@ -40,6 +40,7 @@ if (isset($_POST['pesquisar'])){ //Se clicou no botão de pesquisar
 }
 ?>
 
+<!-- FALTA RESPONSIVIDADE E PESQUISAR EFETIVAMENTE -->
 
 
 
