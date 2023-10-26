@@ -27,6 +27,11 @@ if (isset($_POST['cadastrar'])){
     $mensagem = "Inserido com sucesso.";
 
 }
+ 
+function listaEstadosOrderIdAsc(){
+    return mysql_query("SELECT estado, sigla FROM estado ORDER BY sigla ASC");
+}
+
 
 ?>
 
@@ -159,7 +164,7 @@ if (isset($_POST['cadastrar'])){
                 <div class="form-item">
 
                     <span class="form-item-icon material-symbols-rounded">calendar_today</span>
-                    <input type="text" id="dataNascimento" name="dataNascimento" autocomplete="off" maxlength="10" class="form-control" placeholder="Sua data de Nascimento" onkeyup="mascara_DataNascimento()" required>
+                    <input type="date" id="dataNascimento" name="dataNascimento" autocomplete="off" maxlength="10" class="form-control" placeholder="Sua data de Nascimento" onkeyup="mascara_DataNascimento()" required>
 
                 </div>
 
@@ -172,7 +177,7 @@ if (isset($_POST['cadastrar'])){
 
                 <div class="form-item">
                     <span class="form-item-icon material-symbols-rounded">person_pin_circle</span>
-                    <select id="estado" name="estado" required>
+                    <select id="estado" name="estado" name="cod_estados" id="cod_estados" required>
                         <option selected disabled value="">Seu Estado</option>
                         <option value="AC">Acre</option>
                         <option value="AL">Alagoas</option>
