@@ -44,7 +44,7 @@ $result2 = mysqli_query($conexao, $sql2);
   <body>
     <header id="cabecalho">
 
-      <?php require_once("testeNavbar.php"); ?>
+      <?php require_once("NavbarAdm.php"); ?>
       
       <div class="banner">
         <img src="img/imgSITE/DREAMSTORE-BANNER" alt="">

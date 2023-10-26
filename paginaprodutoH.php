@@ -25,9 +25,6 @@ $result = mysqli_query($conexao, $sql);
         <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
         <link href='https://fonts.googleapis.com/css?family=Lato' rel='stylesheet' type='text/css'>
 
-
-
-
         <!-- Principal CSS do Bootstrap -->
         <link href="css/bootstrap.min.css" rel="stylesheet">
 
@@ -61,9 +58,6 @@ $result = mysqli_query($conexao, $sql);
                 </div>
                 <?php } ?>
             </div>
-            <hr>
-            
-            <?php require_once("cardH.php"); ?>
         </main>
         <script src="js/pesquisa.js"></script>
     </body>
