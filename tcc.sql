@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Tempo de geração: 20/10/2023 às 16:30
+-- Tempo de geração: 25/10/2023 às 21:31
 -- Versão do servidor: 10.4.28-MariaDB
 -- Versão do PHP: 8.2.4
 
@@ -136,7 +136,8 @@ INSERT INTO `genero` (`id`, `nome`, `status`) VALUES
 (7, 'BIOGRAFIA', 'ativo'),
 (8, 'DRAMA', 'ativo'),
 (9, 'MISTÉRIO', 'ativo'),
-(10, 'AVENTURA', 'ativo');
+(10, 'AVENTURA', 'ativo'),
+(11, 'TERROR', 'ativo');
 
 -- --------------------------------------------------------
 
@@ -200,8 +201,47 @@ CREATE TABLE `livrogenero` (
   `genero_id` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
--- --------------------------------------------------------
+--
+-- Despejando dados para a tabela `livrogenero`
+--
 
+INSERT INTO `livrogenero` (`id`, `livro_id`, `genero_id`) VALUES
+(1, 1, 1),
+(2, 1, 4),
+(3, 2, 1),
+(4, 3, 2),
+(5, 3, 4),
+(6, 4, 1),
+(7, 4, 5),
+(8, 5, 1),
+(9, 5, 4),
+(10, 6, 9),
+(11, 6, 3),
+(12, 7, 7),
+(13, 7, 6),
+(14, 8, 1),
+(15, 8, 4),
+(16, 9, 1),
+(17, 9, 8),
+(18, 10, 4),
+(19, 10, 5),
+(20, 11, 9),
+(21, 11, 3),
+(22, 12, 1),
+(23, 12, 4),
+(26, 13, 5),
+(27, 13, 11),
+(28, 14, 5),
+(29, 14, 10),
+(30, 15, 5),
+(31, 15, 1),
+(32, 16, 4),
+(33, 16, 1),
+(34, 17, 5),
+(35, 17, 10),
+(36, 18, 1);
+
+-- --------------------------------------------------------
 
 --
 -- Estrutura para tabela `livros`
@@ -316,6 +356,14 @@ ALTER TABLE `heartstopper`
   ADD PRIMARY KEY (`id`);
 
 --
+-- Índices de tabela `livrogenero`
+--
+ALTER TABLE `livrogenero`
+  ADD PRIMARY KEY (`id`),
+  ADD KEY `fk_livrosGeneros_Livros` (`livro_id`),
+  ADD KEY `fk_livrosGeneros_Generos` (`genero_id`);
+
+--
 -- Índices de tabela `livros`
 --
 ALTER TABLE `livros`
@@ -342,19 +390,19 @@ ALTER TABLE `adm`
 -- AUTO_INCREMENT de tabela `autor`
 --
 ALTER TABLE `autor`
-  MODIFY `id` int(13) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=20;
+  MODIFY `id` int(13) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=21;
 
 --
 -- AUTO_INCREMENT de tabela `editora`
 --
 ALTER TABLE `editora`
-  MODIFY `id` int(13) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=20;
+  MODIFY `id` int(13) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=31;
 
 --
 -- AUTO_INCREMENT de tabela `genero`
 --
 ALTER TABLE `genero`
-  MODIFY `id` int(13) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(13) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
 
 --
 -- AUTO_INCREMENT de tabela `heartscard`
@@ -367,6 +415,12 @@ ALTER TABLE `heartscard`
 --
 ALTER TABLE `heartstopper`
   MODIFY `id` int(13) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=23;
+
+--
+-- AUTO_INCREMENT de tabela `livrogenero`
+--
+ALTER TABLE `livrogenero`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=37;
 
 --
 -- AUTO_INCREMENT de tabela `livros`
@@ -383,6 +437,13 @@ ALTER TABLE `usuario`
 --
 -- Restrições para tabelas despejadas
 --
+
+--
+-- Restrições para tabelas `livrogenero`
+--
+ALTER TABLE `livrogenero`
+  ADD CONSTRAINT `fk_livrosGeneros_Generos` FOREIGN KEY (`genero_id`) REFERENCES `genero` (`id`),
+  ADD CONSTRAINT `fk_livrosGeneros_Livros` FOREIGN KEY (`livro_id`) REFERENCES `livros` (`id`);
 
 --
 -- Restrições para tabelas `livros`
