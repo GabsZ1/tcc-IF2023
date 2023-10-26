@@ -42,7 +42,8 @@ CREATE TABLE `adm` (
 --
 
 INSERT INTO `adm` (`id`, `nome`, `email`, `senha`, `arquivo`) VALUES
-(1, 'Márcia', 'MarciaPascutti@ifpr.edu.com.br', '12345', NULL);
+(1, 'Ana Laura', 'analauracabral603@gmail.com', '12345', NULL),
+(2, 'Gabrielle Bonini', 'gabrielleboninibarbosa@gmail.com', '1432', NULL);
 
 -- --------------------------------------------------------
 
