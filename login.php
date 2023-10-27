@@ -60,7 +60,6 @@ if (isset($_POST['logar'])){
                         <input type="checkbox" id="rememberMeCheck">
                         <label for="rememberMeCheck">Lembre-se de mim</label>
                     </div>
-                    <a href="#">Esqueci minha senha</a>
                 </div>
                     <input class="btn btn-primary btn-lg btn-block active" style="left: -30px;" type="submit" value="Entre" name="logar">
             </form>
@@ -70,7 +69,7 @@ if (isset($_POST['logar'])){
             </div>
         </div>
         <div class="login-social">
-            <div>Nos encontrem por outras plataformas</div>
+            <div>Nos encontre em outras plataformas</div>
             <div class="login-social-btn">
                 <a href="#">
                     <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-brand-instagram" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">

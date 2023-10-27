@@ -1,13 +1,4 @@
-<!-- 
-document.getElementById("dado")
-    .addEventListener("keyup", function(event) {
-    event.preventDefault();
-    if (event.keyCode === 13) {
-        document.getElementById("button-dado").click();
-    }
-});
-<input type="text" id="dado" name="dado" placeholder="Descrição" required/>
-<button id="button-dado" onclick="enviar('0');">Pesquisar</button> -->
+
 
 <link rel="stylesheet" href="css/navbar.css" >
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.0/font/bootstrap-icons.css">
@@ -52,7 +43,7 @@ if (isset($_POST['pesquisar'])){ //Se clicou no botão de pesquisar
 
           <div class="input-busca">
             <form method="POST">
-            <input type="text" name="" id="floatingInput" placeholder="Pesquisar" style="height: 40px">
+            <input type="text" name=""  placeholder="Pesquisar" style="height: 40px">
             </form>
           </div>
 

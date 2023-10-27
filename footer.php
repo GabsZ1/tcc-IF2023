@@ -75,7 +75,7 @@
 
   <!-- Copyright -->
   <div class="text-center p-4" style="background-color: rgba(0, 0, 0, 0.05);">
-    © DS TCC 2023 :
+  2022–2023 DreamStore
   </div>
   <!-- Copyright -->
 </footer>

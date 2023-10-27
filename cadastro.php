@@ -227,7 +227,7 @@ function listaEstadosOrderIdAsc(){
         </div>
     </div>
         <div class="cadastro-social">
-            <div>cadastre-se por outras plataformas</div>
+            <div>Nos encontre em outras plataformas</div>
             <div class="cadastro-social-btn">
                 <a href="#">
                     <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-brand-instagram" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
@@ -249,3 +249,4 @@ function listaEstadosOrderIdAsc(){
   </div>  
 </body>
 </html>
+

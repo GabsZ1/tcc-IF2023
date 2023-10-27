@@ -53,69 +53,12 @@
                 <p class="lead">Onde estará seus livros mais desejados!</p>
                 </div>
                 
-                <div class="row g-5">
-                    <hr class="my-4">
-                    <h4 class="mb-3">PAGAMENTO</h4>
-                    
-                    <div class="my-3">
-                        <div class="form-check">
-                            <input id="credit" name="paymentMethod" type="radio" class="form-check-input" checked required>
-                            <label class="form-check-label" for="credit">Cartão de Crédito</label>
-                        </div>
-                        <div class="form-check">
-                            <input id="debit" name="paymentMethod" type="radio" class="form-check-input" required>
-                            <label class="form-check-label" for="debit">Cartão de Débito</label>
-                        </div>
-                        <div class="form-check">
-                            <input id="paypal" name="paymentMethod" type="radio" class="form-check-input" required>
-                            <label class="form-check-label" for="paypal">PayPal</label>
-                        </div>
-                    </div>
-
-                    <div class="row gy-3">
-                        <div class="col-md-6">
-                            <label for="cc-name" class="form-label">Nome do Cartão</label>
-                            <input type="text" class="form-control" id="cc-name" placeholder="" required>
-                            <small class="text-body-secondary">Nome completo impresso no Cartão</small>
-                            <div class="invalid-feedback">
-                                Nome Completo Impresso OBRIGATÓRIO
-                            </div>
-                        </div>
-
-                        <div class="col-md-6">
-                            <label for="cc-number" class="form-label">Número do Cartão</label>
-                            <input type="text" class="form-control" id="cc-number" placeholder="" required>
-                            <div class="invalid-feedback">
-                               Número do Cartão OBRIGATÓRIO
-                            </div>
-                        </div>
-
-                        <div class="col-md-3">
-                            <label for="cc-expiration" class="form-label">Data de validade</label>
-                            <input type="text" class="form-control" id="cc-expiration" placeholder="" required>
-                            <div class="invalid-feedback">
-                               Data de Validade OBRIGATÓRIA
-                            </div>
-                        </div>
-
-                        <div class="col-md-3">
-                            <label for="cc-cvv" class="form-label">CVV</label>
-                            <input type="text" class="form-control" id="cc-cvv" placeholder="" required>
-                            <div class="invalid-feedback">
-                               Código de Segurança OBRIGATÓRIO
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <hr class="my-4">
-                    <a href="#" class="btn btn-primary btn-lg btn-block active" Style="width: 250px; left:500px; top:-150px;" role="button"
-              aria-pressed="true">FINALIZAR COMPRAS</a>
-                </div>
+         
             </main>
-
+<!-- 
             <footer class="my-5 pt-5 text-body-secondary text-center text-small">
                 <p class="mb-1">&copy; 2022–2023 DreamStore</p>
-            </footer>
+            </footer> -->
         </div>
         <script src="js/pesquisa.js"></script>
         <script src="/docs/5.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous"></script>
