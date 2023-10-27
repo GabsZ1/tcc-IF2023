@@ -172,7 +172,7 @@ if (isset($_POST['cadastrar'])){
 
                 <div class="form-item">
                     <span class="form-item-icon material-symbols-rounded">terminal</span>
-                    <input type="text" name="cpf" id="cpf" placeholder="Seu CPF" autocomplete="off" maxlength="14" onkeyup="document.getElementById('validation').innerHTML = validaCPF(this.value)" required>
+                    <input type="text" name="cpf" id="cpf" placeholder="Insira seu CPF sem os . e -" autocomplete="off" maxlength="14" onkeyup="document.getElementById('validation').innerHTML = validaCPF(this.value)" required>
                     <div><b></b> <span id="validation"></span></div>
                 </div>
                 

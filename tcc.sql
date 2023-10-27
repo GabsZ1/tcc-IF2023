@@ -296,7 +296,7 @@ CREATE TABLE `usuario` (
   `email` varchar(200) NOT NULL,
   `senha` varchar(200) NOT NULL,
   `dataNascimento` varchar(10) NOT NULL,
-  `cpf` varchar(14) NOT NULL,
+  `cpf` varchar(11) NOT NULL,
   `cidade` varchar(100) NOT NULL,
   `UF` varchar(2) NOT NULL,
   `telefone` varchar(14) NOT NULL
