@@ -172,7 +172,7 @@ if (isset($_POST['cadastrar'])){
 
                 <div class="form-item">
                     <span class="form-item-icon material-symbols-rounded">terminal</span>
-                    <input type="text" name="cpf" id="cpf" placeholder="Insira seu CPF sem os . e -" autocomplete="off" maxlength="14" onkeyup="document.getElementById('validation').innerHTML = validaCPF(this.value)" required>
+                    <input type="text" name="cpf" id="cpf" placeholder="Insira seu CPF sem os . e -" autocomplete="off" maxlength="11" onkeyup="document.getElementById('validation').innerHTML = validaCPF(this.value)" required>
                     <div><b></b> <span id="validation"></span></div>
                 </div>
                 
@@ -180,13 +180,15 @@ if (isset($_POST['cadastrar'])){
                 <div class="form-item">
                     <span class="form-item-icon material-symbols-rounded">person_pin_circle</span>
                     <select name="uf" id="estado" required>
-                        <option></option>
+                        <option selected disabled value="">Seu estado</option>
                     </select>
                 </div>
 
                 <div class="form-item">
                     <span class="form-item-icon material-symbols-rounded">location_city</span>
-                    <select name="cidade" id="cidade" required></select>
+                    <select name="cidade" id="cidade" required>
+                        <option selected disabled value="">Sua cidade</option>
+                    </select>
                 </div>
 
                 <div class="form-item">
@@ -247,7 +249,6 @@ if (isset($_POST['cadastrar'])){
 
       //  console.log(response[0]).sigla)
       const options = document.createElement("optgroup")
-      options.setAttribute('label', 'Seu estado')
       response.forEach(function(uf) {
         options.innerHTML += '<option>' + uf.sigla + '</option>'
       })
