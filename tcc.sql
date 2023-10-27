@@ -143,31 +143,6 @@ INSERT INTO `genero` (`id`, `nome`, `status`) VALUES
 -- --------------------------------------------------------
 
 --
--- Estrutura para tabela `heartscard`
---
-
-CREATE TABLE `heartscard` (
-  `id` int(13) NOT NULL,
-  `titulo` varchar(200) NOT NULL,
-  `subtitulo` varchar(200) NOT NULL,
-  `sinopse` varchar(1000) NOT NULL,
-  `valor` int(11) NOT NULL,
-  `capa` varchar(11) NOT NULL,
-  `class` varchar(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
-
---
--- Despejando dados para a tabela `heartscard`
---
-
-INSERT INTO `heartscard` (`id`, `titulo`, `subtitulo`, `sinopse`, `valor`, `capa`, `class`) VALUES
-(1, 'Heartstopper: Minha pessoa favorita ', 'No segundo volume da série Heartstopper, Charlie e Nick precisam entender o que um beijo significa para a relação dos dois — e, principalmente, para eles mesmos.', 'Charlie e Nick são melhores amigos, mas tudo muda depois que eles se beijam em uma festa. Charlie acredita que cometeu um grande erro e arruinou a amizade dos dois para sempre, e Nick está mais confuso do que nunca. Mas aos poucos Nick começa a enxergar o mundo sob uma nova perspectiva e, com a ajuda de Charlie, descobre muitas coisas sobre o mundo que o cerca, sobre seus amigos — e, principalmente, sobre ele mesmo. ', 38, 'h2.jpg', 'class12.jpg'),
-(2, 'Heartstopper: Um passo adiante', 'No terceiro volume da série Heartstopper, acompanhamos os primeiros desafios do namoro de Charlie e Nick enquanto os garotos viajam a Paris. ', 'Depois de entenderem o que sentiam um pelo outro, Charlie e Nick se tornaram oficialmente namorados, e cada dia é uma nova oportunidade para se conhecerem um pouco mais. Mas nem tudo é fácil, principalmente quando se trata de se assumir enquanto casal para o mundo. Mesmo com medo da reação das pessoas, os garotos sabem que em breve terão de contar a verdade, pelo menos para os amigos mais próximos ― ainda mais quando a turma toda viaja a Paris.\r\nEnquanto decidem como dar este próximo passo, os dois vão descobrir que, não importa qual seja o desafio, eles podem sempre contar um com o outro.\r\n\r\n', 38, 'h3.jpg', 'class12.jpg'),
-(3, 'Heartstopper: De mãos dadas', 'No quarto volume da série Heartstopper, Charlie e Nick terão que enfrentar uma longa jornada de amadurecimento ― sem nunca soltarem as mãos.', 'Charlie e Nick já não precisam esconder de ninguém no colégio que estão namorando, e agora, mais do que nunca, Charlie quer finalmente dizer “Eu te amo”. O que parece um gesto simples se torna bem complicado quando sua ansiedade o faz questionar se Nick se sente da mesma forma…\r\nNick, por sua vez, está com a cabeça cheia. Afinal, ele ainda não teve a oportunidade de se assumir para o pai, e se preocupa constantemente com Charlie, que dá sinais claros de ter um transtorno alimentar.\r\nConforme o relacionamento dos dois amadurece, os desafios que vêm pela frente ficam cada vez mais difíceis ― mas os garotos logo vão aprender que amar alguém nada mais é do que estar ao seu lado, juntos, de mãos dadas.', 38, 'h4.webp', 'class12.jpg');
-
--- --------------------------------------------------------
-
---
 -- Estrutura para tabela `heartstopper`
 --
 
@@ -188,7 +163,7 @@ CREATE TABLE `heartstopper` (
 --
 
 INSERT INTO `heartstopper` (`id`, `titulo`, `subtitulo`, `sinopse`, `valor`, `capa`, `class`, `heartAutor_id`, `heartEditora_id`) VALUES
-(1, 'Heartstopper: Dois garotos, um encontro ', 'O primeiro volume da adorada série em quadrinhos finalmente chega ao Brasil.', 'Charlie Spring e Nick Nelson não têm quase nada em comum. Charlie é um aluno dedicado e bastante inseguro por conta do bullying que sofre no colégio desde que se assumiu gay. Já Nick é superpopular, especialmente querido por ser um ótimo jogador de rúgbi. Quando os dois passam a sentar um ao lado do outro toda manhã, uma amizade intensa se desenvolve, e eles ficam cada vez mais próximos.\r\nCharlie logo começa a se sentir diferente a respeito do novo amigo, apesar de saber que se apaixonar por um garoto hétero só vai gerar frustrações. Mas o próprio Nick está em dúvida sobre o que sente ― e talvez os garotos estejam prestes a descobrir que, quando menos se espera, o amor pode funcionar das formas mais incríveis e surpreendentes.', 42, 'heartstopper.jpg', 'class12.png', 20, 22);
+(1, 'Heartstopper: Dois garotos, um encontro ', 'O primeiro volume da adorada série em quadrinhos finalmente chega ao Brasil.', 'Charlie Spring e Nick Nelson não têm quase nada em comum. Charlie é um aluno dedicado e bastante inseguro por conta do bullying que sofre no colégio desde que se assumiu gay. Já Nick é superpopular, especialmente querido por ser um ótimo jogador de rúgbi. Quando os dois passam a sentar um ao lado do outro toda manhã, uma amizade intensa se desenvolve, e eles ficam cada vez mais próximos.\r\nCharlie logo começa a se sentir diferente a respeito do novo amigo, apesar de saber que se apaixonar por um garoto hétero só vai gerar frustrações. Mas o próprio Nick está em dúvida sobre o que sente ― e talvez os garotos estejam prestes a descobrir que, quando menos se espera, o amor pode funcionar das formas mais incríveis e surpreendentes.', 35, 'heartstopper.jpg', 'class12.png', 20, 22);
 
 -- --------------------------------------------------------
 
