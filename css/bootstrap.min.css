@@ -81,6 +81,9 @@ section {
 }
 
 
+/* imagens da filtragem de pesquisa */
+
+
 /* footer */
 
 ul.footer{
@@ -91,10 +94,6 @@ align-items: center;
 .footer2{
   overflow: hidden;
 }
-
-
-
-
 
 /* card */
 .body-card{

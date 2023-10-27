@@ -35,7 +35,7 @@
           </div>
 
           <div class="input-busca">
-            <form method="POST" action="index.php">
+            <form method="POST" action="filtrarTitulo.php">
               <input type="text" name="pesquisar"  placeholder="Pesquisar" style="height: 40px">
             </form>
           </div>
