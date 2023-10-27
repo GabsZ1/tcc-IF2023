@@ -27,11 +27,6 @@ if (isset($_POST['cadastrar'])){
     $mensagem = "Inserido com sucesso.";
 
 }
- 
-function listaEstadosOrderIdAsc(){
-    return mysql_query("SELECT estado, sigla FROM estado ORDER BY sigla ASC");
-}
-
 
 ?>
 
@@ -138,7 +133,7 @@ function listaEstadosOrderIdAsc(){
   <div class="text-center">
     <div class="cadastro-container">
         
-        <div class="cadastro">
+        <div class="cadastro" style="width: 650px;">
             <div class="cadastro-logo">
                 <a href="login.php">
                     <img src="img/imgSITE/nuvemLILAS.png" alt="logo">
@@ -146,78 +141,57 @@ function listaEstadosOrderIdAsc(){
             </div>
             <div class="cadastro-heather">
                 <h1>Cadastre-se</h1>
+                <br>
+                <br>
+                <br>
             </div>
             <form onsubmit="return validaCPF(this.cpf.value)" class="cadastro-form" method="post">
                 <div class="form-item">
                     <span class="form-item-icon material-symbols-rounded">badge</span>
-                    <input type="text" name="nome" class="form-control" placeholder="Seu nome" required autofocus>
+                    <input type="text" name="nome" placeholder="Seu nome" required autofocus>
                 </div>
                 <div class="form-item">
                     <span class="form-item-icon material-symbols-rounded">mail</span>
-                    <input type="email" name="email" class="form-control" placeholder="Seu e-mail" required>
+                    <input type="email" name="email" placeholder="Seu e-mail" required>
                 </div>
                 <div class="form-item">
                     <span class="form-item-icon material-symbols-rounded">lock</span>
-                    <input type="password" name="senha" class="form-control"  placeholder="Cadastre sua senha" required>
+                    <input type="password" name="senha" placeholder="Cadastre sua senha" required>
+                </div>
+                <div class="form-item">
+                    <span class="form-item-icon material-symbols-rounded">lock</span>
+                    <input type="password" name="senha" placeholder="Confirme sua senha" required>
                 </div>
 
                 <div class="form-item">
 
                     <span class="form-item-icon material-symbols-rounded">calendar_today</span>
-                    <input type="date" id="dataNascimento" name="dataNascimento" autocomplete="off" maxlength="10" class="form-control" placeholder="Sua data de Nascimento" onkeyup="mascara_DataNascimento()" required>
+                    <input type="date" id="dataNascimento" name="dataNascimento" autocomplete="off" maxlength="10"  placeholder="Sua data de Nascimento" onkeyup="mascara_DataNascimento()" required>
 
                 </div>
 
                 <div class="form-item">
                     <span class="form-item-icon material-symbols-rounded">terminal</span>
-                    <input class="form-control" type="text" name="cpf" id="cpf" placeholder="Seu CPF" autocomplete="off" maxlength="14" onkeyup="document.getElementById('validation').innerHTML = validaCPF(this.value)" required>
-                    <div><b>Resultado:</b> <span id="validation"></span></div>
+                    <input type="text" name="cpf" id="cpf" placeholder="Seu CPF" autocomplete="off" maxlength="14" onkeyup="document.getElementById('validation').innerHTML = validaCPF(this.value)" required>
+                    <div><b></b> <span id="validation"></span></div>
                 </div>
                 
 
                 <div class="form-item">
                     <span class="form-item-icon material-symbols-rounded">person_pin_circle</span>
-                    <select id="estado" name="estado" name="cod_estados" id="cod_estados" required>
-                        <option selected disabled value="">Seu Estado</option>
-                        <option value="AC">Acre</option>
-                        <option value="AL">Alagoas</option>
-                        <option value="AP">Amapá</option>
-                        <option value="AM">Amazonas</option>
-                        <option value="BA">Bahia</option>
-                        <option value="CE">Ceará</option>
-                        <option value="DF">Distrito Federal</option>
-                        <option value="ES">Espírito Santo</option>
-                        <option value="GO">Goiás</option>
-                        <option value="MA">Maranhão</option>
-                        <option value="MT">Mato Grosso</option>
-                        <option value="MS">Mato Grosso do Sul</option>
-                        <option value="MG">Minas Gerais</option>
-                        <option value="PA">Pará</option>
-                        <option value="PB">Paraíba</option>
-                        <option value="PR">Paraná</option>
-                        <option value="PE">Pernambuco</option>
-                        <option value="PI">Piauí</option>
-                        <option value="RJ">Rio de Janeiro</option>
-                        <option value="RN">Rio Grande do Norte</option>
-                        <option value="RS">Rio Grande do Sul</option>
-                        <option value="RO">Rondônia</option>
-                        <option value="RR">Roraima</option>
-                        <option value="SC">Santa Catarina</option>
-                        <option value="SP">São Paulo</option>
-                        <option value="SE">Sergipe</option>
-                        <option value="TO">Tocantins</option>
-                        <option value="EX">Estrangeiro</option>
+                    <select name="uf" id="estado" required>
+                        <option></option>
                     </select>
                 </div>
 
                 <div class="form-item">
                     <span class="form-item-icon material-symbols-rounded">location_city</span>
-                    <input type="text" name="cidade" class="form-control" placeholder="Sua cidade" required>
+                    <select name="cidade" id="cidade" required></select>
                 </div>
 
                 <div class="form-item">
                     <span class="form-item-icon material-symbols-rounded">call</span>
-                    <input type="tel" id="telefone" name="telefone" autocomplete="off" maxlength="14" class="form-control" placeholder="insira o DDD" onkeyup="mascara_telefone()" required>
+                    <input type="tel" id="telefone" name="telefone" autocomplete="off" maxlength="14" placeholder="insira o DDD" onkeyup="mascara_telefone()" required>
                 </div>
                 <div class="form-item-outro">
                     
@@ -248,5 +222,38 @@ function listaEstadosOrderIdAsc(){
     </div>
   </div>  
 </body>
+
+<script>
+    const ulrUF = 'https://servicodados.ibge.gov.br/api/v1/localidades/estados/'
+    const cidade = document.getElementById("cidade")
+    const uf = document.getElementById("estado")
+
+    uf.addEventListener('change', async function() {
+      const urlCidades = 'https://servicodados.ibge.gov.br/api/v1/localidades/estados/' + uf.value + '/municipios'
+      const request = await fetch(urlCidades)
+      const response = await request.json()
+
+      let options = ''
+      response.forEach(function(cidades) {
+        options += '<option>' + cidades.nome + '</option>'
+      })
+      cidade.innerHTML = options
+    })
+
+
+    window.addEventListener('load', async () => {
+      const request = await fetch(ulrUF)
+      const response = await request.json()
+
+      //  console.log(response[0]).sigla)
+      const options = document.createElement("optgroup")
+      options.setAttribute('label', 'Seu estado')
+      response.forEach(function(uf) {
+        options.innerHTML += '<option>' + uf.sigla + '</option>'
+      })
+      uf.append(options)
+    })
+  </script>
+
 </html>
 

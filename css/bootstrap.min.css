@@ -96,7 +96,7 @@ align-items: center;
 
 
 
-/* card Heart */
+/* card */
 .body-card{
   display:flex;
   justify-content: center;
@@ -996,7 +996,8 @@ input[type="date"]::-webkit-calendar-picker-indicator {
 .cadastro input[type="date"],
 .cadastro input[type="email"],
 .cadastro input[type="tel"],
-.cadastro select[id="estado"] {
+.cadastro select[id="estado"],
+.cadastro select[id="cidade"] {
   border: none;
   outline: none;
   background: rgba(255, 255, 255, .3);
@@ -1009,12 +1010,6 @@ input[type="date"]::-webkit-calendar-picker-indicator {
 
 .cadastro input:focus {
   background: white;
-}
-
-.cadastro input[type="checkbox"] {
-  width: 16px;
-  height: 16px;
-  accent-color: #005799;
 }
 
 .cadastro-social {
