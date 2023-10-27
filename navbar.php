@@ -1,13 +1,4 @@
-<!-- 
-document.getElementById("dado")
-    .addEventListener("keyup", function(event) {
-    event.preventDefault();
-    if (event.keyCode === 13) {
-        document.getElementById("button-dado").click();
-    }
-});
-<input type="text" id="dado" name="dado" placeholder="Descrição" required/>
-<button id="button-dado" onclick="enviar('0');">Pesquisar</button> -->
+
 
 <link rel="stylesheet" href="css/navbar.css" >
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.0/font/bootstrap-icons.css">
@@ -45,7 +36,7 @@ document.getElementById("dado")
 
           <div class="input-busca">
             <form method="POST" action="index.php">
-              <input type="text" name="pesquisar" id="floatingInput" placeholder="Pesquisar" style="height: 40px">
+              <input type="text" name="pesquisar"  placeholder="Pesquisar" style="height: 40px">
             </form>
           </div>
 
