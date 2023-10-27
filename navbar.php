@@ -33,13 +33,6 @@ document.getElementById("dado")
       <!-- Lupa -->
 
 
-<?php
-      $V_WHERE = "";
-if (isset($_POST['pesquisar'])){ //Se clicou no botão de pesquisar
-  $V_WHERE = " and titulo like '%" . $_POST['titulo'] ."%'";
-}
-?>
-
 <!-- FALTA RESPONSIVIDADE E PESQUISAR EFETIVAMENTE -->
 
 
@@ -51,8 +44,8 @@ if (isset($_POST['pesquisar'])){ //Se clicou no botão de pesquisar
           </div>
 
           <div class="input-busca">
-            <form method="POST">
-            <input type="text" name="" id="floatingInput" placeholder="Pesquisar" style="height: 40px">
+            <form method="POST" action="index.php">
+              <input type="text" name="pesquisar" id="floatingInput" placeholder="Pesquisar" style="height: 40px">
             </form>
           </div>
 
