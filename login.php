@@ -55,12 +55,7 @@ if (isset($_POST['logar'])){
                     <span class="form-item-icon material-symbols-rounded">lock</span>
                     <input type="password" name="senha" class="form-control" placeholder="Insira a senha" required>
                 </div>
-                <div class="form-item-outro">
-                    <div class="checkbox">
-                        <input type="checkbox" id="rememberMeCheck">
-                        <label for="rememberMeCheck">Lembre-se de mim</label>
-                    </div>
-                </div>
+               
                     <input class="btn btn-primary btn-lg btn-block active" style="left: -30px;" type="submit" value="Entre" name="logar">
             </form>
             <div class="login-footer">
