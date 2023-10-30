@@ -21,8 +21,20 @@ $result2 = mysqli_query($conexao, $sql2);
 
 ?>
 
-<div class="container">
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="css/bootstrap.min.css" rel="stylesheet">
+  <title>Document</title>
+</head>
+<body class="filtro">
+  <div >
   <?php while ($row = $result->fetch_assoc()) { ?>
   <a href="paginaproduto.php?id=<?php echo $row['id']; ?>" class="img-fluid mr-2" alt="img" >
   <img src="img/LIVRO/<?php echo $row['capa']; ?>" /></a><?php } ?> 
 </div>
+</body>
+</html>
+
