@@ -22,7 +22,7 @@ $result2 = mysqli_query($conexao, $sql2);
 ?>
 
 <div class="container">
-                <?php while ($row = $result->fetch_assoc()) { ?>
-                <a href="paginaproduto.php?id=<?php echo $row['id']; ?>" class="img-fluid mr-2" alt="img" >
-                <img src="img/LIVRO/<?php echo $row['capa']; ?>" /></a><?php } ?> 
-              </div>
+  <?php while ($row = $result->fetch_assoc()) { ?>
+  <a href="paginaproduto.php?id=<?php echo $row['id']; ?>" class="img-fluid mr-2" alt="img" >
+  <img src="img/LIVRO/<?php echo $row['capa']; ?>" /></a><?php } ?> 
+</div>

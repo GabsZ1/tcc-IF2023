@@ -74,6 +74,11 @@ if (isset($_POST['cadastrar'])){
                         </form>
                         <label class="input-group-text" for="inputGroupFile02">Upload</label>
                     </div>
+
+                    <div class="mb-3">
+                        <input type="file" class="form-control" aria-label="file example" required>
+                        <div class="invalid-feedback">Example invalid form file feedback</div>
+                    </div>
                     
 
                     <div class="form-item-outro">
