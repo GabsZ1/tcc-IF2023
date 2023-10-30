@@ -83,6 +83,24 @@ section {
 
 /* imagens da filtragem de pesquisa */
 
+.filtro img{
+  height: 540px;
+  width: 400px;
+  align-items: center;
+  display: flex;
+  justify-content: center;
+
+}
+
+.filtro{
+  background-color: #E5E3FA;
+}
+
+
+
+
+
+
 
 /* footer */
 
