@@ -1,8 +1,7 @@
 <?php
 
 require_once("conexao.php"); 
-
-
+     
 
 $where = "";
 if (isset($_POST['pesquisar'])){ //Se clicou no botão de pesquisar

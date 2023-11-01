@@ -85,15 +85,18 @@ section {
 
 .filtro img{
   height: 540px;
+  position:relative;
+  top: 90%;
+  left: 20%;
+  transform: translate(-50%, -50%);
   width: 400px;
-  align-items: center;
-  display: flex;
-  justify-content: center;
 
 }
 
 .filtro{
   background-color: #E5E3FA;
+  display: flex;
+  justify-content: center;
 }
 
 
