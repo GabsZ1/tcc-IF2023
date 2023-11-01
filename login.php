@@ -1,4 +1,5 @@
 <?php
+session_start();
 
 //1. Conectar no BD (IP, Usuário, ...)
 
@@ -59,8 +60,20 @@ if (isset($_POST['logar'])){
                     <input class="btn btn-primary btn-lg btn-block active" style="left: -30px;" type="submit" value="Entre" name="logar">
             </form>
             <div class="login-footer">
-                Não possui uma conta? <a href="cadastro.php">Crie uma conta</a>.<br>
-                <a href="adm.php">Logar como Administrador</a>
+                
+                <?php
+                  if (!isset($_SESSION['logar'])) {
+                ?>
+                    Não possui uma conta? <a href="cadastro.php">Crie uma conta</a>.<br>
+                    <a href="adm.php">Logar como Administrador!</a>
+                <?php
+                  } else {
+                ?>
+                    <a href="sair.php">Sair</a>
+                <?php
+                  }
+                ?>
+                
             </div>
         </div>
         <div class="login-social">
