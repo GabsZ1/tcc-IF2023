@@ -25,12 +25,9 @@ $result = mysqli_query($conexao, $sql);
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Produtos</title>
- 
+        
         <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
         <link href='https://fonts.googleapis.com/css?family=Lato' rel='stylesheet' type='text/css'>
-
-
-
 
         <!-- Principal CSS do Bootstrap -->
         <link href="css/bootstrap.min.css" rel="stylesheet">
@@ -63,7 +60,7 @@ $result = mysqli_query($conexao, $sql);
 
                 </div>
                 <div class="right-side">  
-                    <img src="img/LIVRO/<?php echo $row['capa']; ?>">
+                    <img src="img/LIVRO/<?php echo $row['capa']; ?>" style="margin-top: 14px;">
                 </div>
                 <?php } ?>
             </div>

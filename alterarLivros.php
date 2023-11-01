@@ -22,6 +22,8 @@ if (isset($_POST['salvar'])) {
 }
 ?>
 
+<!-- FAZER ALTERAR LIVROS FUNCIONAR E ADICIONAR ALTERAÇÃO DE AUTOR E EDITORA TAMBÉM (no caso deles a unica alteração  seria o status de ativo ou inativo) -->
+
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>

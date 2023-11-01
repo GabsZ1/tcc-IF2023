@@ -30,6 +30,8 @@ if (isset($_POST['cadastrar'])){
 
 ?>
 
+<!-- coloquei no banco a coluna de status, quero fazer como fiz o heartstopper, em que 0 seria ativo e 1 inativo, como fazer exatamente (já fiz no banco igual o outro) -->
+
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
@@ -179,7 +181,7 @@ if (isset($_POST['cadastrar'])){
 
                 <div class="form-item">
                     <span class="form-item-icon material-symbols-rounded">person_pin_circle</span>
-                    <select name="uf" id="estado" required>
+                    <select name="estado" id="estado" required>
                         <option selected disabled value="">Seu estado</option>
                     </select>
                 </div>
