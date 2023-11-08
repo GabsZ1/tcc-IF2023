@@ -62,7 +62,7 @@ if (isset($_POST['logar'])){
             <div class="login-footer">
                 
                 <?php
-                  if (!isset($_SESSION['logar'])) {
+                  if (!isset($_SESSION['email'])) {
                 ?>
                     Não possui uma conta? <a href="cadastro.php">Crie uma conta</a>.<br>
                     <a href="adm.php">Logar como Administrador!</a>
