@@ -38,7 +38,7 @@ if (isset($_POST['cadastrar'])){
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="website icon" type="png" href="img/nuvemLILAS.png">
+    <link rel="website icon" type="png" href="img/imgSITE/nuvemLILAS.png">
     <link href="css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@48,300,0,0" />
     <title>Cadastro</title>
