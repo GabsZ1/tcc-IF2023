@@ -12,10 +12,11 @@ if (isset($_POST['salvar'])) {
     $sinopse = $_POST['sinopse'];
     $val = $_POST['valor'];
     $capa = $_POST['capa'];
+    $status = $_POST['status'];
 
 
     //3º passo - Preparar a SQL
-    $sql = "update livros set sinopse = '{$sinopse}', valor = '{$val}', capa = '{$capa}' where id = {$id} ";
+    $sql = "update livros set sinopse = '{$sinopse}', valor = '{$val}', capa = '{$capa}', status = '{$status}' where id = {$id} ";
 
 
     //4º passo - Executar a sql no banco de dados
@@ -39,6 +40,10 @@ $linha = mysqli_fetch_array($resultado);
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="https://kit.fontawesome.com/42c6fc9b70.js" crossorigin="anonymous"></script>
+
+    <!-- Icone da aba -->
+    <link rel="website icon" type="png" href="img/imgSITE/nuvemLILAS.png">
+
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@200&family=Poppins:wght@100&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100&display=swap" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
@@ -62,9 +67,14 @@ $linha = mysqli_fetch_array($resultado);
                 <input type="text" class="form-control" id="floatingInput" name="valor" value="<?= $linha['valor'] ?>">
                 <label for="floatingInput">Valor</label>
             </div>
-            <div class="form-floating">
-                <input type="text" class="form-control" id="floatingPassword" name="capa" value="<?= $linha['capa'] ?>">
+            <div class="form-floating mb-3">
+                <input type="text" class="form-control" id="floatingInput" name="capa" value="<?= $linha['capa'] ?>">
                 <label for="floatingPassword">Capa</label>
+            </div>
+            <div class="form-floating">
+                <select class="form-control" name="status" id="floatingInput" value="<?= $linha['status'] ?>">
+                    <option selected disabled value="">Status</option>
+                </select>
             </div>
 
 
