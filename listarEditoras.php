@@ -44,10 +44,7 @@ $resultado = mysqli_query($conexao, $sql);
 
     <div class="card mt-3 mb-3">
       <div class="card-body">
-        <h1 class="card-title" style="color: #5a5a5a; font-family: '-apple-system'; font-weight: 300;">Listagem de Editoras
-          <a href="cadastroEditora.php" class="btn btn-primary btn-sm"><i class="fa-solid fa-plus"></i>
-          </a>
-        </h1>
+        <h1 class="card-title" style="color: #5a5a5a; font-family: '-apple-system'; font-weight: 300;">Listagem de Editoras</h1>
       </div>
     </div>
     <table class="table table-hover">
