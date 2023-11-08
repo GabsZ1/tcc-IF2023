@@ -2,24 +2,33 @@
 require_once("conexao.php");
 
 //Esse "isset" serve para verificar se foi clicado no botão, caso não tenha sido clicado, não aparecerá o "warning" que aparece
+
+$id = $_GET['id'];
+
 if (isset($_POST['salvar'])) {
 
     //2º passo - Receber os dados para inserir no BD
-    
+
     $sinopse = $_POST['sinopse'];
     $val = $_POST['valor'];
     $capa = $_POST['capa'];
 
+
     //3º passo - Preparar a SQL
-    $sql = "insert into livros (sinopse, valor, capa) values ('$sinopse', '$val', '$capa')"; //Esses dados são uma query
-    //Para valores numéricos não precisa das ''.
+    $sql = "update livros set sinopse = '{$sinopse}', valor = '{$val}', capa = '{$capa}' where id = {$id} ";
+
 
     //4º passo - Executar a sql no banco de dados
     mysqli_query($conexao, $sql);
 
     //5º passo
-    $mensagem = "Registo Salvo com Sucesso";
+    $mensagem = "Registo atualizado com sucesso";
 }
+
+$sql = "select * from livros where id = {$id}";
+$resultado = mysqli_query($conexao, $sql);
+$linha = mysqli_fetch_array($resultado);
+
 ?>
 
 <!-- FAZER ALTERAR LIVROS FUNCIONAR E ADICIONAR ALTERAÇÃO DE AUTOR E EDITORA TAMBÉM (no caso deles a unica alteração  seria o status de ativo ou inativo) -->
@@ -40,27 +49,30 @@ if (isset($_POST['salvar'])) {
 <body>
     <div class="container">
         <form method="POST">
+
+            <input type="hidden" name="id" value="<?= $_GET['id'] ?>">
+            
             <h2>Alterar Livros</h2>
 
             <div class="form-floating mb-3">
-                <input type="text" class="form-control" id="floatingInput" placeholder="name@example.com" name="nome">
+                <input type="text" class="form-control" id="floatingInput" name="sinopse" value="<?= $linha['sinopse'] ?>">
                 <label for="floatingInput">Sinopse</label>
             </div>
             <div class="form-floating mb-3">
-                <input type="text" class="form-control" id="floatingInput" placeholder="name@example.com" name="email">
+                <input type="text" class="form-control" id="floatingInput" name="valor" value="<?= $linha['valor'] ?>">
                 <label for="floatingInput">Valor</label>
             </div>
             <div class="form-floating">
-                <input type="text" class="form-control" id="floatingPassword" placeholder="Password" name="senha">
+                <input type="text" class="form-control" id="floatingPassword" name="capa" value="<?= $linha['capa'] ?>">
                 <label for="floatingPassword">Capa</label>
             </div>
 
 
 
             <button type="submit" class="btn btn-primary mt-3" name="salvar" value="salvar">
-                <i class="fa-solid fa-check"></i> Salvar</button>
+                <i class="fa-solid fa-check"></i>Salvar</button>
                 
-            <a href="listarLivros.php" class="btn btn-warning mt-3"><i class="fa-solid fa-rotate-left"> Voltar</i></a>
+            <a href="listarLivros.php" class="btn btn-warning mt-3"><i class="fa-solid fa-rotate-left">Voltar</i></a>
         </form>
     </div>
 </body>
