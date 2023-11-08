@@ -45,7 +45,7 @@ $resultado = mysqli_query($conexao, $sql);
     <div class="card mt-3 mb-3">
       <div class="card-body">
         <h1 class="card-title" style="color: #5a5a5a; font-family: '-apple-system'; font-weight: 300;">Listagem de Autores
-          <a href="cadastroLivro.php" class="btn btn-primary btn-sm"><i class="fa-solid fa-plus"></i>
+          <a href="cadastroAutor.php" class="btn btn-primary btn-sm"><i class="fa-solid fa-plus"></i>
           </a>
         </h1>
       </div>
@@ -68,7 +68,7 @@ $resultado = mysqli_query($conexao, $sql);
             <td><?= $linha['status'] ?></th>
             <td>
 
-              <a href="alterarLivros.php?id=<?= $linha['id'] ?>" class="btn btn-warning"><i class="fa-solid fa-pen-to-square"></i></a>
+              <a href="alterarAutores.php?id=<?= $linha['id'] ?>" class="btn btn-warning"><i class="fa-solid fa-pen-to-square"></i></a>
 
               <a href="usuarioListar.php?id=<?= $linha['id'] ?>" class="btn btn-danger" onclick="return confirm('Confirmar exclusão?')"><i class="fa-solid fa-trash-can"></i></a>
 

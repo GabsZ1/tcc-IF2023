@@ -9,14 +9,11 @@ if (isset($_POST['salvar'])) {
 
     //2º passo - Receber os dados para inserir no BD
 
-    $sinopse = $_POST['sinopse'];
-    $val = $_POST['valor'];
-    $capa = $_POST['capa'];
     $status = $_POST['status'];
 
 
     //3º passo - Preparar a SQL
-    $sql = "update livros set sinopse = '{$sinopse}', valor = '{$val}', capa = '{$capa}', status = '{$status}' where id = {$id} ";
+    $sql = "update autor set status = '{$status}' where id = {$id} ";
 
 
     //4º passo - Executar a sql no banco de dados
@@ -26,7 +23,7 @@ if (isset($_POST['salvar'])) {
     $mensagem = "Registo atualizado com sucesso";
 }
 
-$sql = "select * from livros where id = {$id}";
+$sql = "select * from autor where id = {$id}";
 $resultado = mysqli_query($conexao, $sql);
 $linha = mysqli_fetch_array($resultado);
 
@@ -57,20 +54,8 @@ $linha = mysqli_fetch_array($resultado);
 
             <input type="hidden" name="id" value="<?= $_GET['id'] ?>">
             
-            <h2>Alterar Livros</h2>
+            <h2>Alterar Autores</h2>
 
-            <div class="form-floating mb-3">
-                <input type="text" class="form-control" id="floatingInput" name="sinopse" value="<?= $linha['sinopse'] ?>">
-                <label for="floatingInput">Sinopse</label>
-            </div>
-            <div class="form-floating mb-3">
-                <input type="text" class="form-control" id="floatingInput" name="valor" value="<?= $linha['valor'] ?>">
-                <label for="floatingInput">Valor</label>
-            </div>
-            <div class="form-floating mb-3">
-                <input type="text" class="form-control" id="floatingInput" name="capa" value="<?= $linha['capa'] ?>">
-                <label for="floatingPassword">Capa</label>
-            </div>
             <div class="form-item">
                 <select class="form-control" name="status" value="<?= $linha['status'] ?>">
                     <option selected disabled value="">-Status-</option>
@@ -79,12 +64,10 @@ $linha = mysqli_fetch_array($resultado);
                 </select>
             </div>
 
-
-
             <button type="submit" class="btn btn-primary mt-3" name="salvar" value="salvar">
                 <i class="fa-solid fa-check"></i>Salvar</button>
                 
-            <a href="listarLivros.php" class="btn btn-warning mt-3"><i class="fa-solid fa-rotate-left">Voltar</i></a>
+            <a href="listarAutores.php" class="btn btn-warning mt-3"><i class="fa-solid fa-rotate-left">Voltar</i></a>
         </form>
     </div>
 </body>
