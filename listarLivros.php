@@ -58,6 +58,7 @@ $resultado = mysqli_query($conexao, $sql);
           <th scope="col">Subtitulo</th>
           <th scope="col">Sinopse</th>
           <th scope="col">Valor</th>
+          <th scope="col">Status</th>
           <th scope="col">Ação</th>
         </tr>
       </thead>
@@ -70,6 +71,7 @@ $resultado = mysqli_query($conexao, $sql);
             <td><?= $linha['subtitulo'] ?></th>
             <td><?= $linha['sinopse'] ?></th>
             <td><?= $linha['valor'] ?></th>
+            <td><?= $linha['status'] ?></th>
             <td>
 
               <a href="alterarLivros.php?id=<?= $linha['id'] ?>" class="btn btn-warning"><i class="fa-solid fa-pen-to-square"></i></a>

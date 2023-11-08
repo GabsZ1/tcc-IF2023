@@ -9,11 +9,11 @@ if (isset($_POST['pesquisar'])){ //Se clicou no botão de pesquisar
   $where = " and titulo like '%" . $_POST['pesquisar'] ."%'";
 }
 
-$sql = "SELECT * FROM livros where heartstopper = 0 " . $where; //pega a tabela inteira para rodar
+$sql = "SELECT * FROM livros where heartstopper = 0 and status = 1 " . $where; //pega a tabela inteira para rodar
 
 $result = mysqli_query($conexao, $sql); 
 
-$sql2 = "SELECT * FROM livros where heartstopper = 1 " . $where; //pega a tabela pra abrir o heatstopper para rodar
+$sql2 = "SELECT * FROM livros where heartstopper = 1 and status = 1 " . $where; //pega a tabela pra abrir o heatstopper para rodar
 
 $result2 = mysqli_query($conexao, $sql2); 
 

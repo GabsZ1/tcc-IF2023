@@ -72,8 +72,10 @@ $linha = mysqli_fetch_array($resultado);
                 <label for="floatingPassword">Capa</label>
             </div>
             <div class="form-floating">
-                <select class="form-control" name="status" id="floatingInput" value="<?= $linha['status'] ?>">
+                <select class="form-control" id="floatingInput" name="status" value="<?= $linha['status'] ?>">
                     <option selected disabled value="">Status</option>
+                    <option value="1">Ativo</option>
+                    <option value="0">Inativo</option>
                 </select>
             </div>
 
