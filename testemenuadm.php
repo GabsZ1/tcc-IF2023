@@ -114,7 +114,7 @@
                         <ul class="navbar-nav">
                             <li class="nav-item dropdown">
                             
-                                <a class="nav-link fw-bold py-1 px-0 dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false" aria-current="page" href="#" style="margin-right:10px;">Listagens</a>
+                                <a class="nav-link fw-bold py-1 px-0 dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false" aria-current="page" href="#" style="margin-right:15px;">Listagens</a>
                             
                                 <ul class="dropdown-menu dropdown-menu">
                                     <li><a class="dropdown-item" href="listarLivros.php">Livros</a></li>
@@ -142,7 +142,7 @@
                         <ul class="navbar-nav">
                             <li class="nav-item dropdown">
                             
-                                <a class="nav-link fw-bold py-1 px-0 dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false" aria-current="page" href="#" style="margin-left:10px;">Compras</a>
+                                <a class="nav-link fw-bold py-1 px-0 dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false" aria-current="page" href="#" style="margin-left:15px;">Compras</a>
                             
                                 <ul class="dropdown-menu dropdown-menu">
                                     <li><a class="dropdown-item" href="#">Pendentes</a></li>
