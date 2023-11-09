@@ -109,7 +109,7 @@
             <header class="mb-auto">
                 <div>
                     <img src="img/imgSITE/nuvemBRANCO.png" style="width: 100px; margin-right: 250px;" alt="">
-                    <nav class="nav nav-masthead justify-content-center float-md-end">
+                    <nav class="nav nav-masthead justify-content-center float-md-end" style="margin-top: 35px;">
                         
                         <ul class="navbar-nav">
                             <li class="nav-item dropdown">
