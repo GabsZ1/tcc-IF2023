@@ -156,15 +156,12 @@
             </header>
 
             <main class="px-3" style="color:#5a5a5a;">
-                <h1>Cover your page.</h1>
-                <p class="lead">Cover is a one-page template for building simple and beautiful home pages. Download, edit the text, and add your own fullscreen background photo to make it your own.</p>
-                <p class="lead">
-                    <a href="#" class="btn btn-lg btn-light fw-bold border-white bg-white">Learn more</a>
-                </p>
+                <h1>Aqui vai ficar o nome do adm que acessar</h1>
+                <p class="lead">Bem vinda novamente, acesse o nessário para realizar as mudanças que preferir.</p>
             </main>
 
             <footer class="mt-auto text-white-50">
-                <p>Cover template for <a href="https://getbootstrap.com/" class="text-white">Bootstrap</a>, by <a href="https://twitter.com/mdo" class="text-white">@mdo</a>.</p>
+                <p>Adm, by <a class="text-white">@Ana Laura</a> & <a class="text-white">@Gabrille</a>.</p>
             </footer>
         </div>
 
