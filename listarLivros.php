@@ -44,7 +44,7 @@ $resultado = mysqli_query($conexao, $sql);
 
     <div class="card mt-3 mb-3">
       <div class="card-body">
-        <h1 class="card-title" style="color: #5a5a5a; font-family: '-apple-system'; font-weight: 300;">Listagem de Livros</h1> <a href="MenuAdm.php" class="btn btn-warning"><i class="fa-solid fa-rotate-left">Voltar</i></a>
+        <h1 class="card-title" style="color: #5a5a5a; font-family: '-apple-system'; font-weight: 300;">Listagem de Livros</h1> <a href="MenuAdm.php" class="btn" style="background-color: #9c93cf;"><i class="fa-solid fa-rotate-left">Voltar</i></a>
       </div>
     </div>
     <table class="table table-hover">
@@ -71,9 +71,9 @@ $resultado = mysqli_query($conexao, $sql);
             <td><?= $linha['status'] ?></th>
             <td>
 
-              <a href="alterarLivros.php?id=<?= $linha['id'] ?>" class="btn btn-warning"><i class="fa-solid fa-pen-to-square"></i></a>
+              <a href="alterarLivros.php?id=<?= $linha['id'] ?>" class="btn btn" style="background-color:#D4D6FA;"><i class="fa-solid fa-pen-to-square"></i></a>
 
-              <a href="usuarioListar.php?id=<?= $linha['id'] ?>" class="btn btn-danger" onclick="return confirm('Confirmar exclusão?')"><i class="fa-solid fa-trash-can"></i></a>
+              <a href="usuarioListar.php?id=<?= $linha['id'] ?>" class="btn btn-l" style="background-color:#9c93cf;" onclick="return confirm('Confirmar exclusão?')"><i class="fa-solid fa-trash-can"></i></a>
 
               <!--  <button type="button" class="btn btn-warning"><i class="fa-solid fa-pen-to-square"></i></button>
     <button type="button" class="btn btn-danger"><i class="fa-solid fa-trash-can"></i></button></td>
