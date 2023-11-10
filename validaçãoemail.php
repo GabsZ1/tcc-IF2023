@@ -1,5 +1,9 @@
-<input type="text"></input>
+<div class="form-item">
+    <span class="form-item-icon material-symbols-rounded">mail</span>
+    <input type="email" name="email" placeholder="Seu e-mail" required>
+</div>
 
+<button type="submmit">verifica</button>
 
 <script>
 
