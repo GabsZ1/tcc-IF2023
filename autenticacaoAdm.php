@@ -18,6 +18,10 @@ if (isset($_POST['logar'])):
     
     //Verificar se o usuário existe no BD e concede PERMISSÃO ou VOLTA  AO LOGIN
     if ($registros > 0) {
+
+       session_start();
+       $_SESSION['nome'] = $linha['nome'];
+
         header("location:MenuAdm.php");
     }else{
         echo "Usuário/senha inválido!";
@@ -26,3 +30,5 @@ if (isset($_POST['logar'])):
 
 endif;
 ?>
+
+
