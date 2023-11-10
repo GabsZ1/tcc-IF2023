@@ -158,18 +158,14 @@
             <main class="px-3" style="color:#5a5a5a;">
 
             <?php
-                  if (!isset($_SESSION['nome'])) {
-                ?>
-                
-                <h1>Bem vinda </h1>
-                    
-                <?php
-                  } else {
-                ?>
-                    <a href="sair.php">Sair</a>
-                <?php
-                  }
-                ?>
+                if (!isset($_SESSION['nome'])) {
+            ?>
+            
+                <h1>Bem vinda <?php echo nome; ?> </h1>  
+
+            <?php
+                }
+            ?>
 
 
                 
