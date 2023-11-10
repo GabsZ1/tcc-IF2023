@@ -156,7 +156,19 @@
             </header>
 
             <main class="px-3" style="color:#5a5a5a;">
-                <h1>Aqui vai ficar o nome do adm que acessar</h1>
+
+            <?php
+                if (!isset($_SESSION['nome'])) {
+            ?>
+            
+                <h1>Bem vinda <?php echo nome; ?> </h1>  
+
+            <?php
+                }
+            ?>
+
+
+                
                 <p class="lead">Bem vinda novamente, acesse o nessário para realizar as mudanças que preferir.</p>
             </main>
 
