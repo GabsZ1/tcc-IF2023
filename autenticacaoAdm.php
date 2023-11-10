@@ -15,7 +15,7 @@ if (isset($_POST['logar'])):
     require_once("conexao.php");
     $resultado= mysqli_query($conexao, $sql);
     $registros = mysqli_num_rows($resultado); //Retorna a quantidade de registros
-    
+    $linha = mysqli_fetch_array($resultado);
     //Verificar se o usuário existe no BD e concede PERMISSÃO ou VOLTA  AO LOGIN
     if ($registros > 0) {
 
