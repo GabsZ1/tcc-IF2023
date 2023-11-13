@@ -34,7 +34,7 @@ if (isset($_POST['cadastrar'])){
     <link rel="website icon" type="png" href="img/imgSITE/nuvemLILAS.png">
     <link href="css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@48,300,0,0" />
-    <title>Cadastro</title>
+    <title>Cadastro Adm</title>
 
 </head>
 <body class="body-cadastro">
