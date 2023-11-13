@@ -44,7 +44,7 @@ $resultado = mysqli_query($conexao, $sql);
 
     <div class="card mt-3 mb-3">
       <div class="card-body">
-        <h1 class="card-title" style="color: #5a5a5a; font-family: '-apple-system'; font-weight: 300;">Listagem de Livros</h1> <a href="MenuAdm.php" class="btn" style="background-color: #9c93cf;"><i class="fa-solid fa-rotate-left">Voltar</i></a>
+        <h1 class="card-title" style="color: #5a5a5a; font-family: '-apple-system'; font-weight: 300;">Listagem de Livros</h1> <a href="MenuAdm.php" class="btn" style="background-color: #9c93cf;"><i class="fa-solid fa-rotate-left"></i> Voltar</a>
       </div>
     </div>
     <table class="table table-hover">
