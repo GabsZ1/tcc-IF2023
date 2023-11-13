@@ -62,10 +62,8 @@ $linha = mysqli_fetch_array($resultado);
                 </select>
             </div>
 
-            <button type="submit" class="btn btn-primary mt-3" name="salvar" value="salvar">
-                <i class="fa-solid fa-check"></i>Salvar</button>
-                
-            <a href="listarEditoras.php" class="btn btn-warning mt-3"><i class="fa-solid fa-rotate-left">Voltar</i></a>
+            <button type="submit" class="btn mt-3" style="background-color:#D4D6FA;" name="salvar" value="salvar"><i class="fa-solid fa-check"></i> Salvar</button>
+            <a href="listarEditoras.php" class="btn btn-l mt-3" style="background-color:#9c93cf;"><i class="fa-solid fa-rotate-left"></i> Voltar</a>
         </form>
     </div>
 </body>
