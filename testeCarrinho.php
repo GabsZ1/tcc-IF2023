@@ -53,6 +53,7 @@
                 <h2>Carrinho de compras</h2>
                 <p class="lead">Onde estará seus livros mais desejados!</p>
                 </div>
+                <hr>
          
             </main>
 
