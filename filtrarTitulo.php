@@ -8,6 +8,11 @@ if (isset($_POST['pesquisar'])){ //Se clicou no botão de pesquisar
   $where = " and titulo like '%" . $_POST['pesquisar'] ."%'";
 }
 
+$where2 = "";
+if (isset($_POST['pesquisar'])){ //Se clicou no botão de pesquisar
+  $where2 = " and genero like '%" . $_POST['pesquisar'] ."%'";
+}
+
 $sql = "SELECT * FROM livros where heartstopper = 0 " . $where; //pega a tabela inteira para rodar
 
 $result = mysqli_query($conexao, $sql); 
@@ -15,6 +20,20 @@ $result = mysqli_query($conexao, $sql);
 $sql2 = "SELECT * FROM livros where heartstopper = 1 " . $where; //pega a tabela pra abrir o heatstopper para rodar
 
 $result2 = mysqli_query($conexao, $sql2); 
+
+$sql3 = "SELECT * FROM genero where heartstopper = 1 " . $where2;
+
+$result3 = mysqli_query($conexao, $sql3); 
+
+$sql4 = "SELECT * FROM genero where heartstopper = 0 " . $where2; //pega a tabela inteira para rodar
+
+$result4 = mysqli_query($conexao, $sql4); 
+
+
+
+
+
+
 
 // vou tentar fazer aqui a parte de quando for o adm a navbar dele aparecer
 
