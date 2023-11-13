@@ -73,21 +73,23 @@ if (isset($_POST['cadastrar'])){
                         <input type="text" name="valor" placeholder="Valor" required>
                     </div>
 
-                    <!--
+                    
                         
-                    <div class="form-item input-group mb-3">
-                        <input type="file" name="capa" class="form-control" id="inputGroupFile02">
-                        <label class="input-group-text" for="inputGroupFile02">Upload</label>
+                    <div class="form-item mb-3">
+                        <input type="file" name="capa" id="inputGroupFile02">
                     </div>
 
-                     <div class="form-item input-group mb-3">
+                    <!-- <div class="input-group mb-3">
+                            <input type="file" class="form-control" id="inputGroupFile02">
+                            <label class="input-group-text" for="inputGroupFile02">Upload</label>
+                        </div>
+                        
+                    <div class="form-item input-group mb-3">
                         <form name="form" method="post" enctype="multipart/form-data">
                             <input type="file" class="form-control" id="inputGroupFile02" name="arquivo" id="arquivo">
                         </form>
                         <label class="input-group-text" for="inputGroupFile02">Upload</label>
-                    </div> 
-                    
-                    -->
+                    </div> -->
 
                     <div class="form-item">
                         <select name="class" id="estado" value="<?= $linha['class'] ?>" required>

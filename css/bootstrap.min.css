@@ -852,8 +852,7 @@ nav {
 
 .login input[type="text"],
 .login input[type="password"],
-.login input[type="email"],
-.login input[type="file"] {
+.login input[type="email"] {
   border: none;
   outline: none;
   background: rgba(255, 255, 255, .3);
@@ -1010,8 +1009,10 @@ input[type="date"]::-webkit-calendar-picker-indicator {
 .cadastro input[type="date"],
 .cadastro input[type="email"],
 .cadastro input[type="tel"],
+.cadastro input[type="file"],
 .cadastro select[id="estado"],
-.cadastro select[id="cidade"] {
+.cadastro select[id="cidade"]
+ {
   border: none;
   outline: none;
   background: rgba(255, 255, 255, .3);
