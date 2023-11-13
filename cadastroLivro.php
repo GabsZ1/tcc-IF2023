@@ -41,7 +41,7 @@ if (isset($_POST['cadastrar'])){
 <body class="body-cadastro">
     <div class="text-center">
         <div class="cadastro-container">
-            <div class="cadastro" style="width: 650px;">
+            <div class="cadastro" style="width: 650px; margin-top: 20px; margin-bottom: 40px;">
                 <div class="cadastro-logo" style="margin-bottom: 0px;">
                     <a href="login.php">
                         <img src="img/imgSITE/nuvemLILAS.png" alt="logo">
@@ -120,9 +120,10 @@ if (isset($_POST['cadastrar'])){
                         <input class="btn btn-primary btn-lg btn-block active" type="submit" value="Cadastrar" name="cadastrar">
                     </div>
 
-                    Autor não encontrado? <a href="cadastroAutor.php">Cadastre-o</a>!<br>
-                    Editora não encontrada? <a href="cadastroEditora.php">Cadastre-a</a>!<br>
-                    
+                    <div class="login-footer">
+                        <h6>Autor não encontrado? <a href="cadastroAutor.php">Cadastre-o</a>!<br>
+                        Editora não encontrada? <a href="cadastroEditora.php">Cadastre-a</a>!<br></h6>
+                    </div>
                 </form>
             </div>
         </div>
