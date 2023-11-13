@@ -63,6 +63,14 @@ $linha = mysqli_fetch_array($resultado);
                 <input type="text" class="form-control" id="floatingInput" name="sinopse" value="<?= $linha['sinopse'] ?>">
                 <label for="floatingInput">Sinopse</label>
             </div>
+
+            <!-- <div class="form-floating mb-3">
+                <div class="input-group">
+                    <span class="input-group-text">Sinopse</span>
+                    <textarea class="form-control" aria-label="With textarea"></textarea>
+                </div>
+            </div> -->
+
             <div class="form-floating mb-3">
                 <input type="text" class="form-control" id="floatingInput" name="valor" value="<?= $linha['valor'] ?>">
                 <label for="floatingInput">Valor</label>
