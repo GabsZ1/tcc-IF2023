@@ -63,12 +63,42 @@ if (isset($_POST['cadastrar'])){
                     <div class="form-item">
                         <input type="text" name="valor" placeholder="Valor">
                     </div>
+
+
                     <div class="form-item">
-                        <input type="text" name="editora" placeholder="Editora" required>
+                        <select name="livrosAutor_id" id="estado" required>
+                            <?php
+                                $sql = "select * from autor order by nome";
+                                $resultado = mysqli_query($conexao, $sql);
+                                
+                                while ($linha = mysqli_fetch_array($resultado)) :
+                                    $id = $linha['id'];
+                                    $nome = $linha['nome'];
+
+                                    echo "<option value='{$id}'>{$nome}</option>";
+                                endwhile;
+                                ?>
+                        </select>
                     </div>
+
+
                     <div class="form-item">
-                        <input type="text" name="autor" placeholder="Autor" required>
+                        <select name="livrosEditora_id" id="estado" required>
+                            <?php
+                                $sql = "select * from editora order by nome";
+                                $resultado = mysqli_query($conexao, $sql);
+                                
+                                while ($linha = mysqli_fetch_array($resultado)) :
+                                    $id = $linha['id'];
+                                    $nome = $linha['nome'];
+
+                                    echo "<option value='{$id}'>{$nome}</option>";
+                                endwhile;
+                                ?>
+                        </select>
                     </div>
+
+
 
 
 
