@@ -30,6 +30,7 @@ $result2 = mysqli_query($conexao, $sql2);
     <header>
       <?php require_once("navbar.php"); ?>
     </header>
+    <!-- colocar aqui aquilo que tem no da pamela algo como Títulos com a pesquisa > amor(perguntar para ver como faz para parecer oq a pessoa pesquisou) -->
     <div>
       <?php while ($row = $result->fetch_assoc()) { ?>
         <a href="paginaproduto.php?id=<?php echo $row['id']; ?>" class="img-fluid mr-2" alt="img">
