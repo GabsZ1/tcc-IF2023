@@ -41,30 +41,33 @@ if (isset($_POST['cadastrar'])){
 <body class="body-cadastro">
     <div class="text-center">
         <div class="cadastro-container">
-            <div class="cadastro" style="height: 895px; width: 650px;">
-                <div class="cadastro-logo">
+            <div class="cadastro" style="width: 650px;">
+                <div class="cadastro-logo" style="margin-bottom: 0px;">
                     <a href="login.php">
                         <img src="img/imgSITE/nuvemLILAS.png" alt="logo">
                     </a>
                 </div>
                 <div class="cadastro-heather">
-                    <h1>Cadastro de Livros</h1>
+                    <h1 style="margin-bottom: 40px;">Cadastro de Livros</h1>
                 </div>
                 <form class="cadastro-form" method="post">
                     <div class="form-item">
                         <input type="text" name="titulo" placeholder="Título" required autofocus>
                     </div>
                     <div class="form-item">
-                        
                         <input type="text" name="subtitulo" placeholder="Subtitulo" required>
                     </div>
                     <div class="form-item">
-                        
                         <input type="text" name="sinopse" placeholder="Sinopse" required>
                     </div>
-
                     <div class="form-item">
                         <input type="text" name="valor" placeholder="Valor">
+                    </div>
+                    <div class="form-item">
+                        <input type="text" name="editora" placeholder="Editora" required>
+                    </div>
+                    <div class="form-item">
+                        <input type="text" name="autor" placeholder="Autor" required>
                     </div>
 
 
@@ -78,7 +81,7 @@ if (isset($_POST['cadastrar'])){
                     
 
                     <div class="form-item-outro">
-                        <input class="btn btn-primary btn-lg btn-block active" style="left: -30px;" type="submit" value="Cadastrar" name="cadastrar">
+                        <input class="btn btn-primary btn-lg btn-block active" type="submit" value="Cadastrar" name="cadastrar">
                     </div>
                 </form>
             </div>

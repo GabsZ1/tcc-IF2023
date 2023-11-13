@@ -25,4 +25,6 @@ $sql ="select livros.id, livros.titulo,
 // agora listar todos os dados dessa consulta , nome produto, qntd, valor unitario, valor total unitario, e no final o valor total da compra
 
 
+
+
 ?>
