@@ -131,7 +131,7 @@
                                 <a class="nav-link fw-bold py-1 px-0 dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false" aria-current="page" href="#">Cadastros</a>
                             
                                 <ul class="dropdown-menu dropdown-menu">
-                                    <li><a class="dropdown-item" href="cadastroLivros.php">Livros</a></li>
+                                    <li><a class="dropdown-item" href="cadastroLivro.php">Livros</a></li>
                                     <li><a class="dropdown-item" href="listarEditoras.php">Editoras</a></li>
                                     <li><a class="dropdown-item" href="listarAutores.php">Autores</a></li>
                                     <li><hr class="dropdown-divider"></li>
