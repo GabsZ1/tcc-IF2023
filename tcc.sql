@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Tempo de geração: 08/11/2023 às 20:49
+-- Tempo de geração: 10/11/2023 às 16:24
 -- Versão do servidor: 10.4.28-MariaDB
 -- Versão do PHP: 8.2.4
 
@@ -84,6 +84,18 @@ INSERT INTO `autor` (`id`, `nome`, `status`) VALUES
 (20, 'ALICE OSEMAN', 1),
 (21, 'KIERA CASS', 1),
 (22, 'ELAYNE BAETA', 1);
+
+-- --------------------------------------------------------
+
+--
+-- Estrutura para tabela `carrinho`
+--
+
+CREATE TABLE `carrinho` (
+  `id` int(11) NOT NULL,
+  `livros_id` int(11) NOT NULL,
+  `quantidade` int(13) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- --------------------------------------------------------
 
@@ -226,7 +238,7 @@ INSERT INTO `livros` (`id`, `titulo`, `subtitulo`, `sinopse`, `valor`, `capa`, `
 (4, 'EU E ESSE MEU CORAÇÃO', 'Leah MacKenzie, de 17 anos, não tem coração. O que a mantém viva é um coração artificial que ela carrega dentro de uma mochila.', 'Com seu tipo sanguíneo raro, um transplante é como um sonho distante. Conformada, ela tenta se esquecer de que está com os dias contados, criando uma lista de “coisas para fazer antes de morrer”.\r\n\r\nDe repente, Leah recebe uma segunda chance: há um coração disponível! O problema é quando ela descobre que o doador é um garoto da sua escola – e que supostamente se matou!\r\n\r\nMatt, o irmão gêmeo do doador, se recusa a acreditar que Eric se suicidou. Quando Leah o procura, eles descobrem que ambos têm sonhos semelhantes que podem ter pistas do que realmente aconteceu a Eric.\r\n\r\nEnquanto tentam desvendar esse mistério, Matt e Leah se apaixonam e não querem correr o risco de perder um ao outro. Mas nem a vida nem um coração transplantado vem com garantias.\r\n\r\nQuem diria que viver exige mais coragem do que morrer?', 33, 'capa4.jpg', 'class12.png', 1, 5, 23, 0),
 (5, 'OS SETE MARIDOS DE EVELYN HUGO', 'Com todo o esplendor que só a Hollywood do século passado pode oferecer, esta é uma narrativa inesquecível sobre os sacrifícios que fazemos por amor, o perigo dos segredos e o preço da fama.', 'Lendária estrela de Hollywood, Evelyn Hugo sempre esteve sob os holofotes ― seja estrelando uma produção vencedora do Oscar, protagonizando algum escândalo ou aparecendo com um novo marido… pela sétima vez. Agora, prestes a completar oitenta anos e reclusa em seu apartamento no Upper East Side, a famigerada atriz decide contar a própria história ― ou sua “verdadeira história” ―, mas com uma condição: que Monique Grant, jornalista iniciante e até então desconhecida, seja a entrevistadora. Ao embarcar nessa misteriosa empreitada, a jovem repórter começa a se dar conta de que nada é por acaso ― e que suas trajetórias podem estar profunda e irreversivelmente conectadas.\r\n\r\n“Evelyn Hugo faz Elizabeth Taylor parecer sem graça. Você vai rir com ela, chorar, sofrer, e então voltar para a primeira página e fazer tudo de novo.” ― Heather Cocks e Jessica Morgan, autoras de The Royal We.', 32, 'capa5.jfif', 'class16.png', 1, 6, 21, 0),
 (6, 'O HOMEM DE GIZ', 'Assassinato e sinais misteriosos em uma trama para fãs de Stranger Things e Stephen King', 'Em 1986, Eddie e os amigos passam a maior parte dos dias andando de bicicleta pela pacata vizinhança em busca de aventuras. Os desenhos a giz são seu código secreto: homenzinhos rabiscados no asfalto; mensagens que só eles entendem. Mas um desenho misterioso leva o grupo de crianças até um corpo desmembrado e espalhado em um bosque. Depois disso, nada mais é como antes.\r\n\r\nEm 2016, Eddie se esforça para superar o passado, até que um dia ele e os amigos de infância recebem um mesmo aviso: o desenho de um homem de giz enforcado. Quando um dos amigos aparece morto, Eddie tem certeza de que precisa descobrir o que de fato aconteceu trinta anos atrás.\r\n\r\nAlternando habilidosamente entre presente e passado, O Homem de Giz traz o melhor do suspense: personagens maravilhosamente construídos, mistérios de prender o fôlego e reviravoltas que vão impressionar até os leitores mais escaldados.', 44, 'capa6.jpg', 'class16.png', 1, 7, 21, 0),
-(7, 'LADY KILLERS', '“Telfer prova que você pode esfaquear, envenenar e sufocar os arquétipos previsíveis sobre assassinas e escrever algo lascivo e divertido.” — Caitlin Doughty, autora de Confissões do Crematório.', 'Quando pensamos em assassinos em série, pensamos em homens. Mais precisamente, em homens matando mulheres inocentes, vítimas de um apetite atroz por sangue e uma vontade irrefreável de carnificina. As mulheres podem ser tão letais quanto os homens e deixar um rastro de corpos por onde passam ― então o que acontece quando as pessoas são confrontadas com uma assassina em série? Quando as ideias de “sexo frágil” se quebram e fitamos os desconcertantes olhos de uma mulher com sangue seco sob as unhas?', 58, 'capa7.webp', 'class18.png', 1, 8, 24, 0),
+(7, 'LADY KILLERS', '“Telfer prova que você pode esfaquear, envenenar e sufocar os arquétipos previsíveis sobre assassinas e escrever algo lascivo e divertido.” — Caitlin Doughty, autora de Confissões do Crematório.', 'Quando pensamos em assassinos em série, pensamos em homens. Mais precisamente, em homens matando mulheres inocentes, vítimas de um apetite atroz por sangue e uma vontade irrefreável de carnificina. As mulheres podem ser tão letais quanto os homens e deixar um rastro de corpos por onde passam ― então o que acontece quando as pessoas são confrontadas com uma assassina em série? Quando as ideias de “sexo frágil” se quebram e fitamos os desconcertantes olhos de uma mulher com sangue seco sob as unhas?', 48, 'capa7.webp', 'class18.png', 1, 8, 24, 0),
 (8, 'LEITURA DE VERÃO', 'Dois escritores e uma temporada na praia.', 'Augustus Everett é um aclamado autor de ficção literária. January Andrews escreve romances best-seller. Enquanto ela cria seus “felizes para sempre”, ele mata todos os seus personagens.\r\n\r\nEles definitivamente são polos opostos.\r\n\r\nA única coisa que têm em comum é que, durante três meses, vão morar em casas de praia vizinhas, ambos falidos e paralisados por um bloqueio criativo.\r\n\r\nAté que, em uma noite nebulosa, uma coisa leva à outra e eles fazem um acordo que tem o objetivo de arrancá-los da zona de conforto: Augustus vai passar o verão redigindo um livro com final feliz, e January vai escrever o próximo clássico da literatura. Ela vai levá-lo a viagens de campo dignas de uma comédia romântica, e ele a acompanhará em entrevistas com sobreviventes de um culto de suicídio (obviamente).\r\n\r\nCada um vai finalizar um livro e ninguém vai se apaixonar. Será?', 34, 'capa8.jpg', 'class16.png', 1, 9, 25, 0),
 (9, 'LUA NOVA', 'O segundo livro da série que vendeu mais de 15 milhões de exemplares em todo o mundo, Lua nova alcançou o primeiro lugar na lista de mais vendidos do The New York Times.', 'Para Bella Swan, há um coisa mais importante do que a própria vida: Edward Cullen. Mas estar apaixonada por um vampiro é ainda mais perigoso do que ela poderia ter imaginado. Edward já resgatara Bella das garras de um monstro cruel, mas agora, quando o relacionamento ousado do casal ameaça tudo o que lhes é próximo e querido, eles percebem que seus problemas podem estar apenas começando...\r\n\r\nLegiões de leitores que ficaram em transe com o best-seller Crepúsculo estão ávidos pela sequência da história de amor de Bella e Edward. Em Lua nova, Stephenie Meyer nos dá outra combinação irresistível de romance e suspense com um toque sobrenatural. Apaixonante e cheia de reviravoltas surpreendentes, essa saga de amor e vampiros segue rumo à imortalidade literária.', 34, 'capa9.jpg', 'class16.png', 1, 10, 21, 0),
 (10, 'A MALDIÇÃO DO MAR', 'Quando corpos de garotos começam a aparecer no litoral da cidade de Sparrow, alguns moradores se perguntam se a antiga lenda sobre as bruxas vingativas seria verdade. Mas até onde essa caça às bruxas ', 'Há dois séculos, três irmãs foram condenadas à morte por, supostamente, cometerem bruxaria. Pedras foram amarradas em seus tornozelos, e elas morreram afogadas nas águas profundas que margeiam a cidade.\r\n\r\nAgora, por um breve período de tempo – a cada dia primeiro de junho até o solstício de verão –, diz a lenda que as irmãs retornam, roubando os corpos de três meninas para que, por meio deles, possam buscar sua vingança, seduzindo e afogando meninos até a morte.\r\n\r\nComo muitos habitantes locais, Penny Talbot, conhece a lenda de cor. Mas, neste ano, quando a cidade se prepara para o anual retorno das irmãs, um rapaz desconhecido, Bo Carter, chega à cidade buscando suas próprias respostas. E Penny o acolhe.\r\n\r\nMas quando corpos de meninos locais começam a aparecer no litoral, o clima de desconfiança e medo atinge a cidade, dando início a uma verdadeira caça às bruxas.\r\n\r\nA narrativa alterna, os eletrizantes eventos do presente com relatos do diário das jovens condenadas por bruxaria, re', 30, 'capa10.jpg', 'class12.png', 1, 11, 26, 0),
@@ -272,8 +284,9 @@ INSERT INTO `usuario` (`id`, `nome`, `email`, `senha`, `dataNascimento`, `cpf`, 
 (4, 'Ana Laura Dias de Cabral', 'Nalauraaa@gmail.com', '56789', '10/03/20', '153246', 'Cafezal', 'AL', '(44)98535-3', 1),
 (5, 'Ana Laura Dias de Cabral', 'Nalauraaa@gmail.com', '56789', '10/03/20', '153246', 'Cafezal', 'AL', '(44)98535-3', 1),
 (6, 'Batista', 'Batistaaa@gmail.com', '4134321', '30/08/20', '243517', 'Cruzeiro', 'MT', '(44)87263-5', 1),
-(7, 'Gustavo Antonio', 'guuuuA@gmail.com', '243534645', '21/12/2003', '084.709.149', 'Icaraíma', 'PE', '(44)87392-0223', 1),
-(8, 'Gustavo Antonio', 'guuuuA@gmail.com', '23214124', '21/02/2311', '111.111.111', 'Umuarama', 'PI', '(43)23424-4323', 1);
+(7, 'Gustavo Antonio', 'guuuuA@gmail.com', '243534645', '21/12/20', '084.709.149', 'Icaraíma', 'PE', '(44)87392-0223', 1),
+(8, 'Gustavo Antonio', 'guuuuA@gmail.com', '23214124', '21/02/23', '111.111.111', 'Umuarama', 'PI', '(43)23424-4323', 1),
+(25, 'ebfrenfdrenfde', 'favgd@bfrbfrn', '33213123', '2001-03-', '08470914901', 'Abadia dos Dourados', 'MG', '(22)22222-2222', 1);
 
 --
 -- Índices para tabelas despejadas
@@ -290,6 +303,13 @@ ALTER TABLE `adm`
 --
 ALTER TABLE `autor`
   ADD PRIMARY KEY (`id`);
+
+--
+-- Índices de tabela `carrinho`
+--
+ALTER TABLE `carrinho`
+  ADD PRIMARY KEY (`id`),
+  ADD KEY `fk_livrosCarrinho_livros` (`livros_id`);
 
 --
 -- Índices de tabela `editora`
@@ -333,13 +353,19 @@ ALTER TABLE `usuario`
 -- AUTO_INCREMENT de tabela `adm`
 --
 ALTER TABLE `adm`
-  MODIFY `id` int(13) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` int(13) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT de tabela `autor`
 --
 ALTER TABLE `autor`
   MODIFY `id` int(13) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=23;
+
+--
+-- AUTO_INCREMENT de tabela `carrinho`
+--
+ALTER TABLE `carrinho`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT de tabela `editora`
@@ -369,11 +395,17 @@ ALTER TABLE `livros`
 -- AUTO_INCREMENT de tabela `usuario`
 --
 ALTER TABLE `usuario`
-  MODIFY `id` int(13) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+  MODIFY `id` int(13) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=32;
 
 --
 -- Restrições para tabelas despejadas
 --
+
+--
+-- Restrições para tabelas `carrinho`
+--
+ALTER TABLE `carrinho`
+  ADD CONSTRAINT `fk_livrosCarrinho_livros` FOREIGN KEY (`livros_id`) REFERENCES `livros` (`id`);
 
 --
 -- Restrições para tabelas `livrogenero`
