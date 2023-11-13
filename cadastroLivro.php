@@ -32,9 +32,18 @@ if (isset($_POST['cadastrar'])){
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@200&family=Poppins:wght@100&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.0/font/bootstrap-icons.css">
+
     <link rel="website icon" type="png" href="img/imgSITE/nuvemLILAS.png">
     <link href="css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@48,300,0,0" />
+
     <title>Cadastro livro</title>
 </head>
 <!-- ADICIONAR AUTOR E EDITORA E LÁ EM BAIXO CAMINHO PARA CADASTRAR ELES -->
@@ -61,15 +70,24 @@ if (isset($_POST['cadastrar'])){
                         <input type="text" name="sinopse" placeholder="Sinopse" required>
                     </div>
                     <div class="form-item">
-                        <input type="text" name="valor" placeholder="Valor">
+                        <input type="text" name="valor" placeholder="Valor" required>
                     </div>
 
-                    <!-- <div class="form-item input-group mb-3">
+                    <!--
+                        
+                    <div class="form-item input-group mb-3">
+                        <input type="file" name="capa" class="form-control" id="inputGroupFile02">
+                        <label class="input-group-text" for="inputGroupFile02">Upload</label>
+                    </div>
+
+                     <div class="form-item input-group mb-3">
                         <form name="form" method="post" enctype="multipart/form-data">
                             <input type="file" class="form-control" id="inputGroupFile02" name="arquivo" id="arquivo">
                         </form>
                         <label class="input-group-text" for="inputGroupFile02">Upload</label>
-                    </div> -->
+                    </div> 
+                    
+                    -->
 
                     <div class="form-item">
                         <select name="class" id="estado" value="<?= $linha['class'] ?>" required>
