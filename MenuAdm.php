@@ -109,8 +109,23 @@
         <div class="cover-container d-flex w-100 h-100 p-3 mx-auto flex-column">
             <header class="mb-auto">
                 <div>
-                    <img src="img/imgSITE/nuvemBRANCO.png" style="width: 100px; margin-right: 250px;" alt="">
+                    <img src="img/imgSITE/nuvemBRANCO.png" style="width: 100px; margin-right: 150px;" alt="">
                     <nav class="nav nav-masthead justify-content-center float-md-end" style="margin-top: 35px;">
+
+                        <!-- <a class="nav-link active" href="#">Home</a> -->
+
+                        <ul class="navbar-nav">
+                            <li class="nav-item dropdown">
+                            
+                                <a class="nav-link fw-bold py-1 px-0 dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false" aria-current="page" href="#" style="margin-right:15px;">Adm</a>
+                            
+                                <ul class="dropdown-menu dropdown-menu">
+                                    <li><a class="dropdown-item" href="cadastrarAdm.php">Cadastre um administrador</a></li>
+                                    <li><hr class="dropdown-divider"></li>
+                                    <li><a class="dropdown-item" href="sair.php">Desconecte-se</a></li>
+                                </ul>
+                            </li>
+                        </ul>
                         
                         <ul class="navbar-nav">
                             <li class="nav-item dropdown">
@@ -134,8 +149,6 @@
                                     <li><a class="dropdown-item" href="cadastroLivro.php">Livros</a></li>
                                     <li><a class="dropdown-item" href="cadastroEditora.php">Editoras</a></li>
                                     <li><a class="dropdown-item" href="cadastroAutor.php">Autores</a></li>
-                                    <li><hr class="dropdown-divider"></li>
-                                    <li><a class="dropdown-item" href="cadastrarAdm.php">Administrador</a></li>
                                 </ul>
                             </li>
                         </ul>
