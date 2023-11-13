@@ -64,9 +64,18 @@ if (isset($_POST['cadastrar'])){
                         <input type="text" name="valor" placeholder="Valor">
                     </div>
 
+                    <div class="form-item">
+                        <select name="class" id="estado" value="<?= $linha['class'] ?>" required>
+                            <option selected disabled value="">Classificação indicativa</option>
+                            <option value="classL.png">Classificação Livre</option>
+                            <option value="0">Inativo</option>
+                        </select>
+                    </div>
+
 
                     <div class="form-item">
                         <select name="livrosAutor_id" id="estado" required>
+                            <option selected disabled value="">Autor(a)</option>
                             <?php
                                 $sql = "select * from autor order by nome";
                                 $resultado = mysqli_query($conexao, $sql);
@@ -84,6 +93,7 @@ if (isset($_POST['cadastrar'])){
 
                     <div class="form-item">
                         <select name="livrosEditora_id" id="estado" required>
+                            <option selected disabled value="">Editora</option>
                             <?php
                                 $sql = "select * from editora order by nome";
                                 $resultado = mysqli_query($conexao, $sql);
