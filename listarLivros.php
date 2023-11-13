@@ -56,7 +56,8 @@ $resultado = mysqli_query($conexao, $sql);
           <th scope="col">Sinopse</th>
           <th scope="col">Valor</th>
           <th scope="col">Status</th>
-          <th scope="col">Ação</th>
+          <th scope="col">Alterar</th>
+          <th scope="col">Deletar</th>
         </tr>
       </thead>
 
@@ -70,15 +71,13 @@ $resultado = mysqli_query($conexao, $sql);
             <td><?= $linha['valor'] ?></th>
             <td><?= $linha['status'] ?></th>
             <td>
-
               <a href="alterarLivros.php?id=<?= $linha['id'] ?>" class="btn btn" style="background-color:#D4D6FA;"><i class="fa-solid fa-pen-to-square"></i></a>
-
+            </th>
+            <td>
               <a href="usuarioListar.php?id=<?= $linha['id'] ?>" class="btn btn-l" style="background-color:#9c93cf;" onclick="return confirm('Confirmar exclusão?')"><i class="fa-solid fa-trash-can"></i></a>
-
-              <!--  <button type="button" class="btn btn-warning"><i class="fa-solid fa-pen-to-square"></i></button>
-    <button type="button" class="btn btn-danger"><i class="fa-solid fa-trash-can"></i></button></td>
-    </tr> -->
-            <?php } ?>
+            </th>
+          </tr>
+        <?php } ?>
 
       </tbody>
     </table>
