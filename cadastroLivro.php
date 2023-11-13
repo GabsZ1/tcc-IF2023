@@ -116,10 +116,13 @@ if (isset($_POST['cadastrar'])){
                         </select>
                     </div>
                     
-
                     <div class="form-item-outro">
                         <input class="btn btn-primary btn-lg btn-block active" type="submit" value="Cadastrar" name="cadastrar">
                     </div>
+
+                    Autor não encontrado? <a href="cadastroAutor.php">Cadastre-o</a>!<br>
+                    Editora não encontrada? <a href="cadastroEditora.php">Cadastre-a</a>!<br>
+                    
                 </form>
             </div>
         </div>
