@@ -23,6 +23,7 @@ $result2 = mysqli_query($conexao, $sql2);
   <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="website icon" type="png" href="img/imgSITE/nuvemLILAS.png">
     <link href="css/bootstrap.min.css" rel="stylesheet">
     <title>Produtos-Pesquisados</title>
   </head>
@@ -34,7 +35,8 @@ $result2 = mysqli_query($conexao, $sql2);
     <div>
       <?php while ($row = $result->fetch_assoc()) { ?>
         <a href="paginaproduto.php?id=<?php echo $row['id']; ?>" class="img-fluid mr-2" alt="img">
-        <img src="img/LIVRO/<?php echo $row['capa']; ?>" style="width: 400px; height: 540px;"/></a>
+          <img src="img/LIVRO/<?php echo $row['capa']; ?>" style="width: 400px; height: 540px; margin-bottom: 10px"/>
+        </a>
       <?php } ?> 
     </div>
   </body>
