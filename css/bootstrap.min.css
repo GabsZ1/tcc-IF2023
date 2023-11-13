@@ -83,7 +83,7 @@ section {
 
 /* imagens da filtragem de pesquisa */
 
-.filtro > img{
+.filtro img{
   height: 540px;
   position:relative;
   top: 90%;
@@ -97,10 +97,6 @@ section {
   display: flex;
   justify-content: center;
 }
-
-
-
-
 
 
 
@@ -480,7 +476,8 @@ html{
   color: #fff;
 
 }
- .left-side span{
+
+.left-side span{
   font-size: 30px;
   font-weight: 500;
   color: #5A5A5A;

@@ -7,7 +7,7 @@
 
 <nav class="navbar fixed-top navbar-expand-lg bg-body-tert bg-dream" style="justify-content: left">
 
-<!-- div principal -->
+  <!-- div principal -->
   <div style="width: 15%; display: flex; justify-content: left">
     <a class="mt-1" href="index.php" style="padding-left: 4.3em; align-items: left; justify-content: left; text-align: left">
         <img src="img/imgSITE/nuvemLILAS.png" width="120" height="105">

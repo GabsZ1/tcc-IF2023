@@ -19,12 +19,12 @@ $result2 = mysqli_query($conexao, $sql2);
 ?>
 
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link href="css/bootstrap.min.css" rel="stylesheet">
-  <title>Produtos-Pesquisados</title>
+  <title>Document</title>
 </head>
 <body class="filtro">
   <header>
@@ -38,3 +38,4 @@ $result2 = mysqli_query($conexao, $sql2);
   </div>
 </body>
 </html>
+
