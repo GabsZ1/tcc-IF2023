@@ -20,21 +20,21 @@ $result2 = mysqli_query($conexao, $sql2);
 
 <!DOCTYPE html>
 <html lang="pt-br">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link href="css/bootstrap.min.css" rel="stylesheet">
-  <title>Produtos-Pesquisados</title>
-</head>
-<body class="filtro">
-  <header>
-    <?php require_once("navbar.php"); ?>
-  </header>
-  <div>
-    <?php while ($row = $result->fetch_assoc()) { ?>
-      <a href="paginaproduto.php?id=<?php echo $row['id']; ?>" class="img-fluid mr-2" alt="img">
-      <img src="img/LIVRO/<?php echo $row['capa']; ?>" /></a>
-    <?php } ?> 
-  </div>
-</body>
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <title>Produtos-Pesquisados</title>
+  </head>
+  <body class="filtro" style="margin-top: 150px;">
+    <header>
+      <?php require_once("navbar.php"); ?>
+    </header>
+    <div>
+      <?php while ($row = $result->fetch_assoc()) { ?>
+        <a href="paginaproduto.php?id=<?php echo $row['id']; ?>" class="img-fluid mr-2" alt="img">
+        <img src="img/LIVRO/<?php echo $row['capa']; ?>" style="width: 400px; height: 540px;"/></a>
+      <?php } ?> 
+    </div>
+  </body>
 </html>
