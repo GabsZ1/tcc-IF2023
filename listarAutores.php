@@ -44,7 +44,7 @@ $resultado = mysqli_query($conexao, $sql);
 
     <div class="card mt-3 mb-3">
       <div class="card-body">
-        <h1 class="card-title" style="color: #5a5a5a; font-family: '-apple-system'; font-weight: 300;">Listagem de Autores</h1>
+        <h1 class="card-title" style="color: #5a5a5a; font-family: '-apple-system'; font-weight: 300;">Listagem de Autores</h1> <a href="MenuAdm.php" class="btn" style="background-color: #9c93cf;"><i class="fa-solid fa-rotate-left"></i> Voltar</a>
       </div>
     </div>
     <table class="table table-hover">
@@ -53,7 +53,8 @@ $resultado = mysqli_query($conexao, $sql);
           <th scope="col">ID</th>
           <th scope="col">Nome</th>
           <th scope="col">Status</th>
-          <th scope="col">Ação</th>
+          <th scope="col">Alterar</th>
+          <th scope="col">Deletar</th>
         </tr>
       </thead>
 
@@ -64,16 +65,13 @@ $resultado = mysqli_query($conexao, $sql);
             <td><?= $linha['nome'] ?></th>
             <td><?= $linha['status'] ?></th>
             <td>
-
-              <a href="alterarAutores.php?id=<?= $linha['id'] ?>" class="btn btn-warning"><i class="fa-solid fa-pen-to-square"></i></a>
-
-              <a href="usuarioListar.php?id=<?= $linha['id'] ?>" class="btn btn-danger" onclick="return confirm('Confirmar exclusão?')"><i class="fa-solid fa-trash-can"></i></a>
-
-              <!--  <button type="button" class="btn btn-warning"><i class="fa-solid fa-pen-to-square"></i></button>
-    <button type="button" class="btn btn-danger"><i class="fa-solid fa-trash-can"></i></button></td>
-    </tr> -->
-            <?php } ?>
-
+              <a href="alterarLivros.php?id=<?= $linha['id'] ?>" class="btn btn" style="background-color:#D4D6FA;"><i class="fa-solid fa-pen-to-square"></i></a>
+            </th>
+            <td>
+              <a href="usuarioListar.php?id=<?= $linha['id'] ?>" class="btn btn-l" style="background-color:#9c93cf;" onclick="return confirm('Confirmar exclusão?')"><i class="fa-solid fa-trash-can"></i></a>
+            </th>
+          </tr>
+        <?php } ?>
       </tbody>
     </table>
 </body>
