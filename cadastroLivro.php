@@ -68,10 +68,11 @@ if (isset($_POST['cadastrar'])){
                         <select name="class" id="estado" value="<?= $linha['class'] ?>" required>
                             <option selected disabled value="">Classificação indicativa</option>
                             <option value="classL.png">Classificação Livre</option>
-                            <option value="0">Inativo</option>
+                            <option value="class12.png">Classificação +12</option>
+                            <option value="class16.png">Classificação +16</option>
+                            <option value="class18.png">Classificação +18</option>
                         </select>
                     </div>
-
 
                     <div class="form-item">
                         <select name="livrosAutor_id" id="estado" required>
