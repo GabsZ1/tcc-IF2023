@@ -83,17 +83,16 @@ section {
 
 /* imagens da filtragem de pesquisa */
 
-.filtro img{
+.filtro > img{
   height: 540px;
   position:relative;
   top: 90%;
   left: 20%;
   transform: translate(-50%, -50%);
   width: 400px;
-
 }
 
-.filtro{
+.filtro {
   background-color: #E5E3FA;
   display: flex;
   justify-content: center;
