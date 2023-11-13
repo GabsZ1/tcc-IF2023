@@ -39,7 +39,9 @@ if (isset($_POST['cadastrar'])){
         <div class="cadastro-container">
             <div class="cadastro" >
                 <div class="cadastro-logo" style="margin-bottom: 0px;">
+                    <a href="MenuAdm.php">
                         <img src="img/imgSITE/nuvemLILAS.png" alt="logo">
+                    </a>
                 </div>
                 <div class="cadastro-heather">
                     <h1 style="margin-bottom: 30px">Cadastro de Autor</h1>
