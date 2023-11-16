@@ -53,8 +53,53 @@
                 <h2>Carrinho de compras</h2>
                 <p class="lead">Onde estará seus livros mais desejados!</p>
                 </div>
-                <hr>
-         
+                
+                <form action="exibirCarrinho.php" method="post">
+                    <div class="row">
+                        <!-- div resumo compra -->
+                        <div class="col-md-4 order-md-2 mb-4">
+                            <h4 class="d-flex justify-content-between align-items-center mb-3">
+                                <span class="text-muted">Resumo</span>
+                            </h4>
+                            <ul class="list-group mb-3">
+                                <li class="list-group-item d-flex justify-content-between lh-condensed">
+                                    <span>Soma dos Produtos</span>
+                                    <span class="text-muted"><div id="resumoSoma">0,00</div></span>
+                                </li>
+                                <li class="list-group-item d-flex justify-content-between">
+                                    <h6 class="my-0">Total (R$)</h6>
+                                    <strong><div id="resumoValorTotal">0,00</div></strong>
+                                </li>
+                            </ul>
+                            <div class="input-group">
+                                <button type="submit" name="finalizar" value="finalizar" class="btn btn-primary btn-lg btn-block">Finalizar</button>
+                            </div>
+                        </div>
+                        <!-- dados -->
+                        <div class="col-md-8 order-md-1">
+                            <h4 class="mb-3">Lista de Produtos</h4>
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <table id="tabela" class="table table-striped table-bordered table-hover table-sm">
+                                        <thead>
+                                            <tr>
+                                                <th scope="col">Produto</th>
+                                                <th scope="col" class="text-right">Qtd.</th>
+                                                <th scope="col" class="text-right">Preço Un.</th>
+                                                <th scope="col" class="text-right">Preço Total</th>
+                                                <th scope="col" class="text-center">Ação</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <!-- Conteúdo dinâmico -->
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                            <hr class="mb-4">
+                        </div>
+                    </div>
+                </form>
             </main>
 
         </div>

@@ -40,4 +40,5 @@ $result2 = mysqli_query($conexao, $sql2);
       <?php } ?> 
     </div>
   </body>
+  <script src="js/pesquisa.js"></script>
 </html>
