@@ -1,30 +1,11 @@
-<!-- mostra todos os produtos adicionados pelo usuario pegar dados da tabela carrinho e exibir
-ACAO: SELECT NA TABELA CARRINHO FILTRANDO PELO SESSAO_ID -->
-
 <?php
 
-// $sql ="select produto.id, produto.nome, 
-//               carrinho.quantidade, carrinho.valor_unitario,
-//               carrinho.quantidade * valor_unitario as valor_total
-//         from carrinho
-//     inner join produto on produto.id = carrinho.produto_id
-//         where sessao_id = '$sessao_id'";
-
-
-session_start();
 $sessao_id = session_id();
 
-$sql ="select livros.id, livros.titulo, 
-              carrinho.quantidade, livros.valor,
-              carrinho.quantidade * livros.valor as valor_total
-        from carrinho
-    inner join livros on livros.id = carrinho.livros_id
-        where sessao_id = '$sessao_id'";
-
-
-// agora listar todos os dados dessa consulta , nome produto, qntd, valor unitario, valor total unitario, e no final o valor total da compra
+require_once("conexao.php");
 
 ?>
+
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
