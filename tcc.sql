@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Tempo de geração: 10/11/2023 às 16:24
+-- Tempo de geração: 16/11/2023 às 21:05
 -- Versão do servidor: 10.4.28-MariaDB
 -- Versão do PHP: 8.2.4
 
@@ -94,7 +94,9 @@ INSERT INTO `autor` (`id`, `nome`, `status`) VALUES
 CREATE TABLE `carrinho` (
   `id` int(11) NOT NULL,
   `livros_id` int(11) NOT NULL,
-  `quantidade` int(13) NOT NULL
+  `venda_id` int(11) NOT NULL,
+  `quantidade` int(13) NOT NULL,
+  `valorUni` double NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- --------------------------------------------------------
@@ -253,6 +255,7 @@ INSERT INTO `livros` (`id`, `titulo`, `subtitulo`, `sinopse`, `valor`, `capa`, `
 (20, 'Heartstopper: Dois garotos, um encontro \r\n', 'O primeiro volume da adorada série em quadrinhos finalmente chega ao Brasil.', 'Charlie Spring e Nick Nelson não têm quase nada em comum. Charlie é um aluno dedicado e bastante inseguro por conta do bullying que sofre no colégio desde que se assumiu gay. Já Nick é superpopular, especialmente querido por ser um ótimo jogador de rúgbi. Quando os dois passam a sentar um ao lado do outro toda manhã, uma amizade intensa se desenvolve, e eles ficam cada vez mais próximos.\r\nCharlie logo começa a se sentir diferente a respeito do novo amigo, apesar de saber que se apaixonar por um garoto hétero só vai gerar frustrações. Mas o próprio Nick está em dúvida sobre o que sente ― e talvez os garotos estejam prestes a descobrir que, quando menos se espera, o amor pode funcionar das formas mais incríveis e surpreendentes.', 38, 'heartstopper.jpg', 'class12.png', 1, 20, 22, 1),
 (21, 'A SELEÇÃO', 'Muitas garotas sonham em ser princesas, mas este não é o caso de America Singer. Ela topa se inscrever na Seleção só para agradar a mãe, certa de que não será sorteada para participar da competição em', 'Para trinta e cinco garotas, a Seleção é a chance de uma vida. É a oportunidade de ser alçada a um mundo de vestidos deslumbrantes e joias valiosas. De morar em um palácio, conquistar o coração do belo príncipe Maxon e um dia ser a rainha.\r\nAmerica Singer, no entanto, estar entre as Selecionadas é um pesadelo. Significa deixar para trás o rapaz que ama. Abandonar sua família e seu lar para entrar em uma disputa ferrenha por uma coroa que ela não quer. E viver em um palácio sob a ameaça constante de ataques rebeldes.\r\nEntão America conhece pessoalmente o príncipe - e percebe que a vida com que sempre sonhou talvez não seja nada comparada ao futuro que nunca tinha ousado imaginar.', 28, 'capa19.jpg', 'class12.png', 1, 21, 22, 0),
 (22, 'O AMOR NÃO É OBVIO', 'Amores platônicos, segredos inconfessáveis, perseguições pela cidade, traição... poderia ser um roteiro de novela, mas é só a vida real de uma adolescente comum. ', 'O amor não é óbvio. Ele está presente quando você se senta com a sua vizinha idosa para assistir a um novo capítulo da sua novela favorita. Ele é posto à prova quando você escuta as histórias mirabolantes da sua melhor amiga, ainda que nenhuma delas lhe interesse. E, às vezes, ele aparece quando você menos espera e te leva a fazer experimentos científicos munida de binóculos e uma bicicleta amarela.\r\n<br>\r\n<br>\r\nÍris tem 17 anos e está viciada na novela Amor em atos. Ela e sua vizinha, Dona Símia, de 68 anos, não perdem um episódio. Na escola, parece que todo mundo só pensa em duas coisas: na festa de formatura e em perder a virgindade. Só que a vida de Íris está prestes a mudar: Cadu Sena, sua paixão platônica desde a oitava série, está solteiro. Essa é a chance de Íris.', 28, 'capa20.jpg', 'class16.png', 1, 22, 26, 0);
+
 -- --------------------------------------------------------
 
 --
@@ -287,6 +290,19 @@ INSERT INTO `usuario` (`id`, `nome`, `email`, `senha`, `dataNascimento`, `cpf`, 
 (8, 'Gustavo Antonio', 'guuuuA@gmail.com', '23214124', '21/02/23', '111.111.111', 'Umuarama', 'PI', '(43)23424-4323', 1),
 (25, 'ebfrenfdrenfde', 'favgd@bfrbfrn', '33213123', '2001-03-', '08470914901', 'Abadia dos Dourados', 'MG', '(22)22222-2222', 1);
 
+-- --------------------------------------------------------
+
+--
+-- Estrutura para tabela `venda`
+--
+
+CREATE TABLE `venda` (
+  `id` int(11) NOT NULL,
+  `usuario_id` int(11) NOT NULL,
+  `valorTotal` int(11) NOT NULL,
+  `formaReceb` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
 --
 -- Índices para tabelas despejadas
 --
@@ -308,7 +324,8 @@ ALTER TABLE `autor`
 --
 ALTER TABLE `carrinho`
   ADD PRIMARY KEY (`id`),
-  ADD KEY `fk_livrosCarrinho_livros` (`livros_id`);
+  ADD KEY `fk_livrosCarrinho_livros` (`livros_id`),
+  ADD KEY `fk_livrosVendas_livros` (`venda_id`);
 
 --
 -- Índices de tabela `editora`
@@ -343,6 +360,13 @@ ALTER TABLE `livros`
 --
 ALTER TABLE `usuario`
   ADD PRIMARY KEY (`id`);
+
+--
+-- Índices de tabela `venda`
+--
+ALTER TABLE `venda`
+  ADD PRIMARY KEY (`id`),
+  ADD KEY `fk_vendaUsuario_vendas` (`usuario_id`);
 
 --
 -- AUTO_INCREMENT para tabelas despejadas
@@ -397,6 +421,12 @@ ALTER TABLE `usuario`
   MODIFY `id` int(13) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=32;
 
 --
+-- AUTO_INCREMENT de tabela `venda`
+--
+ALTER TABLE `venda`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+
+--
 -- Restrições para tabelas despejadas
 --
 
@@ -404,7 +434,8 @@ ALTER TABLE `usuario`
 -- Restrições para tabelas `carrinho`
 --
 ALTER TABLE `carrinho`
-  ADD CONSTRAINT `fk_livrosCarrinho_livros` FOREIGN KEY (`livros_id`) REFERENCES `livros` (`id`);
+  ADD CONSTRAINT `fk_livrosCarrinho_livros` FOREIGN KEY (`livros_id`) REFERENCES `livros` (`id`),
+  ADD CONSTRAINT `fk_livrosVendas_livros` FOREIGN KEY (`venda_id`) REFERENCES `venda` (`id`);
 
 --
 -- Restrições para tabelas `livrogenero`
@@ -419,6 +450,12 @@ ALTER TABLE `livrogenero`
 ALTER TABLE `livros`
   ADD CONSTRAINT `fk_livrosAutor_Livros` FOREIGN KEY (`livrosAutor_id`) REFERENCES `autor` (`id`),
   ADD CONSTRAINT `fk_livrosEditora_Livros` FOREIGN KEY (`livrosEditora_id`) REFERENCES `editora` (`id`);
+
+--
+-- Restrições para tabelas `venda`
+--
+ALTER TABLE `venda`
+  ADD CONSTRAINT `fk_vendaUsuario_vendas` FOREIGN KEY (`usuario_id`) REFERENCES `usuario` (`id`);
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
