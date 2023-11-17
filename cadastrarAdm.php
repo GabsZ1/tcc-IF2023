@@ -37,6 +37,7 @@ if (isset($_POST['cadastrar'])){
     <title>Cadastro Adm</title>
 
 </head>
+<script>alert("Adm cadastrado com sucesso!");</script>
 <body class="body-cadastro">
     <div class="text-center">
         <div class="cadastro-container">
