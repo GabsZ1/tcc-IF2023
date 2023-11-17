@@ -19,8 +19,7 @@ if (isset($_POST['cadastrar'])){
     mysqli_query($conexao, $sql);
 
     //5. variável da mensagem
-
-    $mensagem = "Inserido com sucesso.";
+ echo"<script>alert(Livro cadastrado com sucesso!);</script>";
 
 }
 
@@ -46,7 +45,9 @@ if (isset($_POST['cadastrar'])){
 
     <title>Cadastro livro</title>
 </head>
-<script>alert("Livro cadastrado com sucesso!");</script>
+
+
+
 <body class="body-cadastro">
     <div class="text-center">
         <div class="cadastro-container">
