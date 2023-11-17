@@ -35,7 +35,7 @@ if (isset($_POST['cadastrar'])){
 </head>
 
 <script>alert("Editora cadastrada com sucesso!");</script>
-    <span aria-hidden="true"></span>
+    
 <body class="body-cadastro">
     <div class="text-center">
         <div class="cadastro-container">
