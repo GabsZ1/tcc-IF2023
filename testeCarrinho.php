@@ -7,7 +7,7 @@ $sql ="select livros.id, livros.titulo,
               carrinho.quantidade, livros.valor,
               carrinho.quantidade * livros.valor as valor_total
         from carrinho
-    inner join livros on livros.id = carrinho.livros_id
+        inner join livros on livros.id = carrinho.livros_id
         where sessao_id = '$sessao_id'";
 
 
