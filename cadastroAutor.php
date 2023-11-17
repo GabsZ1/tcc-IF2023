@@ -8,7 +8,7 @@ if (isset($_POST['cadastrar'])){
 
     //3. Preparar a SQL
 
-    $sql = "insert into editora (nome) values ('$nome')";
+    $sql = "insert into autor (nome) values ('$nome')";
     
     //4. executar a sql no banco de dados
 
@@ -33,9 +33,7 @@ if (isset($_POST['cadastrar'])){
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@48,300,0,0" />
     <title>Cadastro autor</title>
 </head>
-
-<script>alert("Autor cadastradado com sucesso!");</script>
-    <span aria-hidden="true"></span>
+<!-- ADICIONAR AUTOR E EDITORA E LÁ EM BAIXO CAMINHO PARA CADASTRAR ELES -->
 <body class="body-cadastro">
     <div class="text-center">
         <div class="cadastro-container">

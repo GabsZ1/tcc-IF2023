@@ -75,7 +75,7 @@ if (isset($_POST['cadastrar'])){
 
                     
                         
-                    <div class="form-item mb-3">
+                    <div class="form-item">
                         <input type="file" name="capa" id="inputGroupFile02">
                     </div>
 
