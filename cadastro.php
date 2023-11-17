@@ -45,7 +45,7 @@ if (isset($_POST['cadastrar'])){
 <body class="body-cadastro">
     <div class="text-center">
         <div class="cadastro-container">
-            <div class="cadastro" style="width: 650px;">
+            <div class="cadastro" style="width: 650px; width: 650px; margin-top: 30px; margin-bottom: 30px;">
                 <div class="cadastro-logo">
                     <a href="login.php">
                         <img src="img/imgSITE/nuvemLILAS.png" alt="logo">
