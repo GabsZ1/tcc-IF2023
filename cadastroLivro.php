@@ -46,7 +46,7 @@ if (isset($_POST['cadastrar'])){
 
     <title>Cadastro livro</title>
 </head>
-<!-- ADICIONAR AUTOR E EDITORA E LÁ EM BAIXO CAMINHO PARA CADASTRAR ELES -->
+<script>alert("Livro cadastrado com sucesso!");</script>
 <body class="body-cadastro">
     <div class="text-center">
         <div class="cadastro-container">
