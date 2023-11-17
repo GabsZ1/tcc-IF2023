@@ -33,7 +33,9 @@ if (isset($_POST['cadastrar'])){
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@48,300,0,0" />
     <title>Cadastro autor</title>
 </head>
-<!-- ADICIONAR AUTOR E EDITORA E LÁ EM BAIXO CAMINHO PARA CADASTRAR ELES -->
+
+<script>alert("Autor cadastradado com sucesso!");</script>
+    <span aria-hidden="true"></span>
 <body class="body-cadastro">
     <div class="text-center">
         <div class="cadastro-container">
@@ -58,5 +60,6 @@ if (isset($_POST['cadastrar'])){
             </div>
         </div>
     </div>  
+    
 </body>
 </html>
