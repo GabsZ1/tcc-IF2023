@@ -89,7 +89,7 @@ $sql ="select livros.id, livros.titulo,
                                 </li>
                             </ul>
                             <div class="input-group">
-                                <button type="submit" name="finalizar" value="finalizar" class="btn btn-primary btn-lg btn-block">Finalizar</button>
+                                <button type="submit" name="finalizar" value="finalizar" class="btn btn-primary btn-lg btn-block active">Finalizar</button>
                             </div>
                         </div>
                         <!-- dados -->
