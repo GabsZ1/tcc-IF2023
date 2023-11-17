@@ -1,3 +1,20 @@
+<?php
+
+session_start();
+$sessao_id = session_id();
+
+$sql ="select livros.id, livros.titulo, 
+              carrinho.quantidade, livros.valor,
+              carrinho.quantidade * livros.valor as valor_total
+        from carrinho
+    inner join livros on livros.id = carrinho.livros_id
+        where sessao_id = '$sessao_id'";
+
+
+// agora listar todos os dados dessa consulta , nome produto, qntd, valor unitario, valor total unitario, e no final o valor total da compra
+
+?>
+
 
 <!doctype html>
 <html lang="pt-br">
