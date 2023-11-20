@@ -39,7 +39,7 @@ if (isset($_POST['cadastrar'])){
 </head>
 
 <?php if (isset($mensagem)) { ?>
-        <div class="alert" style="background-color: #9c93cf; color: black; margin-top: 50px; padding-right: 140px; padding-left: 140px; margin-bottom: 10;" role="alert">
+        <div class="alert" style="background-color: #9c93cf; color: black; margin-top: 50px; padding-right: 230px;padding-left: 230px; margin-bottom: 0;" role="alert">
             <i class="fa-solid fa-square-check"></i>
             <?= $mensagem ?>
         </div>
