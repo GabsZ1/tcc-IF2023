@@ -141,19 +141,19 @@ function validarCPF($cpf)
                     </div>
 
                     <div class="form-item">
-                        <span class="form-item-icon material-symbols-rounded">calendar_today</span>
-                        <input type="date" id="date" name="dataNascimento" autocomplete="off" placeholder="Sua data de Nascimento" required>
-                        <span class="error-message" id="date-error"></span>
-                    </div>
-
-                    <div class="form-item">
                         <div class="input-box">
                         <span class="form-item-icon material-symbols-rounded">terminal</span>
                         <input type="text" id="cpf" autocomplete="off" maxlength="14" name="cpf" placeholder="Digite seu CPF" 
                         required onkeyup="mascara_cpf()" required pattern="\d{3}\.\d{3}\.\d{3}-\d{2}"/>
                         </div>
                     </div>
-                    
+
+                    <div class="form-item">
+                        <span class="form-item-icon material-symbols-rounded">calendar_today</span>
+                        <input type="date" id="date" name="dataNascimento" autocomplete="off" placeholder="Sua data de Nascimento" required>
+                        <span class="error-message" id="date-error"></span>
+                    </div>
+
                     <div class="form-item">
                         <span class="form-item-icon material-symbols-rounded">person_pin_circle</span>
                         <select name="estado" id="estado" required>
