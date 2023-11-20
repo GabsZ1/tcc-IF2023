@@ -95,13 +95,13 @@ function validarCPF($cpf)
 </head>
 <body class="body-cadastro" style="flex-direction: column;">
     <?php if (isset($mensagemErro)) { ?>
-        <div class="alert alert-danger" role="alert">
+        <div class="alert alert-danger" style="color: black; margin-top: 50px; padding-right: 280px;padding-left: 280px; margin-bottom: 0;" role="alert">
             <i class="fa-solid fa-square-check"></i>
             <?= $mensagemErro ?>
         </div>
     <?php } ?>
     <?php if (isset($mensagem)) { ?>
-        <div class="alert" style="background-color: #9c93cf; border-radiu: 20px; color: black; margin-top: 50px; padding-right: 230px;padding-left: 230px; margin-bottom: 0;" role="alert">
+        <div class="alert" style="background-color: #9c93cf; color: black; margin-top: 50px; padding-right: 230px;padding-left: 230px; margin-bottom: 0;" role="alert">
             <i class="fa-solid fa-square-check"></i>
             <?= $mensagem ?>
         </div>
