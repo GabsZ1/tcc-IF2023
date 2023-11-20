@@ -45,7 +45,7 @@ if (isset($_POST['cadastrar'])){
         </div>
     <?php } ?>
 
-<body class="body-cadastro">
+<body class="body-cadastro" style="flex-direction: column;">
     <div class="text-center">
         <div class="cadastro-container">
             <div class="cadastro" style="width: 650px;">

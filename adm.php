@@ -54,7 +54,7 @@ if (isset($_POST['logar'])){
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
     <title>login do Administrador</title>
 </head>
-<body class="body-login" style="flex-direction: column;">
+<body class="body-login">
     <div class="text-center">
         <div class="login-container">
             <div class="login">
