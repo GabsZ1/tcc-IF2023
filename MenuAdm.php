@@ -156,11 +156,11 @@
                         <ul class="navbar-nav">
                             <li class="nav-item dropdown">
                             
-                                <a class="nav-link fw-bold py-1 px-0 dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false" aria-current="page" href="#" style="margin-left:15px;">Compras</a>
+                                <a class="nav-link fw-bold py-1 px-0 dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false" aria-current="page" href="#" style="margin-left:15px;">Vendas</a>
                             
                                 <ul class="dropdown-menu dropdown-menu">
                                     <li><a class="dropdown-item" href="#">Pendentes</a></li>
-                                    <li><a class="dropdown-item" href="#">Entregues</a></li>
+                                    <li><a class="dropdown-item" href="#">Finalizadas</a></li>
                                 </ul>
                             </li>
                         </ul>

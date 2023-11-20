@@ -3,6 +3,8 @@
 session_start();
 $sessao_id = session_id();
 
+require_once("conexao.php");
+
 $sql ="select livros.id, livros.titulo, 
               carrinho.quantidade, livros.valor,
               carrinho.quantidade * livros.valor as valor_total
@@ -12,6 +14,9 @@ $sql ="select livros.id, livros.titulo,
 
 
 // agora listar todos os dados dessa consulta , nome produto, qntd, valor unitario, valor total unitario, e no final o valor total da compra
+
+$resultado = mysqli_query($conexao, $sql);
+$linha = mysqli_fetch_array($resultado);
 
 ?>
 
@@ -70,7 +75,7 @@ $sql ="select livros.id, livros.titulo,
                 <h2>Carrinho de compras</h2>
                 <p class="lead">Onde estará seus livros mais desejados!</p>
                 </div>
-                
+                <hr style="padding-bottom: 0px; padding-top: 48px;">
                 <form action="exibirCarrinho.php" method="post">
                     <div class="row">
                         <!-- div resumo compra -->
@@ -108,7 +113,19 @@ $sql ="select livros.id, livros.titulo,
                                             </tr>
                                         </thead>
                                         <tbody>
-                                            <!-- Conteúdo dinâmico -->
+                                            <?php while ($linha = mysqli_fetch_array($resultado)) { ?>
+                                                <tr>
+                                                    <td><?= $linha['titulo'] ?></th>
+                                                    <td><?= $linha['quantidade'] ?></th>
+                                                    <td><?= $linha['valor'] ?></th>
+                                                    <td><?= $linha['valor_total'] ?></th>
+                                                    <td>
+
+                                                    <!-- <a href="usuarioAlterar.php?id=<?= $linha['id'] ?>" class="btn btn-warning"><i class="fa-solid fa-pen-to-square"></i></a>
+
+                                                    <a href="usuarioListar.php?id=<?= $linha['id'] ?>" class="btn btn-danger" onclick="return confirm('Confirmar exclusão?')"><i class="fa-solid fa-trash-can"></i></a> -->
+                                                </tr>
+                                            <?php } ?>
                                         </tbody>
                                     </table>
                                 </div>
