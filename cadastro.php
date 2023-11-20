@@ -15,7 +15,6 @@ if (isset($_POST['cadastrar'])) {
         $cpf = $_POST['cpf'];
         $cidade = $_POST['cidade'];
         $estado = $_POST['estado'];
-        $telefone = $_POST['telefone'];
     } 
     else { //prossegue com o cadastro pq o CPF está válido
         $nome = $_POST['nome'];
@@ -25,10 +24,9 @@ if (isset($_POST['cadastrar'])) {
         $cpf = $_POST['cpf'];
         $cidade = $_POST['cidade'];
         $estado = $_POST['estado'];
-        $telefone = $_POST['telefone'];
         //3. Preparar a SQL
 
-        $sql = "insert into usuario (nome, email, senha, dataNascimento, cpf, cidade, UF, telefone) values ('$nome', '$email', '$senha', '$dataNasc', '$cpf', '$cidade', '$estado', '$telefone')";
+        $sql = "insert into usuario (nome, email, senha, dataNascimento, cpf, cidade, UF) values ('$nome', '$email', '$senha', '$dataNasc', '$cpf', '$cidade', '$estado')";
         
         //4. executar a sql no banco de dados
 
