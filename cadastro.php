@@ -3,30 +3,83 @@
 
 $conexao = mysqli_connect('127.0.0.1', 'root', '', 'tcc');
 
-if (isset($_POST['cadastrar'])){
+if (isset($_POST['cadastrar'])) {
+    $cpf = $_POST["cpf"];
 
-    $nome = $_POST['nome'];
-    $email = $_POST['email'];
-    $senha = $_POST['senha'];
-    $dataNasc = $_POST['dataNascimento'];
-    $cpf = $_POST['cpf'];
-    $cidade = $_POST['cidade'];
-    $estado = $_POST['estado'];
-    $telefone = $_POST['telefone'];
+    if (!validarCPF($cpf)) {
+        $mensagemErro = "CPF inválido.";
+        $nome = $_POST['nome'];
+        $email = $_POST['email'];
+        $senha = $_POST['senha'];
+        $dataNasc = $_POST['dataNascimento'];
+        $cpf = $_POST['cpf'];
+        $cidade = $_POST['cidade'];
+        $estado = $_POST['estado'];
+        $telefone = $_POST['telefone'];
+    } 
+    else { //prossegue com o cadastro pq o CPF está válido
+        $nome = $_POST['nome'];
+        $email = $_POST['email'];
+        $senha = $_POST['senha'];
+        $dataNasc = $_POST['dataNascimento'];
+        $cpf = $_POST['cpf'];
+        $cidade = $_POST['cidade'];
+        $estado = $_POST['estado'];
+        $telefone = $_POST['telefone'];
+        //3. Preparar a SQL
 
-    //3. Preparar a SQL
+        $sql = "insert into usuario (nome, email, senha, dataNascimento, cpf, cidade, UF, telefone) values ('$nome', '$email', '$senha', '$dataNasc', '$cpf', '$cidade', '$estado', '$telefone')";
+        
+        //4. executar a sql no banco de dados
 
-    $sql = "insert into usuario (nome, email, senha, dataNascimento, cpf, cidade, UF, telefone) values ('$nome', '$email', '$senha', '$dataNasc', '$cpf', '$cidade', '$estado', '$telefone')";
-    
-    //4. executar a sql no banco de dados
+        mysqli_query($conexao, $sql);
 
-    mysqli_query($conexao, $sql);
+        //5. variável da mensagem
 
-    //5. variável da mensagem
-
-    $mensagem = "Inserido com sucesso.";
-
+        $mensagem = "Inserido com sucesso.";
+    }
 }
+
+
+function validarCPF($cpf)
+{
+  // Remove caracteres não numéricos
+  $cpf = preg_replace('/[^0-9]/', '', $cpf);
+
+  // Verifica se o CPF possui 11 dígitos
+  if (strlen($cpf) != 11) {
+    return false;
+  }
+
+  // Verifica se todos os dígitos são iguais
+  if (preg_match('/(\d)\1{10}/', $cpf)) {
+    return false;
+  }
+
+  // Calcula o primeiro dígito verificador
+  $soma = 0;
+  for ($i = 0; $i < 9; $i++) {
+    $soma += $cpf[$i] * (10 - $i);
+  }
+  $resto = $soma % 11;
+  $digito1 = ($resto < 2) ? 0 : 11 - $resto;
+
+  // Calcula o segundo dígito verificador
+  $soma = 0;
+  for ($i = 0; $i < 10; $i++) {
+    $soma += $cpf[$i] * (11 - $i);
+  }
+  $resto = $soma % 11;
+  $digito2 = ($resto < 2) ? 0 : 11 - $resto;
+
+  // Verifica se os dígitos verificadores estão corretos
+  if ($cpf[9] == $digito1 && $cpf[10] == $digito2) {
+    return true;
+  } else {
+    return false;
+  }
+}
+
 
 ?>
 
@@ -42,8 +95,14 @@ if (isset($_POST['cadastrar'])){
     <title>Cadastro</title>
 
 </head>
-<script>alert("Cadastrado com sucesso!");</script>
+<!-- <script>alert("Cadastrado com sucesso!");</script> -->
 <body class="body-cadastro">
+    <?php if (isset($mensagemErro)) { ?>
+        <div class="alert alert-danger" role="alert">
+            <i class="fa-solid fa-square-check"></i>
+            <?= $mensagemErro ?>
+        </div>
+    <?php } ?>
     <div class="text-center">
         <div class="cadastro-container">
             <div class="cadastro" style="width: 650px; width: 650px; margin-top: 30px; margin-bottom: 30px;">
@@ -78,13 +137,16 @@ if (isset($_POST['cadastrar'])){
 
                     <div class="form-item">
                         <span class="form-item-icon material-symbols-rounded">calendar_today</span>
-                        <input type="date" id="dataNascimento" name="dataNascimento" autocomplete="off" maxlength="10"  placeholder="Sua data de Nascimento" required>
+                        <input type="date" id="date" name="dataNascimento" autocomplete="off" placeholder="Sua data de Nascimento" required>
+                        <span class="error-message" id="date-error"></span>
                     </div>
 
                     <div class="form-item">
+                        <div class="input-box">
                         <span class="form-item-icon material-symbols-rounded">terminal</span>
-                        <input type="text" name="cpf" id="cpf" placeholder="Insira seu CPF sem os . e -" autocomplete="off" maxlength="11" onkeyup="document.getElementById('validation').innerHTML = validaCPF(this.value)" required>
-                        <div><b></b> <span id="validation"></span></div>
+                        <input type="text" id="cpf" autocomplete="off" maxlength="14" name="cpf" placeholder="Digite seu CPF" 
+                        required onkeyup="mascara_cpf()" required pattern="\d{3}\.\d{3}\.\d{3}-\d{2}"/>
+                        </div>
                     </div>
                     
                     <div class="form-item">
@@ -112,6 +174,32 @@ if (isset($_POST['cadastrar'])){
         </div>
     </div>
 </body>
+
+<script>
+    function mascara_cpf() {
+        var cpf = document.getElementById('cpf')
+        if (cpf.value.length == 3 || cpf.value.length == 7) {
+            cpf.value = cpf.value += "."
+        } else if (cpf.value.length == 11) {
+            cpf.value += "-"
+            }
+        }
+</script>
+
+<script>
+    document.getElementById('date').addEventListener('change', function () {
+        var selectedDate = new Date(this.value);
+        var currentDate = new Date();
+
+        if (selectedDate > currentDate) {
+            document.getElementById('date-error').innerHTML = 'A data de nascimento não pode ser no futuro.';
+            this.setCustomValidity('A data de nascimento não pode ser no futuro.');
+        } else {
+            document.getElementById('date-error').innerHTML = '';
+            this.setCustomValidity('');
+        }
+    });
+</script>
 
 <script>
     function mascara_telefone() {
@@ -155,58 +243,6 @@ if (isset($_POST['cadastrar'])){
       })
       uf.append(options)
     })
-</script>
-
-<script>
-    function validaCPF(cpf) {
-    var Soma = 0
-    var Resto
-
-    var strCPF = String(cpf).replace(/[^\d]/g, '')
-        
-    if (strCPF.length !== 11)
-        return false
-        
-    if ([
-        '00000000000',
-        '11111111111',
-        '22222222222',
-        '33333333333',
-        '44444444444',
-        '55555555555',
-        '66666666666',
-        '77777777777',
-        '88888888888',
-        '99999999999',
-        ].indexOf(strCPF) !== -1)
-        return false
-
-    for (i=1; i<=9; i++)
-        Soma = Soma + parseInt(strCPF.substring(i-1, i)) * (11 - i);
-
-    Resto = (Soma * 10) % 11
-
-    if ((Resto == 10) || (Resto == 11)) 
-        Resto = 0
-
-    if (Resto != parseInt(strCPF.substring(9, 10)) )
-        return false
-
-    Soma = 0
-
-    for (i = 1; i <= 10; i++)
-        Soma = Soma + parseInt(strCPF.substring(i-1, i)) * (12 - i)
-
-    Resto = (Soma * 10) % 11
-
-    if ((Resto == 10) || (Resto == 11)) 
-        Resto = 0
-
-    if (Resto != parseInt(strCPF.substring(10, 11) ) )
-        return false
-
-    return true
-    }   
 </script>
 
 <script>
