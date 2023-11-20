@@ -48,11 +48,11 @@ if (isset($_POST['cadastrar'])){
 </head>
 
 <?php if (isset($mensagem)) { ?>
-    <div class="alert alert-success" role="alert">
-        <i class="fa-solid fa-square-check"></i>
-        <?= $mensagem ?>
-    </div>
-<?php } ?>
+        <div class="alert" style="background-color: #9c93cf; border-radiu: 20px; color: black; margin-top: 50px; padding-right: 230px;padding-left: 230px; margin-bottom: 0;" role="alert">
+            <i class="fa-solid fa-square-check"></i>
+            <?= $mensagem ?>
+        </div>
+    <?php } ?>
 
 <body class="body-cadastro">
     <div class="text-center">

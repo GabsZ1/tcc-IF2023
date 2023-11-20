@@ -101,14 +101,14 @@ function validarCPF($cpf)
         </div>
     <?php } ?>
     <?php if (isset($mensagem)) { ?>
-        <div class="alert alert-success" role="alert">
-            <i class="fa-solid fa-square-check" style="background-color: #9c93cf; border-radiu: 20px;"></i>
+        <div class="alert" style="background-color: #9c93cf; border-radiu: 20px; color: black; margin-top: 50px; padding-right: 230px;padding-left: 230px; margin-bottom: 0;" role="alert">
+            <i class="fa-solid fa-square-check"></i>
             <?= $mensagem ?>
         </div>
     <?php } ?>
     <div class="text-center">
         <div class="cadastro-container">
-            <div class="cadastro" style="width: 650px; width: 650px; margin-top: 30px; margin-bottom: 30px;">
+            <div class="cadastro" style="width: 650px; width: 650px; margin-top: 10px; margin-bottom: 30px;">
                 <div class="cadastro-logo">
                     <a href="login.php">
                         <img src="img/imgSITE/nuvemLILAS.png" alt="logo">
