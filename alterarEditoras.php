@@ -46,6 +46,12 @@ $linha = mysqli_fetch_array($resultado);
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.0/font/bootstrap-icons.css">
     <title>Alteração editoras</title>
 </head>
+<?php if (isset($mensagem)) { ?>
+    <div class="alert alert-success" role="alert">
+        <i class="fa-solid fa-square-check"></i>
+        <?= $mensagem ?>
+    </div>
+<?php } ?>
 <body>
     <div class="container">
         <form method="POST">
