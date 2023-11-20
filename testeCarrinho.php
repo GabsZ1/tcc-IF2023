@@ -137,7 +137,7 @@ $linha = mysqli_fetch_array($resultado);
                                                     <td><?= $linha['valor_total'] ?></th>
                                                     <td>
 
-                                                    <a href="usuarioListar.php?id=<?= $linha['id'] ?>" class="btn btn-danger" style="background-color:#9c93cf; border-top-width: 0px; border-right-width: 0px; border-bottom-width: 0px; border-left-width: 0px;" onclick="return confirm('Confirmar exclusão?')"><i class="fa-solid fa-trash-can"></i></a>
+                                                    <!-- <a href="usuarioListar.php?id=<?= $linha['id'] ?>" class="btn btn-danger" style="background-color:#9c93cf; border-top-width: 0px; border-right-width: 0px; border-bottom-width: 0px; border-left-width: 0px;" onclick="return confirm('Confirmar exclusão?')"><i class="fa-solid fa-trash-can"></i></a> -->
                                                 </tr>
                                             <?php } ?>
                                         </tbody>
