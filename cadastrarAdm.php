@@ -37,7 +37,14 @@ if (isset($_POST['cadastrar'])){
     <title>Cadastro Adm</title>
 
 </head>
-<script>alert("Adm cadastrado com sucesso!");</script>
+
+<?php if (isset($mensagem)) { ?>
+        <div class="alert" style="background-color: #9c93cf; color: black; margin-top: 50px; padding-right: 140px; padding-left: 140px; margin-bottom: 10;" role="alert">
+            <i class="fa-solid fa-square-check"></i>
+            <?= $mensagem ?>
+        </div>
+    <?php } ?>
+
 <body class="body-cadastro">
     <div class="text-center">
         <div class="cadastro-container">
