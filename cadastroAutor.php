@@ -39,7 +39,7 @@ if (isset($_POST['cadastrar'])){
             <?= $mensagem ?>
         </div>
     <?php } ?>
-<body class="body-cadastro">
+<body class="body-cadastro" style="flex-direction: column;">
     <div class="text-center">
         <div class="cadastro-container">
             <div class="cadastro" >
