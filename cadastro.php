@@ -104,7 +104,7 @@ function validarCPF($cpf)
         </div>
     <?php } ?>
     <?php if (isset($mensagem)) { ?>
-        <div class="alert alert-sucess" role="alert">
+        <div class="alert alert-success" role="alert">
             <i class="fa-solid fa-square-check"></i>
             <?= $mensagem ?>
         </div>
