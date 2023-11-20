@@ -103,6 +103,12 @@ function validarCPF($cpf)
             <?= $mensagemErro ?>
         </div>
     <?php } ?>
+    <?php if (isset($mensagem)) { ?>
+        <div class="alert alert-sucess" role="alert">
+            <i class="fa-solid fa-square-check"></i>
+            <?= $mensagem ?>
+        </div>
+    <?php } ?>
     <div class="text-center">
         <div class="cadastro-container">
             <div class="cadastro" style="width: 650px; width: 650px; margin-top: 30px; margin-bottom: 30px;">
