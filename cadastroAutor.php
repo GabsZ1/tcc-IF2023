@@ -33,7 +33,12 @@ if (isset($_POST['cadastrar'])){
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@48,300,0,0" />
     <title>Cadastro autor</title>
 </head>
-<script>alert("Autor cadastrado com sucesso!");</script>
+<?php if (isset($mensagem)) { ?>
+    <div class="alert alert-success" role="alert">
+        <i class="fa-solid fa-square-check"></i>
+        <?= $mensagem ?>
+    </div>
+<?php } ?>
 <body class="body-cadastro">
     <div class="text-center">
         <div class="cadastro-container">

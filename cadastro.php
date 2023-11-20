@@ -95,7 +95,6 @@ function validarCPF($cpf)
     <title>Cadastro</title>
 
 </head>
-<!-- <script>alert("Cadastrado com sucesso!");</script> -->
 <body class="body-cadastro" style="flex-direction: column;">
     <?php if (isset($mensagemErro)) { ?>
         <div class="alert alert-danger" role="alert">
@@ -169,11 +168,6 @@ function validarCPF($cpf)
                         </select>
                     </div>
 
-                    <div class="form-item">
-                        <span class="form-item-icon material-symbols-rounded">call</span>
-                        <input type="tel" id="telefone" name="telefone" autocomplete="off" maxlength="14" placeholder="insira o DDD" onkeyup="mascara_telefone()" required>
-                    </div>
-
                     <input class="btn btn-primary btn-lg btn-block active" data-bs-toggle="modal" type="submit" value="Cadastrar" name="cadastrar" style="width: 414px; margin-left: 50px;">
                 </form>
             </div>
@@ -205,19 +199,6 @@ function validarCPF($cpf)
             this.setCustomValidity('');
         }
     });
-</script>
-
-<script>
-    function mascara_telefone() {
-    var celular = document.getElementById('telefone');
-
-        if (celular.value.length == 2) {
-            celular.value = '(' + celular.value + ')';
-        }
-        if (celular.value.length == 9) {
-            celular.value = celular.value + '-';
-        }
-        }
 </script>
 
 <script>

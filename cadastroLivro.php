@@ -19,7 +19,8 @@ if (isset($_POST['cadastrar'])){
     mysqli_query($conexao, $sql);
 
     //5. variável da mensagem
- echo"<script>alert(Livro cadastrado com sucesso!);</script>";
+    
+    $mensagem = "Inserido com sucesso.";
 
 }
 
@@ -46,7 +47,12 @@ if (isset($_POST['cadastrar'])){
     <title>Cadastro livro</title>
 </head>
 
-
+<?php if (isset($mensagem)) { ?>
+    <div class="alert alert-success" role="alert">
+        <i class="fa-solid fa-square-check"></i>
+        <?= $mensagem ?>
+    </div>
+<?php } ?>
 
 <body class="body-cadastro">
     <div class="text-center">
