@@ -5,6 +5,15 @@ $sessao_id = session_id();
 
 require_once("conexao.php");
 
+//Bloco de exclusão
+if (isset($_GET['id'])) {
+
+    $sql = "delete from livros where id = " . $_GET['id'];
+    mysqli_query($conexao, $sql);
+    $mensagem = "Exclusão realizada com sucesso";
+  }
+///////////////////////
+
 $sql ="select livros.id, livros.titulo, 
               carrinho.quantidade, livros.valor,
               carrinho.quantidade * livros.valor as valor_total
@@ -35,6 +44,13 @@ $linha = mysqli_fetch_array($resultado);
         <title>Carrinho</title>
         <link rel="website icon" type="png" href="img/imgSITE/nuvemLILAS.png">
         <?php require_once("navbar.php"); ?>
+
+        <script src="https://kit.fontawesome.com/42c6fc9b70.js" crossorigin="anonymous"></script>
+        <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@200&family=Poppins:wght@100&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100&display=swap" rel="stylesheet">
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe" crossorigin="anonymous"></script>
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.0/font/bootstrap-icons.css">
        
     
         <link href="css/bootstrap.min.css" rel="stylesheet">
@@ -121,9 +137,7 @@ $linha = mysqli_fetch_array($resultado);
                                                     <td><?= $linha['valor_total'] ?></th>
                                                     <td>
 
-                                                    <!-- <a href="usuarioAlterar.php?id=<?= $linha['id'] ?>" class="btn btn-warning"><i class="fa-solid fa-pen-to-square"></i></a>
-
-                                                    <a href="usuarioListar.php?id=<?= $linha['id'] ?>" class="btn btn-danger" onclick="return confirm('Confirmar exclusão?')"><i class="fa-solid fa-trash-can"></i></a> -->
+                                                    <a href="usuarioListar.php?id=<?= $linha['id'] ?>" class="btn btn-danger" style="background-color:#9c93cf; border-top-width: 0px; border-right-width: 0px; border-bottom-width: 0px; border-left-width: 0px;" onclick="return confirm('Confirmar exclusão?')"><i class="fa-solid fa-trash-can"></i></a>
                                                 </tr>
                                             <?php } ?>
                                         </tbody>
