@@ -1,18 +1,5 @@
 <?php
-
-//SE FOI CLICADO NO BOTAO ENVIAR
- 
-if(isset($_POST['logar'])) {
-    $diretorio = "uploads/";
-    $arquivoDestino = $diretorio . $_FILES ['arquivo']['name'];
-
-    //envia o arquivo para o $arqivoDestino
-    if(move_uploaded_file($_FILES['arquivo']['tmp_name'], $arquivoDestino)) {
-        echo "arquivo enviado com sucesso.";
-    } else {
-        echo "ERRO: arquivo não enviado.";
-    }
-}
+session_start();
 
 //1. Conectar no BD (IP, Usuário, ...)
 
@@ -25,7 +12,7 @@ if (isset($_POST['logar'])){
 
     //3. Preparar a SQL
 
-    $sql = "select from usuario (email, senha) values ('$email', '$senha')";
+    $sql = "select from adm (email, senha) values ('$email', '$senha')";
 
     //4. executar a sql no banco de dados
 
@@ -68,10 +55,6 @@ if (isset($_POST['logar'])){
                         <span class="form-item-icon material-symbols-rounded">lock</span>
                         <input type="password" name="senha" class="form-control" placeholder="Insira a senha" required>
                     </div>
-                    <!-- <div class="form-item">
-                        <span class="material-symbols-outlined">upload_file</span>
-                        <input type="file" name="arquivo" class="form-control" placeholder="Escolher arquivo" required>
-                    </div> -->
                     <input class="btn btn-primary btn-lg btn-block active" style="left: -30px;" type="submit" value="Entre" name="logar">
                 </form>
             </div>

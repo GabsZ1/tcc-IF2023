@@ -1,24 +1,14 @@
 <?php
 //1. Conectar no BD (IP, Usuário, ...)
 
-$conexao = mysqli_connect('127.0.0.1', 'root', '', 'tcc');
-
+require_once("conexao.php");
 
 if (isset($_POST['cadastrar'])) {
-    $id = $_POST["id"];
+    
+    $nome = $_POST['nome'];
+    $email = $_POST['email'];
+    $senha = $_POST['senha'];
 
-
-    if (($id)) {
-        $mensagemErro = "Você não é um administrador";
-        $nome = $_POST['nome'];
-        $email = $_POST['email'];
-        $senha = $_POST['senha'];
-    } 
-    else { //prossegue com o cadastro pq o CPF está válido
-        $nome = $_POST['nome'];
-        $email = $_POST['email'];
-        $senha = $_POST['senha'];
-    }
 
     //3. Preparar a SQL
 
@@ -48,12 +38,6 @@ if (isset($_POST['cadastrar'])) {
     <title>Cadastro Adm</title>
 
 </head>
-
-<?php if (isset($mensagemErro)) { ?>
-        <div class="alert alert-danger" style="color: black; margin-top: 50px; padding-right: 280px;padding-left: 280px; margin-bottom: 0;" role="alert">
-            <i class="fa-solid fa-square-check"></i>
-            <?= $mensagemErro ?>
-            <?php } ?>
 
 <?php if (isset($mensagem)) { ?>
     <div class="alert" style="background-color: #9c93cf; color: black; margin-top: 50px; padding-right: 240px; padding-left: 240px; margin-bottom: 10;" role="alert">

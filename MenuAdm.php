@@ -1,6 +1,5 @@
 <?php 
 session_start(); 
-$sessao_id = $_SESSION['email'];
 require_once("verificaAutenticacaoAdm.php"); 
 ?>
 <!doctype html>
