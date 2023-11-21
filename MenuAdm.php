@@ -78,6 +78,7 @@
                             
                                 <ul class="dropdown-menu dropdown-menu">
                                     <li><a class="dropdown-item" href="#">Pendentes</a></li>
+                                    <li><a class="dropdown-item" href="#">Em andamento</a></li>
                                     <li><a class="dropdown-item" href="#">Finalizadas</a></li>
                                 </ul>
                             </li>
