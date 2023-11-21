@@ -9,10 +9,14 @@ if (isset($_POST['cadastrar'])){
     $sinopse = $_POST['sinopse'];
     $val = $_POST['valor'];
     $capa = $_POST['capa'];
+    $classe = $_POST['class'];
+    $Aid = $_POST['livrosAutor_id'];
+    $Eid = $_POST['livrosEditora_id'];
+
 
     //3. Preparar a SQL
 
-    $sql = "insert into livros (titulo, subtitulo, sinopse, valor, capa) values ('$titulo', '$subt', '$sinopse', '$val', '$capa')";
+    $sql = "insert into livros (titulo, subtitulo, sinopse, valor, capa, class, livrosAutor_id, livrosEditora_id) values ('$titulo', '$subt', '$sinopse', '$val', '$capa', '$classe', '$Aid', '$Eid')";
     
     //4. executar a sql no banco de dados
 
