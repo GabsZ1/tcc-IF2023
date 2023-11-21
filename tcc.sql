@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Tempo de geração: 17/11/2023 às 16:34
+-- Tempo de geração: 21/11/2023 às 16:09
 -- Versão do servidor: 10.4.28-MariaDB
 -- Versão do PHP: 8.2.4
 
@@ -20,6 +20,8 @@ SET time_zone = "+00:00";
 --
 -- Banco de dados: `tcc`
 --
+CREATE DATABASE IF NOT EXISTS `tcc` DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci;
+USE `tcc`;
 
 -- --------------------------------------------------------
 
@@ -295,6 +297,8 @@ INSERT INTO `usuario` (`id`, `nome`, `email`, `senha`, `dataNascimento`, `cpf`, 
 (8, 'Gustavo Antonio', 'guuuuA@gmail.com', '23214124', '21/02/23', '111.111.111', 'Umuarama', 'PI', '(43)23424-4323', 1),
 (25, 'ebfrenfdrenfde', 'favgd@bfrbfrn', '33213123', '2001-03-', '08470914901', 'Abadia dos Dourados', 'MG', '(22)22222-2222', 1);
 
+-- --------------------------------------------------------
+
 --
 -- Estrutura para tabela `venda`
 --
@@ -303,42 +307,10 @@ CREATE TABLE `venda` (
   `id` int(11) NOT NULL,
   `produto_id` int(11) NOT NULL,
   `quantidade` int(11) NOT NULL,
-  `valor_unitario` int(11) NOT NULL
+  `valor_unitario` int(11) NOT NULL,
+  `usuario_id` int(11) NOT NULL,
+  `status` int(11) NOT NULL DEFAULT 1
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
-
---
--- Índices para tabelas despejadas
---
-
---
--- Índices de tabela `venda`
---
-ALTER TABLE `venda`
-  ADD PRIMARY KEY (`id`),
-  ADD KEY `fk_vendaProduto` (`produto_id`);
-  ADD KEY `fk_vendaUsuario` (`usuario_id`);
-
---
--- AUTO_INCREMENT para tabelas despejadas
---
-
---
--- AUTO_INCREMENT de tabela `venda`
---
-ALTER TABLE `venda`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
-
---
--- Restrições para tabelas despejadas
---
-
---
--- Restrições para tabelas `venda`
---
-ALTER TABLE `venda`
-  ADD CONSTRAINT `fk_vendaProduto` FOREIGN KEY (`produto_id`) REFERENCES `livros` (`id`);
-  ADD CONSTRAINT `fk_vendaUsuario` FOREIGN KEY (`usuario_id`) REFERENCES `usuario` (`id`);
-COMMIT;
 
 --
 -- Índices para tabelas despejadas
@@ -398,6 +370,14 @@ ALTER TABLE `usuario`
   ADD PRIMARY KEY (`id`);
 
 --
+-- Índices de tabela `venda`
+--
+ALTER TABLE `venda`
+  ADD PRIMARY KEY (`id`),
+  ADD KEY `fk_vendaProduto` (`produto_id`),
+  ADD KEY `fk_vendaUsuario` (`usuario_id`);
+
+--
 -- AUTO_INCREMENT para tabelas despejadas
 --
 
@@ -450,6 +430,12 @@ ALTER TABLE `usuario`
   MODIFY `id` int(13) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=32;
 
 --
+-- AUTO_INCREMENT de tabela `venda`
+--
+ALTER TABLE `venda`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+
+--
 -- Restrições para tabelas despejadas
 --
 
@@ -472,6 +458,13 @@ ALTER TABLE `livrogenero`
 ALTER TABLE `livros`
   ADD CONSTRAINT `fk_livrosAutor_Livros` FOREIGN KEY (`livrosAutor_id`) REFERENCES `autor` (`id`),
   ADD CONSTRAINT `fk_livrosEditora_Livros` FOREIGN KEY (`livrosEditora_id`) REFERENCES `editora` (`id`);
+
+--
+-- Restrições para tabelas `venda`
+--
+ALTER TABLE `venda`
+  ADD CONSTRAINT `fk_vendaProduto` FOREIGN KEY (`produto_id`) REFERENCES `livros` (`id`),
+  ADD CONSTRAINT `fk_vendaUsuario` FOREIGN KEY (`usuario_id`) REFERENCES `usuario` (`id`);
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
