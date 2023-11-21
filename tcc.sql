@@ -296,6 +296,49 @@ INSERT INTO `usuario` (`id`, `nome`, `email`, `senha`, `dataNascimento`, `cpf`, 
 (25, 'ebfrenfdrenfde', 'favgd@bfrbfrn', '33213123', '2001-03-', '08470914901', 'Abadia dos Dourados', 'MG', '(22)22222-2222', 1);
 
 --
+-- Estrutura para tabela `venda`
+--
+
+CREATE TABLE `venda` (
+  `id` int(11) NOT NULL,
+  `produto_id` int(11) NOT NULL,
+  `quantidade` int(11) NOT NULL,
+  `valor_unitario` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Índices para tabelas despejadas
+--
+
+--
+-- Índices de tabela `venda`
+--
+ALTER TABLE `venda`
+  ADD PRIMARY KEY (`id`),
+  ADD KEY `fk_vendaProduto` (`produto_id`);
+
+--
+-- AUTO_INCREMENT para tabelas despejadas
+--
+
+--
+-- AUTO_INCREMENT de tabela `venda`
+--
+ALTER TABLE `venda`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+
+--
+-- Restrições para tabelas despejadas
+--
+
+--
+-- Restrições para tabelas `venda`
+--
+ALTER TABLE `venda`
+  ADD CONSTRAINT `fk_vendaProduto` FOREIGN KEY (`produto_id`) REFERENCES `livros` (`id`);
+COMMIT;
+
+--
 -- Índices para tabelas despejadas
 --
 
