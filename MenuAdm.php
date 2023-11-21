@@ -1,6 +1,5 @@
 <?php 
 session_start(); 
-require_once("verificaAutenticacaoAdm.php"); 
 ?>
 <!doctype html>
 <html lang="pt-br" class="h-100" data-bs-theme="auto">
