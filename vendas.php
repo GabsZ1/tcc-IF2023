@@ -53,8 +53,6 @@ require_once("conexao.php");
     </style>
 </head>
 
-<?php require_once("navbar.php"); ?>
-
 <body>
     <br>
     <div class="container">
@@ -71,15 +69,8 @@ require_once("conexao.php");
                         <option value="5">Cancelado</option>
                     </select>
                 </label>
-                <label for="dataEntrada">Data de Entrada:
-                    <input type="date" id="dataEntrada" name="dataEntrada" class="form-control mr-sm-2">
-                </label>
 
-                <label for="dataSaida">Data de Saída:
-                    <input type="date" id="dataSaida" name="dataSaida" class="form-control mr-sm-2">
-                </label>
-
-                <label for="nome">Nome do Hóspede:
+                <label for="nome">Nome do Usuário:
                     <input type="text" id="nome" name="nome" class="form-control mr-sm-2">
                 </label>
 

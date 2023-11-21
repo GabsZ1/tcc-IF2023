@@ -14,6 +14,28 @@ if (isset($_GET['id'])) {
   }
 ///////////////////////
 
+// if (isset($_POST['finalizar'])) {    PERGUNTA PARA O BORTH POR FAVOR!!!!!!!!!!!!
+//     $sessao_id = session_id();
+    
+//     $valor_unitario = str_replace(',', '.', $_POST['valor_unitario']);
+//     $livros_id = $_POST['livros_id'];
+//     $quantidade = $_POST['quantidade'];
+
+//     $sql_carrinho = "insert into venda (livros_id, valor_unitario, quantidade, sessao_id)
+//     values ($livros_id, '$valor_unitario', '$quantidade', '$sessao_id')";
+//     mysqli_query($conexao, $sql_carrinho);
+
+//     $mensagem = "Venda finalizada com sucesso!";
+// }
+
+// $idlivro = $_GET["id"];  
+
+// $sql = "SELECT livros.*, autor.nome, editora.nome as editora_nome  
+// FROM livros
+// LEFT JOIN autor ON autor.id = livros.livrosAutor_id
+// LEFT JOIN editora ON editora.id = livros.livrosEditora_id
+// WHERE livros.id LIKE '$idlivro'";
+
 $sql ="select livros.id, livros.titulo, 
               carrinho.quantidade, livros.valor,
               carrinho.quantidade * livros.valor as valor_total
