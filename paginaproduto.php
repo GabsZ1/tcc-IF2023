@@ -15,7 +15,6 @@ if (isset($_POST['adicionar'])) {
     $mensagem = "Adicionado ao carrinho com sucesso!";
 }
 
-
 $idlivro = $_GET["id"];  
 
 $sql = "SELECT livros.*, autor.nome, editora.nome as editora_nome  
