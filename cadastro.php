@@ -4,7 +4,20 @@
 $conexao = mysqli_connect('127.0.0.1', 'root', '', 'tcc');
 
 if (isset($_POST['cadastrar'])) {
-    $cpf = $_POST["cpf"];
+    $cpf = $_POST['cpf'];
+    $nome = $_POST['nome'];
+    $email = $_POST['email'];
+    $senha = $_POST['senha'];
+    $dataNasc = $_POST['dataNascimento'];
+    $cpf = $_POST['cpf'];
+    $cidade = $_POST['cidade'];
+    $estado = $_POST['estado'];
+
+    $sql2 = "SELECT * FROM usuario WHERE (email='$email')";
+
+    $resultado = mysqli_query($conexao, $sql2);
+
+    $mensagemErro2 = "Email já cadastrado!";
 
     if (!validarCPF($cpf)) {
         $mensagemErro = "CPF inválido.";
@@ -24,6 +37,16 @@ if (isset($_POST['cadastrar'])) {
         $cpf = $_POST['cpf'];
         $cidade = $_POST['cidade'];
         $estado = $_POST['estado'];
+
+        if(mysqli_num_rows($resultado)>0){
+            ?>
+               <div class="alert alert-danger" style="color: black; margin-top: 50px; padding-right: 280px;padding-left: 280px; margin-bottom: 0;" role="alert">
+                   <i class="fa-solid fa-square-check"></i>
+                   <?= $mensagemErro2 ?>
+               </div>
+           <?php 
+       }
+       else {
         //3. Preparar a SQL
 
         $sql = "insert into usuario (nome, email, senha, dataNascimento, cpf, cidade, UF) values ('$nome', '$email', '$senha', '$dataNasc', '$cpf', '$cidade', '$estado')";
@@ -38,6 +61,7 @@ if (isset($_POST['cadastrar'])) {
     }
 }
 
+}
 
 function validarCPF($cpf)
 {

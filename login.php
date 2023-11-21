@@ -19,7 +19,7 @@ if (isset($_POST['logar'])){
     mysqli_query($conexao, $sql);
 
     //5. variável da mensagem
-
+    $_SESSION['id']=;
     $mensagem = "Usuario logado com sucesso.";
 
 }
