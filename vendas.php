@@ -91,43 +91,31 @@ require_once("conexao.php");
             <?php
             // Reutilização da variável $conexao do arquivo conexão.php
             $filtroStatus = isset($_GET['status']) ? $_GET['status'] : '';
-            $filtroDataEntrada = isset($_GET['dataEntrada']) ? $_GET['dataEntrada'] : '';
-            $filtroDataSaida = isset($_GET['dataSaida']) ? $_GET['dataSaida'] : '';
-            $filtroNomeHospede = isset($_GET['nome']) ? $_GET['nome'] : '';
+            $filtroUsuario = isset($_GET['nome']) ? $_GET['nome'] : '';
 
-            $sql = "SELECT Livros.*, hospede.nome as hospede_nome, quarto.numero as quarto_numero
-                    FROM reserva
-                    LEFT JOIN hospede ON hospede.id = reserva.id_hospede
-                    LEFT JOIN quarto ON quarto.id = reserva.id_quarto
+            $sql = "SELECT vendas.*, usuario.nome as usuario_nome, livros.titulo as livros_titulo
+                    FROM vendas
+                    LEFT JOIN usuario ON usuario.id = vendas.id_usuario
+                    LEFT JOIN livros ON livros.id = vendas.id_livros
                     WHERE 1";
 
             if (!empty($filtroStatus)) {
-                $sql .= " AND reserva.status = $filtroStatus";
+                $sql .= " AND vendas.status = $filtroStatus";
             }
 
-            if (!empty($filtroDataEntrada)) {
-                $sql .= " AND reserva.dataEntrada >= '$filtroDataEntrada'";
+            if (!empty($filtroUsuario)) {
+                $sql .= " AND usuario.nome LIKE '%$filtroUsuario%'";
             }
-
-            if (!empty($filtroDataSaida)) {
-                $sql .= " AND reserva.dataSaida <= '$filtroDataSaida'";
-            }
-
-            if (!empty($filtroNomeHospede)) {
-                $sql .= " AND hospede.nome LIKE '%$filtroNomeHospede%'";
-            }
-
-            $sql .= " ORDER BY reserva.dataEntrada ASC";
 
             $resultado = mysqli_query($conexao, $sql);
 
             // Verifica se a consulta foi bem-sucedida
             if ($resultado) {
-                $reservas = []; // Array para armazenar as reservas
+                $vendas = []; // Array para armazenar as vendas
             
                 // Armazena os resultados em uma matriz
                 while ($linha = mysqli_fetch_array($resultado)) {
-                    $reservas[] = $linha;
+                    $vendas[] = $linha;
                 }
 
 
