@@ -47,19 +47,19 @@ if (isset($_POST['cadastrar'])) {
            <?php 
        }
        else {
-        //3. Preparar a SQL
+            //3. Preparar a SQL
 
-        $sql = "insert into usuario (nome, email, senha, dataNascimento, cpf, cidade, UF) values ('$nome', '$email', '$senha', '$dataNasc', '$cpf', '$cidade', '$estado')";
-        
-        //4. executar a sql no banco de dados
+            $sql = "insert into usuario (nome, email, senha, dataNascimento, cpf, cidade, UF) values ('$nome', '$email', '$senha', '$dataNasc', '$cpf', '$cidade', '$estado')";
+            
+            //4. executar a sql no banco de dados
 
-        mysqli_query($conexao, $sql);
+            mysqli_query($conexao, $sql);
 
-        //5. variável da mensagem
+            //5. variável da mensagem
 
-        $mensagem = "Cadastrado com sucesso.";
+            $mensagem = "Cadastrado com sucesso.";
+        }
     }
-}
 
 }
 

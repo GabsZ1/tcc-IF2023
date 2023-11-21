@@ -1,6 +1,5 @@
 <?php
 session_start();
-//var_dump($_SESSION['email']);
 $sessao_id = $_SESSION['email'];
 require_once("conexao.php");
 require_once("verificaAutenticacao.php"); 
@@ -19,13 +18,16 @@ $sql ="SELECT livros.id, livros.titulo,
               carrinho.quantidade * livros.valor as valor_total
         from carrinho
         inner join livros on livros.id = carrinho.livros_id
-        where sessao_id = '$sessao_id'";
+        where sessao_id LIKE '$sessao_id'";
 
 
 // agora listar todos os dados dessa consulta , nome produto, qntd, valor unitario, valor total unitario, e no final o valor total da compra
 
 $resultado = mysqli_query($conexao, $sql);
-$linha = mysqli_fetch_array($resultado);
+
+// if(mysqli_num_rows($resultado)==1) {
+//     number_format($total, 2);
+// }
 
 ?>
 
@@ -77,13 +79,9 @@ $linha = mysqli_fetch_array($resultado);
                                 <span class="text-muted">Resumo</span>
                             </h4>
                             <ul class="list-group mb-3">
-                                <li class="list-group-item d-flex justify-content-between lh-condensed">
-                                    <span>Soma dos Produtos</span>
-                                    <span class="text-muted"><div id="resumoSoma">0,00</div></span>
-                                </li>
                                 <li class="list-group-item d-flex justify-content-between">
                                     <h6 class="my-0">Total (R$)</h6>
-                                    <strong><div id="resumoValorTotal">0,00</div></strong>
+                                    <strong><div id="resumoValorTotal"> R$ 00,00 </div></strong>
                                 </li>
                             </ul>
                             <div class="input-group">
@@ -111,10 +109,10 @@ $linha = mysqli_fetch_array($resultado);
                                                     <td><?= $linha['titulo'] ?></th>
                                                     <td><?= $linha['quantidade'] ?></th>
                                                     <td><?= $linha['valor'] ?></th>
-                                                    <td><?= $linha['valor_total'] ?></th>
+                                                    <td><?= $linha['valor_total'] ?></th> 
                                                     <td>
-
-                                                    <!-- <a href="testeCarrinho.php?id=<?= $linha['id'] ?>" class="btn btn-danger" style="background-color:#9c93cf; border-top-width: 0px; border-right-width: 0px; border-bottom-width: 0px; border-left-width: 0px;" onclick="return confirm('Confirmar retirada do carrinho?')"><i class="fa-solid fa-trash-can"></i></a> -->
+                                                        <a href="testeCarrinho.php?id=<?= $linha['id'] ?>" class="btn btn-danger" style="background-color:#9c93cf; border-top-width: 0px; border-right-width: 0px; border-bottom-width: 0px; border-left-width: 0px;" onclick="return confirm('Confirmar retirada do carrinho?')"><i class="fa-solid fa-trash-can"></i></a>
+                                                    </th>
                                                 </tr>
                                             <?php } ?>
                                         </tbody>
