@@ -3,7 +3,7 @@ session_start();
 require_once("conexao.php");
 
 if (isset($_POST['adicionar'])) {
-    $sessao_id = session_id();
+    $sessao_id = $_SESSION['email'];
     $valor_unitario = str_replace(',', '.', $_POST['valor_unitario']);
     $livros_id = $_POST['livros_id'];
     $quantidade = $_POST['quantidade'];
@@ -70,7 +70,7 @@ $row = mysqli_fetch_array($result);
                         <span class="mb-4">R$<?= $row['valor']; ?></span>
                         <input class="form-control text-center mb-3" id="quantidade" name="quantidade" type="number" min="1" max="20" value="1" style="max-width: 5rem">
                         <!-- <a href="#" class="btn btn-primary btn-lg btn-block active" role="button" aria-pressed="true" style="margin-left: 0px;"></a> -->
-                        <button type="submit" class="btn btn-primary btn-lg btn-block active" name="adicionar" aria-pressed="true" style="margin-left: 0px;">Adicionar ao carrinho</button>
+                        <button type="submit" class="btn btn-primary btn-lg btn-block active" name="adicionar" id="btnAdicionar" aria-pressed="true" style="margin-left: 0px;">Adicionar ao carrinho</button>
 
 
                     </div>
@@ -80,6 +80,7 @@ $row = mysqli_fetch_array($result);
                 </div>
             </form>
         </main>
+        <script src="js/carrinho.js"></script>
         <script src="js/pesquisa.js"></script>
     </body>
 </html>

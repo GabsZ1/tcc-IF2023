@@ -1,44 +1,20 @@
 <?php
-
 session_start();
-$sessao_id = session_id();
-
+//var_dump($_SESSION['email']);
+$sessao_id = $_SESSION['email'];
 require_once("conexao.php");
-
 require_once("verificaAutenticacao.php"); 
 
 //Bloco de exclusão
 if (isset($_GET['id'])) {
 
-    $sql = "delete from livros where id = " . $_GET['id'];
-    mysqli_query($conexao, $sql);
+    $sql2 = "delete from livros where id = " . $_GET['id'];
+    mysqli_query($conexao, $sql2);
     $mensagem = "Exclusão realizada com sucesso";
   }
 ///////////////////////
 
-// if (isset($_POST['finalizar'])) {    PERGUNTA PARA O BORTH POR FAVOR!!!!!!!!!!!!
-//     $sessao_id = session_id();
-    
-//     $valor_unitario = str_replace(',', '.', $_POST['valor_unitario']);
-//     $livros_id = $_POST['livros_id'];
-//     $quantidade = $_POST['quantidade'];
-
-//     $sql_carrinho = "insert into venda (livros_id, valor_unitario, quantidade, sessao_id)
-//     values ($livros_id, '$valor_unitario', '$quantidade', '$sessao_id')";
-//     mysqli_query($conexao, $sql_carrinho);
-
-//     $mensagem = "Venda finalizada com sucesso!";
-// }
-
-// $idlivro = $_GET["id"];  
-
-// $sql = "SELECT livros.*, autor.nome, editora.nome as editora_nome  
-// FROM livros
-// LEFT JOIN autor ON autor.id = livros.livrosAutor_id
-// LEFT JOIN editora ON editora.id = livros.livrosEditora_id
-// WHERE livros.id LIKE '$idlivro'";
-
-$sql ="select livros.id, livros.titulo, 
+$sql ="SELECT livros.id, livros.titulo, 
               carrinho.quantidade, livros.valor,
               carrinho.quantidade * livros.valor as valor_total
         from carrinho
@@ -138,7 +114,7 @@ $linha = mysqli_fetch_array($resultado);
                                                     <td><?= $linha['valor_total'] ?></th>
                                                     <td>
 
-                                                    <a href="testeCarrinho.php?id=<?= $linha['id'] ?>" class="btn btn-danger" style="background-color:#9c93cf; border-top-width: 0px; border-right-width: 0px; border-bottom-width: 0px; border-left-width: 0px;" onclick="return confirm('Confirmar retirada do carrinho?')"><i class="fa-solid fa-trash-can"></i></a>
+                                                    <!-- <a href="testeCarrinho.php?id=<?= $linha['id'] ?>" class="btn btn-danger" style="background-color:#9c93cf; border-top-width: 0px; border-right-width: 0px; border-bottom-width: 0px; border-left-width: 0px;" onclick="return confirm('Confirmar retirada do carrinho?')"><i class="fa-solid fa-trash-can"></i></a> -->
                                                 </tr>
                                             <?php } ?>
                                         </tbody>
@@ -153,7 +129,32 @@ $linha = mysqli_fetch_array($resultado);
 
         </div>
         <script src="js/pesquisa.js"></script>
+        <script src="js/carrinho.js"></script>
         <script src="/docs/5.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous"></script>
         <script src="checkout.js"></script>
     </body>
 </html>
+
+<?php
+// if (isset($_POST['finalizar'])) {    PERGUNTA PARA O BORTH POR FAVOR!!!!!!!!!!!!
+//     $sessao_id = session_id();
+    
+//     $valor_unitario = str_replace(',', '.', $_POST['valor_unitario']);
+//     $livros_id = $_POST['livros_id'];
+//     $quantidade = $_POST['quantidade'];
+
+//     $sql_carrinho = "insert into venda (livros_id, valor_unitario, quantidade, sessao_id)
+//     values ($livros_id, '$valor_unitario', '$quantidade', '$sessao_id')";
+//     mysqli_query($conexao, $sql_carrinho);
+
+//     $mensagem = "Venda finalizada com sucesso!";
+// }
+
+// $idlivro = $_GET["id"];  
+
+// $sql = "SELECT livros.*, autor.nome, editora.nome as editora_nome  
+// FROM livros
+// LEFT JOIN autor ON autor.id = livros.livrosAutor_id
+// LEFT JOIN editora ON editora.id = livros.livrosEditora_id
+// WHERE livros.id LIKE '$idlivro'";
+?>

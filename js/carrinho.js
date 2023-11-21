@@ -106,6 +106,6 @@ $(function() {
 
 
     $(".btnExcluir").bind("click", Excluir);
-	$("#btnAdicionar").bind("click", Adicionar);
+	$(".btnAdicionar").bind("click", Adicionar);
 	$("#btnAplicarDesconto").bind("click", AplicarDesconto);
 });
