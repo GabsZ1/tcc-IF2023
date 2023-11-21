@@ -316,6 +316,7 @@ CREATE TABLE `venda` (
 ALTER TABLE `venda`
   ADD PRIMARY KEY (`id`),
   ADD KEY `fk_vendaProduto` (`produto_id`);
+  ADD KEY `fk_vendaUsuario` (`usuario_id`);
 
 --
 -- AUTO_INCREMENT para tabelas despejadas
@@ -336,6 +337,7 @@ ALTER TABLE `venda`
 --
 ALTER TABLE `venda`
   ADD CONSTRAINT `fk_vendaProduto` FOREIGN KEY (`produto_id`) REFERENCES `livros` (`id`);
+  ADD CONSTRAINT `fk_vendaUsuario` FOREIGN KEY (`usuario_id`) REFERENCES `usuario` (`id`);
 COMMIT;
 
 --

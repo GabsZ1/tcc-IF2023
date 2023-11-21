@@ -93,14 +93,14 @@ require_once("conexao.php");
             $filtroStatus = isset($_GET['status']) ? $_GET['status'] : '';
             $filtroUsuario = isset($_GET['nome']) ? $_GET['nome'] : '';
 
-            $sql = "SELECT vendas.*, usuario.nome as usuario_nome, livros.titulo as livros_titulo
-                    FROM vendas
-                    LEFT JOIN usuario ON usuario.id = vendas.id_usuario
-                    LEFT JOIN livros ON livros.id = vendas.id_livros
+            $sql = "SELECT venda.*, usuario.nome as usuario_nome, livros.titulo as livros_titulo
+                    FROM venda
+                    LEFT JOIN usuario ON usuario.id = venda.usuario_id
+                    LEFT JOIN livros ON livros.id = venda.produto_id
                     WHERE 1";
 
             if (!empty($filtroStatus)) {
-                $sql .= " AND vendas.status = $filtroStatus";
+                $sql .= " AND venda.status = $filtroStatus";
             }
 
             if (!empty($filtroUsuario)) {
@@ -120,8 +120,8 @@ require_once("conexao.php");
 
 
                 // Itera sobre as reservas para exibir os cartões de reserva
-                foreach ($reservas as $reserva) {
-                    $statusInfo = getStatusName($reserva['status']);
+                foreach ($vendas as $venda) {
+                    $statusInfo = getStatusName($venda['status']);
                     $statusText = $statusInfo[0];
                     $statusClass = $statusInfo[1];
                     ?>
@@ -132,31 +132,24 @@ require_once("conexao.php");
                             <div class="card-body">
                                 <div class="card-title">
                                     <h5 style="color: #a70162; font-family: 'Segoe UI'">QUARTO
-                                        <?= $reserva['quarto_numero'] ?>
+                                        <?= $venda['livros_titulo'] ?>
                                     </h5>
-
                                     <label class="badge text-bg-<?= $statusClass ?>">
                                         <?= $statusText ?>
                                     </label>
                                 </div>
                                 <ul class="list-group list-group-flush">
                                     <li class="list-group-item">Hóspede:
-                                        <?= $reserva['hospede_nome'] ?>
-                                    </li>
-                                    <li class="list-group-item">Data de entrada:
-                                        <?= date('d/m/Y', strtotime($reserva['dataEntrada'])) ?>
-                                    </li>
-                                    <li class="list-group-item">Data de Saída:
-                                        <?= date('d/m/Y', strtotime($reserva['dataSaida'])) ?>
+                                        <?= $venda['usuario_nome'] ?>
                                     </li>
                                     <li class="list-group-item">Valor Total: R$
-                                        <?= number_format($reserva['valorTotalReserva'], 2, ',', '.') ?>
+                                        <?= number_format($venda['valorTotalVenda'], 2, ',', '.') ?>
                                     </li>
                                 </ul>
 
-                                <a href="alterarReserva.php?id=<?= $reserva['id'] ?>" class="btn btn-warning">
+                                <!-- <a href="alterarReserva.php?id=<?= $venda['id'] ?>" class="btn btn-warning">
                                     <i class="fa-solid fa-pen-to-square"></i>Alterar
-                                </a>
+                                </a> -->
                                 
                             </div>
                         </div>
