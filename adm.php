@@ -30,11 +30,6 @@ if (isset($_POST['logar'])){
     //4. executar a sql no banco de dados
 
     mysqli_query($conexao, $sql);
-
-    //5. variável da mensagem
-
-    $mensagem = "Usuario logado com sucesso.";
-
 }
 ?>
 

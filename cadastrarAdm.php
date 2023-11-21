@@ -19,7 +19,7 @@ if (isset($_POST['cadastrar'])){
 
     //5. variável da mensagem
 
-    $mensagem = "Inserido com sucesso.";
+    $mensagem = "Cadastrado com sucesso.";
 
 }
 

@@ -32,8 +32,6 @@
                     <img src="img/imgSITE/nuvemBRANCO.png" style="width: 100px; margin-right: 150px;" alt="">
                     <nav class="nav nav-masthead justify-content-center float-md-end" style="margin-top: 35px;">
 
-                        <!-- <a class="nav-link active" href="#">Home</a> -->
-
                         <ul class="navbar-nav">
                             <li class="nav-item dropdown">
                             
@@ -101,7 +99,7 @@
                 }
             ?>
                 <p class="lead">Bem vinda novamente, acesse o nessário para realizar as mudanças que preferir.</p>
-                
+
             </main>
 
             <footer class="mt-auto text-white-50">
