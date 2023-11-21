@@ -12,6 +12,8 @@ if (isset($_POST['cadastrar'])) {
     $cpf = $_POST['cpf'];
     $cidade = $_POST['cidade'];
     $estado = $_POST['estado'];
+    $numerocasa = $_POST['numerocasa'];
+    $nomerua = $_POST['nomerua'];
 
     $sql2 = "SELECT * FROM usuario WHERE (email='$email')";
 
@@ -28,6 +30,8 @@ if (isset($_POST['cadastrar'])) {
         $cpf = $_POST['cpf'];
         $cidade = $_POST['cidade'];
         $estado = $_POST['estado'];
+        $numerocasa = $_POST['numerocasa'];
+        $nomerua = $_POST['nomerua'];
     } 
     else { //prossegue com o cadastro pq o CPF está válido
         $nome = $_POST['nome'];
@@ -37,6 +41,8 @@ if (isset($_POST['cadastrar'])) {
         $cpf = $_POST['cpf'];
         $cidade = $_POST['cidade'];
         $estado = $_POST['estado'];
+        $numerocasa = $_POST['numerocasa'];
+        $nomerua = $_POST['nomerua'];
 
         if(mysqli_num_rows($resultado)>0){
             ?>
@@ -114,6 +120,7 @@ function validarCPF($cpf)
     <link rel="website icon" type="png" href="img/imgSITE/nuvemLILAS.png">
     <link href="css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@48,300,0,0" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
     <title>Cadastro</title>
 
 </head>
@@ -132,7 +139,7 @@ function validarCPF($cpf)
     <?php } ?>
     <div class="text-center">
         <div class="cadastro-container">
-            <div class="cadastro" style="width: 650px; width: 650px; margin-top: 10px; margin-bottom: 30px;">
+            <div class="cadastro" style="width: 650px; width: 650px; margin-top: 10px; margin-bottom: 30px; height: 1300px">
                 <div class="cadastro-logo">
                     <a href="login.php">
                         <img src="img/imgSITE/nuvemLILAS.png" alt="logo">
@@ -189,8 +196,22 @@ function validarCPF($cpf)
                             <option selected disabled value="">Sua cidade</option>
                         </select>
                     </div>
+                        
+                
+                  <div  class="form-item" style=" margin-top: 50px; padding-right: 140px; padding-left: 140px; margin-bottom: 10; right: 140px; height: -50px;  top: -50px;">
+                    <!-- <span class="material-symbols-outlined">home_pin</span> -->
+                        <input type="text" name="text" placeholder="Nome da rua" required autofocus>
+                </div>
 
-                    <input class="btn btn-primary btn-lg btn-block active" data-bs-toggle="modal" type="submit" value="Cadastrar" name="cadastrar" style="width: 414px; margin-left: 50px;">
+                    <div class="form-item" style=" margin-top: 50px; padding-right: 140px; padding-left: 140px; margin-bottom: 10;  right: -140px; height: 50px; top: -180px;">
+                        <!-- <span class="form-item-icon material-symbols-rounded">badge</span> -->
+                        <input type="text" name="nome" placeholder="Número da casa" required autofocus>
+                    </div>
+              
+               
+            
+                    <input class="btn btn-primary btn-lg btn-block active"
+                     data-bs-toggle="modal" type="submit" value="Cadastrar" name="cadastrar" style="width: 414px; margin-left: 50px; top: -130px">
                 </form>
             </div>
         </div>
