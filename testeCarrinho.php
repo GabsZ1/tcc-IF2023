@@ -5,6 +5,8 @@ $sessao_id = session_id();
 
 require_once("conexao.php");
 
+require_once("verificaAutenticacao.php"); 
+
 //Bloco de exclusão
 if (isset($_GET['id'])) {
 
