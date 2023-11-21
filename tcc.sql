@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Tempo de geração: 21/11/2023 às 16:09
+-- Tempo de geração: 21/11/2023 às 20:53
 -- Versão do servidor: 10.4.28-MariaDB
 -- Versão do PHP: 8.2.4
 
@@ -94,9 +94,9 @@ INSERT INTO `autor` (`id`, `nome`, `status`) VALUES
 CREATE TABLE `carrinho` (
   `id` int(11) NOT NULL,
   `livros_id` int(11) NOT NULL,
-  `valor_unitario` int(11) NOT NULL,
+  `valor_unitario` double NOT NULL,
   `quantidade` int(11) NOT NULL,
-  `sessao_id` int(11) NOT NULL
+  `sessao_id` varchar(100) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
@@ -104,7 +104,32 @@ CREATE TABLE `carrinho` (
 --
 
 INSERT INTO `carrinho` (`id`, `livros_id`, `valor_unitario`, `quantidade`, `sessao_id`) VALUES
-(1, 2, 38, 1, 0);
+(9, 2, 38, 2, 'guuuuA@gmail.com'),
+(10, 2, 38, 1, 'gabrielle@gmail.com'),
+(11, 3, 37, 1, 'gabrielle@gmail.com'),
+(12, 3, 37, 1, 'Nalauraaa@gmail.com'),
+(13, 4, 33, 1, 'Nalauraaa@gmail.com'),
+(14, 5, 32, 1, 'Nalauraaa@gmail.com'),
+(15, 2, 38, 2, 'Nalauraaa@gmail.com'),
+(16, 1, 32, 1, 'Nalauraaa@gmail.com'),
+(17, 3, 37, 1, 'Nalauraaa@gmail.com'),
+(18, 5, 32, 1, 'Nalauraaa@gmail.com'),
+(19, 2, 38, 1, 'Nalauraaa@gmail.com'),
+(20, 1, 32, 1, 'Nalauraaa@gmail.com'),
+(21, 3, 37, 1, 'Nalauraaa@gmail.com'),
+(22, 1, 32, 1, 'Nalauraaa@gmail.com'),
+(23, 2, 38, 1, 'Nalauraaa@gmail.com'),
+(24, 3, 37, 1, 'Nalauraaa@gmail.com'),
+(25, 2, 38, 1, 'Nalauraaa@gmail.com'),
+(26, 11, 42, 1, 'Nalauraaa@gmail.com'),
+(27, 2, 38, 1, 'Nalauraaa@gmail.com'),
+(29, 1, 32, 1, 'vinicius@gmail.com'),
+(30, 2, 38, 1, ''),
+(31, 1, 32, 1, ''),
+(32, 1, 32, 1, ''),
+(33, 1, 32, 1, 'guuuuA@gmail.com'),
+(34, 2, 38, 1, 'favgd@bfrbfrn'),
+(35, 3, 37, 1, 'favgd@bfrbfrn');
 
 -- --------------------------------------------------------
 
@@ -295,7 +320,10 @@ INSERT INTO `usuario` (`id`, `nome`, `email`, `senha`, `dataNascimento`, `cpf`, 
 (6, 'Batista', 'Batistaaa@gmail.com', '4134321', '30/08/20', '243517', 'Cruzeiro', 'MT', '(44)87263-5', 1),
 (7, 'Gustavo Antonio', 'guuuuA@gmail.com', '243534645', '21/12/20', '084.709.149', 'Icaraíma', 'PE', '(44)87392-0223', 1),
 (8, 'Gustavo Antonio', 'guuuuA@gmail.com', '23214124', '21/02/23', '111.111.111', 'Umuarama', 'PI', '(43)23424-4323', 1),
-(25, 'ebfrenfdrenfde', 'favgd@bfrbfrn', '33213123', '2001-03-', '08470914901', 'Abadia dos Dourados', 'MG', '(22)22222-2222', 1);
+(25, 'ebfrenfdrenfde', 'favgd@bfrbfrn', '33213123', '2001-03-', '08470914901', 'Abadia dos Dourados', 'MG', '(22)22222-2222', 1),
+(32, 'dfwfwaf', 'Nalauraaa@gmail.com', '123', '1981-06-20', '007.665.539', 'Umuarama', 'PR', '', 1),
+(33, 'dfwfwaf', 'Nalauraaa@gmail.com', '432', '2005-03-10', '140.812.259', 'Cruzeiro do Sul', 'PR', '', 1),
+(34, 'vinicius', 'vinicius@gmail.com', '123', '1981-06-20', '007.665.539', 'Umuarama', 'PR', '', 1);
 
 -- --------------------------------------------------------
 
@@ -397,7 +425,7 @@ ALTER TABLE `autor`
 -- AUTO_INCREMENT de tabela `carrinho`
 --
 ALTER TABLE `carrinho`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=36;
 
 --
 -- AUTO_INCREMENT de tabela `editora`
@@ -427,7 +455,7 @@ ALTER TABLE `livros`
 -- AUTO_INCREMENT de tabela `usuario`
 --
 ALTER TABLE `usuario`
-  MODIFY `id` int(13) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=32;
+  MODIFY `id` int(13) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=35;
 
 --
 -- AUTO_INCREMENT de tabela `venda`
