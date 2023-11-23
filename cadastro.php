@@ -12,8 +12,8 @@ if (isset($_POST['cadastrar'])) {
     $cpf = $_POST['cpf'];
     $cidade = $_POST['cidade'];
     $estado = $_POST['estado'];
-    $numerocasa = $_POST['numerocasa'];
-    $nomerua = $_POST['nomerua'];
+    $cep = $_POST['cep'];
+    $endereco = $_POST['endereco'];
 
     $sql2 = "SELECT * FROM usuario WHERE (email='$email')";
 
@@ -30,8 +30,8 @@ if (isset($_POST['cadastrar'])) {
         $cpf = $_POST['cpf'];
         $cidade = $_POST['cidade'];
         $estado = $_POST['estado'];
-        $numerocasa = $_POST['numerocasa'];
-        $nomerua = $_POST['nomerua'];
+        $cep = $_POST['cep'];
+        $endereco = $_POST['endereco'];
     } 
     else { //prossegue com o cadastro pq o CPF está válido
         $nome = $_POST['nome'];
@@ -41,8 +41,8 @@ if (isset($_POST['cadastrar'])) {
         $cpf = $_POST['cpf'];
         $cidade = $_POST['cidade'];
         $estado = $_POST['estado'];
-        $numerocasa = $_POST['numerocasa'];
-        $nomerua = $_POST['nomerua'];
+        $cep = $_POST['cep'];
+        $endereco = $_POST['endereco'];
 
         if(mysqli_num_rows($resultado)>0){
             ?>
@@ -55,7 +55,7 @@ if (isset($_POST['cadastrar'])) {
        else {
             //3. Preparar a SQL
 
-            $sql = "insert into usuario (nome, email, senha, dataNascimento, cpf, cidade, UF) values ('$nome', '$email', '$senha', '$dataNasc', '$cpf', '$cidade', '$estado')";
+            $sql = "insert into usuario (nome, email, senha, dataNascimento, cpf, cidade, UF, cep, endereco) values ('$nome', '$email', '$senha', '$dataNasc', '$cpf', '$cidade', '$estado', '$cep', '$endereco')";
             
             //4. executar a sql no banco de dados
 
@@ -198,17 +198,13 @@ function validarCPF($cpf)
                     </div>
                         
                 
-                  <div  class="form-item" style=" margin-top: 50px; padding-right: 140px; padding-left: 140px; margin-bottom: 10; right: 140px; height: -50px;  top: -50px;">
-                    <!-- <span class="material-symbols-outlined">home_pin</span> -->
-                        <input type="text" name="text" placeholder="Nome da rua" required autofocus>
-                </div>
-
-                    <div class="form-item" style=" margin-top: 50px; padding-right: 140px; padding-left: 140px; margin-bottom: 10;  right: -140px; height: 50px; top: -180px;">
-                        <!-- <span class="form-item-icon material-symbols-rounded">badge</span> -->
-                        <input type="text" name="nome" placeholder="Número da casa" required autofocus>
+                    <div  class="form-item" style=" margin-top: 50px; padding-right: 140px; padding-left: 140px; margin-bottom: 10; right: 140px; height: -50px;  top: -50px;">
+                        <input type="text" name="cep" placeholder="CEP" required autofocus>
                     </div>
-              
-               
+
+                    <div class="form-item" style=" margin-top: 50px; padding-right: 140px; padding-left: 140px; margin-bottom: 10;  right: -140px; height: 50px; top: -190px;">
+                        <input type="text" name="endereco" placeholder="Seu endereço" required autofocus>
+                    </div>
             
                     <input class="btn btn-primary btn-lg btn-block active"
                      data-bs-toggle="modal" type="submit" value="Cadastrar" name="cadastrar" style="width: 414px; margin-left: 50px; top: -130px">
