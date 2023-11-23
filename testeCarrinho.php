@@ -111,7 +111,7 @@ $resultado = mysqli_query($conexao, $sql);
                                                     <td><?= $linha['valor'] ?></th>
                                                     <td><?= $linha['valor_total'] ?></th> 
                                                     <td>
-                                                        <a href="testeCarrinho.php?id=<?= $linha['id'] ?>" class="btn btn-danger" style="background-color:#9c93cf; border-top-width: 0px; border-right-width: 0px; border-bottom-width: 0px; border-left-width: 0px;" onclick="return confirm('Confirmar retirada do carrinho?')"><i class="fa-solid fa-trash-can"></i></a>
+                                                        <a href="testeCarrinho.php?id=<?= $linha['titulo'] ?>" class="btn btn-danger" style="background-color:#9c93cf; border-top-width: 0px; border-right-width: 0px; border-bottom-width: 0px; border-left-width: 0px;" onclick="return confirm('Confirmar retirada do carrinho?')"><i class="fa-solid fa-trash-can"></i></a>
                                                     </th>
                                                 </tr>
                                             <?php } ?>

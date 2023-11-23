@@ -1,5 +1,7 @@
 <?php 
-session_start(); 
+session_start();
+require_once("conexao.php"); 
+// require_once("verificaAutenticacaoAdm.php"); 
 ?>
 <!doctype html>
 <html lang="pt-br" class="h-100" data-bs-theme="auto">
