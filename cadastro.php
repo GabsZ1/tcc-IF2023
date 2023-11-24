@@ -185,25 +185,21 @@ function validarCPF($cpf)
 
                     <div class="form-item">
                         <span class="form-item-icon material-symbols-rounded">person_pin_circle</span>
-                        <select name="estado" id="estado" required>
-                            <option selected disabled value="">Seu estado</option>
-                        </select>
+                        <input  id="estado" type="text" name="estado" placeholder="Estado" required autofocus>
                     </div>
 
                     <div class="form-item">
                         <span class="form-item-icon material-symbols-rounded">location_city</span>
-                        <select name="cidade" id="cidade" required>
-                            <option selected disabled value="">Sua cidade</option>
-                        </select>
+                        <input  id="cidade" type="text" name="cidade" placeholder="Cidade" required autofocus>
                     </div>
                         
                 
                     <div  class="form-item" style=" margin-top: 50px; padding-right: 140px; padding-left: 140px; margin-bottom: 10; right: 140px; height: -50px;  top: -50px;">
-                        <input type="text" name="cep" placeholder="CEP" required autofocus>
+                        <input  id="cep" type="text" name="cep" placeholder="CEP" required autofocus>
                     </div>
 
                     <div class="form-item" style=" margin-top: 50px; padding-right: 140px; padding-left: 140px; margin-bottom: 10;  right: -140px; height: 50px; top: -190px;">
-                        <input type="text" name="endereco" placeholder="Seu endereço" required autofocus>
+                        <input  id="endereco" type="text" name="endereco" placeholder="Seu endereço" required autofocus>
                     </div>
             
                     <input class="btn btn-primary btn-lg btn-block active"
@@ -240,7 +236,7 @@ function validarCPF($cpf)
     });
 </script>
 
-<script>
+<!-- <script>
     const ulrUF = 'https://servicodados.ibge.gov.br/api/v1/localidades/estados/'
     const cidade = document.getElementById("cidade")
     const uf = document.getElementById("estado")
@@ -269,7 +265,7 @@ function validarCPF($cpf)
       })
       uf.append(options)
     })
-</script>
+</script> -->
 
 <script>
     let senha = document.getElementById('senha');
@@ -288,4 +284,5 @@ function validarCPF($cpf)
     confsenha.addEventListener('input', validarSenha)
 </script>
 
+<script type="text/javascript" src="js/cep.js"></script>
 </html>
