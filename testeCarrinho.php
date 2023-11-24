@@ -33,6 +33,28 @@ while ($linha = mysqli_fetch_array($resultado)) {
 }
 
 $resultado = mysqli_query($conexao, $sql);
+
+
+if (isset($_POST['finalizar'])) {
+    $sessao_id = $_SESSION['email'];
+
+    while ($linha = mysqli_fetch_array($resultado)) {
+        $totalGeral += $linha['valor_total'];
+    }
+    
+    $valortotal = str_replace(',', '.', $_POST['valortotal']);
+    $usuario_id = $_POST['usuario_id'];
+    $data = $_POST['datavenda'];
+
+    $sql_carrinho = "insert into venda (usuario_id, valortotal, datavenda)
+    values ($usuario_id, '$valortotal', '$data')";
+
+    mysqli_query($conexao, $sql_carrinho);
+
+    $mensagem = "Venda finalizada com sucesso!";
+}
+
+
 ?>
 
 
@@ -75,7 +97,7 @@ $resultado = mysqli_query($conexao, $sql);
                 <p class="lead">Onde estará seus livros mais desejados!</p>
                 </div>
                 <hr style="padding-bottom: 0px; padding-top: 48px;">
-                <form action="exibirCarrinho.php" method="post">
+                <form action="testeCarrinho.php" method="post">
                     <div class="row">
                         <!-- div resumo compra -->
                         <div class="col-md-4 order-md-2 mb-4">
@@ -88,9 +110,13 @@ $resultado = mysqli_query($conexao, $sql);
                                     <strong><div id="resumoValorTotal"> R$ <?= $totalGeral ?>,00</div></strong>
                                 </li>
                             </ul>
+
+
                             <div class="input-group">
                                 <button type="submit" name="finalizar" value="finalizar" class="btn btn-primary btn-lg btn-block active">Finalizar</button>
                             </div>
+
+
                         </div>
                         <!-- dados -->
                         <div class="col-md-8 order-md-1">
@@ -136,27 +162,3 @@ $resultado = mysqli_query($conexao, $sql);
         <script src="checkout.js"></script>
     </body>
 </html>
-
-<?php
-// if (isset($_POST['finalizar'])) {    PERGUNTA PARA O BORTH POR FAVOR!!!!!!!!!!!!
-//     $sessao_id = session_id();
-    
-//     $valor_unitario = str_replace(',', '.', $_POST['valor_unitario']);
-//     $livros_id = $_POST['livros_id'];
-//     $quantidade = $_POST['quantidade'];
-
-//     $sql_carrinho = "insert into venda (livros_id, valor_unitario, quantidade, sessao_id)
-//     values ($livros_id, '$valor_unitario', '$quantidade', '$sessao_id')";
-//     mysqli_query($conexao, $sql_carrinho);
-
-//     $mensagem = "Venda finalizada com sucesso!";
-// }
-
-// $idlivro = $_GET["id"];  
-
-// $sql = "SELECT livros.*, autor.nome, editora.nome as editora_nome  
-// FROM livros
-// LEFT JOIN autor ON autor.id = livros.livrosAutor_id
-// LEFT JOIN editora ON editora.id = livros.livrosEditora_id
-// WHERE livros.id LIKE '$idlivro'";
-?>
