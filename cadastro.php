@@ -151,10 +151,15 @@ function validarCPF($cpf)
                     <br>
                     <br>
                 </div>
+
+                <?php
+                $nome = isset($_POST['nome']) ? $_POST['nome'] : "";
+                ?>
+
                 <form class="cadastro-form" method="post">
                     <div class="form-item">
                         <span class="form-item-icon material-symbols-rounded">badge</span>
-                        <input type="text" name="nome" placeholder="Seu nome" required autofocus>
+                        <input type="text" name="nome" placeholder="Seu nome" required autofocus value="<?= $nome ?>">
                     </div>
                     <div class="form-item">
                         <span class="form-item-icon material-symbols-rounded">mail</span>
