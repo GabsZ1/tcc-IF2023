@@ -4,13 +4,15 @@ $sessao_id = $_SESSION['email'];
 require_once("conexao.php");
 require_once("verificaAutenticacao.php"); 
 
+// . " and sessao_id = " . $sessao_id; (deu erro D: )
+
 //Bloco de exclusão
 if (isset($_GET['id'])) {
 
-    $sql2 = "delete from livros where id = " . $_GET['id'];
-    mysqli_query($conexao, $sql2);
-    $mensagem = "Exclusão realizada com sucesso";
-  }
+    $sql = "delete from carrinho where livros_id = " . $_GET['id'] ;
+    mysqli_query($conexao, $sql);
+    $mensagem = "Exclusão realizada com sucesso!";
+}
 ///////////////////////
 
 $sql ="SELECT livros.id, livros.titulo, 
@@ -25,10 +27,12 @@ $sql ="SELECT livros.id, livros.titulo,
 
 $resultado = mysqli_query($conexao, $sql);
 
-// if(mysqli_num_rows($resultado)==1) {
-//     number_format($total, 2);
-// }
+$totalGeral = 0.0;
+while ($linha = mysqli_fetch_array($resultado)) {
+    $totalGeral += $linha['valor_total'];
+}
 
+$resultado = mysqli_query($conexao, $sql);
 ?>
 
 
@@ -81,7 +85,7 @@ $resultado = mysqli_query($conexao, $sql);
                             <ul class="list-group mb-3">
                                 <li class="list-group-item d-flex justify-content-between">
                                     <h6 class="my-0">Total (R$)</h6>
-                                    <strong><div id="resumoValorTotal"> R$ 00,00 </div></strong>
+                                    <strong><div id="resumoValorTotal"> R$ <?= $totalGeral ?>,00</div></strong>
                                 </li>
                             </ul>
                             <div class="input-group">
@@ -111,7 +115,7 @@ $resultado = mysqli_query($conexao, $sql);
                                                     <td><?= $linha['valor'] ?></th>
                                                     <td><?= $linha['valor_total'] ?></th> 
                                                     <td>
-                                                        <a href="testeCarrinho.php?id=<?= $linha['titulo'] ?>" class="btn btn-danger" style="background-color:#9c93cf; border-top-width: 0px; border-right-width: 0px; border-bottom-width: 0px; border-left-width: 0px;" onclick="return confirm('Confirmar retirada do carrinho?')"><i class="fa-solid fa-trash-can"></i></a>
+                                                        <a href="testeCarrinho.php?id=<?= $linha['id'] ?>" class="btn btn-danger" style="background-color:#9c93cf; border-top-width: 0px; border-right-width: 0px; border-bottom-width: 0px; border-left-width: 0px;" onclick="return confirm('Confirmar retirada do carrinho?')"><i class="fa-solid fa-trash-can"></i></a>
                                                     </th>
                                                 </tr>
                                             <?php } ?>
