@@ -85,7 +85,7 @@ $resultado = mysqli_query($conexao, $sql);
                             <ul class="list-group mb-3">
                                 <li class="list-group-item d-flex justify-content-between">
                                     <h6 class="my-0">Total (R$)</h6>
-                                    <strong><div id="resumoValorTotal"> R$ <?= $totalGeral ?></div></strong>
+                                    <strong><div id="resumoValorTotal"> R$ <?= $totalGeral ?>,00</div></strong>
                                 </li>
                             </ul>
                             <div class="input-group">
