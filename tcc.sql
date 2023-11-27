@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Tempo de geração: 21/11/2023 às 20:53
+-- Tempo de geração: 27/11/2023 às 13:20
 -- Versão do servidor: 10.4.28-MariaDB
 -- Versão do PHP: 8.2.4
 
@@ -104,32 +104,18 @@ CREATE TABLE `carrinho` (
 --
 
 INSERT INTO `carrinho` (`id`, `livros_id`, `valor_unitario`, `quantidade`, `sessao_id`) VALUES
-(9, 2, 38, 2, 'guuuuA@gmail.com'),
-(10, 2, 38, 1, 'gabrielle@gmail.com'),
 (11, 3, 37, 1, 'gabrielle@gmail.com'),
 (12, 3, 37, 1, 'Nalauraaa@gmail.com'),
 (13, 4, 33, 1, 'Nalauraaa@gmail.com'),
 (14, 5, 32, 1, 'Nalauraaa@gmail.com'),
-(15, 2, 38, 2, 'Nalauraaa@gmail.com'),
-(16, 1, 32, 1, 'Nalauraaa@gmail.com'),
 (17, 3, 37, 1, 'Nalauraaa@gmail.com'),
 (18, 5, 32, 1, 'Nalauraaa@gmail.com'),
-(19, 2, 38, 1, 'Nalauraaa@gmail.com'),
-(20, 1, 32, 1, 'Nalauraaa@gmail.com'),
 (21, 3, 37, 1, 'Nalauraaa@gmail.com'),
-(22, 1, 32, 1, 'Nalauraaa@gmail.com'),
-(23, 2, 38, 1, 'Nalauraaa@gmail.com'),
 (24, 3, 37, 1, 'Nalauraaa@gmail.com'),
-(25, 2, 38, 1, 'Nalauraaa@gmail.com'),
 (26, 11, 42, 1, 'Nalauraaa@gmail.com'),
-(27, 2, 38, 1, 'Nalauraaa@gmail.com'),
-(29, 1, 32, 1, 'vinicius@gmail.com'),
-(30, 2, 38, 1, ''),
-(31, 1, 32, 1, ''),
-(32, 1, 32, 1, ''),
-(33, 1, 32, 1, 'guuuuA@gmail.com'),
-(34, 2, 38, 1, 'favgd@bfrbfrn'),
-(35, 3, 37, 1, 'favgd@bfrbfrn');
+(35, 3, 37, 1, 'favgd@bfrbfrn'),
+(36, 3, 37, 4, ''),
+(40, 3, 37, 2, 'vinicius@gmail.com');
 
 -- --------------------------------------------------------
 
@@ -304,6 +290,8 @@ CREATE TABLE `usuario` (
   `cidade` varchar(100) NOT NULL,
   `UF` varchar(2) NOT NULL,
   `telefone` varchar(14) NOT NULL,
+  `cep` varchar(9) NOT NULL,
+  `endereco` varchar(100) NOT NULL,
   `status` int(11) NOT NULL DEFAULT 1
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
@@ -311,19 +299,19 @@ CREATE TABLE `usuario` (
 -- Despejando dados para a tabela `usuario`
 --
 
-INSERT INTO `usuario` (`id`, `nome`, `email`, `senha`, `dataNascimento`, `cpf`, `cidade`, `UF`, `telefone`, `status`) VALUES
-(1, 'Gabrielle', 'gabrielle@gmail.com', '1234', '', '0', 'Umuarama', 'PR', '44 8825 939', 1),
-(2, 'Gabrielle', 'gabrielle@gmail.com', '1234', '', '0', 'Umuarama', 'PR', '44 8825 939', 1),
-(3, 'Gabrielle', 'gabrielle@gmail.com', '1234', '', '0', 'Umuarama', 'PR', '44 8825 939', 1),
-(4, 'Ana Laura Dias de Cabral', 'Nalauraaa@gmail.com', '56789', '10/03/20', '153246', 'Cafezal', 'AL', '(44)98535-3', 1),
-(5, 'Ana Laura Dias de Cabral', 'Nalauraaa@gmail.com', '56789', '10/03/20', '153246', 'Cafezal', 'AL', '(44)98535-3', 1),
-(6, 'Batista', 'Batistaaa@gmail.com', '4134321', '30/08/20', '243517', 'Cruzeiro', 'MT', '(44)87263-5', 1),
-(7, 'Gustavo Antonio', 'guuuuA@gmail.com', '243534645', '21/12/20', '084.709.149', 'Icaraíma', 'PE', '(44)87392-0223', 1),
-(8, 'Gustavo Antonio', 'guuuuA@gmail.com', '23214124', '21/02/23', '111.111.111', 'Umuarama', 'PI', '(43)23424-4323', 1),
-(25, 'ebfrenfdrenfde', 'favgd@bfrbfrn', '33213123', '2001-03-', '08470914901', 'Abadia dos Dourados', 'MG', '(22)22222-2222', 1),
-(32, 'dfwfwaf', 'Nalauraaa@gmail.com', '123', '1981-06-20', '007.665.539', 'Umuarama', 'PR', '', 1),
-(33, 'dfwfwaf', 'Nalauraaa@gmail.com', '432', '2005-03-10', '140.812.259', 'Cruzeiro do Sul', 'PR', '', 1),
-(34, 'vinicius', 'vinicius@gmail.com', '123', '1981-06-20', '007.665.539', 'Umuarama', 'PR', '', 1);
+INSERT INTO `usuario` (`id`, `nome`, `email`, `senha`, `dataNascimento`, `cpf`, `cidade`, `UF`, `telefone`, `cep`, `endereco`, `status`) VALUES
+(1, 'Gabrielle', 'gabrielle@gmail.com', '1234', '', '0', 'Umuarama', 'PR', '44 8825 939', '', '', 1),
+(2, 'Gabrielle', 'gabrielle@gmail.com', '1234', '', '0', 'Umuarama', 'PR', '44 8825 939', '', '', 1),
+(3, 'Gabrielle', 'gabrielle@gmail.com', '1234', '', '0', 'Umuarama', 'PR', '44 8825 939', '', '', 1),
+(4, 'Ana Laura Dias de Cabral', 'Nalauraaa@gmail.com', '56789', '10/03/20', '153246', 'Cafezal', 'AL', '(44)98535-3', '', '', 1),
+(5, 'Ana Laura Dias de Cabral', 'Nalauraaa@gmail.com', '56789', '10/03/20', '153246', 'Cafezal', 'AL', '(44)98535-3', '', '', 1),
+(6, 'Batista', 'Batistaaa@gmail.com', '4134321', '30/08/20', '243517', 'Cruzeiro', 'MT', '(44)87263-5', '', '', 1),
+(7, 'Gustavo Antonio', 'guuuuA@gmail.com', '243534645', '21/12/20', '084.709.149', 'Icaraíma', 'PE', '(44)87392-0223', '', '', 1),
+(8, 'Gustavo Antonio', 'guuuuA@gmail.com', '23214124', '21/02/23', '111.111.111', 'Umuarama', 'PI', '(43)23424-4323', '', '', 1),
+(25, 'ebfrenfdrenfde', 'favgd@bfrbfrn', '33213123', '2001-03-', '08470914901', 'Abadia dos Dourados', 'MG', '(22)22222-2222', '', '', 1),
+(32, 'dfwfwaf', 'Nalauraaa@gmail.com', '123', '1981-06-20', '007.665.539', 'Umuarama', 'PR', '', '', '', 1),
+(33, 'dfwfwaf', 'Nalauraaa@gmail.com', '432', '2005-03-10', '140.812.259', 'Cruzeiro do Sul', 'PR', '', '', '', 1),
+(34, 'vinicius', 'vinicius@gmail.com', '123', '1981-06-20', '007.665.539', 'Umuarama', 'PR', '', '', '', 1);
 
 -- --------------------------------------------------------
 
@@ -425,7 +413,7 @@ ALTER TABLE `autor`
 -- AUTO_INCREMENT de tabela `carrinho`
 --
 ALTER TABLE `carrinho`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=36;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=42;
 
 --
 -- AUTO_INCREMENT de tabela `editora`
