@@ -122,7 +122,6 @@ function validarCPF($cpf)
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@48,300,0,0" />
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
     <title>Cadastro</title>
-
 </head>
 <body class="body-cadastro" style="flex-direction: column;">
     <?php if (isset($mensagemErro)) { ?>

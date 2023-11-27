@@ -69,6 +69,7 @@ if (isset($_POST['logar'])){
                 <?php
                   } else {
                 ?>
+                    <h6>Você está logado(a) <?php echo $_SESSION['email']; ?> </h6>
                     <a href="sair.php">Sair</a>
                 <?php
                   }
