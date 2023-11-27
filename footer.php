@@ -33,16 +33,16 @@
           </h6>
           <p> 
             <div class="formapagamento"  style="margin-left: -300px;">
-            <a href="#!" class="text-reset">Boleto Bancário</a>
+            <span>Boleto Bancário</span>
           </p>
           <p>
-            <a href="#!" class="text-reset">Cartão de Crédito</a>
+            <span>Cartão de Crédito</span>
           </p>
           <p>
-            <a href="#!" class="text-reset">Cartão de Débito</a>
+            <span>Cartão de Débito</span>
           </p>
           <p>
-            <a href="#!" class="text-reset">Pix</a>
+            <span>Pix</span>
           </p>
         </div>
         </div>
