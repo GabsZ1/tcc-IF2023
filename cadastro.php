@@ -153,7 +153,18 @@ function validarCPF($cpf)
                 </div>
 
                 <?php
+
                 $nome = isset($_POST['nome']) ? $_POST['nome'] : "";
+                $email = isset($_POST['email']) ? $_POST['email'] : "";
+                $senha = isset($_POST['senha']) ? $_POST['senha'] : "";
+                $confsenha = isset($_POST['confsenha']) ? $_POST['confsenha'] : "";
+                $cpf = isset($_POST['cpf']) ? $_POST['cpf'] : "";
+                $dataNascimento = isset($_POST['dataNascimento']) ? $_POST['dataNascimento'] : "";
+                $estado = isset($_POST['estado']) ? $_POST['estado'] : "";
+                $cidade = isset($_POST['cidade']) ? $_POST['cidade'] : "";
+                $cep = isset($_POST['cep']) ? $_POST['cep'] : "";
+                $endereco = isset($_POST['endereco']) ? $_POST['endereco'] : "";
+
                 ?>
 
                 <form class="cadastro-form" method="post">
@@ -163,50 +174,50 @@ function validarCPF($cpf)
                     </div>
                     <div class="form-item">
                         <span class="form-item-icon material-symbols-rounded">mail</span>
-                        <input type="email" name="email" placeholder="Seu e-mail" required>
+                        <input type="email" name="email" placeholder="Seu e-mail" required value="<?= $email ?>">
                     </div>
                     <div class="form-item">
                         <span class="form-item-icon material-symbols-rounded">lock</span>
-                        <input type="password" id="senha" name="senha" placeholder="Cadastre sua senha" required>
+                        <input type="password" id="senha" name="senha" placeholder="Cadastre sua senha" required value="<?= $senha ?>">
                     </div>
                     <div class="form-item">
                         <span class="form-item-icon material-symbols-rounded">lock</span>
-                        <input type="password" id="confsenha" name="confsenha" placeholder="Confirme sua senha" required>
+                        <input type="password" id="confsenha" name="confsenha" placeholder="Confirme sua senha" required value="<?= $confsenha ?>">
                     </div>
 
                     <div class="form-item">
                         <div class="input-box">
                         <span class="form-item-icon material-symbols-rounded">terminal</span>
                         <input type="text" id="cpf" autocomplete="off" maxlength="14" name="cpf" placeholder="Digite seu CPF" 
-                        required onkeyup="mascara_cpf()" required pattern="\d{3}\.\d{3}\.\d{3}-\d{2}"/>
+                        required onkeyup="mascara_cpf()" required pattern="\d{3}\.\d{3}\.\d{3}-\d{2}" value="<?= $cpf ?>"/>
                         </div>
                     </div>
 
                     <div class="form-item">
                         <span class="form-item-icon material-symbols-rounded">calendar_today</span>
-                        <input type="date" id="date" name="dataNascimento" autocomplete="off" placeholder="Sua data de Nascimento" required>
+                        <input type="date" id="date" name="dataNascimento" autocomplete="off" placeholder="Sua data de Nascimento" required value="<?= $dataNascimento ?>">
                         <span class="error-message" id="date-error"></span>
                     </div>
 
                     <div class="form-item">
                         <span class="form-item-icon material-symbols-rounded">person_pin_circle</span>
-                        <input  id="estado" type="text" name="estado" placeholder="Estado" required autofocus>
+                        <input  id="estado" type="text" name="estado" placeholder="Estado" required autofocus value="<?= $estado ?>">
                     </div>
 
                     <div class="form-item">
                         <span class="form-item-icon material-symbols-rounded">location_city</span>
-                        <input  id="cidade" type="text" name="cidade" placeholder="Cidade" required autofocus>
+                        <input  id="cidade" type="text" name="cidade" placeholder="Cidade" required autofocus value="<?= $cidade ?>">
                     </div>
                         
                 
                     <div  class="form-item" style=" margin-top: 50px; padding-right: 140px; padding-left: 140px; margin-bottom: 10; right: 140px; height: -50px;  top: -50px;">
-                        <input  id="cep" type="text" name="cep" placeholder="CEP" required autofocus>
+                        <input  id="cep" type="text" name="cep" placeholder="CEP" required autofocus value="<?= $cep ?>">
                     </div>
 
                     
 
                     <div class="form-item" style=" margin-top: 50px; padding-right: 140px; padding-left: 140px; margin-bottom: 10;  right: -140px; height: 50px; top: -190px;">
-                        <input  id="endereco" type="text" name="endereco" placeholder="Seu endereço" required autofocus>
+                        <input  id="endereco" type="text" name="endereco" placeholder="Seu endereço" required autofocus value="<?= $endereco ?>">
                     </div>
             
                     <input class="btn btn-primary btn-lg btn-block active"
