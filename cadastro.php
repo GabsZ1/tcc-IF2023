@@ -199,27 +199,28 @@ function validarCPF($cpf)
                         <span class="error-message" id="date-error"></span>
                     </div>
 
-                    <div class="form-item">
+
+                    <div  class="form-item" style=" margin-top: 50px; padding-right: 140px; padding-left: 140px; margin-bottom: 10; right: 140px; height: -50px;  top: -60px;">
+                        <input  id="cep" type="text" name="cep" placeholder="CEP"   maxlength="9" required autofocus value="<?= $cep ?>">
+                    </div>
+
+                    <div class="form-item" style=" margin-top: 50px; padding-right: 140px; padding-left: 140px; margin-bottom: 10;  right: -140px; height: 50px; top: -190px;">
+                        <input  id="endereco" type="text" name="endereco" placeholder="Seu endereço" required autofocus value="<?= $endereco ?>">
+                    </div>
+
+                    <div class="form-item" style="top: -180px;">
                         <span class="form-item-icon material-symbols-rounded">person_pin_circle</span>
                         <input  id="estado" type="text" name="estado" placeholder="Estado" required autofocus value="<?= $estado ?>">
                     </div>
 
-                    <div class="form-item">
+                    <div class="form-item" style="top: -180px;">
                         <span class="form-item-icon material-symbols-rounded">location_city</span>
                         <input  id="cidade" type="text" name="cidade" placeholder="Cidade" required autofocus value="<?= $cidade ?>">
                     </div>
                         
                 
-                    <div  class="form-item" style=" margin-top: 50px; padding-right: 140px; padding-left: 140px; margin-bottom: 10; right: 140px; height: -50px;  top: -50px;">
-                        <input  id="cep" type="text" name="cep" placeholder="CEP" required autofocus value="<?= $cep ?>">
-                    </div>
-
-                    
-
-                    <div class="form-item" style=" margin-top: 50px; padding-right: 140px; padding-left: 140px; margin-bottom: 10;  right: -140px; height: 50px; top: -190px;">
-                        <input  id="endereco" type="text" name="endereco" placeholder="Seu endereço" required autofocus value="<?= $endereco ?>">
-                    </div>
             
+                   
                     <input class="btn btn-primary btn-lg btn-block active"
                      data-bs-toggle="modal" type="submit" value="Cadastrar" name="cadastrar" style="width: 414px; margin-left: 50px; top: -130px">
                 </form>
@@ -238,8 +239,8 @@ function validarCPF($cpf)
     document.getElementById('cep').addEventListener('input', function() {
         const cep = this.value;
 
-        if (cep.length === 8) {
-            const url = `https://viacep.com.br/ws/${cep}/json/`;
+        if (cep.length === 9) {
+            const url = "https://viacep.com.br/ws/${cep}/json/";
 
             fetch(url)
                 .then(response => response.json())
@@ -249,9 +250,8 @@ function validarCPF($cpf)
                         resetFields();
                     } else {
                         mensagemErro.style.display = 'none';
-                        document.getElementById('uf').value = data.uf;
+                        document.getElementById('estado').value = data.estado;
                         document.getElementById('cidade').value = data.cidade;
-                        document.getElementById('endereco').value = data.endereco;
                     
                     }
                 })
@@ -265,9 +265,8 @@ function validarCPF($cpf)
         });
 
         function resetFields() {
-            document.getElementById('uf').value = '';
+            document.getElementById('estado').value = '';
             document.getElementById('cidade').value = '';
-            document.getElementById('endereco').value = '';
         }
     </script>
 
