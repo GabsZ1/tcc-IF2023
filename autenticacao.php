@@ -20,7 +20,6 @@ if (isset($_POST['logar'])):
        session_start();
        $_SESSION['email'] = $linha['email'];
 
-
         header("location:index.php");
     }else{
         echo "Usuário/senha inválido!";
