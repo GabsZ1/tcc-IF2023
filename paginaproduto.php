@@ -1,18 +1,41 @@
 <?php
 session_start();
+$sessao_id = $_SESSION['email'];
 require_once("conexao.php");
 
 if (isset($_POST['adicionar'])) {
-    $sessao_id = $_SESSION['email'];
-    $valor_unitario = str_replace(',', '.', $_POST['valor_unitario']);
-    $livros_id = $_POST['livros_id'];
-    $quantidade = $_POST['quantidade'];
 
-    $sql_carrinho = "insert into carrinho (livros_id, valor_unitario, quantidade, sessao_id)
-    values ($livros_id, '$valor_unitario', '$quantidade', '$sessao_id')";
-    mysqli_query($conexao, $sql_carrinho);
+    if (isset($_POST['livros_id'])) {
+        $livrosid = $_POST['livros_id'];
+    }
 
-    $mensagem = "Adicionado ao carrinho com sucesso!";
+    // Olha se o produto está no carrinho.
+    $sqlprocura = "select * from carrinho where livros_id = '$livrosid' and sessao_id = '$sessao_id'";
+    $resultado2 = mysqli_query($conexao, $sqlprocura);
+    if (mysqli_num_rows($resultado2) > 0) {
+        $linha = mysqli_fetch_assoc($resultado2);
+        $quantidadeAtual = $linha['quantidade'] + $_POST['quantidade'];
+
+        if ($quantidadeAtual > 20) {
+            $mensagem = "Limite excedido";
+        } else {
+            $atualiza = "update carrinho set quantidade = $quantidadeAtual where livros_id =" . $_POST['livros_id'];
+            mysqli_query($conexao, $atualiza);
+
+            $mensagem = "Adicionado ao carrinho com sucesso! x2";
+        }
+    } else {
+        $sessao_id = $_SESSION['email'];
+        $valor_unitario = str_replace(',', '.', $_POST['valor_unitario']);
+        $livros_id = $_POST['livros_id'];
+        $quantidade = $_POST['quantidade'];
+        
+        $sql_carrinho = "insert into carrinho (livros_id, valor_unitario, quantidade, sessao_id)
+        values ($livros_id, '$valor_unitario', '$quantidade', '$sessao_id')";
+        mysqli_query($conexao, $sql_carrinho);
+        
+        $mensagem = "Adicionado ao carrinho com sucesso!";
+    }
 }
 
 $idlivro = $_GET["id"];  
