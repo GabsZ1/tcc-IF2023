@@ -203,6 +203,8 @@ function validarCPF($cpf)
                         <input  id="cep" type="text" name="cep" placeholder="CEP" required autofocus>
                     </div>
 
+                    
+
                     <div class="form-item" style=" margin-top: 50px; padding-right: 140px; padding-left: 140px; margin-bottom: 10;  right: -140px; height: 50px; top: -190px;">
                         <input  id="endereco" type="text" name="endereco" placeholder="Seu endereço" required autofocus>
                     </div>
@@ -214,6 +216,54 @@ function validarCPF($cpf)
         </div>
     </div>
 </body>
+
+
+
+<p id="mensagem-erro" style="color: red; display: none;">CEP não encontrado</p>
+
+<script>
+    const mensagemErro = document.getElementById('mensagem-erro');
+
+    document.getElementById('cep').addEventListener('input', function() {
+        const cep = this.value;
+
+        if (cep.length === 8) {
+            const url = `https://viacep.com.br/ws/${cep}/json/`;
+
+            fetch(url)
+                .then(response => response.json())
+                .then(data => {
+                    if (data.erro) {
+                        mensagemErro.style.display = 'block';
+                        resetFields();
+                    } else {
+                        mensagemErro.style.display = 'none';
+                        document.getElementById('uf').value = data.uf;
+                        document.getElementById('cidade').value = data.cidade;
+                        document.getElementById('endereco').value = data.endereco;
+                    
+                    }
+                })
+                .catch(error => {
+                    console.error('Erro ao buscar CEP:', error);
+                    mensagemErro.style.display = 'block';
+                    resetFields();
+                });
+
+            }
+        });
+
+        function resetFields() {
+            document.getElementById('uf').value = '';
+            document.getElementById('cidade').value = '';
+            document.getElementById('endereco').value = '';
+        }
+    </script>
+
+
+
+
+
 
 <script>
     function mascara_cpf() {
@@ -239,6 +289,7 @@ function validarCPF($cpf)
             this.setCustomValidity('');
         }
     });
+    
 </script>
 
 <!-- <script>
