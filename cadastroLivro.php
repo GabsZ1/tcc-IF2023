@@ -70,24 +70,38 @@ if (isset($_POST['cadastrar'])){
                 <div class="cadastro-heather">
                     <h1 style="margin-bottom: 40px;">Cadastro de Livros</h1>
                 </div>
+
+                <?php
+
+                $titulo = isset($_POST['titulo']) ? $_POST['titulo'] : "";
+                $subtitulo = isset($_POST['subtitulo']) ? $_POST['subtitulo'] : "";
+                $sinopse = isset($_POST['sinopse']) ? $_POST['sinopse'] : "";
+                $valor = isset($_POST['valor']) ? $_POST['valor'] : "";
+                $capa = isset($_POST['capa']) ? $_POST['capa'] : "";
+                $class = isset($_POST['class']) ? $_POST['class'] : "";
+                $livrosAutor_id = isset($_POST['livrosAutor_id']) ? $_POST['livrosAutor_id'] : "";
+                $livrosEditora_id = isset($_POST['livrosEditora_id']) ? $_POST['livrosEditora_id'] : "";
+
+                ?>
+
                 <form class="cadastro-form" method="post">
                     <div class="form-item">
-                        <input type="text" name="titulo" placeholder="Título" required autofocus>
+                        <input type="text" name="titulo" placeholder="Título" required autofocus value="<?= $titulo ?>">
                     </div>
                     <div class="form-item">
-                        <input type="text" name="subtitulo" placeholder="Subtitulo" required>
+                        <input type="text" name="subtitulo" placeholder="Subtitulo" required value="<?= $subtitulo ?>">
                     </div>
                     <div class="form-item">
-                        <input type="text" name="sinopse" placeholder="Sinopse" required>
+                        <input type="text" name="sinopse" placeholder="Sinopse" required value="<?= $sinopse ?>">
                     </div>
                     <div class="form-item">
-                        <input type="text" name="valor" placeholder="Valor" required>
+                        <input type="text" name="valor" placeholder="Valor" required value="<?= $valor ?>">
                     </div>
 
                     
                         
                     <div class="form-item">
-                        <input type="file" name="capa" id="inputGroupFile02">
+                        <input type="file" name="capa" id="inputGroupFile02" required value="<?= $capa ?>">
                     </div>
 
                     <!-- <div class="input-group mb-3">
@@ -103,7 +117,7 @@ if (isset($_POST['cadastrar'])){
                     </div> -->
 
                     <div class="form-item">
-                        <select name="class" id="estado" value="<?= $linha['class'] ?>" required>
+                        <select name="class" id="estado" value="<?= $linha['class'] ?>" required value="<?= $class ?>">
                             <option selected disabled value="">Classificação indicativa</option>
                             <option value="classL.png">Classificação Livre</option>
                             <option value="class12.png">Classificação +12</option>
@@ -113,7 +127,7 @@ if (isset($_POST['cadastrar'])){
                     </div>
 
                     <div class="form-item">
-                        <select name="livrosAutor_id" id="estado" required>
+                        <select name="livrosAutor_id" id="estado" required value="<?= $livrosAutor_id ?>">
                             <option selected disabled value="">Autor(a)</option>
                             <?php
                                 $sql = "select * from autor order by nome";
@@ -131,7 +145,7 @@ if (isset($_POST['cadastrar'])){
 
 
                     <div class="form-item">
-                        <select name="livrosEditora_id" id="estado" required>
+                        <select name="livrosEditora_id" id="estado" required value="<?= $livrosEditora_id ?>">
                             <option selected disabled value="">Editora</option>
                             <?php
                                 $sql = "select * from editora order by nome";
