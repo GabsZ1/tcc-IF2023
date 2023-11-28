@@ -92,27 +92,6 @@ if (isset($_POST['cadastrar'])){
                         <input type="text" name="valor" placeholder="Valor" required value="<?= $valor ?>">
                     </div>
 
-                    
-                        
-                    <div class="form-item">
-                        <label class="picture">
-                            <input type="file" accept="image/*" class="picture__input" name="capa" id="inputGroupFile02" required>
-                            <span class="picture__image"></span>
-                        </label>
-                    </div>
-
-                    <!-- <div class="input-group mb-3">
-                            <input type="file" class="form-control" id="inputGroupFile02">
-                            <label class="input-group-text" for="inputGroupFile02">Upload</label>
-                        </div>
-                        
-                    <div class="form-item input-group mb-3">
-                        <form name="form" method="post" enctype="multipart/form-data">
-                            <input type="file" class="form-control" id="inputGroupFile02" name="arquivo" id="arquivo">
-                        </form>
-                        <label class="input-group-text" for="inputGroupFile02">Upload</label>
-                    </div> -->
-
                     <div class="form-item">
                         <select name="class" id="estado" value="<?= $linha['class'] ?>" required>
                             <option selected disabled value="">Classificação indicativa</option>
@@ -157,6 +136,15 @@ if (isset($_POST['cadastrar'])){
                                 ?>
                         </select>
                     </div>
+
+                    <div class="form-item">
+                        <center>
+                            <label class="picture">
+                                <input type="file" accept="image/*" class="picture__input" name="capa" id="inputGroupFile02" required>
+                                <span class="picture__image"></span>
+                            </label>
+                        </center>
+                    </div>
                     
                     <div class="form-item-outro">
                         <input class="btn btn-primary btn-lg btn-block active" type="submit" value="Cadastrar" name="cadastrar">
@@ -176,7 +164,7 @@ if (isset($_POST['cadastrar'])){
 
     const pictureImage = document.querySelector('.picture__image');
 
-    const pictureImageTXT = 'Selecione uma imagem';
+    const pictureImageTXT = 'Selecione uma capa';
 
     pictureImage.innerHTML = pictureImageTXT;
 
