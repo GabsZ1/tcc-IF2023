@@ -72,16 +72,10 @@ if (isset($_POST['cadastrar'])){
                 </div>
 
                 <?php
-
                 $titulo = isset($_POST['titulo']) ? $_POST['titulo'] : "";
                 $subtitulo = isset($_POST['subtitulo']) ? $_POST['subtitulo'] : "";
                 $sinopse = isset($_POST['sinopse']) ? $_POST['sinopse'] : "";
                 $valor = isset($_POST['valor']) ? $_POST['valor'] : "";
-                $capa = isset($_POST['capa']) ? $_POST['capa'] : "";
-                $class = isset($_POST['class']) ? $_POST['class'] : "";
-                $livrosAutor_id = isset($_POST['livrosAutor_id']) ? $_POST['livrosAutor_id'] : "";
-                $livrosEditora_id = isset($_POST['livrosEditora_id']) ? $_POST['livrosEditora_id'] : "";
-
                 ?>
 
                 <form class="cadastro-form" method="post">
@@ -102,7 +96,7 @@ if (isset($_POST['cadastrar'])){
                         
                     <div class="form-item">
                         <label class="picture">
-                            <input type="file" accept="image/*" class="picture__input" name="capa" id="picture__input" required value="<?= $capa ?>">
+                            <input type="file" accept="image/*" class="picture__input" name="capa" id="inputGroupFile02" required>
                             <span class="picture__image"></span>
                         </label>
                     </div>
@@ -120,7 +114,7 @@ if (isset($_POST['cadastrar'])){
                     </div> -->
 
                     <div class="form-item">
-                        <select name="class" id="estado" value="<?= $linha['class'] ?>" required value="<?= $class ?>">
+                        <select name="class" id="estado" value="<?= $linha['class'] ?>" required>
                             <option selected disabled value="">Classificação indicativa</option>
                             <option value="classL.png">Classificação Livre</option>
                             <option value="class12.png">Classificação +12</option>
@@ -130,7 +124,7 @@ if (isset($_POST['cadastrar'])){
                     </div>
 
                     <div class="form-item">
-                        <select name="livrosAutor_id" id="estado" required value="<?= $livrosAutor_id ?>">
+                        <select name="livrosAutor_id" id="estado" required>
                             <option selected disabled value="">Autor(a)</option>
                             <?php
                                 $sql = "select * from autor order by nome";
@@ -148,7 +142,7 @@ if (isset($_POST['cadastrar'])){
 
 
                     <div class="form-item">
-                        <select name="livrosEditora_id" id="estado" required value="<?= $livrosEditora_id ?>">
+                        <select name="livrosEditora_id" id="estado" required>
                             <option selected disabled value="">Editora</option>
                             <?php
                                 $sql = "select * from editora order by nome";
@@ -177,5 +171,37 @@ if (isset($_POST['cadastrar'])){
         </div>
     </div>  
 </body>
-<script src="js/cadastroIMG.js"></script>
+<script>
+    const inputFile = document.querySelector('#inputGroupFile02');
+
+    const pictureImage = document.querySelector('.picture__image');
+
+    const pictureImageTXT = 'Selecione uma imagem';
+
+    pictureImage.innerHTML = pictureImageTXT;
+
+    inputFile.addEventListener('change', function(e) {
+        const inputTarget = e.target;
+        const file = inputTarget.files[0];
+
+        if (file) {
+            const reader = new FileReader();
+
+            reader.addEventListener('load', function(e) {
+                const readerTarget = e.target;
+
+                const img = document.createElement('img');
+                img.src = readerTarget.result;
+                img.classList.add('picture__img');
+                pictureImage.innerHTML = '';
+
+                pictureImage.appendChild(img);
+            });
+
+            reader.readAsDataURL(file);
+        } else {
+            pictureImage.innerHTML = pictureImageTXT;
+        }
+    });
+</script>
 </html>

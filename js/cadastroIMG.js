@@ -21,7 +21,7 @@ inputFile.addEventListener('change', function(e) {
             img.classList.add('picture__img');
             pictureImage.innerHTML = '';
 
-            pictureImage.appendChild(img/LIVRO);
+            pictureImage.appendChild(img);
         });
 
         reader.readAsDataURL(file);
