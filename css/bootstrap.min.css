@@ -82,6 +82,33 @@ section {
 
 
 
+/* IMAGEM DO CADASTRO DE LIVRO */
+
+.picture__input {
+  display: none;
+}
+
+.picture {
+  width: 200px;
+  aspect-ratio: 6/8;
+  background: #bbb;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #777;
+  border: 2px dashed currentColor;
+  cursor: pointer;
+}
+
+.picture:hover {
+  color: #555;
+}
+
+.picture__img {
+  max-width: 100%;
+}
+
+
 /* imagens da filtragem de pesquisa */
 
 /* .imagem {

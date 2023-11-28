@@ -69,7 +69,7 @@ $resultado = mysqli_query($conexao, $sql);
             <td><?= $linha['subtitulo'] ?></th>
             <td><?= $linha['sinopse'] ?></th>
             <td><?= $linha['valor'] ?></th>
-            <td><?= $linha['status'] ?></th>
+            <td><?= ($linha['status']) == 1 ? 'Ativo' : 'Inativo'; ?></th>
             <td>
               <a href="alterarLivros.php?id=<?= $linha['id'] ?>" class="btn btn" style="background-color:#D4D6FA;"><i class="fa-solid fa-pen-to-square"></i></a>
             </th>

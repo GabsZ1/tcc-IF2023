@@ -101,7 +101,10 @@ if (isset($_POST['cadastrar'])){
                     
                         
                     <div class="form-item">
-                        <input type="file" name="capa" id="inputGroupFile02" required value="<?= $capa ?>">
+                        <label class="picture">
+                            <input type="file" accept="image/*" class="picture__input" name="capa" id="picture__input" required value="<?= $capa ?>">
+                            <span class="picture__image"></span>
+                        </label>
                     </div>
 
                     <!-- <div class="input-group mb-3">
@@ -174,4 +177,5 @@ if (isset($_POST['cadastrar'])){
         </div>
     </div>  
 </body>
+<script src="js/cadastroIMG.js"></script>
 </html>
