@@ -13,20 +13,46 @@ if (isset($_POST['cadastrar'])){
     $Aid = $_POST['livrosAutor_id'];
     $Eid = $_POST['livrosEditora_id'];
 
+//     $sql2 = "SELECT * FROM livros WHERE (titulo='$titulo')";
 
-    //3. Preparar a SQL
+//     $resultado = mysqli_query($conexao, $sql2);
 
-    $sql = "insert into livros (titulo, subtitulo, sinopse, valor, capa, class, livrosAutor_id, livrosEditora_id) values ('$titulo', '$subt', '$sinopse', '$val', '$capa', '$classe', '$Aid', '$Eid')";
-    
-    //4. executar a sql no banco de dados
+//     $mensagemErro2 = "Titulo já cadastrado!";
+// } 
+// else { 
+//     $titulo = $_POST['titulo'];
+//     $subt = $_POST['subtitulo'];
+//     $sinopse = $_POST['sinopse'];
+//     $val = $_POST['valor'];
+//     $capa = $_POST['capa'];
+//     $classe = $_POST['class'];
+//     $Aid = $_POST['livrosAutor_id'];
+//     $Eid = $_POST['livrosEditora_id'];
 
-    mysqli_query($conexao, $sql);
+//     if(mysqli_num_rows($resultado)>0){
+//         ?>
+//             <div class="alert alert-danger" style="color: black; margin-top: 50px; padding-right: 280px;padding-left: 280px; margin-bottom: 0;" role="alert">
+//                 <i class="fa-solid fa-square-check"></i>
+//                 <?= $mensagemErro2 ?>
+//             </div>
+//         <?php 
+//     }
+//     else {
+        //3. Preparar a SQL
 
-    //5. variável da mensagem
-    
-    $mensagem = "Cadastrado com sucesso.";
+        $sql = "insert into livros (titulo, subtitulo, sinopse, valor, capa, class, livrosAutor_id, livrosEditora_id) values ('$titulo', '$subt', '$sinopse', '$val', '$capa', '$classe', '$Aid', '$Eid')";
+            
+        //4. executar a sql no banco de dados
 
+        mysqli_query($conexao, $sql);
+
+        //5. variável da mensagem
+            
+        $mensagem = "Cadastrado com sucesso.";
+//     }
 }
+
+
 
 ?>
 
