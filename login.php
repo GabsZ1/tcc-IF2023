@@ -42,7 +42,9 @@ if (isset($_POST['logar'])){
     <div class="login-container">
         <div class="login">
             <div class="login-logo">
-                <img src="img/imgSITE/nuvemLILAS.png" alt="logo">
+                <a href="index.php">
+                    <img src="img/imgSITE/nuvemLILAS.png" alt="logo">
+                </a>
             </div>
             <div class="login-header">
                 <h1>Login</h1>

@@ -99,7 +99,7 @@ $row = mysqli_fetch_array($result);
                         <span class="mb-4">R$<?= $row['valor']; ?></span>
                         <input class="form-control text-center mb-3" id="quantidade" name="quantidade" type="number" min="1" max="20" value="1" style="max-width: 5rem">
                         <!-- <a href="#" class="btn btn-primary btn-lg btn-block active" role="button" aria-pressed="true" style="margin-left: 0px;"></a> -->
-                        <button type="submit" class="btn btn-primary btn-lg btn-block active" name="adicionar" aria-pressed="true" style="margin-left: 0px;">Adicionar ao carrinho</button>
+                        <button type="submit" class="btn btn-primary btn-lg btn-block active" name="adicionar" aria-pressed="true" style="margin-left: 0px;"><a href="testeCarrinho.php">Adicionar ao carrinho</a></button>
 
 
                     </div>

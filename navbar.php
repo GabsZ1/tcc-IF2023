@@ -1,4 +1,15 @@
+<?php
+session_start();
 
+$sessao_id = "";
+
+if (isset($_SESSION['email'])) {
+    $sessao_id = $_SESSION['email'];
+}
+
+require_once("conexao.php");
+
+?>
 
 <link rel="stylesheet" href="css/navbar.css" >
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.0/font/bootstrap-icons.css">
@@ -53,13 +64,15 @@
 
         <li class="nav-item">
           <?php
-            if (!isset($_SESSION['logar'])) {
+            if (!isset($_SESSION['email'])) {
           ?>
           <a class="nav-link mt-4" href="login.php"><svg xmlns="http://www.w3.org/2000/svg" height="2.3em" align-items="center" viewBox="0 0 448 512"><!--! Font Awesome Free 6.4.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. --><style>svg{fill:#9c93cf}</style><path d="M224 256A128 128 0 1 0 224 0a128 128 0 1 0 0 256zm-45.7 48C79.8 304 0 383.8 0 482.3C0 498.7 13.3 512 29.7 512H418.3c16.4 0 29.7-13.3 29.7-29.7C448 383.8 368.2 304 269.7 304H178.3z"/></svg></a>
           <?php
             } else { 
-              echo $_SESSION['logar'];
-            }
+          ?>
+          <a class="nav-link mt-4" href="login.php"><svg xmlns="http://www.w3.org/2000/svg" height="2.2em" viewBox="0 0 640 512"><!--!Font Awesome Free 6.5.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2023 Fonticons, Inc.--><path fill="#9c93cf" d="M96 128a128 128 0 1 1 256 0A128 128 0 1 1 96 128zM0 482.3C0 383.8 79.8 304 178.3 304h91.4C368.2 304 448 383.8 448 482.3c0 16.4-13.3 29.7-29.7 29.7H29.7C13.3 512 0 498.7 0 482.3zM625 177L497 305c-9.4 9.4-24.6 9.4-33.9 0l-64-64c-9.4-9.4-9.4-24.6 0-33.9s24.6-9.4 33.9 0l47 47L591 143c9.4-9.4 24.6-9.4 33.9 0s9.4 24.6 0 33.9z"/></svg></a>
+          <?php
+            } 
           ?>
         </li>
       </ul>

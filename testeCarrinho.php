@@ -38,14 +38,17 @@ $resultado = mysqli_query($conexao, $sql);
 if (isset($_POST['finalizar'])) {
     $sessao_id = $_SESSION['email'];
 
-    
+    $livros_id = $_POST['livros_id'];
+    $quantidade = $_POST['quantidade'];
+    $valor_unitario = $_POST['valor_unitario'];
+    $usuario_id = $_POST['usuario_id'];
 
-$sql_carrinho = "insert into venda (livros_id, quantidade, valor_unitario, usuario_id)
-        values ($livros_id, '$quantidade', '$valor_unitario', '$usuario_id')";
+    $sql_carrinho = "insert into venda (livros_id, quantidade, valor_unitario, usuario_id)
+    values ($livros_id, '$quantidade', '$valor_unitario', '$usuario_id')";
 
     while ($linha = mysqli_fetch_array($resultado)) {
         $totalGeral += $linha['valor_total'];
-        
+            
         $sql ="SELECT livros.id, livros.titulo, 
               carrinho.quantidade, livros.valor,
               carrinho.quantidade * livros.valor as valor_total
@@ -55,12 +58,6 @@ $sql_carrinho = "insert into venda (livros_id, quantidade, valor_unitario, usuar
 
     }
     
-    $livros_id = $_POST['livros_id'];
-    $quantidade = $_POST['quantidade'];
-    $valor_unitario = $_POST['valor_unitario'];
-    $usuario_id = $_POST['usuario_id'];
-
-
     mysqli_query($conexao, $sql_carrinho);
 
     $mensagem = "Venda finalizada com sucesso!";
