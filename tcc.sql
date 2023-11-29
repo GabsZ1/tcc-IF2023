@@ -62,28 +62,44 @@ CREATE TABLE `autor` (
 -- Despejando dados para a tabela `autor`
 --
 
+-- --------------------------------------------------------
+
+--
+-- Estrutura para tabela `autor`
+--
+
+CREATE TABLE `autor` (
+  `id` int(13) NOT NULL,
+  `nome` varchar(100) NOT NULL,
+  `status` int(20) NOT NULL DEFAULT 1
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Despejando dados para a tabela `autor`
+--
+
 INSERT INTO `autor` (`id`, `nome`, `status`) VALUES
 (1, 'Tahereh Mafi', 1),
-(3, 'JENNA EVANS WELCH', 1),
-(4, 'VICTORIA AVEYARD', 1),
-(5, 'C.C.HUNTER', 1),
-(6, 'TAYLOR JENKINS REID', 1),
-(7, 'C.J.TUDOR', 1),
-(8, 'TORI TELFER', 1),
-(9, 'EMILY HENRY', 1),
-(10, 'STEPHENIE MEYER', 1),
-(11, 'SHEA ERNSHAW', 1),
-(12, 'AGATHA CRISTIE', 1),
-(13, 'JANE AUSTEN', 1),
-(14, 'LOUISE ONEILL', 1),
-(15, 'RICK RIORDAN', 1),
-(16, 'HOLLY BLACK', 1),
-(17, 'ANA BEATRIZ BRANDÃO', 1),
-(18, 'COLLEEN HOUCK ', 1),
-(19, 'TILLIE COLE ', 1),
-(20, 'ALICE OSEMAN', 1),
-(21, 'KIERA CASS', 1),
-(22, 'ELAYNE BAETA', 1);
+(3, 'Jenna Evans Welch', 1),
+(4, 'Victoria Aveyard', 1),
+(5, 'C.C.Hunter', 1),
+(6, 'Taylor Jenkins Reid', 1),
+(7, 'C.J.Tudor', 1),
+(8, 'Tori Telfer', 1),
+(9, 'Emily Henry', 1),
+(10, 'Stephenie Meyer', 1),
+(11, 'Shea Ernshaw', 1),
+(12, 'Agatha Cristie', 1),
+(13, 'Jane Austen', 1),
+(14, 'Louise Oneill', 1),
+(15, 'Rick Riordan', 1),
+(16, 'Holly Black', 1),
+(17, 'Ana Beatriz Brandão', 1),
+(18, 'Colleen Houck ', 1),
+(19, 'Tillie Cole ', 1),
+(20, 'Alice Oseman', 1),
+(21, 'Kiera Cass', 1),
+(22, 'Elayne Baeta', 1);
 
 -- --------------------------------------------------------
 

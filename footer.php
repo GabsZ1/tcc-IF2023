@@ -6,8 +6,8 @@
      
       <div class="row mt-3">
         
-        <div class="col-md-3 col-lg-4 col-xl-3">
-          <img src="img/imgSITE/nuvemBRANCO.png" alt="" style="height: 250px; margin-left: 0px">
+        <div class="col">
+          <img src="img/imgSITE/nuvemBRANCO.png" alt="" style="height: 250px;">
         </div>
 
         <div class="col-md-3 col-lg-4 col-xl-3">

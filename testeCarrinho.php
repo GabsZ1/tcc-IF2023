@@ -38,16 +38,28 @@ $resultado = mysqli_query($conexao, $sql);
 if (isset($_POST['finalizar'])) {
     $sessao_id = $_SESSION['email'];
 
+    
+
+$sql_carrinho = "insert into venda (livros_id, quantidade, valor_unitario, usuario_id)
+        values ($livros_id, '$quantidade', '$valor_unitario', '$usuario_id')";
+
     while ($linha = mysqli_fetch_array($resultado)) {
         $totalGeral += $linha['valor_total'];
+        
+        $sql ="SELECT livros.id, livros.titulo, 
+              carrinho.quantidade, livros.valor,
+              carrinho.quantidade * livros.valor as valor_total
+        from carrinho
+        inner join livros on livros.id = carrinho.livros_id
+        where sessao_id LIKE '$sessao_id'";
+
     }
     
-    $valortotal = str_replace(',', '.', $_POST['valortotal']);
+    $livros_id = $_POST['livros_id'];
+    $quantidade = $_POST['quantidade'];
+    $valor_unitario = $_POST['valor_unitario'];
     $usuario_id = $_POST['usuario_id'];
-    $data = $_POST['datavenda'];
 
-    $sql_carrinho = "insert into venda (usuario_id, valortotal, datavenda)
-    values ($usuario_id, '$valortotal', '$data')";
 
     mysqli_query($conexao, $sql_carrinho);
 

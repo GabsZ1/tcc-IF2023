@@ -1,6 +1,12 @@
 <?php
 session_start();
-$sessao_id = $_SESSION['email'];
+
+$sessao_id = "";
+
+if (isset($_SESSION['email'])) {
+    $sessao_id = $_SESSION['email'];
+}
+
 require_once("conexao.php");
 
 if (isset($_POST['adicionar'])) {
