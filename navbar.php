@@ -1,6 +1,4 @@
 <?php
-session_start();
-
 $sessao_id = "";
 
 if (isset($_SESSION['email'])) {
