@@ -44,7 +44,7 @@ if (!("erro" in conteudo)) {
     //Atualiza os campos com os valores.
     document.getElementById('endereco').value=(conteudo.logradouro);
     document.getElementById('cidade').value=(conteudo.localidade);
-    document.getElementById('estado').value=(conteudo.estado);
+    document.getElementById('estado').value=(conteudo.uf);
 } //end if.
 else {
     //CEP não Encontrado.

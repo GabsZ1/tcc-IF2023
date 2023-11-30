@@ -218,24 +218,24 @@ function validarCPF($cpf)
 
           <form method="get" action=".">
                     <label>
-                    <div  class="form-item" style=" margin-top: 50px; padding-right: 140px; padding-left: 140px; margin-bottom: 10; right: 140px; height: -50px;  top: -60px;">
+                    <div  class="form-item" style=" margin-top: 50px; padding-right: 140px; padding-left: 140px; margin-bottom: 10; right: 140px; height: -50px;  top: -40px; ">
                         <input  id="cep" type="text" name="cep" placeholder="CEP"  value=""  size="10" maxlength="9"  onblur="pesquisacep(this.value);" required autofocus value="<?= $cep ?>">
                        </label>
                     </div>
 
                     <label>
-                    <div class="form-item" style=" margin-top: 50px; padding-right: 140px; padding-left: 140px; margin-bottom: 10;  right: -140px; height: 50px; top: -190px;">
+                    <div class="form-item" style=" margin-top: 50px; padding-right: 140px; padding-left: 140px; margin-bottom: 10;  right: -140px; height: 50px; top: -150px; ">
                         <input  id="endereco" type="text" name="endereco" placeholder="Seu endereço" size="60" required autofocus value="<?= $endereco ?>"></label>
                     </div>
 
                     <label>
-                    <div class="form-item" style="top: -180px;">
+                    <div class="form-item" style="top: -120px;">
                         <span class="form-item-icon material-symbols-rounded">person_pin_circle</span>
                         <input  id="estado" type="text" name="estado" placeholder="Estado" size="2"  required autofocus value="<?= $estado ?>"></label>
                     </div>
 
                     <label>
-                    <div class="form-item" style="top: -180px;">
+                    <div class="form-item" style="top: -100px;">
                         <span class="form-item-icon material-symbols-rounded">location_city</span>
                         <input  id="cidade" type="text" name="cidade" placeholder="Cidade" size="40" required autofocus value="<?= $cidade ?>"></label>
                     </div>
@@ -244,7 +244,7 @@ function validarCPF($cpf)
             
                    
                     <input class="btn btn-primary btn-lg btn-block active"
-                     data-bs-toggle="modal" type="submit" value="Cadastrar" name="cadastrar" style="width: 414px; margin-left: 50px; top: -130px">
+                     data-bs-toggle="modal" type="submit" value="Cadastrar" name="cadastrar" style="width: 414px; margin-left: 50px; top: -100px">
                 </form>
             </div>
         </div>
