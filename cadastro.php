@@ -199,7 +199,7 @@ function validarCPF($cpf)
                     </div>
 
 
-                    <form method="get" action=".">
+            
         <!-- <label>Cep:
         <input name="cep" type="text" id="cep" value=""  maxlength="9"
                onblur="pesquisacep(this.value);" /></label><br />
@@ -215,16 +215,12 @@ function validarCPF($cpf)
         <input name="ibge" type="text" id="ibge" size="8" /><br />
        -->
 
-
+          <form method="get" action=".">
                     <label>
                     <div  class="form-item" style=" margin-top: 50px; padding-right: 140px; padding-left: 140px; margin-bottom: 10; right: 140px; height: -50px;  top: -60px;">
                         <input  id="cep" type="text" name="cep" placeholder="CEP"  value=""  size="10" maxlength="9"  onblur="pesquisacep(this.value);" required autofocus value="<?= $cep ?>">
                        </label>
                     </div>
-
-
-
-
 
                     <label>
                     <div class="form-item" style=" margin-top: 50px; padding-right: 140px; padding-left: 140px; margin-bottom: 10;  right: -140px; height: 50px; top: -190px;">
@@ -240,7 +236,7 @@ function validarCPF($cpf)
                     <label>
                     <div class="form-item" style="top: -180px;">
                         <span class="form-item-icon material-symbols-rounded">location_city</span>
-                        <input  id="cidade" type="text" name="cidade" placeholder="Cidade" size="40"required autofocus value="<?= $cidade ?>"></label>
+                        <input  id="cidade" type="text" name="cidade" placeholder="Cidade" size="40" required autofocus value="<?= $cidade ?>"></label>
                     </div>
                        </form> 
                 
