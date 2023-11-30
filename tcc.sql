@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Tempo de geração: 27/11/2023 às 13:20
+-- Tempo de geração: 30/11/2023 às 12:51
 -- Versão do servidor: 10.4.28-MariaDB
 -- Versão do PHP: 8.2.4
 
@@ -45,22 +45,6 @@ CREATE TABLE `adm` (
 INSERT INTO `adm` (`id`, `nome`, `email`, `senha`, `arquivo`, `status`) VALUES
 (1, 'Ana Laura', 'analauracabral603@gmail.com', '12345', NULL, 1),
 (2, 'Gabrielle Bonini', 'gabrielleboninibarbosa@gmail.com', '1432', NULL, 1);
-
--- --------------------------------------------------------
-
---
--- Estrutura para tabela `autor`
---
-
-CREATE TABLE `autor` (
-  `id` int(13) NOT NULL,
-  `nome` varchar(100) NOT NULL,
-  `status` int(20) NOT NULL DEFAULT 1
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
-
---
--- Despejando dados para a tabela `autor`
---
 
 -- --------------------------------------------------------
 
@@ -190,6 +174,20 @@ INSERT INTO `genero` (`id`, `nome`, `status`) VALUES
 (9, 'MISTÉRIO', 1),
 (10, 'AVENTURA', 1),
 (11, 'TERROR', 1);
+
+-- --------------------------------------------------------
+
+--
+-- Estrutura para tabela `itensvenda`
+--
+
+CREATE TABLE `itensvenda` (
+  `id` int(11) NOT NULL,
+  `venda_id` int(11) NOT NULL,
+  `livros_id` int(13) NOT NULL,
+  `quantidade` int(11) NOT NULL,
+  `valor_unitario` double(11,2) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- --------------------------------------------------------
 
@@ -337,11 +335,9 @@ INSERT INTO `usuario` (`id`, `nome`, `email`, `senha`, `dataNascimento`, `cpf`, 
 
 CREATE TABLE `venda` (
   `id` int(11) NOT NULL,
-  `produto_id` int(11) NOT NULL,
-  `quantidade` int(11) NOT NULL,
-  `valor_unitario` int(11) NOT NULL,
   `usuario_id` int(11) NOT NULL,
-  `status` int(11) NOT NULL DEFAULT 1
+  `status` int(11) NOT NULL DEFAULT 1,
+  `datacadastro` datetime NOT NULL DEFAULT current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
@@ -380,6 +376,13 @@ ALTER TABLE `genero`
   ADD PRIMARY KEY (`id`);
 
 --
+-- Índices de tabela `itensvenda`
+--
+ALTER TABLE `itensvenda`
+  ADD PRIMARY KEY (`id`),
+  ADD KEY `fk_Venda` (`venda_id`);
+
+--
 -- Índices de tabela `livrogenero`
 --
 ALTER TABLE `livrogenero`
@@ -406,7 +409,6 @@ ALTER TABLE `usuario`
 --
 ALTER TABLE `venda`
   ADD PRIMARY KEY (`id`),
-  ADD KEY `fk_vendaProduto` (`produto_id`),
   ADD KEY `fk_vendaUsuario` (`usuario_id`);
 
 --
@@ -444,6 +446,12 @@ ALTER TABLE `genero`
   MODIFY `id` int(13) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
 
 --
+-- AUTO_INCREMENT de tabela `itensvenda`
+--
+ALTER TABLE `itensvenda`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+
+--
 -- AUTO_INCREMENT de tabela `livrogenero`
 --
 ALTER TABLE `livrogenero`
@@ -478,6 +486,12 @@ ALTER TABLE `carrinho`
   ADD CONSTRAINT `fk_livros` FOREIGN KEY (`livros_id`) REFERENCES `livros` (`id`);
 
 --
+-- Restrições para tabelas `itensvenda`
+--
+ALTER TABLE `itensvenda`
+  ADD CONSTRAINT `fk_Venda` FOREIGN KEY (`venda_id`) REFERENCES `venda` (`id`);
+
+--
 -- Restrições para tabelas `livrogenero`
 --
 ALTER TABLE `livrogenero`
@@ -495,7 +509,6 @@ ALTER TABLE `livros`
 -- Restrições para tabelas `venda`
 --
 ALTER TABLE `venda`
-  ADD CONSTRAINT `fk_vendaProduto` FOREIGN KEY (`produto_id`) REFERENCES `livros` (`id`),
   ADD CONSTRAINT `fk_vendaUsuario` FOREIGN KEY (`usuario_id`) REFERENCES `usuario` (`id`);
 COMMIT;
 
