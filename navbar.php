@@ -14,25 +14,16 @@ require_once("conexao.php");
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe" crossorigin="anonymous"></script>
 
-<style>
-    @media (min-width:992px) {
-        .navbar{
-            transform: translateY(50%);
-        }
-    }
-</style>
-
 
 <nav class="navbar fixed-top navbar-expand-lg bg-body-tert bg-dream" style="justify-content: left">
 
   <!-- div principal -->
-  <div clas="img">
+ 
   <div style="width: 15%; display: flex; justify-content: left;">
     <a class="mt-1" href="index.php" style="padding-left: 4.3em; align-items: left; justify-content: left; text-align: left;">
         <img src="img/imgSITE/nuvemLILAS.png" width="120" height="105">
     </a>
   </div>
-</div>
 
   <!-- div 1 (está funcionando como um gap que completa os 100% da tela DEVE CONTINUAR VAZIA) -->
 
