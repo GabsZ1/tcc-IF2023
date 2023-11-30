@@ -51,40 +51,39 @@ valorunitario double(11,2)
 
 */
 
-if (isset($_POST['finalizar'])) {
 
-    $sessao_id = $_SESSION['email'];
+
+if (isset($_POST['finalizar'])) {
 
     //--> insere na tabela 'venda'
 
-    $usuario_id = $_POST['usuario_id'];
-    $datacadastro = $_POST['datacadastro'];
+    if (isset($_POST['sessao_id'])) {
+        $sessao_id = $_POST['sessao_id'];
+    }
 
-    $sql_venda = "insert into venda (usuario_id, datacadastro)
-    values ($usuario_id, '$datacadastro')";
+    // verifica se tem algum produto
+    $sqlprocura = "select * from carrinho where sessao_id = '$sessao_id'";
+    $resultado2 = mysqli_query($conexao, $sqlprocura);
+    if (mysqli_num_rows($resultado2) > 0) {
+        $linha = mysqli_fetch_assoc($resultado2);
 
-    mysqli_query($conexao, $sql_venda);
+        $sessao_id = $_SESSION['email'];
+        
+        $sql_venda = "insert into venda (sessao_id)
+        values ('$sessao_id')";
+        mysqli_query($conexao, $sql_venda);
+        
+        $mensagem = "Adicionado a venda com sucesso!";
+    }
+
+    header("location: testeCarrinho.php?mensagem=$mensagem");
     
     //-->insere os produtos
 
-    $sql ="SELECT livros.id, livros.titulo, 
-                carrinho.quantidade, livros.valor,
-                carrinho.quantidade * livros.valor as valor_total
-            from carrinho
-            inner join livros on livros.id = carrinho.livros_id
-            where sessao_id LIKE '$sessao_id'";
-
-
-
     while ($linha = mysqli_fetch_array($resultado)) {
         $totalGeral += $linha['valor_total'];
-            
-
     }
-    
-    mysqli_query($conexao, $sql_carrinho);
 
-    $mensagem = "Venda finalizada com sucesso!";
 }
 
 
