@@ -200,7 +200,7 @@ function validarCPF($cpf)
 
 
                     <div  class="form-item" style=" margin-top: 50px; padding-right: 140px; padding-left: 140px; margin-bottom: 10; right: 140px; height: -50px;  top: -60px;">
-                        <input  id="cep" type="text" name="cep" placeholder="CEP"   maxlength="9" required autofocus value="<?= $cep ?>">
+                        <input  id="cep" type="number" name="cep" placeholder="CEP"   maxlength="9" required autofocus value="<?= $cep ?>">
                     </div>
 
                     <div class="form-item" style=" margin-top: 50px; padding-right: 140px; padding-left: 140px; margin-bottom: 10;  right: -140px; height: 50px; top: -190px;">
