@@ -335,7 +335,7 @@ INSERT INTO `usuario` (`id`, `nome`, `email`, `senha`, `dataNascimento`, `cpf`, 
 
 CREATE TABLE `venda` (
   `id` int(11) NOT NULL,
-  `usuario_id` int(11) NOT NULL,
+  `sessao_id` int(11) NOT NULL,
   `status` int(11) NOT NULL DEFAULT 1,
   `datacadastro` datetime NOT NULL DEFAULT current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
