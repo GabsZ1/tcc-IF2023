@@ -199,23 +199,6 @@ function validarCPF($cpf)
                         <span class="error-message" id="date-error"></span>
                     </div>
 
-
-            
-        <!-- <label>Cep:
-        <input name="cep" type="text" id="cep" value=""  maxlength="9"
-               onblur="pesquisacep(this.value);" /></label><br />
-        Rua:
-        <input name="rua" type="text" id="rua" size="60" /><br />
-        Bairro:
-        <input name="bairro" type="text" id="bairro" size="40" /><br />
-        <label>Cidade:
-        <input name="cidade" type="text" id="cidade"  /></label><br />
-        <label>Estado:
-        <input name="uf" type="text" id="uf"  /></label><br />
-       IBGE:
-        <input name="ibge" type="text" id="ibge" size="8" /><br />
-       -->
-
           <form method="get" action=".">
                     <label>
                     <div  class="form-item" style=" margin-top: 50px; padding-right: 140px; padding-left: 140px; margin-bottom: 10; right: 140px; height: -50px;  top: -40px; ">
