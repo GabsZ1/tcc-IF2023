@@ -199,24 +199,50 @@ function validarCPF($cpf)
                     </div>
 
 
+                    <form method="get" action=".">
+        <!-- <label>Cep:
+        <input name="cep" type="text" id="cep" value=""  maxlength="9"
+               onblur="pesquisacep(this.value);" /></label><br />
+        Rua:
+        <input name="rua" type="text" id="rua" size="60" /><br />
+        Bairro:
+        <input name="bairro" type="text" id="bairro" size="40" /><br />
+        <label>Cidade:
+        <input name="cidade" type="text" id="cidade"  /></label><br />
+        <label>Estado:
+        <input name="uf" type="text" id="uf"  /></label><br />
+       IBGE:
+        <input name="ibge" type="text" id="ibge" size="8" /><br />
+       -->
+
+
+                    <label>
                     <div  class="form-item" style=" margin-top: 50px; padding-right: 140px; padding-left: 140px; margin-bottom: 10; right: 140px; height: -50px;  top: -60px;">
-                        <input  id="cep" type="number" name="cep" placeholder="CEP"   maxlength="9" required autofocus value="<?= $cep ?>">
+                        <input  id="cep" type="text" name="cep" placeholder="CEP"  value=""  size="10" maxlength="9"  onblur="pesquisacep(this.value);" required autofocus value="<?= $cep ?>">
+                       </label>
                     </div>
 
+
+
+
+
+                    <label>
                     <div class="form-item" style=" margin-top: 50px; padding-right: 140px; padding-left: 140px; margin-bottom: 10;  right: -140px; height: 50px; top: -190px;">
-                        <input  id="endereco" type="text" name="endereco" placeholder="Seu endereço" required autofocus value="<?= $endereco ?>">
+                        <input  id="endereco" type="text" name="endereco" placeholder="Seu endereço" size="60" required autofocus value="<?= $endereco ?>"></label>
                     </div>
 
+                    <label>
                     <div class="form-item" style="top: -180px;">
                         <span class="form-item-icon material-symbols-rounded">person_pin_circle</span>
-                        <input  id="estado" type="text" name="estado" placeholder="Estado" required autofocus value="<?= $estado ?>">
+                        <input  id="estado" type="text" name="estado" placeholder="Estado" size="2"  required autofocus value="<?= $estado ?>"></label>
                     </div>
 
+                    <label>
                     <div class="form-item" style="top: -180px;">
                         <span class="form-item-icon material-symbols-rounded">location_city</span>
-                        <input  id="cidade" type="text" name="cidade" placeholder="Cidade" required autofocus value="<?= $cidade ?>">
+                        <input  id="cidade" type="text" name="cidade" placeholder="Cidade" size="40"required autofocus value="<?= $cidade ?>"></label>
                     </div>
-                        
+                       </form> 
                 
             
                    
@@ -230,7 +256,14 @@ function validarCPF($cpf)
 
 
 
-<p id="mensagem-erro" style="color: red; display: none;">CEP não encontrado</p>
+
+
+
+
+
+
+
+<!-- <p id="mensagem-erro" style="color: red; display: none;">CEP não encontrado</p>
 
 <script>
     const mensagemErro = document.getElementById('mensagem-erro');
@@ -267,11 +300,7 @@ function validarCPF($cpf)
             document.getElementById('estado').value = '';
             document.getElementById('cidade').value = '';
         }
-    </script>
-
-
-
-
+    </script> -->
 
 
 <script>
