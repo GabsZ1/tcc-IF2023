@@ -51,97 +51,41 @@ valorunitario double(11,2)
 
 */
 
-// Salva a compra na tabela venda e itens_venda.
 if (isset($_POST['finalizar'])) {
+
+    $sessao_id = $_SESSION['email'];
+
+    //--> insere na tabela 'venda'
+
+    $usuario_id = $_POST['usuario_id'];
+    $datacadastro = $_POST['datacadastro'];
+
+    $sql_venda = "insert into venda (usuario_id, datacadastro)
+    values ($usuario_id, '$datacadastro')";
+
+    mysqli_query($conexao, $sql_venda);
     
-        // Verifica se tem algum produto.
-        $sql_usuario = ""
+    //-->insere os produtos
 
-        $sqlverifica = "select * from carrinho where carrinho.sessao_id = '$sessao_id'";
-        $resultadoverifica = mysqli_query($conexao, $sqlverifica);
-        $linhasvef = mysqli_num_rows($resultadoverifica);
-
-        if ($linhasvef > 0) {
-
-            $usuario_id = $linha['usuario_id'];
-
-            // Inserir n tabela de venda.
-            $inserirVenda = "insert into venda (usuario_id, datacadastro)
-            values ('$usuario_id', '$datacadastro')";
-            mysqli_query($conexao, $inserirVenda);
-
-            // ID da última venda inserida ao BD.
-
-            $idVenda = mysqli_insert_id($conexao);
-
-            $sql = "select livros.id, carrinho.quantidade, livros.valor from carrinho
+    $sql ="SELECT livros.id, livros.titulo, 
+                carrinho.quantidade, livros.valor,
+                carrinho.quantidade * livros.valor as valor_total
+            from carrinho
             inner join livros on livros.id = carrinho.livros_id
-            where carrinho.sessao_id = '$sessao_id'";
-            $resultado2 = mysqli_query($conexao, $sql);
-
-            while ($linha = mysqli_fetch_array($resultado2)) {
-                $idLivrvos = $linha['id'];
-                $quantidade = $linha['quantidade'];
-                $valorUnitario = $linha['valor'];
-
-                // Calcula o valor total para cada produto.
-                $valorTotal = $valorUnitario * $quantidade;
-                $totalCarrinho = $totalCarrinho + $valorTotal;
-
-                // Inserir na tabela de itens_venda.
-                $inserirItem = "insert into itensvenda (venda_id, livros_id, quantidade, valor_unitario) values ('$idVenda', '$idLivros', '$quantidade', '$valor_unitario')";
-                mysqli_query($conexao, $inserirItem);
-
-                $atualizarVenda = "update venda set valorTotal = '$totalCarrinho' where idVenda = '$idVenda'";
-                mysqli_query($conexao, $atualizarVenda);
-            }
-            // Limpando o carrinho.
-            $limpaCarrinho = "delete from carrinho where sessao_id = '$sessao_id'";
-            mysqli_query($conexao, $limpaCarrinho);
-
-            $mensagem1 = "Obrigado pelo pedido! Você pode acompanhá-lo pela lista de pedidos.";
-        } else {
-            $mensagem2 = "Adicione produtos ao carrinho!";
-        }
-    }
+            where sessao_id LIKE '$sessao_id'";
 
 
 
-// if (isset($_POST['finalizar'])) {
-
-//     $sessao_id = $_SESSION['email'];
-
-//     //--> insere na tabela 'venda'
-
-//     $usuario_id = $_POST['usuario_id'];
-//     $datacadastro = $_POST['datacadastro'];
-
-//     $sql_venda = "insert into venda (usuario_id, datacadastro)
-//     values ($usuario_id, '$datacadastro')";
-
-//     mysqli_query($conexao, $sql_venda);
-    
-//     //-->insere os produtos
-
-//     $sql ="SELECT livros.id, livros.titulo, 
-//                 carrinho.quantidade, livros.valor,
-//                 carrinho.quantidade * livros.valor as valor_total
-//             from carrinho
-//             inner join livros on livros.id = carrinho.livros_id
-//             where sessao_id LIKE '$sessao_id'";
-
-
-
-//     while ($linha = mysqli_fetch_array($resultado)) {
-//         $totalGeral += $linha['valor_total'];
+    while ($linha = mysqli_fetch_array($resultado)) {
+        $totalGeral += $linha['valor_total'];
             
 
-//     }
+    }
     
-//     mysqli_query($conexao, $sql_carrinho);
+    mysqli_query($conexao, $sql_carrinho);
 
-//     $mensagem = "Venda finalizada com sucesso!";
-// }
+    $mensagem = "Venda finalizada com sucesso!";
+}
 
 
 ?>
