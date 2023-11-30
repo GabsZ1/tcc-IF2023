@@ -52,11 +52,9 @@ valorunitario double(11,2)
 */
 
 
-
 if (isset($_POST['finalizar'])) {
 
-    //--> insere na tabela 'venda'
-
+    //define a variavel da sessao
     if (isset($_POST['sessao_id'])) {
         $sessao_id = $_POST['sessao_id'];
     }
@@ -64,6 +62,8 @@ if (isset($_POST['finalizar'])) {
     // verifica se tem algum produto
     $sqlprocura = "select * from carrinho where sessao_id = '$sessao_id'";
     $resultado2 = mysqli_query($conexao, $sqlprocura);
+
+    // roda todas as linhas que o resultado der e se tiver pelo menos 1 roda a inserção da tabela
     if (mysqli_num_rows($resultado2) > 0) {
         $linha = mysqli_fetch_assoc($resultado2);
 
