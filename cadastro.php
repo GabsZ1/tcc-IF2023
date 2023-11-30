@@ -4,6 +4,7 @@
 $conexao = mysqli_connect('127.0.0.1', 'root', '', 'tcc');
 
 if (isset($_POST['cadastrar'])) {
+    
     $cpf = $_POST['cpf'];
     $nome = $_POST['nome'];
     $email = $_POST['email'];
