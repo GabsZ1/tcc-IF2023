@@ -12,7 +12,7 @@ if (isset($_GET['id'])) {
 
 
 //2. preparar a sql
-$sql = "select * from livros";
+$sql = "select * from venda";
 
 //3.executar a sql
 $resultado = mysqli_query($conexao, $sql);
@@ -33,7 +33,7 @@ $resultado = mysqli_query($conexao, $sql);
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe" crossorigin="anonymous"></script>
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.0/font/bootstrap-icons.css">
-  <title>Listagem de Livros</title>
+  <title>Vendas</title>
 </head>
 <body>
 
@@ -44,20 +44,25 @@ $resultado = mysqli_query($conexao, $sql);
 
     <div class="card mt-3 mb-3">
       <div class="card-body">
-        <h1 class="card-title" style="color: #5a5a5a; font-family: '-apple-system'; font-weight: 300;">Listagem de Livros</h1> <a href="MenuAdm.php" class="btn" style="background-color: #9c93cf;"><i class="fa-solid fa-rotate-left"></i> Voltar</a>
+        <h1 class="card-title" style="color: #5a5a5a; font-family: '-apple-system'; font-weight: 300;">Vendas Efetuadas</h1>
+        <form class="d-flex" role="search">
+          <input class="form-control me-2" style="margin-left: 700px; width: 500px" type="search" placeholder="Filtro por status" aria-label="Search">
+          <button class="btn btn-outline-success" type="submit">Procurar</button>
+        </form>
+        <a href="MenuAdm.php" class="btn" style="magin-bottom: 100px; background-color: #9c93cf;"><i class="fa-solid fa-rotate-left"></i> Voltar</a>
       </div>
     </div>
     <table class="table table-hover">
       <thead> <!-- cabeçalho -->
         <tr>
           <th scope="col">ID</th>
-          <th scope="col">Título</th>
-          <th scope="col">Subtitulo</th>
-          <th scope="col">Sinopse</th>
-          <th scope="col">Valor</th>
-          <th scope="col">Status</th>
+          <th scope="col">Usuario</th>
+          <th scope="col">Status da Venda</th>
+          <th scope="col">Forma de pagamento</th>
+          <th scope="col">Valor Total da Venda</th>
+          <th scope="col">Data/Horário da venda</th>
           <th scope="col">Alterar</th>
-          <th scope="col">Deletar</th>
+          <th scope="col">Cancelar</th>
         </tr>
       </thead>
 
@@ -65,16 +70,16 @@ $resultado = mysqli_query($conexao, $sql);
         <?php while ($linha = mysqli_fetch_array($resultado)) { ?>
           <tr>
             <td><?= $linha['id'] ?></th>
-            <td><?= $linha['titulo'] ?></th>
-            <td><?= $linha['subtitulo'] ?></th>
-            <td><?= $linha['sinopse'] ?></th>
-            <td><?= $linha['valor'] ?></th>
-            <td><?= ($linha['status']) == 1 ? 'Ativo' : 'Inativo'; ?></th>
+            <td><?= $linha['usuario_id'] ?></th>
+            <td><?= ($linha['status']) == 1 ? 'Finalizada' : 'Em andamento'; ?></th>
+            <td><?= $linha['formadepagamento'] ?></th>
+            <td><?= $linha['valortotal'] ?></th>
+            <td><?= $linha['datacadastro'] ?></th>
             <td>
-              <a href="alterarLivros.php?id=<?= $linha['id'] ?>" class="btn btn" style="background-color:#D4D6FA;"><i class="fa-solid fa-pen-to-square"></i></a>
+              <a href="alterarVenda.php?id=<?= $linha['id'] ?>" class="btn btn" style="background-color:#D4D6FA;"><i class="fa-solid fa-pen-to-square"></i></a>
             </th>
             <td>
-              <a href="listarLivros.php?id=<?= $linha['id'] ?>" class="btn btn-l" style="background-color:#9c93cf;" onclick="return confirm('Confirmar exclusão?')"><i class="fa-solid fa-trash-can"></i></a>
+              <a href="usuarioListar.php?id=<?= $linha['id'] ?>" class="btn btn-l" style="background-color:#9c93cf;" onclick="return confirm('Confirmar exclusão?')"><i class="fa-solid fa-circle-xmark"></i></a>
             </th>
           </tr>
         <?php } ?>

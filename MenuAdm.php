@@ -76,16 +76,7 @@ require_once("conexao.php");
                         </ul>
 
                         <ul class="navbar-nav">
-                            <li class="nav-item dropdown">
-                            
-                                <a class="nav-link fw-bold py-1 px-0 dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false" aria-current="page" href="#" style="margin-left:15px;">Vendas</a>
-                            
-                                <ul class="dropdown-menu dropdown-menu">
-                                    <li><a class="dropdown-item" href="#">Pendentes</a></li>
-                                    <li><a class="dropdown-item" href="#">Em andamento</a></li>
-                                    <li><a class="dropdown-item" href="#">Finalizadas</a></li>
-                                </ul>
-                            </li>
+                            <a class="nav-link fw-bold py-1 px-0" aria-expanded="false" aria-current="page" href="pagamentos.php" style="margin-left:15px;">Vendas</a>
                         </ul>
                         
                     </nav>
