@@ -20,6 +20,7 @@ if (isset($_POST['logar'])):
         $linha = mysqli_fetch_array($resultado);
        
        session_start();
+       $_SESSION['id']    = $linha['id'];
        $_SESSION['email'] = $linha['email'];
 
         header("location:index.php");
