@@ -2,14 +2,47 @@
 session_start();
 $sessao_id = $_SESSION['email'];
 require_once("conexao.php");
-require_once("verificaAutenticacao.php"); 
+require_once("verificaAutenticacao.php");
 
-// . " and sessao_id = " . $sessao_id; (deu erro D: )
+if (isset($_POST['finalizar'])) {
+
+    //INSERE NA TABELA VENDA /////////////////////////////////////////////////////////////////
+    $usuario_id       = $_SESSION['id'];
+    $status           = 0; //Em andamento
+    $formadepagamento = $_POST['formadepagamento'];
+    $totalGeral       = $_POST['totalGeral'];
+    
+    $sql_venda = "insert into venda (usuario_id, status, formadepagamento, valortotal) 
+                    values ($usuario_id, $status, $formadepagamento, $totalGeral)";
+    $resultado = mysqli_query($conexao, $sql_venda);
+    $venda_id = mysqli_insert_id($conexao);
+
+
+    //INSERE NA TABELA ITENSVENDA ///////////////////////////////////////////////////////////
+    
+    //Pega todos os livros cadastrados no carrinho
+    $sqlprocura = "select * from carrinho where sessao_id = '$sessao_id'";
+    $resultadoitens = mysqli_query($conexao, $sqlprocura);
+
+    // roda todas as linhas que o resultado der e se tiver pelo menos 1 roda a inserção da tabela
+    while ($linha = mysqli_fetch_array($resultadoitens)) {
+        $livros_id = $linha['livros_id'];
+        $quantidade = $linha['quantidade'];
+        $valor_unitario = $linha['valor_unitario'];
+
+        
+        $sql_itensvenda = "insert into itensvenda (venda_id, livros_id, quantidade, valor_unitario) 
+                    values ($venda_id, $livros_id, $quantidade, $valor_unitario)";
+        $resultado = mysqli_query($conexao, $sql_itensvenda);
+    }
+
+    header("location: carrinhoFinalizado.php");
+}
+
 
 //Bloco de exclusão
 if (isset($_GET['id'])) {
-
-    $sql = "delete from carrinho where livros_id = " . $_GET['id'] ;
+    $sql = "delete from carrinho where livros_id = " . $_GET['id'] ." and sessao_id = '" . $sessao_id ."'";
     mysqli_query($conexao, $sql);
     $mensagem = "Exclusão realizada com sucesso!";
 }
@@ -35,56 +68,6 @@ while ($linha = mysqli_fetch_array($resultado)) {
 $resultado = mysqli_query($conexao, $sql);
 
 
-/*
--venda-
-id
-cliente_id
-status
-datacadastro    datetime default current_timestamp
-
--itensvenda-
-id
-venda_id
-produto_id
-quantidade  int
-valorunitario double(11,2)
-
-*/
-
-
-if (isset($_POST['finalizar'])) {
-
-    //define a variavel da sessao
-    if (isset($_POST['sessao_id'])) {
-        $sessao_id = $_POST['sessao_id'];
-    }
-
-    // verifica se tem algum produto
-    $sqlprocura = "select * from carrinho where sessao_id = '$sessao_id'";
-    $resultado2 = mysqli_query($conexao, $sqlprocura);
-
-    // roda todas as linhas que o resultado der e se tiver pelo menos 1 roda a inserção da tabela
-    if (mysqli_num_rows($resultado2) > 0) {
-        $linha = mysqli_fetch_assoc($resultado2);
-
-        $sessao_id = $_SESSION['email'];
-        
-        $sql_venda = "insert into venda (sessao_id)
-        values ('$sessao_id')";
-        mysqli_query($conexao, $sql_venda);
-        
-        $mensagem = "Adicionado a venda com sucesso!";
-    }
-
-    header("location: testeCarrinho.php?mensagem=$mensagem");
-    
-    //-->insere os produtos
-
-    while ($linha = mysqli_fetch_array($resultado)) {
-        $totalGeral += $linha['valor_total'];
-    }
-
-}
 
 
 ?>
@@ -130,6 +113,7 @@ if (isset($_POST['finalizar'])) {
                 </div>
                 <hr style="padding-bottom: 0px; padding-top: 48px;">
                 <form action="testeCarrinho.php" method="post">
+                    <input type="hidden" name="totalGeral" value="<?= $totalGeral ?>" />
                     <div class="row">
                         <!-- div resumo compra -->
                         <div class="col-md-4 order-md-2 mb-4">
@@ -144,25 +128,23 @@ if (isset($_POST['finalizar'])) {
                             </ul>
                             <span class="text-muted">forma de pagamento</span>
                             
-<div class="custom-control custom-radio" style="">
-  <input type="radio" id="customRadio1" name="customRadio" class="custom-control-input">
-  <label class="custom-control-label" for="customRadio1">Boleto bancário</label>
-</div>
-
-<div class="custom-control custom-radio">
-  <input type="radio" id="customRadio2" name="customRadio" class="custom-control-input">
-  <label class="custom-control-label" for="customRadio2">Cartão de crédito</label>
-</div>
-
-<div class="custom-control custom-radio">
-  <input type="radio" id="customRadio3" name="customRadio" class="custom-control-input">
-  <label class="custom-control-label" for="customRadio3">Cartão de débito</label>
-</div>
-
-<div class="custom-control custom-radio">
-  <input type="radio" id="customRadio4" name="customRadio" class="custom-control-input">
-  <label class="custom-control-label" for="customRadio4">Pix</label>
-</div>
+                            <!-- forma de pagamento -->
+                            <div class="custom-control custom-radio" style="">
+                                <input type="radio" id="formadepagamento1" name="formadepagamento" class="custom-control-input" value="1">
+                                <label class="custom-control-label" for="formadepagamento1">Boleto bancário</label>
+                            </div>
+                            <div class="custom-control custom-radio">
+                                <input type="radio" id="formadepagamento2" name="formadepagamento" class="custom-control-input" value="2">
+                                <label class="custom-control-label" for="formadepagamento2">Cartão de crédito</label>
+                            </div>
+                            <div class="custom-control custom-radio">
+                                <input type="radio" id="formadepagamento3" name="formadepagamento" class="custom-control-input" value="3">
+                                <label class="custom-control-label" for="formadepagamento3">Cartão de débito</label>
+                            </div>
+                            <div class="custom-control custom-radio">
+                                <input type="radio" id="formadepagamento4" name="formadepagamento" class="custom-control-input" value="4">
+                                <label class="custom-control-label" for="formadepagamento4">Pix</label>
+                            </div>
 
 
                             <div class="input-group">

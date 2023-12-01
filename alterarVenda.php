@@ -1,22 +1,17 @@
 <?php
 require_once("conexao.php");
 
-//Esse "isset" serve para verificar se foi clicado no botão, caso não tenha sido clicado, não aparecerá o "warning" que aparece
-
 $id = $_GET['id'];
 
 if (isset($_POST['salvar'])) {
 
-    //2º passo - Receber os dados para inserir no BD
+    //2º passo - Receber os dados para alterar no BD
 
-    $sinopse = $_POST['sinopse'];
-    $val = $_POST['valor'];
-    $capa = $_POST['capa'];
     $status = $_POST['status'];
 
 
     //3º passo - Preparar a SQL
-    $sql = "update livros set sinopse = '{$sinopse}', valor = '{$val}', capa = '{$capa}', status = '{$status}' where id = {$id} ";
+    $sql = "update venda set status = '{$status}' where id = {$id} ";
 
 
     //4º passo - Executar a sql no banco de dados
@@ -26,7 +21,7 @@ if (isset($_POST['salvar'])) {
     $mensagem = "Registo atualizado com sucesso";
 }
 
-$sql = "select * from livros where id = {$id}";
+$sql = "select * from venda where id = {$id}";
 $resultado = mysqli_query($conexao, $sql);
 $linha = mysqli_fetch_array($resultado);
 
@@ -61,40 +56,19 @@ $linha = mysqli_fetch_array($resultado);
 
             <input type="hidden" name="id" value="<?= $_GET['id'] ?>">
             
-            <h2>Alterar Livros</h2>
+            <h2>Alterar Venda</h2>
 
-            <div class="form-floating mb-3">
-                <input type="text" class="form-control" id="floatingInput" name="sinopse" value="<?= $linha['sinopse'] ?>">
-                <label for="floatingInput">Sinopse</label>
-            </div>
-
-            <!-- <div class="form-floating mb-3">
-                <div class="input-group">
-                    <span class="input-group-text">Sinopse</span>
-                    <textarea class="form-control" aria-label="With textarea"></textarea>
-                </div>
-            </div> -->
-
-            <div class="form-floating mb-3">
-                <input type="text" class="form-control" id="floatingInput" name="valor" value="<?= $linha['valor'] ?>">
-                <label for="floatingInput">Valor</label>
-            </div>
-            <div class="form-floating mb-3">
-                <input type="text" class="form-control" id="floatingInput" name="capa" value="<?= $linha['capa'] ?>">
-                <label for="floatingPassword">Capa</label>
-            </div>
             <div class="form-item">
                 <select class="form-control" name="status" value="<?= $linha['status'] ?>">
                     <option selected disabled value="">-Status-</option>
-                    <option value="1">Ativo</option>
-                    <option value="0">Inativo</option>
+                    <option value="1">Finalizada</option>
+                    <option value="0">Em andamento</option>
                 </select>
             </div>
 
-
-
             <button type="submit" class="btn mt-3" style="background-color:#D4D6FA;" name="salvar" value="salvar"><i class="fa-solid fa-check"></i> Salvar</button>
-            <a href="listarLivros.php" class="btn btn-l mt-3" style="background-color:#9c93cf;"><i class="fa-solid fa-rotate-left"></i> Voltar</a>
+            <a href="pagamentos.php" class="btn btn-l mt-3" style="background-color:#9c93cf;"><i class="fa-solid fa-rotate-left"></i> Voltar</a>
+
         </form>
     </div>
 </body>
