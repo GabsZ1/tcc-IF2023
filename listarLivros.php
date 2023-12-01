@@ -2,8 +2,8 @@
 require_once("conexao.php");
 
 $where = "";
-if (isset($_POST['pesquisar'])){ //Se clicou no botão de pesquisar
-  $where = " where genero like '%" . $_POST['pesquisar'] ."%'";
+if (isset($_POST['pesquisa'])){ //Se clicou no botão de pesquisar
+  $where = " where genero.id = " . $_POST['pesquisa'] ." ";
 }
 
 //Bloco de exclusão
@@ -15,9 +15,10 @@ if (isset($_GET['id'])) {
 }
 ///////////////////////
 
-
 //2. preparar a sql
-$sql = "select * from livros" . $where;
+$sql = "select livros.* 
+        from livros 
+        left join genero on genero.id = livros.genero_id " . $where;
 
 //3.executar a sql
 $resultado = mysqli_query($conexao, $sql);
