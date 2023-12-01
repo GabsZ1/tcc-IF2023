@@ -129,6 +129,23 @@ if (isset($_POST['cadastrar'])){
                     </div>
 
                     <div class="form-item">
+                        <select name="genero_id" id="estado" required>
+                            <option selected disabled value="">Gênero Literário</option>
+                            <?php
+                                $sql = "select * from genero order by nome";
+                                $resultado = mysqli_query($conexao, $sql);
+                                
+                                while ($linha = mysqli_fetch_array($resultado)) :
+                                    $id = $linha['id'];
+                                    $nome = $linha['nome'];
+
+                                    echo "<option value='{$id}'>{$nome}</option>";
+                                endwhile;
+                            ?>
+                        </select>
+                    </div>
+
+                    <div class="form-item">
                         <select name="livrosAutor_id" id="estado" required>
                             <option selected disabled value="">Autor(a)</option>
                             <?php
