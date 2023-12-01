@@ -51,8 +51,19 @@ $resultado = mysqli_query($conexao, $sql);
     <div class="card mt-3 mb-3">
       <div class="card-body">
         <h1 class="card-title" style="color: #5a5a5a; font-family: '-apple-system'; font-weight: 300;">Listagem de Livros</h1>
+        
         <form class="d-flex" role="search" method="POST" action="listarLivros.php">
-          <input class="form-control me-2" style="margin-left: 700px; width: 500px" type="search" placeholder="Filtro por genero" name="pesquisa" aria-label="Search">
+          <select class="form-select" name="pesquisa" style="margin-left: 550px; width: 500px" aria-label="Default select example">
+            <option selected disabled>Busque pelo genero</option>
+            <option value="1">Romance</option>
+            <option value="3">Suspense</option>
+            <option value="4">Ficção</option>
+            <option value="5">Fantasia</option>
+            <option value="6">Crime real</option>
+            <option value="8">Drama</option>
+            <option value="9">Mistério</option>
+            <option value="10">Aventura</option>
+          </select>
           <button class="btn btn-outline-success" type="submit">Procurar</button>
         </form>
         <a href="MenuAdm.php" class="btn" style="background-color: #9c93cf;"><i class="fa-solid fa-rotate-left"></i> Voltar</a>

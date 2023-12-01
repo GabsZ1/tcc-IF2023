@@ -199,30 +199,30 @@ function validarCPF($cpf)
                         <span class="error-message" id="date-error"></span>
                     </div>
 
-          <form method="get" action=".">
-                    <label>
-                    <div  class="form-item" style=" margin-top: 50px; padding-right: 140px; padding-left: 140px; margin-bottom: 10; right: 140px; height: -50px;  top: -40px; ">
-                        <input  id="cep" type="text" name="cep" placeholder="CEP"  value=""  size="10" maxlength="9"  onblur="pesquisacep(this.value);" required autofocus value="<?= $cep ?>">
-                       </label>
-                    </div>
+                    <form method="get" action=".">
+                        <label>
+                        <div  class="form-item" style=" margin-top: 50px; padding-right: 140px; padding-left: 140px; margin-bottom: 10; right: 140px; height: -50px;  top: -40px; ">
+                            <input  id="cep" type="text" name="cep" placeholder="CEP"  value=""  size="10" maxlength="9"  onblur="pesquisacep(this.value);" required autofocus value="<?= $cep ?>">
+                        </label>
+                        </div>
 
-                    <label>
-                    <div class="form-item" style=" margin-top: 50px; padding-right: 140px; padding-left: 140px; margin-bottom: 10;  right: -140px; height: 50px; top: -150px; ">
-                        <input  id="endereco" type="text" name="endereco" placeholder="Seu endereço" size="60" required autofocus value="<?= $endereco ?>"></label>
-                    </div>
+                        <label>
+                        <div class="form-item" style=" margin-top: 50px; padding-right: 140px; padding-left: 140px; margin-bottom: 10;  right: -140px; height: 50px; top: -150px; ">
+                            <input  id="endereco" type="text" name="endereco" placeholder="Seu endereço" size="60" required autofocus value="<?= $endereco ?>"></label>
+                        </div>
 
-                    <label>
-                    <div class="form-item" style="top: -120px;">
-                        <span class="form-item-icon material-symbols-rounded">person_pin_circle</span>
-                        <input  id="estado" type="text" name="estado" placeholder="Estado" size="2"  required autofocus value="<?= $estado ?>"></label>
-                    </div>
+                        <label>
+                        <div class="form-item" style="top: -120px;">
+                            <span class="form-item-icon material-symbols-rounded">person_pin_circle</span>
+                            <input  id="estado" type="text" name="estado" placeholder="Estado" size="2"  required autofocus value="<?= $estado ?>"></label>
+                        </div>
 
-                    <label>
-                    <div class="form-item" style="top: -100px;">
-                        <span class="form-item-icon material-symbols-rounded">location_city</span>
-                        <input  id="cidade" type="text" name="cidade" placeholder="Cidade" size="40" required autofocus value="<?= $cidade ?>"></label>
-                    </div>
-                       </form> 
+                        <label>
+                        <div class="form-item" style="top: -100px;">
+                            <span class="form-item-icon material-symbols-rounded">location_city</span>
+                            <input  id="cidade" type="text" name="cidade" placeholder="Cidade" size="40" required autofocus value="<?= $cidade ?>"></label>
+                        </div>
+                    </form> 
                 
             
                    
@@ -241,46 +241,6 @@ function validarCPF($cpf)
 
 
 
-
-
-<!-- <p id="mensagem-erro" style="color: red; display: none;">CEP não encontrado</p>
-
-<script>
-    const mensagemErro = document.getElementById('mensagem-erro');
-
-    document.getElementById('cep').addEventListener('input', function() {
-        const cep = this.value;
-
-        if (cep.length === 9) {
-            const url = "https://viacep.com.br/ws/${cep}/json/";
-
-            fetch(url)
-                .then(response => response.json())
-                .then(data => {
-                    if (data.erro) {
-                        mensagemErro.style.display = 'block';
-                        resetFields();
-                    } else {
-                        mensagemErro.style.display = 'none';
-                        document.getElementById('estado').value = data.estado;
-                        document.getElementById('cidade').value = data.cidade;
-                    
-                    }
-                })
-                .catch(error => {
-                    console.error('Erro ao buscar CEP:', error);
-                    mensagemErro.style.display = 'block';
-                    resetFields();
-                });
-
-            }
-        });
-
-        function resetFields() {
-            document.getElementById('estado').value = '';
-            document.getElementById('cidade').value = '';
-        }
-    </script> -->
 
 
 <script>
@@ -309,37 +269,6 @@ function validarCPF($cpf)
     });
     
 </script>
-
-<!-- <script>
-    const ulrUF = 'https://servicodados.ibge.gov.br/api/v1/localidades/estados/'
-    const cidade = document.getElementById("cidade")
-    const uf = document.getElementById("estado")
-
-    uf.addEventListener('change', async function() {
-      const urlCidades = 'https://servicodados.ibge.gov.br/api/v1/localidades/estados/' + uf.value + '/municipios'
-      const request = await fetch(urlCidades)
-      const response = await request.json()
-
-      let options = ''
-      response.forEach(function(cidades) {
-        options += '<option>' + cidades.nome + '</option>'
-      })
-      cidade.innerHTML = options
-    })
-
-
-    window.addEventListener('load', async () => {
-      const request = await fetch(ulrUF)
-      const response = await request.json()
-
-      //  console.log(response[0]).sigla)
-      const options = document.createElement("optgroup")
-      response.forEach(function(uf) {
-        options.innerHTML += '<option>' + uf.sigla + '</option>'
-      })
-      uf.append(options)
-    })
-</script> -->
 
 <script>
     let senha = document.getElementById('senha');

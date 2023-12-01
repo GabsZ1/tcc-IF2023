@@ -51,7 +51,11 @@ $resultado = mysqli_query($conexao, $sql);
       <div class="card-body">
         <h1 class="card-title" style="color: #5a5a5a; font-family: '-apple-system'; font-weight: 300;">Vendas Efetuadas</h1>
         <form class="d-flex" role="search" method="POST" action="pagamentos.php">
-          <input class="form-control me-2" style="margin-left: 700px; width: 500px" type="search" placeholder="Filtro por status" name="pesquisa" aria-label="Search">
+        <select class="form-select" name="pesquisa" style="margin-left: 550px; width: 500px" aria-label="Default select example">
+            <option selected disabled>Busque pelo status</option>
+            <option value="0">Em andamento</option>
+            <option value="1">Finalizada</option>
+          </select>
           <button class="btn btn-outline-success" type="submit">Procurar</button>
         </form>
         <a href="MenuAdm.php" class="btn" style="magin-bottom: 100px; background-color: #9c93cf;"><i class="fa-solid fa-rotate-left"></i> Voltar</a>
