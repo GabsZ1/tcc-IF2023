@@ -21,7 +21,7 @@ require_once("conexao.php");
  
   <div style="width: 15%; display: flex; justify-content: left;">
     <a class="mt-1" href="index.php" style="padding-left: 4.3em; align-items: left; justify-content: left; text-align: left;">
-        <img src="img/imgSITE/nuvemLILAS.png" width="120" height="105">
+        <img src="img/imgSITE/nuvemLILAS.png" width="120" height="105" class="img-responsive">
     </a>
   </div>
 
@@ -32,7 +32,6 @@ require_once("conexao.php");
   <!-- div 2 -->
 
   <div style="width: 70%; display: flex">
-
     <div class="collapse navbar-collapse" style="width: 100%; justify-content: right;" id="navbarCollapse">
       <!-- Lupa -->
       <ul style=" justify-content: right; display: flex; gap: 2em; list-style:none;">
@@ -41,6 +40,7 @@ require_once("conexao.php");
             <div class="lupa">
               <svg xmlns="http://www.w3.org/2000/svg" style="margin-top: 6px" height="2.3em" viewBox="0 0 512 512"> <!-- ! Font Awesome Free 6.4.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. --> <style>svg{fill:#9c93cf}</style><path d="M416 208c0 45.9-14.9 88.3-40 122.7L502.6 457.4c12.5 12.5 12.5 32.8 0 45.3s-32.8 12.5-45.3 0L330.7 376c-34.4 25.2-76.8 40-122.7 40C93.1 416 0 322.9 0 208S93.1 0 208 0S416 93.1 416 208zM208 352a144 144 0 1 0 0-288 144 144 0 1 0 0 288z"/></svg>
             </div>
+        
 
             <div class="input-busca">
               <form method="POST" action="filtrarTitulo.php">
@@ -80,7 +80,7 @@ require_once("conexao.php");
     </div>
 
   </div>
-
+  
   <button style="border: none; padding: 0 0 0 0;" class="navbar-toggler " type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
