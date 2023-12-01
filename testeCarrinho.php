@@ -142,6 +142,27 @@ if (isset($_POST['finalizar'])) {
                                     <strong><div id="resumoValorTotal"> R$ <?= $totalGeral ?>,00</div></strong>
                                 </li>
                             </ul>
+                            <span class="text-muted">forma de pagamento</span>
+                            
+<div class="custom-control custom-radio" style="">
+  <input type="radio" id="customRadio1" name="customRadio" class="custom-control-input">
+  <label class="custom-control-label" for="customRadio1">Boleto bancário</label>
+</div>
+
+<div class="custom-control custom-radio">
+  <input type="radio" id="customRadio2" name="customRadio" class="custom-control-input">
+  <label class="custom-control-label" for="customRadio2">Cartão de crédito</label>
+</div>
+
+<div class="custom-control custom-radio">
+  <input type="radio" id="customRadio3" name="customRadio" class="custom-control-input">
+  <label class="custom-control-label" for="customRadio3">Cartão de débito</label>
+</div>
+
+<div class="custom-control custom-radio">
+  <input type="radio" id="customRadio4" name="customRadio" class="custom-control-input">
+  <label class="custom-control-label" for="customRadio4">Pix</label>
+</div>
 
 
                             <div class="input-group">
