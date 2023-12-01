@@ -36,8 +36,15 @@ if (isset($_POST['finalizar'])) {
         $resultado = mysqli_query($conexao, $sql_itensvenda);
     }
 
-    header("location: carrinhoFinalizado.php");
+    $mensagemSucesso = "Compra Finalizada com sucesso!";
+
+    header("location: testeCarrinho.php");
+    
+    $limpaCarrinho = "delete from carrinho where sessao_id = '$sessao_id'";
+    
+    mysqli_query($conexao, $limpaCarrinho);
 }
+
 
 
 //Bloco de exclusão
@@ -104,6 +111,12 @@ $resultado = mysqli_query($conexao, $sql);
         <link href="checkout.css" rel="stylesheet">
     </head>
     <body>
+        <?php if (isset($mensagemSucesso)) { ?>
+            <div class="alert" style="background-color: #9c93cf; color: black; margin-top: 50px; padding-right: 230px;padding-left: 230px; margin-bottom: 0;" role="alert">
+                <i class="fa-solid fa-square-check"></i>
+                <?= $mensagemSucesso ?>
+            </div>
+        <?php } ?>
         <div class="container">
             <main>
                 <div class="py-5 text-center">
@@ -130,7 +143,7 @@ $resultado = mysqli_query($conexao, $sql);
                             
                             <!-- forma de pagamento -->
                             <div class="custom-control custom-radio" style="">
-                                <input type="radio" id="formadepagamento1" name="formadepagamento" class="custom-control-input" value="1">
+                                <input type="radio" id="formadepagamento1" name="formadepagamento" class="custom-control-input" value="1" required>
                                 <label class="custom-control-label" for="formadepagamento1">Boleto bancário</label>
                             </div>
                             <div class="custom-control custom-radio">

@@ -1,6 +1,11 @@
 <?php
 require_once("conexao.php");
 
+$where = "";
+if (isset($_POST['pesquisar'])){ //Se clicou no botão de pesquisar
+  $where = " where genero like '%" . $_POST['pesquisar'] ."%'";
+}
+
 //Bloco de exclusão
 if (isset($_GET['id'])) {
 
@@ -12,7 +17,7 @@ if (isset($_GET['id'])) {
 
 
 //2. preparar a sql
-$sql = "select * from livros";
+$sql = "select * from livros" . $where;
 
 //3.executar a sql
 $resultado = mysqli_query($conexao, $sql);
@@ -44,7 +49,12 @@ $resultado = mysqli_query($conexao, $sql);
 
     <div class="card mt-3 mb-3">
       <div class="card-body">
-        <h1 class="card-title" style="color: #5a5a5a; font-family: '-apple-system'; font-weight: 300;">Listagem de Livros</h1> <a href="MenuAdm.php" class="btn" style="background-color: #9c93cf;"><i class="fa-solid fa-rotate-left"></i> Voltar</a>
+        <h1 class="card-title" style="color: #5a5a5a; font-family: '-apple-system'; font-weight: 300;">Listagem de Livros</h1>
+        <form class="d-flex" role="search" method="POST" action="listarLivros.php">
+          <input class="form-control me-2" style="margin-left: 700px; width: 500px" type="search" placeholder="Filtro por genero" name="pesquisa" aria-label="Search">
+          <button class="btn btn-outline-success" type="submit">Procurar</button>
+        </form>
+        <a href="MenuAdm.php" class="btn" style="background-color: #9c93cf;"><i class="fa-solid fa-rotate-left"></i> Voltar</a>
       </div>
     </div>
     <table class="table table-hover">

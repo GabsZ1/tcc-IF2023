@@ -303,7 +303,6 @@ CREATE TABLE `usuario` (
   `cpf` varchar(11) NOT NULL,
   `cidade` varchar(100) NOT NULL,
   `UF` varchar(2) NOT NULL,
-  `telefone` varchar(14) NOT NULL,
   `cep` varchar(9) NOT NULL,
   `endereco` varchar(100) NOT NULL,
   `status` int(11) NOT NULL DEFAULT 1
