@@ -167,7 +167,7 @@ if (isset($_POST['cadastrar'])){
                         <select name="livrosEditora_id" id="estado" required>
                             <option selected disabled value="">Editora</option>
                             <?php
-                                $sql = "select * from editora order by nome";
+                                $sql = "SELECT * from editora order by nome where status = 1";
                                 $resultado = mysqli_query($conexao, $sql);
                                 
                                 while ($linha = mysqli_fetch_array($resultado)) :
@@ -195,7 +195,8 @@ if (isset($_POST['cadastrar'])){
 
                     <div class="login-footer">
                         <h6>Autor não encontrado? <a href="cadastroAutor.php">Cadastre-o</a>!<br>
-                        Editora não encontrada? <a href="cadastroEditora.php">Cadastre-a</a>!<br></h6>
+                        Editora não encontrada? <a href="cadastroEditora.php">Cadastre-a</a>!<br>
+                        Gênero não encontrado? <a href="cadastroGenero.php">Cadastre-o</a>!<br></h6>
                     </div>
                 </form>
             </div>

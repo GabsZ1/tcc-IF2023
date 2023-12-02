@@ -58,6 +58,7 @@ require_once("conexao.php");
                                     <li><a class="dropdown-item" href="listarLivros.php">Livros</a></li>
                                     <li><a class="dropdown-item" href="listarEditoras.php">Editoras</a></li>
                                     <li><a class="dropdown-item" href="listarAutores.php">Autores</a></li>
+                                    <li><a class="dropdown-item" href="listarGeneros.php">Gêneros</a></li>
                                 </ul>
                             </li>
                         </ul>
@@ -71,6 +72,7 @@ require_once("conexao.php");
                                     <li><a class="dropdown-item" href="cadastroLivro.php">Livros</a></li>
                                     <li><a class="dropdown-item" href="cadastroEditora.php">Editoras</a></li>
                                     <li><a class="dropdown-item" href="cadastroAutor.php">Autores</a></li>
+                                    <li><a class="dropdown-item" href="cadastroGenero.php">Gêneros</a></li>
                                 </ul>
                             </li>
                         </ul>

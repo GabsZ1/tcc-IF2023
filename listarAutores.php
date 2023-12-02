@@ -63,12 +63,12 @@ $resultado = mysqli_query($conexao, $sql);
           <tr>
             <td><?= $linha['id'] ?></th>
             <td><?= $linha['nome'] ?></th>
-            <td><?= $linha['status'] ?></th>
+            <td><?= ($linha['status']) == 1 ? 'Ativo' : 'Inativo'; ?></th>
             <td>
-              <a href="alterarLivros.php?id=<?= $linha['id'] ?>" class="btn btn" style="background-color:#D4D6FA;"><i class="fa-solid fa-pen-to-square"></i></a>
+              <a href="alterarAutores.php?id=<?= $linha['id'] ?>" class="btn btn" style="background-color:#D4D6FA;"><i class="fa-solid fa-pen-to-square"></i></a>
             </th>
             <td>
-              <a href="usuarioListar.php?id=<?= $linha['id'] ?>" class="btn btn-l" style="background-color:#9c93cf;" onclick="return confirm('Confirmar exclusão?')"><i class="fa-solid fa-trash-can"></i></a>
+              <a href="listarAutores.php?id=<?= $linha['id'] ?>" class="btn btn-l" style="background-color:#9c93cf;" onclick="return confirm('Confirmar exclusão?')"><i class="fa-solid fa-trash-can"></i></a>
             </th>
           </tr>
         <?php } ?>
