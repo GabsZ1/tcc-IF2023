@@ -132,7 +132,7 @@ if (isset($_POST['cadastrar'])){
                         <select name="genero_id" id="estado" required>
                             <option selected disabled value="">Gênero Literário</option>
                             <?php
-                                $sql = "select * from genero order by nome";
+                                $sql = "SELECT * from genero order by nome";
                                 $resultado = mysqli_query($conexao, $sql);
                                 
                                 while ($linha = mysqli_fetch_array($resultado)) :
@@ -149,7 +149,7 @@ if (isset($_POST['cadastrar'])){
                         <select name="livrosAutor_id" id="estado" required>
                             <option selected disabled value="">Autor(a)</option>
                             <?php
-                                $sql = "select * from autor order by nome";
+                                $sql = "SELECT * from autor where status = 1 order by nome";
                                 $resultado = mysqli_query($conexao, $sql);
                                 
                                 while ($linha = mysqli_fetch_array($resultado)) :
@@ -167,7 +167,7 @@ if (isset($_POST['cadastrar'])){
                         <select name="livrosEditora_id" id="estado" required>
                             <option selected disabled value="">Editora</option>
                             <?php
-                                $sql = "SELECT * from editora order by nome where status = 1";
+                                $sql = "SELECT * from editora where status = 1 order by nome ";
                                 $resultado = mysqli_query($conexao, $sql);
                                 
                                 while ($linha = mysqli_fetch_array($resultado)) :
