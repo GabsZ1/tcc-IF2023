@@ -16,18 +16,17 @@ require_once("conexao.php");
 
 
 <nav class="navbar fixed-top navbar-expand-lg bg-body-tert bg-dream" style="justify-content: left">
-
   <!-- div principal -->
  
   <div style="width: 15%; display: flex; justify-content: left;">
     <a class="mt-1" href="index.php" style="padding-left: 4.3em; align-items: left; justify-content: left; text-align: left;">
-        <img src="img/imgSITE/nuvemLILAS.png" width="120" height="105" class="img-responsive">
+        <img src="img/imgSITE/nuvemLILAS.png"  width="120" height="105" class="img-responsive">
     </a>
   </div>
 
   <!-- div 1 (está funcionando como um gap que completa os 100% da tela DEVE CONTINUAR VAZIA) -->
 
-  <div style="width: 10%; display: flex"></div>
+<div style="width: 10%; display: flex"></div> 
     
   <!-- div 2 -->
 
@@ -57,7 +56,7 @@ require_once("conexao.php");
         <!-- Sacola de compras -->
 
         <li class="nav-item">
-          <a class="nav-link mr-1 mt-4" href="testeCarrinho.php"><svg xmlns="http://www.w3.org/2000/svg" height="2.3em" align-items="center" viewBox="0 0 448 512"><!--! Font Awesome Free 6.4.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. --><style>svg{fill:#9c93cf}</style><path d="M160 112c0-35.3 28.7-64 64-64s64 28.7 64 64v48H160V112zm-48 48H48c-26.5 0-48 21.5-48 48V416c0 53 43 96 96 96H352c53 0 96-43 96-96V208c0-26.5-21.5-48-48-48H336V112C336 50.1 285.9 0 224 0S112 50.1 112 112v48zm24 48a24 24 0 1 1 0 48 24 24 0 1 1 0-48zm152 24a24 24 0 1 1 48 0 24 24 0 1 1 -48 0z"/></svg></a>
+          <a class="nav-link mr-1 mt-4" href="testeCarrinho.php"><svg xmlns="http://www.w3.org/2000/svg" height="2.3em" align-items="center" viewBox="0 0 448 512" ><!--! Font Awesome Free 6.4.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. --><style>svg{fill:#9c93cf}</style><path d="M160 112c0-35.3 28.7-64 64-64s64 28.7 64 64v48H160V112zm-48 48H48c-26.5 0-48 21.5-48 48V416c0 53 43 96 96 96H352c53 0 96-43 96-96V208c0-26.5-21.5-48-48-48H336V112C336 50.1 285.9 0 224 0S112 50.1 112 112v48zm24 48a24 24 0 1 1 0 48 24 24 0 1 1 0-48zm152 24a24 24 0 1 1 48 0 24 24 0 1 1 -48 0z"/></svg></a>
         </li>
 
         <!-- Pessoa login -->
@@ -82,8 +81,7 @@ require_once("conexao.php");
   </div>
   
   <button style="border: none; padding: 0 0 0 0;" class="navbar-toggler " type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
-    <span class="navbar-toggler-icon"></span>
+    <span class="navbar-toggler-icon" style="margin-top: -90px;"></span>
   </button>
-
 </nav>
 

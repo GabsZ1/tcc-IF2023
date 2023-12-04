@@ -94,6 +94,12 @@ section {
 }
 
 
+@media (max-width:616px){
+  .navbar-toggler-icon {
+    
+
+  }
+}
 
 /* .banner .img {
   width: 100%;
