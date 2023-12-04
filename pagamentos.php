@@ -3,7 +3,7 @@ require_once("conexao.php");
 
 $where = "";
 if (isset($_POST['pesquisa'])){ //Se clicou no botão de pesquisar
-  $where = " where status like '%" . $_POST['pesquisa'] ."%'";
+  $where = " where venda.status like '%" . $_POST['pesquisa'] ."%'";
 }
 
 //Bloco de exclusão
@@ -17,7 +17,17 @@ if (isset($_GET['id'])) {
 ///////////////////////
 
 //2. preparar a sql
-$sql = "SELECT * from venda" . $where;
+
+// $sql ="SELECT livros.id, livros.titulo, 
+//               carrinho.quantidade, livros.valor,
+//               carrinho.quantidade * livros.valor as valor_total
+//         from carrinho
+//         inner join livros on livros.id = carrinho.livros_id
+//         where sessao_id LIKE '$sessao_id'";
+
+$sql = "SELECT usuario.id, usuario.nome as nome_usuario, venda.usuario_id, venda.status, venda.formadepagamento, venda.valortotal, venda.datacadastro
+        from venda
+        inner join usuario on usuario.id = venda.usuario_id" . $where;
 
 //3.executar a sql
 $resultado = mysqli_query($conexao, $sql);
@@ -79,10 +89,10 @@ $resultado = mysqli_query($conexao, $sql);
         <?php while ($linha = mysqli_fetch_array($resultado)) { ?>
           <tr>
             <td><?= $linha['id'] ?></th>
-            <td><?= $linha['usuario_id'] ?></th>
+            <td><?= $linha['nome_usuario'] ?></th>
             <td><?= ($linha['status']) == 1 ? 'Finalizada' : 'Em andamento'; ?></th>
             <td><?= $linha['formadepagamento'] ?></th>
-            <td><?= $linha['valortotal'] ?></th>
+            <td>R$ <?= $linha['valortotal'] ?></th>
             <td><?= $linha['datacadastro'] ?></th>
             <td>
               <a href="alterarVenda.php?id=<?= $linha['id'] ?>" class="btn btn" style="background-color:#D4D6FA;"><i class="fa-solid fa-pen-to-square"></i></a>
@@ -99,3 +109,40 @@ $resultado = mysqli_query($conexao, $sql);
 </html>
 
   
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
