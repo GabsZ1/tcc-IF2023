@@ -59,10 +59,10 @@ $linha = mysqli_fetch_array($resultado);
             <h2>Alterar Venda</h2>
 
             <div class="form-item">
-                <select class="form-control" name="status" value="<?= $linha['status'] ?>">
+            <select class="form-control" name="status" value="<?= $linha['status'] ?>">
                     <option selected disabled value="">-Status-</option>
-                    <option value="1">Finalizada</option>
-                    <option value="0">Em andamento</option>
+                    <option value="1" <?= ($linha['status'] == 1) ? "selected" : "" ?>> Finalizada </option>
+                    <option value="0" <?= ($linha['status'] == 0) ? "selected" : "" ?>> Em andamento </option>
                 </select>
             </div>
 

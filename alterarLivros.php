@@ -68,13 +68,6 @@ $linha = mysqli_fetch_array($resultado);
                 <label for="floatingInput">Sinopse</label>
             </div>
 
-            <!-- <div class="form-floating mb-3">
-                <div class="input-group">
-                    <span class="input-group-text">Sinopse</span>
-                    <textarea class="form-control" aria-label="With textarea"></textarea>
-                </div>
-            </div> -->
-
             <div class="form-floating mb-3">
                 <input type="text" class="form-control" id="floatingInput" name="valor" value="<?= $linha['valor'] ?>">
                 <label for="floatingInput">Valor</label>
@@ -86,8 +79,8 @@ $linha = mysqli_fetch_array($resultado);
             <div class="form-item">
                 <select class="form-control" name="status" value="<?= $linha['status'] ?>">
                     <option selected disabled value="">-Status-</option>
-                    <option value="1">Ativo</option>
-                    <option value="0">Inativo</option>
+                    <option value="1" <?= ($linha['status'] == 1) ? "selected" : "" ?>> Ativo</option>
+                    <option value="0" <?= ($linha['status'] == 0) ? "selected" : "" ?>>Inativo</option>
                 </select>
             </div>
 
