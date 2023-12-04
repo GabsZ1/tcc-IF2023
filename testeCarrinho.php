@@ -37,8 +37,6 @@ if (isset($_POST['finalizar'])) {
     }
 
     $mensagemSucesso = "Compra Finalizada com sucesso!";
-
-    header("location: testeCarrinho.php");
     
     $limpaCarrinho = "delete from carrinho where sessao_id = '$sessao_id'";
     
@@ -112,9 +110,9 @@ $resultado = mysqli_query($conexao, $sql);
     </head>
     <body>
         <?php if (isset($mensagemSucesso)) { ?>
-            <div class="alert" style="background-color: #9c93cf; color: black; margin-top: 50px; padding-right: 230px;padding-left: 230px; margin-bottom: 0;" role="alert">
+            <div class="alert alert-success" style="margin-top: 77px;" role="alert">
                 <i class="fa-solid fa-square-check"></i>
-                <?= $mensagemSucesso ?>
+                <?= $mensagemSucesso; ?>
             </div>
         <?php } ?>
         <div class="container">
