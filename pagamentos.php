@@ -18,7 +18,8 @@ if (isset($_GET['id'])) {
 
 //2. preparar a sql
 
-$sql = "SELECT usuario.id, usuario.nome as nome_usuario, venda.usuario_id, venda.status, venda.formadepagamento, venda.valortotal, venda.datacadastro
+$sql = "SELECT usuario.nome as nome_usuario, 
+               venda.id, venda.usuario_id, venda.status, venda.formadepagamento, venda.valortotal, venda.datacadastro
         from venda
         inner join usuario on usuario.id = venda.usuario_id" . $where;
 

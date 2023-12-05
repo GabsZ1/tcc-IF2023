@@ -60,9 +60,9 @@ $linha = mysqli_fetch_array($resultado);
 
             <div class="form-item">
             <select class="form-control" name="status" value="<?= $linha['status'] ?>">
-                    <option selected disabled value="">-Status-</option>
-                    <option value="1" <?= ($linha['status'] == 1) ? "selected" : "" ?>> Finalizada </option>
-                    <option value="0" <?= ($linha['status'] == 0) ? "selected" : "" ?>> Em andamento </option>
+                    <option disabled value="">-Status-</option>
+                    <option value="1" <?= ($linha['status'] == 1) ? "selected" : "" ?>> Em andamento </option>
+                    <option value="0" <?= ($linha['status'] == 0) ? "selected" : "" ?>> Finalizada </option>
                 </select>
             </div>
 
