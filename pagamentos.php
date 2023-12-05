@@ -93,7 +93,6 @@ $resultado = mysqli_query($conexao, $sql);
           <th scope="col">Valor Total da Venda</th>
           <th scope="col">Data/Horário da venda</th>
           <th scope="col">Alterar</th>
-          <th scope="col">Cancelar</th>
         </tr>
       </thead>
 
@@ -108,9 +107,6 @@ $resultado = mysqli_query($conexao, $sql);
             <td><?= $linha['datacadastro'] ?></th>
             <td>
               <a href="alterarVenda.php?id=<?= $linha['id'] ?>" class="btn btn" style="background-color:#D4D6FA;"><i class="fa-solid fa-pen-to-square"></i></a>
-            </th>
-            <td>
-              <a href="usuarioListar.php?id=<?= $linha['id'] ?>" class="btn btn-l" style="background-color:#9c93cf;" onclick="return confirm('Confirmar exclusão?')"><i class="fa-solid fa-circle-xmark"></i></a>
             </th>
           </tr>
         <?php } ?>
